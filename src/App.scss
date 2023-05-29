@@ -1,0 +1,51 @@
+@import './styles/colours.scss';
+
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Cera Round Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+}
+
+
+
+// --- mixins // --- layers
+@mixin layer-1 {
+  background-color: $mid-3;
+}
+@mixin layer-2 {
+  background-color: $mid-2;
+}
+@mixin layer-3 {
+  background-color: $mid-1;
+}
+@mixin layer-4 {
+  background-color: $light-3;
+}
+@mixin layer-5 {
+  background-color: $light-2;
+}
+@mixin layer-6 {
+  background-color: $light-1;
+}
+
+// --- layer classes
+.layer-1 {
+  @include layer-1
+}
+.layer-2 {
+  @include layer-2
+}
+.layer-3 {
+  @include layer-3
+}
+.layer-4 {
+  @include layer-4
+}
+.layer-5 {
+  @include layer-5
+}
+.layer-6 {
+  @include layer-6
+}
