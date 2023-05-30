@@ -1,5 +1,5 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 
 
@@ -9,8 +9,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // components
 import NavigationBar from './components/screens/utils/NavigationBar';
 import { Col, Container, Row } from 'react-bootstrap';
-import { findRenderedComponentWithType } from 'react-dom/test-utils';
-// import Home from './components/screens/Home';
 
 
 function App() {
@@ -18,11 +16,11 @@ function App() {
   return (
     <div className='App vh-100 border border-2 border-danger'>
       <Router>
-        <NavigationBar />
+        {/* <NavigationBar /> */}
 
         <div className='app-wrapper w-100 h-100'>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<TranslateScreen />} />
             {/* <Route path="/character" element={<Character />} />
             <Route path="/games" element={<Games />} />
             <Route path="/settings" element={<Settings />} />
@@ -49,28 +47,30 @@ function Home(props) {
         <Col className='layer-3 p-2 h-100'>word edit tools</Col>
       </Row>
     </Container>
-
-    // <div className='home-screen p-2 h-100 layer-1'>
-    //   <div className='p-2 h-25 layer-2 rounded'>
-    //     new phrase input box
-    //   </div>
-
-    //   <div className=''>
-    //     <div className='layer-2 p-2 w-50 h-100 rounded'>
-    //       recent words
-    //     </div>
-
-    //     <div className='layer-2 p-2 w-50 h-100 rounded'>
-    //       word edit tools
-    //     </div>
-    //   </div>
-    // </div>
   )
 }
 
 function TranslateScreen(props) {
   return (
-    
+    <Container>
+      <Row>
+        <Col>
+         <TranslateBar />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>Column</Col>
+        <Col>Column</Col>
+      </Row>
+    </Container>
+  )
+}
+
+function TranslateBar(props) {
+  return (
+    <div id='translate-bar' className='translate-bar'>
+    </div>
   )
 }
 

@@ -2,14 +2,6 @@
 
 
 
-* {
-  box-sizing: border-box;
-  font-family: 'Cera Round Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 500;
-}
-
-
-
 // --- mixins // --- layers
 @mixin layer-1 {
   background-color: $mid-3;
@@ -30,6 +22,24 @@
   background-color: $light-1;
 }
 
+* {
+  @include layer-4;
+  box-sizing: border-box;
+  font-family: 'Cera Round Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+}
+
+.box {
+  margin: auto;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid whitesmoke;
+
+  &.red { 
+    border-color: red;
+  }
+}
+
 // --- layer classes
 .layer-1 {
   @include layer-1
@@ -48,4 +58,35 @@
 }
 .layer-6 {
   @include layer-6
+}
+
+.container {
+  border: 1px solid red;
+}
+
+.row {
+  border: 1px solid whitesmoke;
+}
+
+.col {
+  border: 1px solid red;
+}
+
+
+// ----- ACTUAL CLASSES ----- //
+.translate-screen {
+  .row {
+    // padding: 0.25rem;
+    // width: 100%;
+    // border: 1px solid red;
+  }
+
+  .col {
+    border-radius: 0.25rem;
+  }
+}
+
+.translate-bar {
+  @include layer-4();
+  height: 200px;
 }
