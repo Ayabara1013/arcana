@@ -1,5 +1,5 @@
+@use './styles/globals' as g;
 @import './styles/colours.scss';
-
 
 
 // --- mixins // --- layers
@@ -23,14 +23,14 @@
 }
 
 * {
-  @include layer-4;
+  // @include layer-4;
   box-sizing: border-box;
   font-family: 'Cera Round Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 500;
 }
 
 .box {
-  margin: auto;
+  // margin: auto;
   padding: 0.25rem;
   border-radius: 0.25rem;
   border: 1px solid whitesmoke;
@@ -38,6 +38,10 @@
   &.red { 
     border-color: red;
   }
+}
+
+.svh-100 {
+  height: 100svh;
 }
 
 // --- layer classes
@@ -61,19 +65,23 @@
 }
 
 .container {
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 
 .row {
-  border: 1px solid whitesmoke;
+  // border: 1px solid whitesmoke;
 }
 
 .col {
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 
-
 // ----- ACTUAL CLASSES ----- //
+
+.navbar {
+
+}
+
 .translate-screen {
   .row {
     // padding: 0.25rem;
@@ -89,4 +97,45 @@
 .translate-bar {
   @include layer-4();
   height: 200px;
+}
+
+.App {
+  @include layer-4;
+  
+  display: flex;
+  flex-direction: column;
+  height: calc(100svh);
+
+  border: 2px solid red;
+}
+
+.app-wrapper {
+  height: 100%;
+  border: 2px solid blueviolet;
+}
+
+.settings-card {
+  @include layer-5;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  color: $dark-3;
+  box-shadow: 0.25rem;
+}
+
+.settings-nav {
+  border-radius: 0.5rem;
+  flex-grow: 3;
+}
+
+.st-input {
+  min-width: 50%;
+  border: 0;
+  border-radius: 0.25rem;
+  height: 2.5rem;
+}
+
+.dangerous-button {
+  background-color: rgb(220, 100, 100);
+  // I need to add 'on hover' styles
 }
