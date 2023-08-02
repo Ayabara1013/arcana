@@ -1,5 +1,17 @@
 @use './globals.scss' as g;
+@use '../App.scss' as a;
+@use './colours.scss' as colours;
 
 .navbar {
   // height: 40px;
+}
+
+.nav-item {
+  // @include a.box-shadow;
+  
+  padding: 0.5rem;
+  border: 0px;
+  border-radius: 0.5rem;
+  color: black;
+  text-decoration-line: none;
 }
