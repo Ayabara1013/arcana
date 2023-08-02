@@ -1,4 +1,31 @@
+import React from 'react';
+import '../../../App.scss';
 
+// components
+import { Button, Col, Container, Row } from 'react-bootstrap';
+
+
+
+/** ------------------------------
+ * 
+ * @param {*} props name, onClick
+ * @returns StNavListItem component
+ */
+
+export function StNavListItem(props) {
+  const { name, onClick } = props;
+
+  return (
+    <a class="list-group-item list-group-item-action"
+      data-toggle="list"
+      href={`#${name.toLowerCase()}`}
+      role="tab"
+      onClick={onClick}
+    >
+      {name}
+    </a>
+  );
+}
 
 
 /** ------------------------------
@@ -8,10 +35,20 @@
  */
 
 export function StCategoryContainer(props) {
+  const { title } = props;
+
   return (
     <Container>
       <Row>
         <Col className=''>
+          {
+            title ?
+              <SettingsCard>
+                <StCategoryTitle name={title} />
+              </SettingsCard>
+            : null
+          }
+
           {props.children}
         </Col>
       </Row>
@@ -49,9 +86,9 @@ export function SettingsCard(props) {
 
 export function StCategoryTitle(props) {
   return (
-    <h3 className='text-center fw-bold'>
+    <h1 className='text-center fw-bold'>
       {props.name}
-    </h3>
+    </h1>
   );
 }
 
@@ -65,15 +102,30 @@ export function StCategoryTitle(props) {
 
 export function StInputSingle(props) {
 
+  let el = <></>;
+
+  if (props.noButton) {
+    el = <input className='st-input' placeholder={props.placeholder} />;
+  }
+  else {
+    el = <>
+      <input className='st-input' placeholder={props.placeholder} />
+      <Button className='btn-def'>submit</Button>
+    </>
+  }
+
   return (
-    <div className=''>
+    <div className={props.className}>
       <p className='mt-2 mb-0'>
         {props.text || 'ERROR'}
       </p>
+
       <div className='d-flex flex-row gap-2 justify-content-start'>
-        <input className='st-input' placeholder={props.placeholder} />
-        <Button className=''>submit</Button>
+        {/* <input className='st-input' placeholder={props.placeholder} />
+        {props.noButton ? null : <Button className='btn-def'>submit</Button>} */}
+        {el}
       </div>
+
     </div>
   );
 }
