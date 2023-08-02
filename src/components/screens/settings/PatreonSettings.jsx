@@ -13,25 +13,27 @@ function PatreonSettings(props) {
   return (
     <StCategoryContainer title='Patreon'>
       <SettingsCard name='Patreon Info'>
-        <div className="d-flex row row-cols-3 gy-4">
+        <div className="d-flex row mb-4 gy-4">
           <div className="col">
             <PaAccountInfo />
           </div>
+        </div>
 
+        <div className="d-flex row mb-4 gy-4">
           <div className="col">
             <PaTier />
           </div>
+        </div>
 
+        <div className="d-flex row gy-4">
+          <div className="col">
+            <PaCallout />
+          </div>
           <div className="col">
             <PaSupportLink />
           </div>
-
           <div className="col">
             <PaUnlink />
-          </div>
-
-          <div className="col">
-            <PaCallout />
           </div>
         </div>
 
@@ -50,7 +52,11 @@ function PaAccountInfo(props) {
   return (
     <Card>
       <h5 className='text-center'>Account Id</h5>
-      <p>{props.accId || '<PROPS MISSING ACCOUNT ID>'}</p>
+      <div className="m-auto">
+        <p className='phe'>Patreon Account Name: {props.accName || '<PROPS MISSING ACCOUNT NAME>'}</p>
+        <p className='phe'>Patreon Account ID: {props.accId || '<PROPS MISSING ACCOUNT ID>'}</p>
+        <p className='phe'>Patreon Account Email: {props.AccEmail || '<PROPS MISSING ACCOUNT EMAIL>'}</p>
+      </div>
     </Card>
   );
 }
@@ -67,9 +73,9 @@ function PaTier(props) {
   const tier = props.tier || 'SUPER MEGA CHAD';
   
   const benefitsList = benefits ? 
-    benefits.map((benefit, index) => <li key={index}>{benefit}</li>) : [];
+    benefits.map((benefit, index) => <li key={index} className=''>{benefit}</li>) : [];
 
-  const benefitsElement = <ul>{benefitsList}</ul>
+  const benefitsElement = <ul className='patreon-benefits phe'>{benefitsList}</ul>
   const errorElement = <p>ERROR: THERE ARE NO BENEFITS PROVIDED</p>;
 
 
@@ -77,13 +83,13 @@ function PaTier(props) {
     <Card>
       <h5 className='text-center'>Patron Tier</h5>
       {/* <p>You are a; {tier || '[MISSING_TIER]'}-level Patron!</p> */}
-      <div className="text-center">
+      <div className="text-center phe">
         <p className='mb-0'>You are a;</p>
-        <p className='mb-0'>{tier || '[MISSING_TIER]'}</p>
+        <p className='mb-0 phe'>{tier || '[MISSING_TIER]'}</p>
         <p className=''>-level Patron!</p>
       </div>
 
-      <p className='mb-0'>You have the following benefits: </p>
+      <p className='mb-0 text-center'>You have the following benefits: </p>
       {benefitsList.length > 0 ? benefitsElement : errorElement}
     </Card>
   );
@@ -96,15 +102,15 @@ function PaTier(props) {
  */
 function PaSupportLink(props) {
   return (
-    <Card>
-      <h5 className='text-center'>Link/Support us on Patreon</h5>
+    <Card className='p-2'>
+      <h5 className='text-center mb'>Support us on Patreon</h5>
 
       <Button
-        className='m-2'
+        // className='m-2'
         variant="info"
-        onClick={() => console.log("Primary")}
+        onClick={() => console.log("clicked the support us button")}
       >
-        Primary
+        {props.text || 'Support Us!'}
       </Button>
     </Card>
   );
@@ -117,15 +123,15 @@ function PaSupportLink(props) {
  */
 function PaUnlink(props) {
   return (
-    <Card>
+    <Card className='p-2'>
       <h5 className='text-center'>Unlink Patreon</h5>
 
       <Button
-        className='m-2'
+        // className='m-2'
         variant="info"
-        onClick={() => console.log("Primary")}
+        onClick={() => console.log("clicked button to unlink patreon")}
       >
-        Primary
+        Unlink Patreon
       </Button>
     </Card>
   );
@@ -138,15 +144,15 @@ function PaUnlink(props) {
  */
 function PaCallout(props) {
   return (
-    <Card>
-      <h5 className='text-center'>Check us out on Patreon!</h5>
+    <Card className='p-2'>
+      <h5 className='text-center'>Check out our Patreon!</h5>
       
       <Button
-        className='m-2'
+        // className='m-2'
         variant="info"
-        onClick={() => console.log("Primary")}
+        onClick={() => console.log("clicked the check us out button")}
       >
-        Primary
+        Check us out!
       </Button>
     </Card>
   );

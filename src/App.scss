@@ -182,3 +182,26 @@ body {
     border-bottom-color: $dark-3;
   }
 }
+
+.patreon-benefits {
+  margin: 0 auto;
+  display: inline-block;
+  padding-left: 0;
+  text-align: left;
+  // border: 1px solid blue;
+
+}
+
+
+.card {
+  @include layer-6();
+  // background-color: $light-1;
+
+  padding: 1rem;
+  border: 0px;
+  color: $dark-3;
+}
+
+.phe {
+  border: 2px dotted rgb(226, 91, 67);
+}

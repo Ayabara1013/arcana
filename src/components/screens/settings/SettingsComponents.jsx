@@ -3,6 +3,7 @@ import '../../../App.scss';
 
 // components
 import { Button, Col, Container, Modal, Row } from 'react-bootstrap';
+import { GoToPatreonButton } from '../../utils/MiscComponents';
 
 /** ------------------------------
  * 
@@ -167,39 +168,3 @@ export function StModal(props) {
   <Modal.Body>*things*</Modal.Body>
   <Modal.Footer>*things*</Modal.Footer>
 </ModalB> */}
-
-function ModalB(props) {
-  const { title, ButtonText} = props;
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
-        {ButtonText}
-      </Button>
-
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop={true}
-        keyboard={true}
-      >
-        <Modal.Header closeButton>
-          {/* {React.cloneElement(props.Header, {})} */}
-        </Modal.Header>
-
-        <Modal.Body>
-          {/* {React.cloneElement(props.Body, {})} */}
-        </Modal.Body>
-
-        <Modal.Footer>
-          {/* {React.cloneElement(props.Footer, {})} */}
-        </Modal.Footer>
-      </Modal>
-    </>
-  );
-}
-
