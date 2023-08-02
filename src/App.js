@@ -1,26 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
-
+import './styles/classes.scss';
 
 // react router
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // components
-import NavigationBar from './components/screens/utils/NavigationBar';
-import { Col, Container, Row } from 'react-bootstrap';
+import NavigationBar from './components/utils/NavigationBar';
+import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
+
+import SettingsScreen from './components/screens/settings/SettingsScreen';
 
 
 function App() {
 
   return (
-    <div className='App vh-100 border border-2 border-danger'>
+    <div className='App'>
       <Router>
-        {/* <NavigationBar /> */}
+        <NavigationBar />
 
-        <div className='app-wrapper w-100 h-100'>
-          <Routes>
-            <Route path="/" element={<TranslateScreen />} />
+        <div className='app-wrapper'>
+        <Routes>
+            <Route path="/" element={<SettingsScreen />} />
             {/* <Route path="/character" element={<Character />} />
             <Route path="/games" element={<Games />} />
             <Route path="/settings" element={<Settings />} />

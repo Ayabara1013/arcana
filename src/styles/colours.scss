@@ -12,3 +12,166 @@ $mid-3: #67a272;
 $dark-1: #558b5f;
 $dark-2: #46724e;
 $dark-3: #36593d;
+
+
+
+
+// --- https://lingtalfi.com/bootstrap4-color-generator# 
+
+/*------------------------------------
+- COLOR def
+------------------------------------*/
+
+$def_t1: #477f52;
+$def_t2: #345e3c;
+$def_t3: #9cc7a4;
+$def_t4: #acd0b3;
+$def_t5: #1b301f;
+$def_t6: #2f5436;
+$def_t7: #3a6843;
+$def_t8: #080f0a;
+$def_t9: #b9d8bf;
+
+$def_shadow: rgba(71, 127, 82, 0.5);
+$def_text_color_dark_bright: #fff;
+
+
+.alert-def {
+  color: $def_t5;
+  background-color: $def_t9;
+  border-color: $def_t4;
+}
+
+.alert-def hr {
+  border-top-color: $def_t3;
+}
+
+.alert-def .alert-link {
+  color: $def_t8;
+}
+
+.badge-def {
+  color: $def_text_color_dark_bright;
+  background-color: $def_t1;
+}
+
+.badge-def[href]:hover, .badge-def[href]:focus {
+  color: $def_text_color_dark_bright;
+  background-color: $def_t2;
+}
+
+.bg-def {
+  background-color: $def_t1 !important;
+}
+
+a.bg-def:hover, a.bg-def:focus,
+button.bg-def:hover,
+button.bg-def:focus {
+  background-color: $def_t2 !important;
+}
+
+.border-def {
+  border-color: $def_t1 !important;
+}
+
+.btn-def {
+  color: $def_text_color_dark_bright;
+  background-color: $def_t1;
+  border-color: $def_t1;
+}
+
+.btn-def:hover {
+  color: $def_text_color_dark_bright;
+  background-color: $def_t7;
+  border-color: $def_t2;
+}
+
+.btn-def:focus, .btn-def.focus {
+  box-shadow: 0 0 0 0.2rem $def_shadow;
+}
+
+.btn-def.disabled, .btn-def:disabled {
+  color: $def_text_color_dark_bright;
+  background-color: $def_t1;
+  border-color: $def_t1;
+}
+
+.btn-def:not(:disabled):not(.disabled):active, .btn-def:not(:disabled):not(.disabled).active, .show > .btn-def.dropdown-toggle {
+  color: $def_text_color_dark_bright;
+  background-color: $def_t2;
+  border-color: $def_t6;
+}
+
+.btn-def:not(:disabled):not(.disabled):active:focus, .btn-def:not(:disabled):not(.disabled).active:focus, .show > .btn-def.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem $def_shadow;
+}
+
+.btn-outline-def {
+  color: $def_t1;
+  background-color: transparent;
+  border-color: $def_t1;
+}
+
+.btn-outline-def:hover {
+  color: $def_text_color_dark_bright;
+  background-color: $def_t1;
+  border-color: $def_t1;
+}
+
+.btn-outline-def:focus, .btn-outline-def.focus {
+  box-shadow: 0 0 0 0.2rem $def_shadow;
+}
+
+.btn-outline-def.disabled, .btn-outline-def:disabled {
+  color: $def_t1;
+  background-color: transparent;
+}
+
+.btn-outline-def:not(:disabled):not(.disabled):active, .btn-outline-def:not(:disabled):not(.disabled).active, .show > .btn-outline-def.dropdown-toggle {
+  color: $def_text_color_dark_bright;
+  background-color: $def_t1;
+  border-color: $def_t1;
+}
+
+.btn-outline-def:not(:disabled):not(.disabled):active:focus, .btn-outline-def:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-def.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem $def_shadow;
+}
+
+.list-group-item-def {
+  color: $def_t5;
+  background-color: $def_t4;
+}
+
+.list-group-item-def.list-group-item-action:hover, .list-group-item-def.list-group-item-action:focus {
+  color: $def_t5;
+  background-color: $def_t3;
+}
+
+.list-group-item-def.list-group-item-action.active {
+  color: $def_text_color_dark_bright;
+  background-color: $def_t5;
+  border-color: $def_t5;
+}
+
+.table-def,
+.table-def > th,
+.table-def > td {
+  background-color: $def_t4;
+}
+
+.table-hover .table-def:hover {
+  background-color: $def_t3;
+}
+
+.table-hover .table-def:hover > td,
+.table-hover .table-def:hover > th {
+  background-color: $def_t3;
+}
+
+.text-def {
+  color: $def_t1 !important;
+}
+
+a.text-def:hover, a.text-def:focus {
+  color: $def_t2 !important;
+}
