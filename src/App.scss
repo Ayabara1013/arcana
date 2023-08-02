@@ -22,11 +22,22 @@
   background-color: $light-1;
 }
 
+@mixin box-shadow {
+  box-shadow:
+    0.25rem 0.5rem 0.5rem rgba($dark-3, 0.2),
+    0.5rem 1rem 1rem rgba($dark-3, 0.1),
+    0.75rem 1.5rem 1.5rem rgba($dark-3, 0.025)
+}
+
 * {
   // @include layer-4;
   box-sizing: border-box;
   font-family: 'Cera Round Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 500;
+}
+
+body {
+  @include layer-4();
 }
 
 .box {
@@ -62,6 +73,10 @@
 }
 .layer-6 {
   @include layer-6
+}
+
+.box-shadow {
+  @include box-shadow();
 }
 
 .container {
@@ -106,21 +121,23 @@
   flex-direction: column;
   height: calc(100svh);
 
-  border: 2px solid red;
+  // border: 2px solid red;
 }
 
 .app-wrapper {
   height: 100%;
-  border: 2px solid blueviolet;
+  // border: 2px solid blueviolet;
 }
 
 .settings-card {
   @include layer-5;
+  @include box-shadow;
+
   border-radius: 0.5rem;
   margin-bottom: 2rem;
   padding: 1rem;
   color: $dark-3;
-  box-shadow: 0.25rem;
+
 }
 
 .settings-nav {
@@ -129,13 +146,39 @@
 }
 
 .st-input {
-  min-width: 50%;
+  min-width: 60%;
   border: 0;
   border-radius: 0.25rem;
   height: 2.5rem;
+  
+  &.-button, &.-b {
+    min-width: 60%;
+  }
+
+  &.-nbutton, &.-nb {
+    width: 100%;
+  }
 }
+
+
 
 .dangerous-button {
   background-color: rgb(220, 100, 100);
   // I need to add 'on hover' styles
+}
+
+.btn {
+  font-weight: 500;
+  color: white;
+
+  // :hover {
+  //   color: white;
+  // }
+}
+
+.st-modal {
+  .modal-content {
+    background-color: $light-2;
+    border-bottom-color: $dark-3;
+  }
 }

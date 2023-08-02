@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../../App.scss';
 
 // components
-import { Button, Col, Container, Row } from 'react-bootstrap';
-
-
+import { Button, Col, Container, Modal, Row } from 'react-bootstrap';
 
 /** ------------------------------
  * 
@@ -97,7 +95,7 @@ export function StCategoryTitle(props) {
 /** ------------------------------
  * 
  * @params { text, placeholder } props 
- * @returns object
+ * @returns component
  */
 
 export function StInputSingle(props) {
@@ -105,11 +103,11 @@ export function StInputSingle(props) {
   let el = <></>;
 
   if (props.noButton) {
-    el = <input className='st-input' placeholder={props.placeholder} />;
+    el = <input className='st-input -nbutton' placeholder={props.placeholder} />;
   }
   else {
     el = <>
-      <input className='st-input' placeholder={props.placeholder} />
+      <input className='st-input -button' placeholder={props.placeholder} />
       <Button className='btn-def'>submit</Button>
     </>
   }
@@ -129,3 +127,79 @@ export function StInputSingle(props) {
     </div>
   );
 }
+
+
+
+/** ------------------------------
+ * 
+ * @params { title, buttonText } props 
+ * @returns component
+ */
+
+export function StModal(props) {
+  const { title, buttonText} = props;
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        {buttonText}
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop={true}
+        keyboard={true}
+        className='st-modal'
+      >
+        {props.children}
+      </Modal>
+    </>
+  );
+}
+
+{/* <ModalB>
+  <Modal.Header>*things*</Modal.Header>
+  <Modal.Body>*things*</Modal.Body>
+  <Modal.Footer>*things*</Modal.Footer>
+</ModalB> */}
+
+function ModalB(props) {
+  const { title, ButtonText} = props;
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        {ButtonText}
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop={true}
+        keyboard={true}
+      >
+        <Modal.Header closeButton>
+          {/* {React.cloneElement(props.Header, {})} */}
+        </Modal.Header>
+
+        <Modal.Body>
+          {/* {React.cloneElement(props.Body, {})} */}
+        </Modal.Body>
+
+        <Modal.Footer>
+          {/* {React.cloneElement(props.Footer, {})} */}
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
+
