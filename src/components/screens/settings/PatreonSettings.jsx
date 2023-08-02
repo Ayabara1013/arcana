@@ -110,7 +110,7 @@ function PaSupportLink(props) {
         variant="info"
         onClick={() => console.log("clicked the support us button")}
       >
-        Support us!
+        {props.text || 'Support Us!'}
       </Button>
     </Card>
   );

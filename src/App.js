@@ -24,12 +24,12 @@ function App() {
         <div className='app-wrapper'>
         <Routes>
             <Route path="/" element={<SettingsScreen />} />
-            {/* <Route path="/character" element={<Character />} />
-            <Route path="/games" element={<Games />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} /> */}
+            <Route path="/character" element={<SettingsScreen />} />
+            <Route path="/games" element={<SettingsScreen />} />
+            <Route path="/settings" element={<SettingsScreen />} />
+            <Route path="/about" element={<SettingsScreen />} />
+            <Route path="/contact" element={<SettingsScreen />} />
+            <Route path="*" element={<SettingsScreen />} />
           </Routes>
         </div>
 
@@ -40,41 +40,14 @@ function App() {
 
 function Home(props) {
   return (
-    <Container className='home-screen d-flex flex-column p-2 gap-2 h-100 layer-1 border border-1 border-danger'>
-      <Row className='layer-2 m-auto p-2 h-25 rounded'>
-        <Col className='p-2 h-100 layer-3'>new phrase input box</Col>
-      </Row>
-
-      <Row className='layer-2 m-auto p-2 h-75 rounded'>
-        <Col className='layer -3 p-2 h-100'>recent words list</Col>
-        <Col className='layer-3 p-2 h-100'>word edit tools</Col>
-      </Row>
-    </Container>
-  )
-}
-
-function TranslateScreen(props) {
-  return (
-    <Container>
-      <Row>
-        <Col>
-         <TranslateBar />
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>Column</Col>
-        <Col>Column</Col>
-      </Row>
-    </Container>
-  )
-}
-
-function TranslateBar(props) {
-  return (
-    <div id='translate-bar' className='translate-bar'>
+    <div>
+      <span>home screen</span>
     </div>
   )
+}
+
+function NotFound(props) {
+
 }
 
 

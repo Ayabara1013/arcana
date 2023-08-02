@@ -20,11 +20,12 @@ function NavigationBar(props) {
 					</div>
 
 					<div className="nav-middle">
-						<Nav className='gap-2'>
+						<Nav className=''>
 							{/* Use Link component for navigation */}
 							<Link to="/" className='nav-item'>
 								Home
 							</Link>
+							
 							<Link to="/character" className='nav-item'>
 								Character
 							</Link>
@@ -32,9 +33,11 @@ function NavigationBar(props) {
 							<Link to="/games" className='nav-item'>
 								Games
 							</Link>
+
 							<Link to="/settings" className='nav-item'>
 								Settings
 							</Link>
+							
 							<Link to="/about" className='nav-item'>
 								About
 							</Link>

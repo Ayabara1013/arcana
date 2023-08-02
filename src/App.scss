@@ -192,10 +192,13 @@ body {
 
 }
 
+
 .card {
+  @include layer-6();
+  // background-color: $light-1;
+
   padding: 1rem;
   border: 0px;
-  background-color: $light-1;
   color: $dark-3;
 }
 
