@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../App.scss';
+import '../../../styles/App.scss';
 
 // components
 import { Button, ButtonGroup, Col, Container, Modal, ModalHeader, Popover, Row } from 'react-bootstrap';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../App.scss';
+import '../../../styles/App.scss';
 
 // components
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
@@ -126,7 +126,7 @@ function PaUnlink(props) {
       <h5 className='text-center'>Unlink Patreon</h5>
 
       <Button
-        className='pa-button -dark'
+        className='pa-button -dark -warning'
         variant="info"
         onClick={() => console.log("clicked button to unlink patreon")}
       >

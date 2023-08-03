@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../App.scss';
+import '../../../styles/App.scss';
 
 // components
 import { Button, Col, Container, Modal, Row } from 'react-bootstrap';
@@ -15,7 +15,7 @@ export function StNavListItem(props) {
   const { name, onClick } = props;
 
   return (
-    <a class="list-group-item list-group-item-action"
+    <a className="list-group-item list-group-item-action"
       data-toggle="list"
       href={`#${name.toLowerCase()}`}
       role="tab"

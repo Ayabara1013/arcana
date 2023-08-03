@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Image } from 'react-bootstrap';
+import { Button, Container, Image } from 'react-bootstrap';
 import { faPatreon } from '@fortawesome/free-brands-svg-icons';
 import { faB } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,3 +18,16 @@ export function PatreonButton(props) {
 }
 
 // || <span>[ x ] | </span>
+
+/**
+ * I may not use this, I cant seem to get classes working?
+ * @param {*} props 
+ * @returns 
+ */
+export function ScreenContainer(props) {
+  return (
+    <Container className='mt-2'>
+      {props.children}
+    </Container>
+  );
+}

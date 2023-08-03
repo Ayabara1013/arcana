@@ -1,5 +1,5 @@
-@use './styles/globals' as g;
-@import './styles/colours.scss';
+@use './globals' as g;
+@import './colours.scss';
 
 
 // --- mixins // --- layers
@@ -41,7 +41,7 @@ body {
 }
 
 .box {
-  // margin: auto;
+  margin: auto;
   padding: 0.25rem;
   border-radius: 0.25rem;
   border: 1px solid whitesmoke;
@@ -79,23 +79,23 @@ body {
   @include box-shadow();
 }
 
-.container {
-  // border: 1px solid red;
-}
+// .container {
+//   // border: 1px solid red;
+// }
 
-.row {
-  // border: 1px solid whitesmoke;
-}
+// .row {
+//   // border: 1px solid whitesmoke;
+// }
 
-.col {
-  // border: 1px solid red;
-}
+// .col {
+//   // border: 1px solid red;
+// }
 
 // ----- ACTUAL CLASSES ----- //
 
-.navbar {
+// .navbar {
 
-}
+// }
 
 .translate-screen {
   .row {
@@ -195,6 +195,7 @@ body {
 
 .card {
   @include layer-6();
+  @extend .box-shadow;
   // background-color: $light-1;
 
   padding: 1rem;
@@ -213,4 +214,17 @@ body {
   &.-dark {
     background-color: $patreon-blue;
   }
+}
+
+.btn {
+  &.-warning {
+    &:active {
+      background-color: red;
+      color: white;
+    }
+  }
+}
+
+.screen-container {
+  margin-top: 1rem;
 }
