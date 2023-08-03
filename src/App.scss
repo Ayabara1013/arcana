@@ -205,3 +205,12 @@ body {
 .phe {
   border: 2px dotted rgb(226, 91, 67);
 }
+
+.pa-button {
+  background-color: $patreon-orange;
+  border: 0;
+
+  &.-dark {
+    background-color: $patreon-blue;
+  }
+}

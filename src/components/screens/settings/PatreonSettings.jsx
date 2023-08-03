@@ -4,6 +4,7 @@ import '../../../App.scss';
 // components
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { SettingsCard, StCategoryContainer, StCategoryTitle, StInputSingle, StNavListItem } from './SettingsComponents';
+import { PatreonButton } from '../../utils/MiscComponents';
 
 
 
@@ -105,13 +106,11 @@ function PaSupportLink(props) {
     <Card className='p-2'>
       <h5 className='text-center mb'>Support us on Patreon</h5>
 
-      <Button
-        // className='m-2'
-        variant="info"
-        onClick={() => console.log("clicked the support us button")}
-      >
-        {props.text || 'Support Us!'}
-      </Button>
+      {/* <PatreonButton text='Support us!'>
+        hello!
+      </PatreonButton> */}
+
+      <PatreonButton text='Support us!' />
     </Card>
   );
 }
@@ -127,7 +126,7 @@ function PaUnlink(props) {
       <h5 className='text-center'>Unlink Patreon</h5>
 
       <Button
-        // className='m-2'
+        className='pa-button -dark'
         variant="info"
         onClick={() => console.log("clicked button to unlink patreon")}
       >
@@ -147,13 +146,15 @@ function PaCallout(props) {
     <Card className='p-2'>
       <h5 className='text-center'>Check out our Patreon!</h5>
       
-      <Button
+      {/* <Button
         // className='m-2'
         variant="info"
         onClick={() => console.log("clicked the check us out button")}
       >
         Check us out!
-      </Button>
+      </Button> */}
+
+      <PatreonButton />
     </Card>
   );
 }

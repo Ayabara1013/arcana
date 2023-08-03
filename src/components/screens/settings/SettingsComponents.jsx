@@ -3,7 +3,7 @@ import '../../../App.scss';
 
 // components
 import { Button, Col, Container, Modal, Row } from 'react-bootstrap';
-import { GoToPatreonButton } from '../../utils/MiscComponents';
+import { PatreonButton } from '../../utils/MiscComponents';
 
 /** ------------------------------
  * 
