@@ -177,6 +177,7 @@ body {
 }
 
 .st-modal {
+  // padding: 1rem;
   .modal-content {
     background-color: $light-2;
     border-bottom-color: $dark-3;
@@ -201,6 +202,7 @@ body {
   padding: 1rem;
   border: 0px;
   color: $dark-3;
+  border-radius: 0.5rem;
 }
 
 .phe {
@@ -227,4 +229,13 @@ body {
 
 .screen-container {
   margin-top: 1rem;
+}
+
+.email-element {
+  &.-open {
+    @extend .card;
+  }
+
+  &.-closed {
+  }
 }

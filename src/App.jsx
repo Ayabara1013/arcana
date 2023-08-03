@@ -29,7 +29,7 @@ function App() {
 
         <div className='app-wrapper'>
         <Routes>
-            <Route path="/" element={<DisplayAccount />} />
+            <Route path="/" element={<SettingsScreen />} />
             <Route path="/character" element={<SettingsScreen />} />
             <Route path="/games" element={<SettingsScreen />} />
             <Route path="/settings" element={<SettingsScreen />} />

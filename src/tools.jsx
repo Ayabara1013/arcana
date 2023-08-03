@@ -2,9 +2,9 @@
 
 
 class Account {
-  constructor(userName, accountName, email, password, patreonId, patreonTier, activeSessions) {
+  constructor(username, accountName, email, password, patreonId, patreonTier, activeSessions) {
     this.user = {
-      userName,
+      username,
       accountName,
       email
     };

@@ -115,9 +115,10 @@ export function StInputSingle(props) {
 
   return (
     <div className={props.className}>
-      <p className='mt-2 mb-0'>
+      <div className='mt-2 mb-0'>
         {props.text || 'ERROR'}
-      </p>
+      </div>
+      {/**apparently this is somehow passing a div into the element if I run it as a <p>? I switch it to a div just for safety */}
 
       <div className='d-flex flex-row gap-2 justify-content-start'>
         {/* <input className='st-input' placeholder={props.placeholder} />
