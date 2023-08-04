@@ -13,6 +13,7 @@ import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
 
 import SettingsScreen from './components/screens/settings/SettingsScreen';
 import ContactScreen from './components/screens/ContactScreen';
+import Arcana from './components/screens/Arcana';
 
 
 // Import the Account class and the accountsDB array
@@ -29,7 +30,7 @@ function App() {
 
         <div className='app-wrapper'>
         <Routes>
-            <Route path="/" element={<SettingsScreen />} />
+            <Route path="/" element={<Arcana />} />
             <Route path="/character" element={<SettingsScreen />} />
             <Route path="/games" element={<SettingsScreen />} />
             <Route path="/settings" element={<SettingsScreen />} />
