@@ -3,6 +3,7 @@ import { Button, ButtonGroup, Col, Container, Form, InputGroup, Row } from 'reac
 
 import '../../styles/arcana.scss';
 import { update } from 'lodash';
+import { object } from 'prop-types';
 
 
 function Arcana(props) {
@@ -57,7 +58,7 @@ function TradingPost(props) {
     }
   }
 
-  const cr = {
+  const cr = { // class rewards
     paladin:      new ClassSet(false, false, 'Paladin',       'September'),
     priest:       new ClassSet(false, false, 'Priest',        'September'),
     rogue:        new ClassSet(false, false, 'Rogue',         'September'),
@@ -92,44 +93,8 @@ function TradingPost(props) {
   const armourCost = 450;
   const weaponsCost = 500;
 
-  const updateCosts = () => {
-    costs.september = 0;
-    costs.october = 0; 
-    costs.november = 0;
-    costs.december = 0;
-    costs.armour = 0;
-    costs.weapons = 0;
-
-    // Calculate the costs for each month
-    Object.values(cr).forEach(classSet => {
-      if (classSet.month === 'September') {
-        if (classSet.armour) costs.september += armourCost;
-        if (classSet.weapons) costs.september += weaponsCost;
-      } else if (classSet.month === 'October') {
-        if (classSet.armour) costs.october += armourCost;
-        if (classSet.weapons) costs.october += weaponsCost;
-      } else if (classSet.month === 'November') {
-        if (classSet.armour) costs.november += armourCost;
-        if (classSet.weapons) costs.november += weaponsCost;
-      } else if (classSet.month === 'December') {
-        if (classSet.armour) costs.december += armourCost;
-        if (classSet.weapons) costs.december += weaponsCost;
-      }
-    });
-  
-    // Calculate the total armour and weapons cost
-    // const totalArmour = Object.values(cr).filter(classSet => classSet.armour).length * armourCost;
-    // const totalWeapons = Object.values(cr).filter(classSet => classSet.weapons).length * weaponsCost;
-
-    costs.armour = Object.values(cr).filter(cr => cr.armour).length * armourCost;
-    costs.weapons = Object.values(cr).filter(cr => cr.weapons).length * weaponsCost; 
-
-    console.log(`september : ${costs.september}`);
-    console.log(`october : ${costs.october}`);
-    console.log(`november : ${costs.november}`);
-    console.log(`december : ${costs.december}`);
-    console.log(`total armour cost: ${costs.armour}`);
-    console.log(`total weapons cost: ${costs.weapons}`);
+  const updateCosts = (cl, item, status) => {
+    console.log(`you pressed updateCosts, this button is not being used right now`)
   };
 
   
@@ -138,7 +103,7 @@ function TradingPost(props) {
   };
   
   React.useEffect(() => {
-    updateCosts();
+    console.log(costs);
   }, [cr]);
   
   const colClass = 'flex-grow-0 p-0';
@@ -186,31 +151,31 @@ function TradingPost(props) {
           <Row className='m-auto justify-content-end lign-items-start gap-2'>
             <Col className={colClass}>
               <h4 className='text-center fw-bold'>{cr.paladin.month}</h4>
-              <ClassCard cl={cr.paladin}      name={cr.paladin.className}     setCosts={setCosts} />
-              <ClassCard cl={cr.priest}       name={cr.priest.className}      setCosts={setCosts} />
-              <ClassCard cl={cr.rogue}        name={cr.rogue.className}       setCosts={setCosts} />
+              <ClassCard cl={cr.paladin}  name={cr.paladin.className} setCosts={setCosts} />
+              <ClassCard cl={cr.priest}   name={cr.priest.className}  setCosts={setCosts} />
+              <ClassCard cl={cr.rogue}    name={cr.rogue.className}   setCosts={setCosts} />
             </Col>
 
             <Col className={colClass}>
               <h4 className='text-center fw-bold'>{cr.deathKnight.month}</h4>
               <ClassCard cl={cr.deathKnight}  name={cr.deathKnight.className} setCosts={setCosts} tc='-smaller-title' />
               <ClassCard cl={cr.demonHunter}  name={cr.demonHunter.className} setCosts={setCosts} tc='-smaller-title' />
-              <ClassCard cl={cr.druid}        name={cr.druid.className}       setCosts={setCosts}  />
+              <ClassCard cl={cr.druid}        name={cr.druid.className}       setCosts={setCosts} />
             </Col>
 
             <Col className={colClass}>
               <h4 className='text-center fw-bold'>{cr.warlock.month}</h4>
-              <ClassCard cl={cr.warlock}      name={cr.warlock.className}     setCosts={setCosts} />
-              <ClassCard cl={cr.monk}         name={cr.monk.className}        setCosts={setCosts} />
-              <ClassCard cl={cr.warrior}      name={cr.warrior.className}     setCosts={setCosts} />
+              <ClassCard cl={cr.warlock}  name={cr.warlock.className} setCosts={setCosts} />
+              <ClassCard cl={cr.monk}     name={cr.monk.className}    setCosts={setCosts} />
+              <ClassCard cl={cr.warrior}  name={cr.warrior.className} setCosts={setCosts} />
             </Col>
 
             <Col className={colClass}>
               <h4 className='text-center fw-bold'>{cr.evoker.month}</h4>
-              <ClassCard cl={cr.evoker}       name={cr.evoker.className}      setCosts={setCosts} />
-              <ClassCard cl={cr.hunter}       name={cr.hunter.className}      setCosts={setCosts} />
-              <ClassCard cl={cr.mage}         name={cr.mage.className}        setCosts={setCosts} />
-              <ClassCard cl={cr.shaman}       name={cr.shaman.className}      setCosts={setCosts} />
+              <ClassCard cl={cr.evoker} name={cr.evoker.className}  setCosts={setCosts} />
+              <ClassCard cl={cr.hunter} name={cr.hunter.className}  setCosts={setCosts} />
+              <ClassCard cl={cr.mage}   name={cr.mage.className}    setCosts={setCosts} />
+              <ClassCard cl={cr.shaman} name={cr.shaman.className}  setCosts={setCosts} />
             </Col>
           </Row>
         </Col>
@@ -219,178 +184,137 @@ function TradingPost(props) {
   );
 }
 
+
 function ClassCard(props) {
-  const { cl, name, tc } = props; // class object, class name, text class
+  const { cl, name, tc, setCosts } = props; // class object, class name, text class
+
+  const armourCost = 450;
+  const weaponsCost = 500;
 
   const [armour, setArmour] = useState(false);
   const [weapons, setWeapons] = useState(false);
 
-  // convert the class name to a class string
-  let n = name.toLowerCase().replace(' ', '-');
+  let n = name.toLowerCase().replace(' ', '-'); // convert the class name to a class string
 
-  const handleWeaponsClick = () => {
-    setWeapons(!weapons);
-    cl.weapons = !cl.weapons;
-    console.log(`toggling ${name} armour to: ${cl.weapons}`);
-  }
-
-  const handleArmourClick = () => {
-    setArmour(!armour);
-    cl.armour = !cl.armour;
-    console.log(`toggling ${name} armour to: ${cl.armour}`);
-  }
-
-  return (
-    <div className={`class-card box -${n.toLowerCase()}`}>
-      <span className={`${tc} class-title text-center mb-0`}>{name}</span>
-
-      <ButtonGroup>
-        <Button
-          variant={cl.armour ? 'primary' : 'outline-secondary'}
-          className={`item-btn ${armour ? '-on' : '-off'} `}
-          onClick={handleArmourClick}>
-          Armour
-        </Button>
-
-        <Button
-          variant={cl.weapons ? 'primary' : 'outline-secondary'}
-          className={`item-btn ${weapons ? '-on' : '-off'} `}
-          onClick={handleWeaponsClick}>
-          Weapons
-        </Button>
-      </ButtonGroup>
-    </div>
-  )
-}
-
-/**
- * 
- * @param {object} cr class rewards object
- * @param {string} cl class name
- * @param {string} item weapon / armour selected
- * @param {boolean} operation on / off selection
- * @param {setState} setCosts setCosts function
- */
-const updateCosts = (cr, pClass, item, operation, setCosts) => {
-
-  // if (item === 'weapons') {
-
-  // }
-
-  // if (item === 'armour') {
-  //   object.values.forEach
-  // }
-
-  Object.values(cr).forEach(classSet => {
-    // are we subtracting or adding?
-    if { cr.pClass.item === false } { // the item is not turned on, so we need to set it to active and add the cost to the value
-      // should we check if the total value is correct in some way?
-      cr.pClass.item = true:
-    }
+  const handleClick = (item, type) => {
+    console.log('---------------------------------')
+    // if (item !== null && item !== undefined && item !== '') {
+    //   console.log(`${cl.className}: ${cl.className}`);
+    //   console.log(`${cl.className} armour:  ${cl.armour}`);
+    //   console.log(`${cl.className} weapons: ${cl.weapons}`);
+    //   console.log('>>>')
+    // } else {
+    //   console.log(`No item available.`);
+    // }
 
 
-    /**
-     * confirm which cost value is being modified
-     * 1. check the month
-     * 2. check if it is already active
-     * 3. if active, toggle off and subtract cost,
-     * 4. if inactive, toggle on and add cost,
-     */
-    switch (classSet.month) {
-      case 'September':
+    if (type === 'armour') {
+      if (cl.armour === false) {
+        setArmourTrue();
+        // setArmour(true);
         
-        break;
-    
-      default:
-        break;
+        // setCosts((prevCosts) => ({
+        //   ...prevCosts,
+        //   [cl.month.toLowerCase()]: prevCosts[cl.month.toLowerCase()] + armourCost,
+        //   armour: prevCosts.armour + armourCost,
+        // }));
+      }
+      else if (cl.armour === true) {
+        setArmourFalse();
+        // setArmour(false);
+        // setCosts((prevCosts) => ({
+        //   ...prevCosts,
+        //   [cl.month.toLowerCase()]: prevCosts[cl.month.toLowerCase()] - armourCost,
+        //   armour: prevCosts.armour - armourCost,
+        // }));
+      }
+    }
+    else if (type === 'weapons') {
+      if (cl.weapons === false) {
+        setWeaponsTrue();
+      }
+      else if (cl.weapons === true) {
+        setWeaponsFalse();
+      }
     }
 
-  })
 
-  // costs.september = 0;
-  // costs.october = 0; 
-  // costs.november = 0;
-  // costs.december = 0;
-  // costs.armour = 0;
-  // costs.weapons = 0;
+  };
 
-  // // Calculate the costs for each month
-  // Object.values(cr).forEach(classSet => {
-  //   if (classSet.month === 'September') {
-  //     if (classSet.armour) costs.september += armourCost;
-  //     if (classSet.weapons) costs.september += weaponsCost;
-  //   } else if (classSet.month === 'October') {
-  //     if (classSet.armour) costs.october += armourCost;
-  //     if (classSet.weapons) costs.october += weaponsCost;
-  //   } else if (classSet.month === 'November') {
-  //     if (classSet.armour) costs.november += armourCost;
-  //     if (classSet.weapons) costs.november += weaponsCost;
-  //   } else if (classSet.month === 'December') {
-  //     if (classSet.armour) costs.december += armourCost;
-  //     if (classSet.weapons) costs.december += weaponsCost;
-  //   }
-  // });
+  //#region set armour weapons true false
+  const setArmourTrue = () => {
+    // console.log(`you pressed armour for ${cl.className}`);
+    // console.log(`${cl.className}.armour is ${cl.armour}`);
+    console.log(`setting ${cl.className}.armour to true`);
 
-  // // Calculate the total armour and weapons cost
-  // // const totalArmour = Object.values(cr).filter(classSet => classSet.armour).length * armourCost;
-  // // const totalWeapons = Object.values(cr).filter(classSet => classSet.weapons).length * weaponsCost;
-
-  // costs.armour = Object.values(cr).filter(cr => cr.armour).length * armourCost;
-  // costs.weapons = Object.values(cr).filter(cr => cr.weapons).length * weaponsCost; 
-
-  // console.log(`september : ${costs.september}`);asdasd
-  // console.log(`october : ${costs.october}`);
-  // console.log(`november : ${costs.november}`);
-  // console.log(`december : ${costs.december}`);
-  // console.log(`total armour cost: ${costs.armour}`);
-  // console.log(`total weapons cost: ${costs.weapons}`);
-};
-
-function ClassCard(props) {
-  const { cl, name, tc } = props; // class object, class name, text class
-
-  const [armour, setArmour] = useState(false);
-  const [weapons, setWeapons] = useState(false);
-
-  // convert the class name to a class string
-  let n = name.toLowerCase().replace(' ', '-');
-
-  const handleWeaponsClick = () => {
-    setWeapons(!weapons);
-    cl.weapons = !cl.weapons;
-    console.log(`toggling ${name} armour to: ${cl.weapons}`);
-  }
-
-  const handleArmourClick = () => {
-    setArmour(!armour);
+    setArmour(true);
     cl.armour = !cl.armour;
-    console.log(`toggling ${name} armour to: ${cl.armour}`);
+
+    console.log(`${cl.className}.armour is now ${cl.armour}`);
   }
 
+  const setArmourFalse = () => {
+    // console.log(`you pressed armour for ${cl.className}`);
+    // console.log(`${cl.className}.armour is ${cl.armour}`);
+    console.log(`setting ${cl.className}.armour to false`);
+
+    setArmour(false);
+    cl.armour = !cl.armour;
+
+    console.log(`${cl.className}.armour is now ${cl.armour}`);
+  }
+
+  const setWeaponsTrue = () => {
+    // console.log(`you pressed armour for ${cl.className}`);
+    // console.log(`${cl.className}.armour is ${cl.armour}`);
+    console.log(`setting ${cl.className}.weapons to true`);
+
+    setWeapons(true);
+    cl.weapons = !cl.weapons;
+
+    console.log(`${cl.className}.weapons is now ${cl.weapons}`);
+  }
+
+  const setWeaponsFalse = () => {
+    // console.log(`you pressed armour for ${cl.className}`);
+    // console.log(`${cl.className}.armour is ${cl.armour}`);
+    console.log(`setting ${cl.className}.weapons to true`);
+    setWeapons(false);
+    cl.weapons = !cl.weapons;
+    console.log(`${cl.className}.weapons is now ${cl.weapons}`);
+  }
+  //#endregion
+
+
+  
   return (
     <div className={`class-card box -${n.toLowerCase()}`}>
       <span className={`${tc} class-title text-center mb-0`}>{name}</span>
 
       <ButtonGroup>
         <Button
+          variant={`primary`}
+          className={`item-btn`}
+          onClick={() => console.log(cl)}>
+          print
+        </Button>
+
+        <Button
           variant={cl.armour ? 'primary' : 'outline-secondary'}
           className={`item-btn ${armour ? '-on' : '-off'} `}
-          onClick={handleArmourClick}>
+          onClick={() => {handleClick(cl.armour, 'armour')}}>
           Armour
         </Button>
 
         <Button
           variant={cl.weapons ? 'primary' : 'outline-secondary'}
           className={`item-btn ${weapons ? '-on' : '-off'} `}
-          onClick={handleWeaponsClick}>
+          onClick={() => {handleClick(cl.weapons, 'weapons')}}>
           Weapons
         </Button>
       </ButtonGroup>
     </div>
   )
 }
-
-
-
 
 export default Arcana;
