@@ -78,7 +78,6 @@ function TradingPost(props) {
   }
 
   const [tendies, setTendies] = useState(0);
-
   const [costs, setCosts] = useState({
     september: 0,
     october: 0,
@@ -87,33 +86,19 @@ function TradingPost(props) {
     armour: 0,
     weapons: 0
   });
-  
-  // console.log(Object.values(cr));
-
-  const armourCost = 450;
-  const weaponsCost = 500;
-
-  const updateCosts = (cl, item, status) => {
-    console.log(`you pressed updateCosts, this button is not being used right now`)
-  };
-
-  
-  const handleInputChange = (event) => {
-    setTendies(event.target.value);
-  };
-  
-  React.useEffect(() => {
-    console.log(costs);
-  }, [cr]);
-  
-  const colClass = 'flex-grow-0 p-0';
+  const [septCost, setSeptCost] = useState(0);
+  const [octCost, setOctCost] = useState(0);
+  const [novCost, setNovCost] = useState(0);
+  const [decCost, setDecCost] = useState(0);
+  const [armourCost, setArmourCost] = useState(0);
+  const [weaponsCost, setWeaponsCost] = useState(0);
 
   return (
     <Container className='card-1 border'>
       <div className='d-flex justify-content-between'>
         <h1>Trading Post Calculator</h1>
         <h1>{tendies} tendies!</h1>
-        <Button variant="primary" onClick={updateCosts}>
+        <Button variant="primary">
           update costs
         </Button>
         <Button variant="primary" onClick={() => console.log(costs)}>
@@ -122,32 +107,26 @@ function TradingPost(props) {
       </div>
 
       <Row className='m-auto'>
-        <Col className='border'>
-          {/* <Button variant="primary" onClick={() => console.log("Primary")}>
-            Primary
-          </Button> */}
-
+        <Col md='auto' className='border'>
           <Form>
             <Form.Group controlId="form-group-id">
-              {/* Form.Label, Form.Control, Form.Text, Form.Check, InputGroup, etc */}
               <Form.Label>how many tendies do you have?</Form.Label>
-              <Form.Control type="number" placeholder="input tendies!" onChange={handleInputChange}/>
+              <Form.Control type="number" placeholder="input tendies!"/>
             </Form.Group>
           </Form>
 
           <h4 className='fw-bold'>you need:</h4>
 
           <h5>september: {costs.september}</h5>
-          <h5>october: {costs.september}</h5>
-          <h5>november: {costs.september}</h5>
-          <h5>december: {costs.september}</h5>
-          <h5>all armour: {costs.september}</h5>
-          <h5>all weapons: {costs.september}</h5>
-          
+          <h5>october: {costs.october}</h5>
+          <h5>november: {costs.november}</h5>
+          <h5>december: {costs.december}</h5>
+          <h5>armour: {costs.armour}</h5>
+          <h5>weapons: {costs.weapons}</h5>
           
         </Col>
 
-        <Col md='auto' className='border'>
+        {/* <Col md='auto' className='border'>
           <Row className='m-auto justify-content-end lign-items-start gap-2'>
             <Col className={colClass}>
               <h4 className='text-center fw-bold'>{cr.paladin.month}</h4>
@@ -178,143 +157,61 @@ function TradingPost(props) {
               <ClassCard cl={cr.shaman} name={cr.shaman.className}  setCosts={setCosts} />
             </Col>
           </Row>
+        </Col> */}
+
+        <Col className='border'>
+          {/* <Button
+            variant={cr.paladin.armour ? 'success' : 'danger'}
+            onClick={() => {
+              console.log(`cr.paladin.armour`);
+              console.log(cr.paladin.armour);
+            }}>
+            paladin armour
+          </Button>
+
+          <Button
+            variant={cr.paladin.weapons ? 'success' : 'danger'}
+            onClick={() => {
+              console.log(`cr.paladin.weapons`);
+              // console.log(cr.paladin.weapons);
+              testWeaponFunction(cr.paladin.weapons, true)
+              // console.log(cr.paladin.weapons);
+            }}>
+            paladin weapons
+          </Button> */}
+          <Button variant="primary" onClick={() => testButtonFunction(cr.paladin, setSeptCost)}>
+            toggle paladin armour
+          </Button>
         </Col>
       </Row>
     </Container>
   );
 }
 
+const testButtonFunction = (c, setCosts) => {
+  console.log('-------------------');
+  console.log(c.armour);
+  c.armour = !c.armour;
+  console.log(c.armour);
+  
+  console.log(c.month)
+
+  setCosts((prev) => ({
+    ...prev,
+    september: c.armour ? prev.september + 1 : prev.september - 1,
+  }));
+}
+
+const testWeaponFunction = (c, bool) => {
+  console.log(c);
+  c = bool;
+  console.log(c);
+}
+
+
 
 function ClassCard(props) {
-  const { cl, name, tc, setCosts } = props; // class object, class name, text class
-
-  const armourCost = 450;
-  const weaponsCost = 500;
-
-  const [armour, setArmour] = useState(false);
-  const [weapons, setWeapons] = useState(false);
-
-  let n = name.toLowerCase().replace(' ', '-'); // convert the class name to a class string
-
-  const handleClick = (item, type) => {
-    console.log('---------------------------------')
-    // if (item !== null && item !== undefined && item !== '') {
-    //   console.log(`${cl.className}: ${cl.className}`);
-    //   console.log(`${cl.className} armour:  ${cl.armour}`);
-    //   console.log(`${cl.className} weapons: ${cl.weapons}`);
-    //   console.log('>>>')
-    // } else {
-    //   console.log(`No item available.`);
-    // }
-
-
-    if (type === 'armour') {
-      if (cl.armour === false) {
-        setArmourTrue();
-        // setArmour(true);
-        
-        // setCosts((prevCosts) => ({
-        //   ...prevCosts,
-        //   [cl.month.toLowerCase()]: prevCosts[cl.month.toLowerCase()] + armourCost,
-        //   armour: prevCosts.armour + armourCost,
-        // }));
-      }
-      else if (cl.armour === true) {
-        setArmourFalse();
-        // setArmour(false);
-        // setCosts((prevCosts) => ({
-        //   ...prevCosts,
-        //   [cl.month.toLowerCase()]: prevCosts[cl.month.toLowerCase()] - armourCost,
-        //   armour: prevCosts.armour - armourCost,
-        // }));
-      }
-    }
-    else if (type === 'weapons') {
-      if (cl.weapons === false) {
-        setWeaponsTrue();
-      }
-      else if (cl.weapons === true) {
-        setWeaponsFalse();
-      }
-    }
-
-
-  };
-
-  //#region set armour weapons true false
-  const setArmourTrue = () => {
-    // console.log(`you pressed armour for ${cl.className}`);
-    // console.log(`${cl.className}.armour is ${cl.armour}`);
-    console.log(`setting ${cl.className}.armour to true`);
-
-    setArmour(true);
-    cl.armour = !cl.armour;
-
-    console.log(`${cl.className}.armour is now ${cl.armour}`);
-  }
-
-  const setArmourFalse = () => {
-    // console.log(`you pressed armour for ${cl.className}`);
-    // console.log(`${cl.className}.armour is ${cl.armour}`);
-    console.log(`setting ${cl.className}.armour to false`);
-
-    setArmour(false);
-    cl.armour = !cl.armour;
-
-    console.log(`${cl.className}.armour is now ${cl.armour}`);
-  }
-
-  const setWeaponsTrue = () => {
-    // console.log(`you pressed armour for ${cl.className}`);
-    // console.log(`${cl.className}.armour is ${cl.armour}`);
-    console.log(`setting ${cl.className}.weapons to true`);
-
-    setWeapons(true);
-    cl.weapons = !cl.weapons;
-
-    console.log(`${cl.className}.weapons is now ${cl.weapons}`);
-  }
-
-  const setWeaponsFalse = () => {
-    // console.log(`you pressed armour for ${cl.className}`);
-    // console.log(`${cl.className}.armour is ${cl.armour}`);
-    console.log(`setting ${cl.className}.weapons to true`);
-    setWeapons(false);
-    cl.weapons = !cl.weapons;
-    console.log(`${cl.className}.weapons is now ${cl.weapons}`);
-  }
-  //#endregion
-
-
   
-  return (
-    <div className={`class-card box -${n.toLowerCase()}`}>
-      <span className={`${tc} class-title text-center mb-0`}>{name}</span>
-
-      <ButtonGroup>
-        <Button
-          variant={`primary`}
-          className={`item-btn`}
-          onClick={() => console.log(cl)}>
-          print
-        </Button>
-
-        <Button
-          variant={cl.armour ? 'primary' : 'outline-secondary'}
-          className={`item-btn ${armour ? '-on' : '-off'} `}
-          onClick={() => {handleClick(cl.armour, 'armour')}}>
-          Armour
-        </Button>
-
-        <Button
-          variant={cl.weapons ? 'primary' : 'outline-secondary'}
-          className={`item-btn ${weapons ? '-on' : '-off'} `}
-          onClick={() => {handleClick(cl.weapons, 'weapons')}}>
-          Weapons
-        </Button>
-      </ButtonGroup>
-    </div>
-  )
 }
 
 export default Arcana;
