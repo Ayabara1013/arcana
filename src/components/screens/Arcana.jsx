@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Button, ButtonGroup, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 
 import '../../styles/arcana.scss';
 import { update } from 'lodash';
@@ -57,8 +57,15 @@ function TradingPost(props) {
       this.month = month;
     }
   }
+  class ClassBtn {
+    constructor(name, armour, weapons) {
+      this.name = name;
+      this.armour = armour;
+      this.weapons = weapons;
+    }
+  }
 
-  const cr = { // class rewards
+  const [cr, setCr] = useState({ // class rewards
     paladin:      new ClassSet(false, false, 'Paladin',       'September'),
     priest:       new ClassSet(false, false, 'Priest',        'September'),
     rogue:        new ClassSet(false, false, 'Rogue',         'September'),
@@ -75,7 +82,7 @@ function TradingPost(props) {
     hunter:       new ClassSet(false, false, 'Hunter',        'December'),
     mage:         new ClassSet(false, false, 'Mage',          'December'),
     shaman:       new ClassSet(false, false, 'Shaman',        'December'),
-  }
+  });
 
   const [tendies, setTendies] = useState(0);
   const [costs, setCosts] = useState({
@@ -92,6 +99,22 @@ function TradingPost(props) {
   const [decCost, setDecCost] = useState(0);
   const [armourCost, setArmourCost] = useState(0);
   const [weaponsCost, setWeaponsCost] = useState(0);
+
+  const [btnState, setBtnState] = useState({
+    paladin: new ClassBtn('Paladin', false, false),
+    priest: new ClassBtn('Priest', false, false),
+    rogue: new ClassBtn('Rogue', false, false),
+    deathKnight: new ClassBtn('Death Knight', false, false),
+    demonHunter: new ClassBtn('Demon Hunter', false, false),
+    druid: new ClassBtn('Druid', false, false),
+    warlock: new ClassBtn('Warlock', false, false),
+    monk: new ClassBtn('Monk', false, false),
+    warrior: new ClassBtn('Warrior', false, false),
+    evoker: new ClassBtn('Evoker', false, false),
+    hunter: new ClassBtn('Hunter', false, false),
+    mage: new ClassBtn('Mage', false, false),
+    shaman: new ClassBtn('Shaman', false, false),
+  });
 
   return (
     <Container className='card-1 border'>
@@ -126,92 +149,126 @@ function TradingPost(props) {
           
         </Col>
 
-        {/* <Col md='auto' className='border'>
-          <Row className='m-auto justify-content-end lign-items-start gap-2'>
-            <Col className={colClass}>
-              <h4 className='text-center fw-bold'>{cr.paladin.month}</h4>
-              <ClassCard cl={cr.paladin}  name={cr.paladin.className} setCosts={setCosts} />
-              <ClassCard cl={cr.priest}   name={cr.priest.className}  setCosts={setCosts} />
-              <ClassCard cl={cr.rogue}    name={cr.rogue.className}   setCosts={setCosts} />
-            </Col>
-
-            <Col className={colClass}>
-              <h4 className='text-center fw-bold'>{cr.deathKnight.month}</h4>
-              <ClassCard cl={cr.deathKnight}  name={cr.deathKnight.className} setCosts={setCosts} tc='-smaller-title' />
-              <ClassCard cl={cr.demonHunter}  name={cr.demonHunter.className} setCosts={setCosts} tc='-smaller-title' />
-              <ClassCard cl={cr.druid}        name={cr.druid.className}       setCosts={setCosts} />
-            </Col>
-
-            <Col className={colClass}>
-              <h4 className='text-center fw-bold'>{cr.warlock.month}</h4>
-              <ClassCard cl={cr.warlock}  name={cr.warlock.className} setCosts={setCosts} />
-              <ClassCard cl={cr.monk}     name={cr.monk.className}    setCosts={setCosts} />
-              <ClassCard cl={cr.warrior}  name={cr.warrior.className} setCosts={setCosts} />
-            </Col>
-
-            <Col className={colClass}>
-              <h4 className='text-center fw-bold'>{cr.evoker.month}</h4>
-              <ClassCard cl={cr.evoker} name={cr.evoker.className}  setCosts={setCosts} />
-              <ClassCard cl={cr.hunter} name={cr.hunter.className}  setCosts={setCosts} />
-              <ClassCard cl={cr.mage}   name={cr.mage.className}    setCosts={setCosts} />
-              <ClassCard cl={cr.shaman} name={cr.shaman.className}  setCosts={setCosts} />
-            </Col>
-          </Row>
-        </Col> */}
-
-        <Col className='border'>
-          {/* <Button
-            variant={cr.paladin.armour ? 'success' : 'danger'}
+        <Col md='auto' className='border'>
+        <Button 
+            variant="primary"
+            className='m-1'
             onClick={() => {
-              console.log(`cr.paladin.armour`);
-              console.log(cr.paladin.armour);
+              console.log(cr.paladin)
             }}>
-            paladin armour
+            view Paladin
           </Button>
 
-          <Button
-            variant={cr.paladin.weapons ? 'success' : 'danger'}
+          <Button 
+            variant="primary"
+            className='m-1'
             onClick={() => {
-              console.log(`cr.paladin.weapons`);
-              // console.log(cr.paladin.weapons);
-              testWeaponFunction(cr.paladin.weapons, true)
-              // console.log(cr.paladin.weapons);
+              console.log(cr.paladin)
+              console.log(btnState.paladin)
             }}>
-            paladin weapons
-          </Button> */}
-          <Button variant="primary" onClick={() => testButtonFunction(cr.paladin, setSeptCost)}>
-            toggle paladin armour
+            check states
           </Button>
+
+          {/* paladin button group */}
+          <Card className=''>
+            <h3 className='text-center fw-bold'>paladin</h3>
+            <ButtonGroup className='m-1'>
+              <Button
+                variant={btnState.paladin.armour ? 'success' : 'secondary'}
+                onClick={ () => {
+                  updateStates(setCr, setBtnState, 'paladin', 'armour');
+                  
+                  //--------------------------------
+
+                  updateCosts(cr.paladin, 'armour', costs, setCosts)
+
+              }}>
+                armour
+              </Button>
+
+              <Button onClick={() => {
+                const month = cr.paladin.month.toLowerCase();
+                setCosts((prevCosts) => ({
+                  ...prevCosts,
+                  armour: cr.paladin.armour ? prevCosts.armour + 1 : prevCosts.armour - 1,
+                  [month]: cr.paladin.armour ? prevCosts[month] + 1 : prevCosts[month] - 1
+                }));
+              }}>
+                set Costs
+              </Button>
+
+              <Button
+                variant={btnState.paladin.weapons ? 'success' : 'secondary'}
+                onClick={() => {
+                  setBtnState({ ...btnState, paladin: { ...btnState.paladin, weapons: !btnState.paladin.weapons } });
+                  setCr({ ...cr, paladin: { ...cr.paladin, weapons: !cr.paladin.weapons } });
+                  console.log(`btnState.paladin.weapons: ${btnState.paladin.weapons} | paladin cr.paladin.weapons: ${cr.paladin.weapons}`);
+
+                  //--------------------------------
+                  const operation = cr.paladin.weapons ? 'add' : 'subtract';
+                  console.log(operation);
+                  // updateCosts(cr.paladin, 'weapons', operation, costs, setCosts);
+                }}>
+                weapons
+              </Button>
+            </ButtonGroup>
+          </Card>
         </Col>
       </Row>
     </Container>
   );
 }
 
-const testButtonFunction = (c, setCosts) => {
-  console.log('-------------------');
-  console.log(c.armour);
-  c.armour = !c.armour;
-  console.log(c.armour);
-  
-  console.log(c.month)
+/**
+ * Update the rewards and button states for a specific player class and reward type.
+ * @param {function} setCr - The state setter for class rewards.
+ * @param {function} setBtnState - The state setter for button states.
+ * @param {string} playerClass - The name of the player class to update.
+ * @param {string} rewardType - The type of reward to update (e.g., 'armour', 'weapons').
+ */
+async function updateStates(setCr, setBtnState, playerClass, rewardType) {
+  // Update the class rewards state
+  setCr((classRewards) => ({
+    ...classRewards,
+    [playerClass]: { ...classRewards[playerClass], [rewardType]: !classRewards[playerClass][rewardType] }
+  }));
 
-  setCosts((prev) => ({
-    ...prev,
-    september: c.armour ? prev.september + 1 : prev.september - 1,
+  // Update the button states
+  setBtnState((btnStates) => ({
+    ...btnStates,
+    [playerClass]: { ...btnStates[playerClass], [rewardType]: !btnStates[playerClass][rewardType] }
   }));
 }
 
-const testWeaponFunction = (c, bool) => {
-  console.log(c);
-  c = bool;
-  console.log(c);
-}
-
-
-
-function ClassCard(props) {
+/**
+ * Update costs based on class changes.
+ * @param {object} cl - Class information object.
+ * @param {string} type - Type of reward to update (e.g., 'armour', 'weapons').
+ * @param {object} costs - Current costs state.
+ * @param {function} setCosts - State setter for costs.
+ */
+function updateCosts(cl, type, costs, setCosts) {
+  const armourCost = 450;
+  const weaponsCost = 500;
   
+  const month = cl.month.toLowerCase();
+  console.log(`cl.${type}: ${cl[type]} | costs.${type}: ${costs[type]}`);
+  
+  /**
+   * default value of cl[type] is false, so when pressed, it should be set to TRUE before this,
+   * THUS it SHOULD add 1 on the first click?
+   * for some reason, the above console.log is returning false, even though it should be true
+   */
+  setCosts(prevCosts => {
+    const updatedTypeCost = cl[type] ? prevCosts[type] - 1 : prevCosts[type] + 1;
+    const updatedMonthCost = cl[type] ? prevCosts[month] - 1 : prevCosts[month] + 1;
+
+    return {
+      ...prevCosts,
+      [type]: updatedTypeCost,
+      [month]: updatedMonthCost
+    };
+  });
 }
 
 export default Arcana;
