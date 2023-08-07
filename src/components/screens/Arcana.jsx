@@ -116,6 +116,12 @@ function TradingPost(props) {
     shaman: new ClassBtn('Shaman', false, false),
   });
 
+  useEffect(() => {
+    console.log('1 reloaded');
+    console.log(cr.paladin)
+  }, []);
+  
+
   return (
     <Container className='card-1 border'>
       <div className='d-flex justify-content-between'>
@@ -175,12 +181,11 @@ function TradingPost(props) {
             <ButtonGroup className='m-1'>
               <Button
                 variant={btnState.paladin.armour ? 'success' : 'secondary'}
-                onClick={ () => {
-                  updateStates(setCr, setBtnState, 'paladin', 'armour');
-                  
+                onClick={() => {
+                  updateStates(cr, setCr, btnState, setBtnState, 'paladin', 'armour');
+                  console.log(cr.paladin);
                   //--------------------------------
-
-                  updateCosts(cr.paladin, 'armour', costs, setCosts)
+                  updateCosts(cr.paladin, 'armour', costs, setCosts);
 
               }}>
                 armour
@@ -200,14 +205,10 @@ function TradingPost(props) {
               <Button
                 variant={btnState.paladin.weapons ? 'success' : 'secondary'}
                 onClick={() => {
-                  setBtnState({ ...btnState, paladin: { ...btnState.paladin, weapons: !btnState.paladin.weapons } });
-                  setCr({ ...cr, paladin: { ...cr.paladin, weapons: !cr.paladin.weapons } });
-                  console.log(`btnState.paladin.weapons: ${btnState.paladin.weapons} | paladin cr.paladin.weapons: ${cr.paladin.weapons}`);
-
+                  updateStates(cr, setCr, btnState, setBtnState, 'paladin', 'weapons');
+                  console.log(cr.paladin);
                   //--------------------------------
-                  const operation = cr.paladin.weapons ? 'add' : 'subtract';
-                  console.log(operation);
-                  // updateCosts(cr.paladin, 'weapons', operation, costs, setCosts);
+                  updateCosts(cr.paladin, 'weapons', costs, setCosts);
                 }}>
                 weapons
               </Button>
@@ -223,21 +224,26 @@ function TradingPost(props) {
  * Update the rewards and button states for a specific player class and reward type.
  * @param {function} setCr - The state setter for class rewards.
  * @param {function} setBtnState - The state setter for button states.
- * @param {string} playerClass - The name of the player class to update.
- * @param {string} rewardType - The type of reward to update (e.g., 'armour', 'weapons').
+ * @param {string} pClass - The name of the player class to update.
+ * @param {string} type - The type of reward to update (e.g., 'armour', 'weapons').
  */
-async function updateStates(setCr, setBtnState, playerClass, rewardType) {
+function updateStates(cr, setCr, btnState, setBtnState, pClass, type) {
+  console.log(`2 playerClass: ${pClass} | rewardType: ${type}`);
+  console.log(`3 armour: ${cr[pClass][type]}`);
+
   // Update the class rewards state
-  setCr((classRewards) => ({
-    ...classRewards,
-    [playerClass]: { ...classRewards[playerClass], [rewardType]: !classRewards[playerClass][rewardType] }
+  setCr((prevCr) => ({
+    ...prevCr,
+    [pClass]: { ...prevCr[pClass], [type]: !prevCr[pClass][type] }
   }));
 
   // Update the button states
-  setBtnState((btnStates) => ({
-    ...btnStates,
-    [playerClass]: { ...btnStates[playerClass], [rewardType]: !btnStates[playerClass][rewardType] }
-  }));
+  setBtnState((prevBtnState) => ({  
+    ...prevBtnState,  
+    [pClass]: { ...prevBtnState[pClass], [type]: !prevBtnState[pClass][type] }  
+  }));  
+  
+  console.log(`4 armour: ${cr[pClass][type]}`);
 }
 
 /**
@@ -247,28 +253,34 @@ async function updateStates(setCr, setBtnState, playerClass, rewardType) {
  * @param {object} costs - Current costs state.
  * @param {function} setCosts - State setter for costs.
  */
-function updateCosts(cl, type, costs, setCosts) {
-  const armourCost = 450;
-  const weaponsCost = 500;
-  
-  const month = cl.month.toLowerCase();
-  console.log(`cl.${type}: ${cl[type]} | costs.${type}: ${costs[type]}`);
-  
+function updateCosts(cl, type, costs, setCosts) {  
   /**
    * default value of cl[type] is false, so when pressed, it should be set to TRUE before this,
    * THUS it SHOULD add 1 on the first click?
    * for some reason, the above console.log is returning false, even though it should be true
    */
-  setCosts(prevCosts => {
-    const updatedTypeCost = cl[type] ? prevCosts[type] - 1 : prevCosts[type] + 1;
-    const updatedMonthCost = cl[type] ? prevCosts[month] - 1 : prevCosts[month] + 1;
 
-    return {
-      ...prevCosts,
-      [type]: updatedTypeCost,
-      [month]: updatedMonthCost
-    };
-  });
+  console.log(`5 cl.${type}: ${cl[type]} | costs.${type}: ${costs[type]} ... adding cost`);
+
+  const armourCost = 450;
+  const weaponsCost = 500;
+  let awc = type === 'armour' ? armourCost : weaponsCost;
+  // if (cl[type]) {
+  //   console.log(`6 adding cost`);
+  //   // awc += 450; 
+  // } else {
+  //   console.log(`6 subtracting cost`);
+  //   awc -= 450;
+  // }
+
+  console.log(`7 type: ${type} | cost: ${awc}`);
+
+  setCosts((prevCosts) => ({
+    ...prevCosts,
+    [type]: cl[type] ? prevCosts[type] - awc : prevCosts[type] + awc,
+    [cl.month.toLowerCase()]: cl[type] ?
+      prevCosts[cl.month.toLowerCase()] - awc : prevCosts[cl.month.toLowerCase()] + awc
+  }));
 }
 
 export default Arcana;
