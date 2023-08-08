@@ -4,30 +4,30 @@ import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from
 import '../../styles/arcana.scss';
 
 function Arcana(props) {
-  let [tendies, setTendies] = useState(0);
-  const [toggle, setToggle] = useState({
-    b1: false,
-    b2: false
-  });
+  // let [tendies, setTendies] = useState(0);
+  // const [toggle, setToggle] = useState({
+  //   b1: false,
+  //   b2: false
+  // });
 
-  const reward = 500;
+  // const reward = 500;
 
-  const handleClick = (id) => {
-    console.log(id);
+  // const handleClick = (id) => {
+  //   console.log(id);
 
-    if (toggle[id]) {
-      setTendies(tendies - reward);
-      setToggle({ ...toggle, [id]: false });
-    }
-    else if (!toggle[id]) {
-      setTendies(tendies + reward);
-      setToggle({ ...toggle, [id]: true });
-    }
-  };
+  //   if (toggle[id]) {
+  //     setTendies(tendies - reward);
+  //     setToggle({ ...toggle, [id]: false });
+  //   }
+  //   else if (!toggle[id]) {
+  //     setTendies(tendies + reward);
+  //     setToggle({ ...toggle, [id]: true });
+  //   }
+  // };
 
   return (
     <Container>
-      <Row>
+      {/* <Row>
         <Col>
           <h1>{tendies}</h1>
           <Button id='i' variant="primary" onClick={() => handleClick('b1')}>
@@ -38,7 +38,7 @@ function Arcana(props) {
             {toggle.b2 ? 'true' : 'false'}
           </Button>
         </Col>
-      </Row>
+      </Row> */}
 
       <TradingPost />
     </Container>
@@ -81,28 +81,16 @@ function TradingPost(props) {
     shaman:       new ClassSet(false, false, 'Shaman',        'December'),
   });
 
-  const classesByMonth = {
-    September: ['paladin', 'priest', 'rogue'],
-    October: ['deathKnight', 'demonHunter', 'druid'],
-    November: ['warlock', 'monk', 'warrior'],
-    December: ['evoker', 'hunter', 'mage', 'shaman'],
-  };
-
   const [tendies, setTendies] = useState(0);
+
   const [costs, setCosts] = useState({
     september: 0,
     october: 0,
     november: 0,
     december: 0,
     armour: 0,
-    weapons: 0
+    weapons: 0,
   });
-  const [septCost, setSeptCost] = useState(0);
-  const [octCost, setOctCost] = useState(0);
-  const [novCost, setNovCost] = useState(0);
-  const [decCost, setDecCost] = useState(0);
-  const [armourCost, setArmourCost] = useState(0);
-  const [weaponsCost, setWeaponsCost] = useState(0);
 
   const [btnState, setBtnState] = useState({
     paladin: new ClassBtn('Paladin', false, false),
@@ -120,29 +108,23 @@ function TradingPost(props) {
     shaman: new ClassBtn('Shaman', false, false),
   });
 
-  useEffect(() => {
-    // console.log('1 reloaded');
-    // console.log(cr.paladin)
-  }, []);
   const colClass = 'flex-grow-0 p-0';
 
-  // console.log(classesByMonth);
-
   return (
-    <Container className='card-1 border'>
+    <Container className='card-1'>
       <div className='d-flex justify-content-between'>
         <h1>Trading Post Calculator</h1>
         <h1>{tendies} tendies!</h1>
-        <Button variant="primary">
+        {/* <Button variant="primary">
           update costs
         </Button>
         <Button variant="primary" onClick={() => console.log(costs)}>
           print costs
-        </Button>
+        </Button> */}
       </div>
 
       <Row className='m-auto'>
-        <Col md='auto' className='border'>
+        <Col md='auto' className=''>
           <Form>
             <Form.Group controlId="form-group-id">
               <Form.Label>how many tendies do you have?</Form.Label>
@@ -161,7 +143,7 @@ function TradingPost(props) {
           
         </Col>
 
-        <Col md='auto' className='border'>
+        <Col md='auto' className=''>
           <Row>
             <Col>
               {/* const { cl, name, cr, setCr, costs, setCosts, btnState, setBtnState, tc} = props; */}
@@ -207,9 +189,6 @@ function TradingPost(props) {
  * @param {string} type - The type of reward to update (e.g., 'armour', 'weapons').
  */
 function updateStates(setCr, setBtnState, pClass, type) {
-  // console.log(`2 playerClass: ${pClass} | rewardType: ${type}`);
-  // console.log(`3 armour: ${cr[pClass][type]}`);
-
   // Update the class rewards state
   setCr((prevCr) => ({
     ...prevCr,
@@ -221,8 +200,6 @@ function updateStates(setCr, setBtnState, pClass, type) {
     ...prevBtnState,  
     [pClass]: { ...prevBtnState[pClass], [type]: !prevBtnState[pClass][type] }  
   }));  
-  
-  // console.log(`4 armour: ${cr[pClass][type]}`);
 }
 
 /**
@@ -238,15 +215,9 @@ function updateCosts(cl, type, setCosts) {
    * THUS it SHOULD add 1 on the first click?
    * for some reason, the above console.log is returning false, even though it should be true
    */
-  // console.log(`5 cl.${type}: ${cl[type]} | costs.${type}: ${costs[type]} ... adding cost`);
-
   const armourCost = 450;
   const weaponsCost = 500;
   let awc = type === 'armour' ? armourCost : weaponsCost;
-
-  // console.log(`6 type: ${type} | cost: ${awc}`);
-
-  // console.log(cl.month.toLowerCase());
 
   setCosts((prevCosts) => ({
     ...prevCosts,
@@ -256,9 +227,6 @@ function updateCosts(cl, type, setCosts) {
   }));
 }
 
-
-{/* <ClassCard cl={cr.paladin} setCr={setCr} setBtnState={setBtnState} /> */}
-
 /**
  * 
  * @param {object} cl
@@ -266,42 +234,43 @@ function updateCosts(cl, type, setCosts) {
  * @param {object} btnState 
  * @param {function} setBtnState 
  * @param {function} setCosts 
- * @returns <ClassCard />
+ * @returns ClassCard component
  */
 function ClassCard(props) {
-  const { cl, name, btnState } = props;
-  const { setCr, setBtnState, setCosts } = props;
-  // const { btnState } = props;
+  const { cl, name, btnState, setCr, setBtnState, setCosts } = props;
+  
+  // button variants ( for future-proofing and to remove hard-coded strings )
+  const activeVariant = 'info';
+  const inactiveVariant = 'secondary';
 
+  // reward types ( for future-proofing and to remove hard-coded strings )
+  const armour = 'armour'; 
+  const weapons = 'weapons';
   // convert the class name to a class string
-  // const pClass = Object.keys(cl)[0]; // player class & object key name as string
   const pClass = name;
   let strName = cl.cName.toLowerCase().replace(' ', '-');
-
-  console.log('test');
-  console.log(props);
 
   return (
     <Card className={`class-card box -${strName}`}>
       <h3 className='text-center fw-bold'>{[name] || `class`}</h3>
       <ButtonGroup className='m-1'>
         <Button
-          variant={btnState[pClass].armour ? 'success' : 'secondary'}
+          variant={btnState[pClass].armour ? activeVariant : inactiveVariant}
           onClick={() => {
-            updateStates(setCr, btnState, setBtnState, pClass, 'armour');
+            updateStates(setCr, setBtnState, pClass, armour);
             //--------------------------------
-            updateCosts(cl, 'armour', setCosts);
+            updateCosts(cl, armour, setCosts);
 
         }}>
           armour
         </Button>
 
         <Button
-          variant={btnState[pClass].weapons ? 'success' : 'secondary'}
+          variant={btnState[pClass].weapons ? activeVariant : inactiveVariant}
           onClick={() => {
-            updateStates(setCr, btnState, setBtnState, pClass, 'weapons');
+            updateStates(setCr, setBtnState, pClass, weapons);
             //--------------------------------
-            updateCosts(cl, 'weapons', setCosts);
+            updateCosts(cl, weapons, setCosts);
           }}>
           weapons
         </Button>
