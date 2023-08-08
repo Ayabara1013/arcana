@@ -50,10 +50,11 @@ function Arcana(props) {
 
 function TradingPost(props) {
   class ClassSet {
-    constructor(armour, weapons, className, month) {
+    constructor(armour, weapons, cName, month) {
       this.armour = armour;
       this.weapons = weapons;
-      this.className = className;
+      this.cName = cName; // class name
+      this.
       this.month = month;
     }
   }
@@ -124,12 +125,12 @@ function TradingPost(props) {
   });
 
   useEffect(() => {
-    console.log('1 reloaded');
-    console.log(cr.paladin)
+    // console.log('1 reloaded');
+    // console.log(cr.paladin)
   }, []);
   const colClass = 'flex-grow-0 p-0';
 
-  console.log(classesByMonth);
+  // console.log(classesByMonth);
 
   return (
     <Container className='card-1 border'>
@@ -164,8 +165,8 @@ function TradingPost(props) {
           
         </Col>
 
-        <Col md='auto' className='border'>
-        <Button 
+        {/* <Col md='auto' className='border'>
+          <Button 
             variant="primary"
             className='m-1'
             onClick={() => {
@@ -183,85 +184,31 @@ function TradingPost(props) {
             }}>
             check states
           </Button>
+        </Col> */}
 
-          
-
-          {/* paladin button group */}
-          <Card className=''>
-            <h3 className='text-center fw-bold'>paladin</h3>
-            <ButtonGroup className='m-1'>
-              <Button
-                variant={btnState.paladin.armour ? 'success' : 'secondary'}
-                onClick={() => {
-                  updateStates(cr, setCr, btnState, setBtnState, 'paladin', 'armour');
-                  console.log(cr.paladin);
-                  //--------------------------------
-                  updateCosts(cr.paladin, 'armour', costs, setCosts);
-
-              }}>
-                armour
-              </Button>
-
-              <Button onClick={() => {
-                const month = cr.paladin.month.toLowerCase();
-                setCosts((prevCosts) => ({
-                  ...prevCosts,
-                  armour: cr.paladin.armour ? prevCosts.armour + 1 : prevCosts.armour - 1,
-                  [month]: cr.paladin.armour ? prevCosts[month] + 1 : prevCosts[month] - 1
-                }));
-              }}>
-                set Costs
-              </Button>
-
-              <Button
-                variant={btnState.paladin.weapons ? 'success' : 'secondary'}
-                onClick={() => {
-                  updateStates(cr, setCr, btnState, setBtnState, 'paladin', 'weapons');
-                  console.log(cr.paladin);
-                  //--------------------------------
-                  updateCosts(cr.paladin, 'weapons', costs, setCosts);
-                }}>
-                weapons
-              </Button>
-            </ButtonGroup>
-          </Card>
-
-          {/* <ClassCard name='paladin'/> */}
-
-          <Col md='auto' className='border'>
-          <Row className='m-auto justify-content-end lign-items-start gap-2'>
-            <Col className={colClass}>
-              <h4 className='text-center fw-bold'>{cr.paladin.month}</h4>
-              <ClassCard cl={cr.paladin}      name={cr.paladin.className}     setCosts={setCosts} />
-              <ClassCard cl={cr.priest}       name={cr.priest.className}      setCosts={setCosts} />
-              <ClassCard cl={cr.rogue}        name={cr.rogue.className}       setCosts={setCosts} />
+        <Col md='auto' className='border'>
+          <Row>
+            <Col>
+            {/* const { cl, name, cr, setCr, costs, setCosts, btnState, setBtnState, tc} = props; */}
+              <ClassCard cl={cr.paladin} name='paladin' cr={cr} setCr={setCr} costs={costs} setCosts={setCosts} btnState={btnState} setBtnState={setBtnState} />
+              <ClassCard cl={cr.priest} name='priest' cr={cr} setCr={setCr} costs={costs} setCosts={setCosts} btnState={btnState} setBtnState={setBtnState} />
+              <ClassCard cl={cr.rogue} name={cr.rogue.cName} cr={cr} setCr={setCr} costs={costs} setCosts={setCosts} btnState={btnState} setBtnState={setBtnState} />
             </Col>
 
-            <Col className={colClass}>
-              <h4 className='text-center fw-bold'>{cr.deathKnight.month}</h4>
-              <ClassCard cl={cr.deathKnight}  name={cr.deathKnight.className} setCosts={setCosts} tc='-smaller-title' />
-              <ClassCard cl={cr.demonHunter}  name={cr.demonHunter.className} setCosts={setCosts} tc='-smaller-title' />
-              <ClassCard cl={cr.druid}        name={cr.druid.className}       setCosts={setCosts}  />
+            <Col>
+            
             </Col>
 
-            <Col className={colClass}>
-              <h4 className='text-center fw-bold'>{cr.warlock.month}</h4>
-              <ClassCard cl={cr.warlock}      name={cr.warlock.className}     setCosts={setCosts} />
-              <ClassCard cl={cr.monk}         name={cr.monk.className}        setCosts={setCosts} />
-              <ClassCard cl={cr.warrior}      name={cr.warrior.className}     setCosts={setCosts} />
+            <Col>
+            
             </Col>
 
-            <Col className={colClass}>
-              <h4 className='text-center fw-bold'>{cr.evoker.month}</h4>
-              <ClassCard cl={cr.evoker}       name={cr.evoker.className}      setCosts={setCosts} />
-              <ClassCard cl={cr.hunter}       name={cr.hunter.className}      setCosts={setCosts} />
-              <ClassCard cl={cr.mage}         name={cr.mage.className}        setCosts={setCosts} />
-              <ClassCard cl={cr.shaman}       name={cr.shaman.className}      setCosts={setCosts} />
+            <Col>
+            
             </Col>
           </Row>
         </Col>
 
-        </Col>
       </Row>
     </Container>
   );
@@ -274,8 +221,8 @@ function TradingPost(props) {
  * @param {string} type - The type of reward to update (e.g., 'armour', 'weapons').
  */
 function updateStates(cr, setCr, btnState, setBtnState, pClass, type) {
-  console.log(`2 playerClass: ${pClass} | rewardType: ${type}`);
-  console.log(`3 armour: ${cr[pClass][type]}`);
+  // console.log(`2 playerClass: ${pClass} | rewardType: ${type}`);
+  // console.log(`3 armour: ${cr[pClass][type]}`);
 
   // Update the class rewards state
   setCr((prevCr) => ({
@@ -289,7 +236,7 @@ function updateStates(cr, setCr, btnState, setBtnState, pClass, type) {
     [pClass]: { ...prevBtnState[pClass], [type]: !prevBtnState[pClass][type] }  
   }));  
   
-  console.log(`4 armour: ${cr[pClass][type]}`);
+  // console.log(`4 armour: ${cr[pClass][type]}`);
 }
 
 /**
@@ -305,13 +252,13 @@ function updateCosts(cl, type, costs, setCosts) {
    * THUS it SHOULD add 1 on the first click?
    * for some reason, the above console.log is returning false, even though it should be true
    */
-  console.log(`5 cl.${type}: ${cl[type]} | costs.${type}: ${costs[type]} ... adding cost`);
+  // console.log(`5 cl.${type}: ${cl[type]} | costs.${type}: ${costs[type]} ... adding cost`);
 
   const armourCost = 450;
   const weaponsCost = 500;
   let awc = type === 'armour' ? armourCost : weaponsCost;
 
-  console.log(`6 type: ${type} | cost: ${awc}`);
+  // console.log(`6 type: ${type} | cost: ${awc}`);
 
   setCosts((prevCosts) => ({
     ...prevCosts,
@@ -321,15 +268,22 @@ function updateCosts(cl, type, costs, setCosts) {
   }));
 }
 
+
+<ClassCard cl={cr.paladin} setCr={setCr} setBtnState={setBtnState} />
+
+/**
+ * 
+ * @param {*} props 
+ * @returns 
+ */
 function ClassCard(props) {
-  // const { cr, setCr, btnState, setBtnState, costs, setCosts } = props;
-  const { name, cr, setCr, btnState, setBtnState, costs, setCosts } = props;
-  // const { name } = props;
-  // const nName = name.toLowerCase();
-  // console.log(`1 name: ${nName}`);
+  // const { cl, name, cr, setCr, costs, setCosts, btnState, setBtnState, tc} = props;
+  const { cl } = props;
+  const { setCr, setBtnState, setCosts } = props;
 
   // convert the class name to a class string
-  let n = name.toLowerCase().replace(' ', '-');
+  const pClass = Object.keys(cl)[0]; // player class & object key name as string
+  let strName = cl.cName.toLowerCase().replace(' ', '-');
 
   console.log('test');
   console.log(props);
@@ -339,24 +293,22 @@ function ClassCard(props) {
       <h3 className='text-center fw-bold'>{name || `class`}</h3>
       <ButtonGroup className='m-1'>
         <Button
-          variant={btnState[name].armour ? 'success' : 'secondary'}
+          variant={btnState[cn].armour ? 'success' : 'secondary'}
           onClick={() => {
-            updateStates(cr, setCr, btnState, setBtnState, 'paladin', 'armour');
-            console.log(cr[name]);
+            updateStates(cl, setCr, btnState, setBtnState, pClass, 'armour');
             //--------------------------------
-            updateCosts(cr[name], 'armour', costs, setCosts);
+            updateCosts(cr[cn], 'armour', costs, setCosts);
 
         }}>
           armour
         </Button>
 
         <Button
-          variant={btnState[name].weapons ? 'success' : 'secondary'}
+          variant={btnState[cn].weapons ? 'success' : 'secondary'}
           onClick={() => {
-            updateStates(cr, setCr, btnState, setBtnState, 'paladin', 'weapons');
-            console.log(cr[name]);
+            updateStates(cr, setCr, btnState, setBtnState, pClass, 'weapons');
             //--------------------------------
-            updateCosts(cr[name], 'weapons', costs, setCosts);
+            updateCosts(cr[cn], 'weapons', costs, setCosts);
           }}>
           weapons
         </Button>
