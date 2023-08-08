@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 
 import '../../styles/arcana.scss';
-import { update } from 'lodash';
-import { object } from 'prop-types';
-
 
 function Arcana(props) {
   let [tendies, setTendies] = useState(0);
@@ -54,7 +51,6 @@ function TradingPost(props) {
       this.armour = armour;
       this.weapons = weapons;
       this.cName = cName; // class name
-      this.
       this.month = month;
     }
   }
@@ -165,46 +161,36 @@ function TradingPost(props) {
           
         </Col>
 
-        {/* <Col md='auto' className='border'>
-          <Button 
-            variant="primary"
-            className='m-1'
-            onClick={() => {
-              console.log(cr.paladin)
-            }}>
-            view Paladin
-          </Button>
-
-          <Button 
-            variant="primary"
-            className='m-1'
-            onClick={() => {
-              console.log(cr.paladin)
-              console.log(btnState.paladin)
-            }}>
-            check states
-          </Button>
-        </Col> */}
-
         <Col md='auto' className='border'>
           <Row>
             <Col>
-            {/* const { cl, name, cr, setCr, costs, setCosts, btnState, setBtnState, tc} = props; */}
-              <ClassCard cl={cr.paladin} name='paladin' cr={cr} setCr={setCr} costs={costs} setCosts={setCosts} btnState={btnState} setBtnState={setBtnState} />
-              <ClassCard cl={cr.priest} name='priest' cr={cr} setCr={setCr} costs={costs} setCosts={setCosts} btnState={btnState} setBtnState={setBtnState} />
-              <ClassCard cl={cr.rogue} name={cr.rogue.cName} cr={cr} setCr={setCr} costs={costs} setCosts={setCosts} btnState={btnState} setBtnState={setBtnState} />
+              {/* const { cl, name, cr, setCr, costs, setCosts, btnState, setBtnState, tc} = props; */}
+              <h4 className='text-center fw-bold'>September</h4>
+              <ClassCard cl={cr.paladin} name='paladin' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.priest} name='priest' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.rogue} name='rogue' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
             </Col>
 
             <Col>
-            
+              <h4 className='text-center fw-bold'>October</h4>
+              <ClassCard cl={cr.deathKnight} name='deathKnight' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.demonHunter} name='demonHunter' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.druid} name='druid' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
             </Col>
 
             <Col>
-            
+              <h4 className='text-center fw-bold'>November</h4>
+              <ClassCard cl={cr.warlock} name='warlock' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.monk} name='monk' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.warrior} name='warrior' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
             </Col>
 
             <Col>
-            
+              <h4 className='text-center fw-bold'>December</h4>
+              <ClassCard cl={cr.evoker} name='evoker' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.hunter} name='hunter' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.mage} name='mage' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.shaman} name='shaman' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
             </Col>
           </Row>
         </Col>
@@ -220,7 +206,7 @@ function TradingPost(props) {
  * @param {string} pClass - The name of the player class to update.
  * @param {string} type - The type of reward to update (e.g., 'armour', 'weapons').
  */
-function updateStates(cr, setCr, btnState, setBtnState, pClass, type) {
+function updateStates(setCr, setBtnState, pClass, type) {
   // console.log(`2 playerClass: ${pClass} | rewardType: ${type}`);
   // console.log(`3 armour: ${cr[pClass][type]}`);
 
@@ -246,7 +232,7 @@ function updateStates(cr, setCr, btnState, setBtnState, pClass, type) {
  * @param {object} costs - Current costs state.
  * @param {function} setCosts - State setter for costs.
  */
-function updateCosts(cl, type, costs, setCosts) {  
+function updateCosts(cl, type, setCosts) {  
   /**
    * default value of cl[type] is false, so when pressed, it should be set to TRUE before this,
    * THUS it SHOULD add 1 on the first click?
@@ -260,6 +246,8 @@ function updateCosts(cl, type, costs, setCosts) {
 
   // console.log(`6 type: ${type} | cost: ${awc}`);
 
+  // console.log(cl.month.toLowerCase());
+
   setCosts((prevCosts) => ({
     ...prevCosts,
     [type]: cl[type] ? prevCosts[type] - awc : prevCosts[type] + awc,
@@ -269,46 +257,51 @@ function updateCosts(cl, type, costs, setCosts) {
 }
 
 
-<ClassCard cl={cr.paladin} setCr={setCr} setBtnState={setBtnState} />
+{/* <ClassCard cl={cr.paladin} setCr={setCr} setBtnState={setBtnState} /> */}
 
 /**
  * 
- * @param {*} props 
- * @returns 
+ * @param {object} cl
+ * @param {function} setCr 
+ * @param {object} btnState 
+ * @param {function} setBtnState 
+ * @param {function} setCosts 
+ * @returns <ClassCard />
  */
 function ClassCard(props) {
-  // const { cl, name, cr, setCr, costs, setCosts, btnState, setBtnState, tc} = props;
-  const { cl } = props;
+  const { cl, name, btnState } = props;
   const { setCr, setBtnState, setCosts } = props;
+  // const { btnState } = props;
 
   // convert the class name to a class string
-  const pClass = Object.keys(cl)[0]; // player class & object key name as string
+  // const pClass = Object.keys(cl)[0]; // player class & object key name as string
+  const pClass = name;
   let strName = cl.cName.toLowerCase().replace(' ', '-');
 
   console.log('test');
   console.log(props);
 
   return (
-    <Card className={`class-card box -${n}`}>
-      <h3 className='text-center fw-bold'>{name || `class`}</h3>
+    <Card className={`class-card box -${strName}`}>
+      <h3 className='text-center fw-bold'>{[name] || `class`}</h3>
       <ButtonGroup className='m-1'>
         <Button
-          variant={btnState[cn].armour ? 'success' : 'secondary'}
+          variant={btnState[pClass].armour ? 'success' : 'secondary'}
           onClick={() => {
-            updateStates(cl, setCr, btnState, setBtnState, pClass, 'armour');
+            updateStates(setCr, btnState, setBtnState, pClass, 'armour');
             //--------------------------------
-            updateCosts(cr[cn], 'armour', costs, setCosts);
+            updateCosts(cl, 'armour', setCosts);
 
         }}>
           armour
         </Button>
 
         <Button
-          variant={btnState[cn].weapons ? 'success' : 'secondary'}
+          variant={btnState[pClass].weapons ? 'success' : 'secondary'}
           onClick={() => {
-            updateStates(cr, setCr, btnState, setBtnState, pClass, 'weapons');
+            updateStates(setCr, btnState, setBtnState, pClass, 'weapons');
             //--------------------------------
-            updateCosts(cr[cn], 'weapons', costs, setCosts);
+            updateCosts(cl, 'weapons', setCosts);
           }}>
           weapons
         </Button>
