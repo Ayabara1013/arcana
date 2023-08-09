@@ -268,7 +268,7 @@ function updateCosts(cl, type, setCosts) {
  * @returns ClassCard component
  */
 function ClassCard(props) {
-  const { cl, name, btnState, setCr, setBtnState, setCosts } = props;
+  const { cl, name, btnState, setCr, setBtnState, setCosts, tc } = props;
   
   // button variants ( for future-proofing and to remove hard-coded strings )
   const activeVariant = 'info';
@@ -282,32 +282,41 @@ function ClassCard(props) {
   let strName = cl.cName.toLowerCase().replace(' ', '-');
 
   return (
-    <Card className={`class-card box -${strName}`}>
-      <h3 className='text-center fw-bold'>{[name] || `class`}</h3>
-      <ButtonGroup className='m-1'>
-        <Button
-          variant={btnState[pClass].armour ? activeVariant : inactiveVariant}
-          onClick={() => {
-            updateStates(setCr, setBtnState, pClass, armour);
-            //--------------------------------
-            updateCosts(cl, armour, setCosts);
+    <Card className={` class-card box -${strName}`}>
+      <div className="d-flex -title">
+        <h3 className={` text-center m-auto fw-bold class-title ${tc}`}>{cl.cName || `class`}</h3>
+      </div>
+      
+      <div className="-buttons">
+        <ButtonGroup className='item-btn-group d-flex flex-grow-1 rounded-0'>
+            <Button
+              className={`item-btn -armour ${btnState[pClass].armour ? '-on' : '-off'} `}
+              // variant={btnState[pClass].armour ? activeVariant : inactiveVariant}
+              onClick={() => {
+                updateStates(setCr, setBtnState, pClass, armour);
+                //--------------------------------
+                updateCosts(cl, armour, setCosts);
+            }}>
+              <span className="">armour</span>
+            </Button>
+        
+            <Button
+              className={`item-btn -weapons ${btnState[pClass].weapons ? '-on' : '-off'} `}
+              // variant={btnState[pClass].weapons ? activeVariant : inactiveVariant}
+              onClick={() => {
+                updateStates(setCr, setBtnState, pClass, weapons);
+                //--------------------------------
+                updateCosts(cl, weapons, setCosts);
+              }}>
+              weapons
+            </Button>
+          </ButtonGroup>
+      </div>
 
-        }}>
-          armour
-        </Button>
-
-        <Button
-          variant={btnState[pClass].weapons ? activeVariant : inactiveVariant}
-          onClick={() => {
-            updateStates(setCr, setBtnState, pClass, weapons);
-            //--------------------------------
-            updateCosts(cl, weapons, setCosts);
-          }}>
-          weapons
-        </Button>
-      </ButtonGroup>
+      {/* <div className="-buttons border"></div> */}
     </Card>
   )
 }
 
 export default Arcana;
+
