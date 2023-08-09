@@ -4,44 +4,11 @@ import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from
 import '../../styles/arcana.scss';
 
 function Arcana(props) {
-  // let [tendies, setTendies] = useState(0);
-  // const [toggle, setToggle] = useState({
-  //   b1: false,
-  //   b2: false
-  // });
-
-  // const reward = 500;
-
-  // const handleClick = (id) => {
-  //   console.log(id);
-
-  //   if (toggle[id]) {
-  //     setTendies(tendies - reward);
-  //     setToggle({ ...toggle, [id]: false });
-  //   }
-  //   else if (!toggle[id]) {
-  //     setTendies(tendies + reward);
-  //     setToggle({ ...toggle, [id]: true });
-  //   }
-  // };
 
   return (
-    <Container>
-      {/* <Row>
-        <Col>
-          <h1>{tendies}</h1>
-          <Button id='i' variant="primary" onClick={() => handleClick('b1')}>
-            {toggle.b1 ? 'true' : 'false'}
-          </Button>
-
-          <Button id='j' variant="primary" onClick={() => handleClick('b2')}>
-            {toggle.b2 ? 'true' : 'false'}
-          </Button>
-        </Col>
-      </Row> */}
-
+    <div className='p-0'>
       <TradingPost />
-    </Container>
+    </div>
   );
 }
 
@@ -106,7 +73,7 @@ function TradingPost(props) {
   });
 
   function updateTendies(value) {
-    setTendies(value);
+    setTendies(parseFloat(value));
   }
 
   const colClass = 'flex-grow-0 p-0';
@@ -118,31 +85,111 @@ function TradingPost(props) {
     setCosts: setCosts
   }
 
+  function calcTendiesCost(costs, tendies, category) {
+    let total = 0;
+    
+    let sdEarnings = [1000, 1000, 1000, 1000];
+    let sept = sdEarnings[0];
+    let oct = sdEarnings[1];
+    let nov = sdEarnings[2];
+    let dec = sdEarnings[3];
+    let sdTotal = 0;
+
+    let result;
+
+    for (let n of sdEarnings) {
+      sdTotal += n;
+    }
+
+    const allTendies = sdTotal + tendies;
+
+    switch (category) {
+      case 'september': 
+        total += costs.september; 
+        break;
+      case 'october':
+        total += costs.october;
+        break;
+      case 'november':
+        total += costs.november;
+        break;
+      case 'december':
+        total += costs.december;
+        break;
+      case 'armour':
+        total += costs.armour;
+        break;
+      case 'weapons':
+        total += costs.weapons;
+        break;
+      default:
+        total = costs.armour + costs.weapons;
+        break;
+    }
+
+    if (total <= tendies) { // if you have enough tendies
+      result = `you have enough tendies!`
+    }
+    else if (total <= allTendies) { // if you have enough tendies after the monthly earnings
+      result = `you will have enough if you get all of the monthly tendies!`
+    }
+    else if (total > allTendies) { // if you wont have enough tendies period
+      result = `the total is more than the tendies you will be able to get :(` 
+    }
+    
+    let ree = '';
+    if (total > sdEarnings[0] + tendies) {
+      ree = `${sdEarnings[0]} + ${tendies} = ${sdEarnings[0] + tendies} :: you will not have enough tendies to get all of the monthly tendies`;
+    }
+
+    const aggEarnings = {
+      sep: sdEarnings[0] - costs.september,
+      oct: sdEarnings[0] + sdEarnings[1] - costs.september - costs.october,
+      // oct: this.sept - costs.october,
+      nov: sdEarnings[0] + sdEarnings[1] + sdEarnings[2] - costs.september - costs.october - costs.november,
+      dec: sdEarnings[0] + sdEarnings[1] + sdEarnings[2] + sdEarnings[3] - costs.september - costs.october - costs.november - costs.december
+    };
+
+    return (
+      <>
+        <div>your tendies: {tendies}</div>
+        <div>(total) monthly tendies: {sdTotal}</div>
+
+        {/* <div className='border border-primary'>
+          <div>{aggEarnings.sep}</div>
+          <div>{aggEarnings.oct}</div>
+          <div>{aggEarnings.nov}</div>
+          <div>{aggEarnings.dec}</div>
+        </div>
+
+        <div className='border border-primary'>
+          <div>october cost: {costs.october}</div>
+        </div>
+        
+        <div className='border border-primary'>
+          <div>november cost: {costs.november}</div>
+        </div>
+
+        <div className='border border-primary'>
+          <div>december cost: {costs.december}</div>
+          <div>october = (october tendies + your tendies) - leftover tendies</div>
+        </div> */}
+
+        <div>total cost: {total}</div>
+        <div>{result}</div>
+      </>
+    )
+  }
+
   return (
-    <Container className='card-1'>
+    <Container className='m-auto max-w-100 p-0'>
       <div className='d-flex justify-content-between'>
         <h1>Trading Post Calculator</h1>
         <h1>{tendies} tendies!</h1>
-        {/* <Button variant="primary">
-          update costs
-        </Button>
-        <Button variant="primary" onClick={() => console.log(costs)}>
-          print costs
-        </Button> */}
       </div>
 
       <Row className='m-auto'>
-        <Col md='auto' className=''>
-          {/* <Form>
-            <Form.Group controlId="form-group-id">
-              <Form.Label>how many tendies do you have?</Form.Label>
-              <Form.Control type="number" placeholder="input tendies!" onSubmit={(e) => setTendies(e.target.value)} />
-              <Button variant="primary" type='submit'>
-                submit
-              </Button>
-            </Form.Group>
-          </Form> */}
-
+        <Col md='5' className=''>
           <InputGroup className="mb-3">
             <InputGroup.Text id="basic-addon1">$</InputGroup.Text>
             <Form.Control placeholder="input tendies!" aria-label="tendies" aria-describedby="basic-addon1" onChange={(e) => updateTendies(e.target.value)} />
@@ -150,28 +197,25 @@ function TradingPost(props) {
           </InputGroup>
 
           <h4 className='fw-bold'>you need:</h4>
-
-          <h5>september: {costs.september}</h5>
-          <h5>october: {costs.october}</h5>
-          <h5>november: {costs.november}</h5>
-          <h5>december: {costs.december}</h5>
-          <h5>armour: {costs.armour}</h5>
-          <h5>weapons: {costs.weapons}</h5>
-          <h4>{`you will need ${(costs.armour + costs.weapons) - tendies} tendies!`}</h4>
+          <div className="d-flex flex-wrap gap-2">
+            <Card className='cost-total-card'>september: {costs.september}</Card>
+            <Card className='cost-total-card'>october: {costs.october}</Card>
+            <Card className='cost-total-card'>november: {costs.november}</Card>
+            <Card className='cost-total-card'>december: {costs.december}</Card>
+            <Card className='cost-total-card'>armour: {costs.armour}</Card>
+            <Card className='cost-total-card'>weapons: {costs.weapons}</Card>
+          </div>
           
+          <div className='m-2'>{calcTendiesCost(costs, tendies, 'total')}</div>          
         </Col>
 
-        <Col md='auto' className=''>
+        <Col md='' className=''>
           <Row>
             <Col>
               <h4 className='text-center fw-bold'>September</h4>
               <ClassCard cl={cr.paladin} name='paladin' {...classCardProps} />
               <ClassCard cl={cr.priest} name='priest' {...classCardProps} />
               <ClassCard cl={cr.rogue} name='rogue' {...classCardProps} />
-              {/* <ClassCard cl={cr.paladin} name='paladin' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.priest} name='priest' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.rogue} name='rogue' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} /> */}
-
             </Col>
 
             <Col>
@@ -179,9 +223,6 @@ function TradingPost(props) {
               <ClassCard cl={cr.deathKnight} name='deathKnight' {...classCardProps} tc='-smaller-title' />
               <ClassCard cl={cr.demonHunter} name='demonHunter' {...classCardProps} tc='-smaller-title' />
               <ClassCard cl={cr.druid} name='druid' {...classCardProps} />
-              {/* <ClassCard cl={cr.deathKnight} name='deathKnight' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.demonHunter} name='demonHunter' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.druid} name='druid' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} /> */}
             </Col>
 
             <Col>
@@ -189,9 +230,6 @@ function TradingPost(props) {
               <ClassCard cl={cr.warlock} name='warlock' {...classCardProps} />
               <ClassCard cl={cr.monk} name='monk' {...classCardProps} />
               <ClassCard cl={cr.warrior} name='warrior' {...classCardProps} />
-              {/* <ClassCard cl={cr.warlock} name='warlock' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.monk} name='monk' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.warrior} name='warrior' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} /> */}
             </Col>
 
             <Col>
@@ -200,18 +238,21 @@ function TradingPost(props) {
               <ClassCard cl={cr.hunter} name='hunter' {...classCardProps} />
               <ClassCard cl={cr.mage} name='mage' {...classCardProps} />
               <ClassCard cl={cr.shaman} name='shaman' {...classCardProps} />
-              {/* <ClassCard cl={cr.evoker} name='evoker' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.hunter} name='hunter' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.mage} name='mage' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.shaman} name='shaman' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} /> */}
             </Col>
           </Row>
         </Col>
+      </Row>
 
+      <Row>
+        <Col>
+          <CostsCard category='September' text={calcTendiesCost(costs, tendies, 'september')} />
+          <CostsCard category='Total' text={calcTendiesCost(costs, tendies, 'total')} />
+        </Col>
       </Row>
     </Container>
   );
 }
+
 /**
  * Update the rewards and button states for a specific player class and reward type.
  * @param {function} setCr - The state setter for class rewards.
@@ -316,6 +357,17 @@ function ClassCard(props) {
       {/* <div className="-buttons border"></div> */}
     </Card>
   )
+}
+
+function CostsCard(props) {
+  const { category, text } = props;
+
+  return (
+    <Card className='costs-card w-auto mb-2'>
+      <h3>{category}</h3>
+      <div>{text}</div>
+    </Card>      
+  );
 }
 
 export default Arcana;
