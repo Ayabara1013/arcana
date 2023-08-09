@@ -80,9 +80,7 @@ function TradingPost(props) {
     mage:         new ClassSet(false, false, 'Mage',          'December'),
     shaman:       new ClassSet(false, false, 'Shaman',        'December'),
   });
-
   const [tendies, setTendies] = useState(0);
-
   const [costs, setCosts] = useState({
     september: 0,
     october: 0,
@@ -91,7 +89,6 @@ function TradingPost(props) {
     armour: 0,
     weapons: 0,
   });
-
   const [btnState, setBtnState] = useState({
     paladin: new ClassBtn('Paladin', false, false),
     priest: new ClassBtn('Priest', false, false),
@@ -108,7 +105,18 @@ function TradingPost(props) {
     shaman: new ClassBtn('Shaman', false, false),
   });
 
+  function updateTendies(value) {
+    setTendies(value);
+  }
+
   const colClass = 'flex-grow-0 p-0';
+
+  const classCardProps = {
+    setCr: setCr,
+    btnState: btnState,
+    setBtnState: setBtnState,
+    setCosts: setCosts
+  }
 
   return (
     <Container className='card-1'>
@@ -125,12 +133,21 @@ function TradingPost(props) {
 
       <Row className='m-auto'>
         <Col md='auto' className=''>
-          <Form>
+          {/* <Form>
             <Form.Group controlId="form-group-id">
               <Form.Label>how many tendies do you have?</Form.Label>
-              <Form.Control type="number" placeholder="input tendies!"/>
+              <Form.Control type="number" placeholder="input tendies!" onSubmit={(e) => setTendies(e.target.value)} />
+              <Button variant="primary" type='submit'>
+                submit
+              </Button>
             </Form.Group>
-          </Form>
+          </Form> */}
+
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="basic-addon1">$</InputGroup.Text>
+            <Form.Control placeholder="input tendies!" aria-label="tendies" aria-describedby="basic-addon1" onChange={(e) => updateTendies(e.target.value)} />
+            <Button variant="primary" id="button-addon2" onClick={() => console.log(tendies)}>confirm</Button>
+          </InputGroup>
 
           <h4 className='fw-bold'>you need:</h4>
 
@@ -140,39 +157,53 @@ function TradingPost(props) {
           <h5>december: {costs.december}</h5>
           <h5>armour: {costs.armour}</h5>
           <h5>weapons: {costs.weapons}</h5>
+          <h4>{`you will need ${(costs.armour + costs.weapons) - tendies} tendies!`}</h4>
           
         </Col>
 
         <Col md='auto' className=''>
           <Row>
             <Col>
-              {/* const { cl, name, cr, setCr, costs, setCosts, btnState, setBtnState, tc} = props; */}
               <h4 className='text-center fw-bold'>September</h4>
-              <ClassCard cl={cr.paladin} name='paladin' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.paladin} name='paladin' {...classCardProps} />
+              <ClassCard cl={cr.priest} name='priest' {...classCardProps} />
+              <ClassCard cl={cr.rogue} name='rogue' {...classCardProps} />
+              {/* <ClassCard cl={cr.paladin} name='paladin' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
               <ClassCard cl={cr.priest} name='priest' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.rogue} name='rogue' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.rogue} name='rogue' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} /> */}
+
             </Col>
 
             <Col>
               <h4 className='text-center fw-bold'>October</h4>
-              <ClassCard cl={cr.deathKnight} name='deathKnight' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.deathKnight} name='deathKnight' {...classCardProps} tc='-smaller-title' />
+              <ClassCard cl={cr.demonHunter} name='demonHunter' {...classCardProps} tc='-smaller-title' />
+              <ClassCard cl={cr.druid} name='druid' {...classCardProps} />
+              {/* <ClassCard cl={cr.deathKnight} name='deathKnight' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
               <ClassCard cl={cr.demonHunter} name='demonHunter' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.druid} name='druid' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.druid} name='druid' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} /> */}
             </Col>
 
             <Col>
               <h4 className='text-center fw-bold'>November</h4>
-              <ClassCard cl={cr.warlock} name='warlock' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.warlock} name='warlock' {...classCardProps} />
+              <ClassCard cl={cr.monk} name='monk' {...classCardProps} />
+              <ClassCard cl={cr.warrior} name='warrior' {...classCardProps} />
+              {/* <ClassCard cl={cr.warlock} name='warlock' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
               <ClassCard cl={cr.monk} name='monk' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.warrior} name='warrior' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.warrior} name='warrior' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} /> */}
             </Col>
 
             <Col>
               <h4 className='text-center fw-bold'>December</h4>
-              <ClassCard cl={cr.evoker} name='evoker' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.evoker} name='evoker' {...classCardProps} />
+              <ClassCard cl={cr.hunter} name='hunter' {...classCardProps} />
+              <ClassCard cl={cr.mage} name='mage' {...classCardProps} />
+              <ClassCard cl={cr.shaman} name='shaman' {...classCardProps} />
+              {/* <ClassCard cl={cr.evoker} name='evoker' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
               <ClassCard cl={cr.hunter} name='hunter' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
               <ClassCard cl={cr.mage} name='mage' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
-              <ClassCard cl={cr.shaman} name='shaman' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} />
+              <ClassCard cl={cr.shaman} name='shaman' setCr={setCr} btnState={btnState} setBtnState={setBtnState} setCosts={setCosts} /> */}
             </Col>
           </Row>
         </Col>
