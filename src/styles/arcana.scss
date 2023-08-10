@@ -1,4 +1,5 @@
 @use '../styles/App.scss' as a;
+@import './colours.scss';
 
 
 $c-death-knight: #C41E3A;
@@ -218,7 +219,9 @@ $default-form-rounding: 0.375rem;
 }
 
 .flex-item {
-  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
 }
 
 .card-fw {
@@ -232,4 +235,18 @@ $default-form-rounding: 0.375rem;
 
 .card {
   @include a.box-shadow-light;
+  // background-color: #191919;
+  // color: white;
+  // font-weight: normal !important;
+}
+
+.math-block {
+  font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+  line-height: normal;
+  // background: rgba(135, 131, 120, 0);
+  background: #292927;
+  color: #EB5757;
+  border-radius: 1rem;
+  font-size: 85%;
+  padding: 0.2em 0.4em;
 }
