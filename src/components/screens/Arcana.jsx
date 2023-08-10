@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 
 import '../../styles/arcana.scss';
+import { Input } from '@chakra-ui/react';
 
 function Arcana(props) {
 
@@ -181,6 +182,13 @@ function TradingPost(props) {
 
   const sdEarnings = [1000, 1000, 1000, 1000];
 
+  const [earnings, setEarnings] = useState({
+    september: 1000,
+    october: 1000,
+    november: 1000,
+    december: 1000,
+  });
+
   const colClass = 'flex-grow-0 p-0';
   const cstyle = 'cost-total-card flex-grow-1 flex-shrink-1 flex-basis-0 text-center';
 
@@ -198,6 +206,8 @@ function TradingPost(props) {
             <Form.Control placeholder="input tendies!" aria-label="tendies" aria-describedby="basic-addon1" onChange={(e) => updateTendies(e.target.value)} />
             <Button variant="primary" id="button-addon2" onClick={() => console.log(tendies)}>confirm</Button>
           </InputGroup>
+
+          <MonthlyEarningsForm earnings={earnings} setEarnings={setEarnings} />
 
           <h4 className='fw-bold'>you need:</h4>
           <div className="d-flex flex-wrap gap-2">
@@ -700,6 +710,34 @@ function CostsCard(props) {
         <li>Have:  <span className="fw-thicc">{tRemaining}</span> tendies left over</li>
         <li>You <span className="fw-thicc">{tResult(month)}</span> be able to buy everything you want</li>
       </ul>
+    </Card>
+  );
+}
+
+function MonthlyEarningsForm(props) {
+  const { earnings, setEarnings } = props;
+  return (
+    <Card className='d-flex flex-row gap-2'>
+      <Form.Group>
+        <Form.Text className="text-muted">september</Form.Text>
+        <Form.Control placeholder={earnings.september} aria-label="tendies" aria-describedby="basic-addon1" className='flex-item' />
+      </Form.Group>
+      
+      <Form.Group>
+        <Form.Text className="text-muted">october</Form.Text>
+        <Form.Control placeholder={earnings.october} aria-label="tendies" aria-describedby="basic-addon1" className='flex-item' />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Text className="text-muted">november</Form.Text>
+        <Form.Control placeholder={earnings.november} aria-label="tendies" aria-describedby="basic-addon1" className='flex-item' />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Text className="text-muted">december</Form.Text>
+        <Form.Control placeholder={earnings.december} aria-label="tendies" aria-describedby="basic-addon1" className='flex-item' />
+      </Form.Group>
+
     </Card>
   );
 }
