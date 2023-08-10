@@ -608,7 +608,7 @@ function CostsCard(props) {
   }
 
   const tCost = costs[month.toLowerCase()];
-  const tRemaining = tPotential(month) - tCost[month.toLowerCase()];
+  const tRemaining = tPotential(month) - tCost;
 
   // const tCost = (month) => {
   //   if (month === 'September') {
@@ -654,12 +654,10 @@ function CostsCard(props) {
     }
   }
 
-  console.log("tPotential(month):", tPotential(month));
-  console.log("tCost[month.toLowerCase()]:", tCost[month.toLowerCase()]);
-  // console.log(month.toLowerCase())
-  // console.log(month)
-  // console.log
-  console.log("tRemaining:", tRemaining);
+  if (month === 'September') console.log('-------------------------');
+  // console.log("tPotential(month):", tPotential(month));
+  console.log("tCost[month.toLowerCase()]:",month , tCost);
+  // console.log("tRemaining:", tRemaining);
 
 
   return (
