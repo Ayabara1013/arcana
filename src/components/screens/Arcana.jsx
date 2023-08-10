@@ -76,15 +76,6 @@ function TradingPost(props) {
     setTendies(parseFloat(value));
   }
 
-  const colClass = 'flex-grow-0 p-0';
-
-  const classCardProps = {
-    setCr: setCr,
-    btnState: btnState,
-    setBtnState: setBtnState,
-    setCosts: setCosts
-  }
-
   function calcTendiesCost(costs, tendies, category) {
     let total = 0;
     
@@ -94,9 +85,9 @@ function TradingPost(props) {
     let nov = sdEarnings[2];
     let dec = sdEarnings[3];
     let sdTotal = 0;
-
+    
     let result;
-
+    
     for (let n of sdEarnings) {
       sdTotal += n;
     }
@@ -181,12 +172,24 @@ function TradingPost(props) {
     )
   }
 
+  const classCardProps = {
+    setCr: setCr,
+    btnState: btnState,
+    setBtnState: setBtnState,
+    setCosts: setCosts
+  }
+
+  const sdEarnings = [1000, 1000, 1000, 1000];
+
+  const colClass = 'flex-grow-0 p-0';
+  const cstyle = 'cost-total-card flex-grow-1 flex-shrink-1 flex-basis-0 text-center';
+
   return (
     <Container className='m-auto max-w-100 p-0'>
-      <div className='d-flex justify-content-between'>
+      <Card className='d-flex flex-row justify-content-between m-2 mb-4 p-2 box-shadow-light'>
         <h1>Trading Post Calculator</h1>
         <h1>{tendies} tendies!</h1>
-      </div>
+      </Card>
 
       <Row className='m-auto'>
         <Col md='5' className=''>
@@ -198,12 +201,12 @@ function TradingPost(props) {
 
           <h4 className='fw-bold'>you need:</h4>
           <div className="d-flex flex-wrap gap-2">
-            <Card className='cost-total-card'>september: {costs.september}</Card>
-            <Card className='cost-total-card'>october: {costs.october}</Card>
-            <Card className='cost-total-card'>november: {costs.november}</Card>
-            <Card className='cost-total-card'>december: {costs.december}</Card>
-            <Card className='cost-total-card'>armour: {costs.armour}</Card>
-            <Card className='cost-total-card'>weapons: {costs.weapons}</Card>
+            <Card className={cstyle}>september: {costs.september}</Card>
+            <Card className={cstyle}>october: {costs.october}</Card>
+            <Card className={cstyle}>november: {costs.november}</Card>
+            <Card className={cstyle}>december: {costs.december}</Card>
+            <Card className={cstyle}>armour: {costs.armour}</Card>
+            <Card className={cstyle}>weapons: {costs.weapons}</Card>
           </div>
           
           <div className='m-2'>{calcTendiesCost(costs, tendies, 'total')}</div>          
@@ -245,8 +248,16 @@ function TradingPost(props) {
 
       <Row>
         <Col>
-          <CostsCard category='September' text={calcTendiesCost(costs, tendies, 'september')} />
-          <CostsCard category='Total' text={calcTendiesCost(costs, tendies, 'total')} />
+          <div className='d-flex gap-2'>
+            {/* <SeptemberCostsCard costs={costs} tendies={tendies} month='September' earnings={sdEarnings} />
+            <OctoberCostsCard costs={costs} tendies={tendies} month='October' earnings={sdEarnings} />
+            <NovemberCostsCard costs={costs} tendies={tendies} month='November' earnings={sdEarnings} />
+            <DecemberCostsCard costs={costs} tendies={tendies} month='December' earnings={sdEarnings} /> */}
+            <CostsCard costs={costs} tendies={tendies} month='September' earnings={sdEarnings} />
+            <CostsCard costs={costs} tendies={tendies} month='October' earnings={sdEarnings} />
+            <CostsCard costs={costs} tendies={tendies} month='November' earnings={sdEarnings} />
+            <CostsCard costs={costs} tendies={tendies} month='December' earnings={sdEarnings} />
+          </div>
         </Col>
       </Row>
     </Container>
@@ -359,14 +370,326 @@ function ClassCard(props) {
   )
 }
 
+// function SeptemberCostsCard(props) {
+//   const { costs, tendies, month, earnings } = props;
+//   const tSepStart = tendies;
+//   const tSepPotential = tSepStart + earnings[0];
+//   const tSepCost = costs.september;
+//   const tSepRemaining = tSepPotential - tSepCost;
+  
+//   const tSepResult = () => {
+//     if (tSepRemaining > 0) {
+//       return <span className="fw-thicc">will</span>;
+//     }
+//     else {
+//       return (
+//         <span>
+//           will <span className="fw-thicc">not</span>
+//         </span>
+//       );
+//     }
+//   }
+
+//   return (
+//     <Card className='costs-card d-flex flex-grow-2'>
+//       <h3 className='fw-bold'>{month}</h3>
+
+//       <h4>{tSepStart} + {earnings[0]} = {tSepPotential} - {tSepCost} = {tSepRemaining} :: {tSepResult()}</h4>
+
+//       <div className='border border-secondary border-2'>
+//         <div className='card-fw'>
+//           you will have a total of <span className="fw-thicc">{tSepStart}</span> tendies at the start of september
+//         </div>
+
+//         <div className='card-fw'>
+//           you have a max potential of <span className="fw-thicc">{tSepPotential}</span> tendies by the end of the month
+//         </div>
+
+//         <div className='card-fw'>
+//           you will need a total of <span className="fw-thicc">{tSepCost}</span> tendies to buy everything you want in september
+//         </div>
+
+//         <div className='card-fw'>
+//           you will have a total of <span className="fw-thicc">{tSepRemaining}</span> tendies left over at the end of the month
+//         </div>
+
+//         <div className='card-fw'>
+//           you {tSepResult()} be able to buy everything you want in september;
+//         </div>
+//       </div>
+//     </Card>      
+//   );
+// }
+
+// function OctoberCostsCard(props) {
+//   const { costs, tendies, month, earnings } = props;
+//   const tOctStart = tendies - costs.september + earnings[0];
+//   const tOctPotential =  tOctStart + earnings[1];
+//   const tOctCost = costs.october;
+//   const tOctRemaining = tOctStart + earnings[1] - tOctCost;
+
+//   const tOctResult = () => {
+//     if (tOctRemaining > 0) {
+//       return <span className="fw-thicc">will</span>;
+//     }
+//     else { 
+//       return (
+//         <span>
+//           will <span className="fw-thicc">not</span>
+//         </span>
+//       );
+//     }
+//   }
+
+//   return (
+//     <Card className='costs-card d-flex flex-grow-2'>
+//       <h3 className='fw-bold'>{month}</h3>
+
+//       <h4>{tOctStart} + {earnings[1]} = {tOctPotential} - {tOctCost} = {tOctRemaining} :: {tOctResult()}</h4>
+
+//       <div className='border border-secondary border-2'>
+//         <div className='card-fw'>
+//           you will have a total of <span className="fw-thicc">{tOctStart}</span> tendies at the start of {month}
+//         </div>
+
+//         <div className='card-fw'>
+//           you have a max potential of <span className="fw-thicc">{tOctPotential}</span> tendies by the end of the month
+//         </div>
+
+//         <div className='card-fw'>
+//           you will need a total of <span className="fw-thicc">{tOctCost}</span> tendies to buy everything you want in {month}
+//         </div>
+
+//         <div className='card-fw'>
+//           you will have a total of <span className="fw-thicc">{tOctRemaining}</span> tendies left over at the end of the month
+//         </div>
+
+//         <div className='card-fw'>
+//           you {tOctResult()} be able to buy everything you want in {month};
+//         </div>
+//       </div>
+//     </Card>      
+//   );
+// }
+
+// function NovemberCostsCard(props) {
+//   const { costs, tendies, month, earnings } = props;
+//   const tNovStart = tendies - costs.september - costs.october + earnings[0] + earnings[1];
+//   const tNovPotential = tNovStart + earnings[2];
+//   const tNovCost = costs.november;
+//   const tNovRemaining = tNovStart + earnings[2] - tNovCost;
+
+//   const tNovResult = () => {
+//     if (tNovRemaining > 0) {
+//       return <span className="fw-thicc">will</span>;
+//     }
+//     else {
+//       return (
+//         <span>
+//           will <span className="fw-thicc">not</span>
+//         </span>
+//       );
+//     }
+//   }
+
+//   return (
+//     <Card className='costs-card d-flex flex-grow-2'>
+//       <h3 className='fw-bold'>{month}</h3>
+
+//       <h4>{tNovStart} + {earnings[2]} = {tNovPotential} - {tNovCost} = {tNovRemaining} :: {tNovResult()}</h4>
+
+//       <div className='border border-secondary border-2'>
+//         <div className='card-fw'>
+//           you will have a total of <span className="fw-thicc">{tNovStart}</span> tendies at the start of {month}
+//         </div>
+
+//         <div className='card-fw'>
+//           you have a max potential of <span className="fw-thicc">{tNovPotential}</span> tendies by the end of the month
+//         </div>
+
+//         <div className='card-fw'>
+//           you will need a total of <span className="fw-thicc">{tNovCost}</span> tendies to buy everything you want in {month}
+//         </div>
+
+//         <div className='card-fw'>
+//           you will have a total of <span className="fw-thicc">{tNovRemaining}</span> tendies left over at the end of the month
+//         </div>
+
+//         <div className='card-fw'>
+//           you {tNovResult()} be able to buy everything you want in {month};
+//         </div>
+//       </div>
+//     </Card>
+//   );
+// }
+
+// function DecemberCostsCard(props) {
+//   const { costs, tendies, month, earnings } = props;
+//   const tDecStart = tendies - costs.september - costs.october - costs.november + earnings[0] + earnings[1] + earnings[2];
+//   const tDecPotential = tDecStart + earnings[3];
+//   const tDecCost = costs.december;
+//   const tDecRemaining = tDecStart + earnings[3] - tDecCost;
+
+//   const tDecResult = () => {
+//     if (tDecRemaining > 0) {
+//       return <span className="fw-thicc">will</span>;
+//     }
+//     else {
+//       return (
+//         <span>
+//           will <span className="fw-thicc">not</span>
+//         </span>
+//       );
+//     }
+//   }
+
+//   return (
+//     <Card className='costs-card d-flex flex-grow-2'>
+//       <h3 className='fw-bold'>{month}</h3>
+
+//       <h4>{tDecStart} + {earnings[3]} = {tDecPotential} - {tDecCost} = {tDecRemaining} :: {tDecResult()}</h4>
+
+//       <div className='border border-secondary border-2'>
+//         <div className='card-fw'>
+//           you will have a total of <span className="fw-thicc">{tDecStart}</span> tendies at the start of {month}
+//         </div>
+
+//         <div className='card-fw'>
+//           you have a max potential of <span className="fw-thicc">{tDecPotential}</span> tendies by the end of the month
+//         </div>
+
+//         <div className='card-fw'>
+//           you will need a total of <span className="fw-thicc">{tDecCost}</span> tendies to buy everything you want in {month}
+//         </div>
+
+//         <div className='card-fw'>
+//           you will have a total of <span className="fw-thicc">{tDecRemaining}</span> tendies left over at the end of the month
+//         </div>
+
+//         <div className='card-fw'>
+//           you {tDecResult()} be able to buy everything you want in {month};
+//         </div>
+//       </div>
+//     </Card>
+//   );
+// }
+
 function CostsCard(props) {
-  const { category, text } = props;
+  const { costs, tendies, month, earnings } = props;
+  
+  const tStart = (month) => {
+    if (month === 'September') {
+      return tendies;
+    }
+    else if (month === 'October') {
+      return tendies - costs.september + earnings[0];
+    }
+    else if (month === 'November') {
+      return tendies - costs.september - costs.october + earnings[0] + earnings[1];
+    }
+    else if (month === 'December') {
+      return tendies - costs.september - costs.october - costs.november + earnings[0] + earnings[1] + earnings[2];
+    }
+  }
+
+  const tPotential = (month) => {
+    if (month === 'September') {
+      return tStart(month) + earnings[0];
+    }
+    else if (month === 'October') {
+      return tStart(month) + earnings[1];
+    }
+    else if (month === 'November') {
+      return tStart(month) + earnings[2];
+    }
+    else if (month === 'December') {
+      return tStart(month) + earnings[3];
+    }
+  }
+
+  const tCost = costs[month.toLowerCase()];
+  const tRemaining = tPotential(month) - tCost[month.toLowerCase()];
+
+  // const tCost = (month) => {
+  //   if (month === 'September') {
+  //     return costs.september;
+  //   }
+  //   else if (month === 'October') {
+  //     return costs.october;
+  //   }
+  //   else if (month === 'November') {
+  //     return costs.november;
+  //   }
+  //   else if (month === 'December') {
+  //     return costs[month.toLowerCase()];
+  //   }
+  // }
+
+  // const tRemaining = (month) => {
+  //   if (month === 'September') {
+  //     return tPotential(month) - tCost(month);
+  //   }
+  //   else if (month === 'October') {
+  //     return tPotential(month) - tCost(month);
+  //   }
+  //   else if (month === 'November') {
+  //     return tPotential(month) - tCost(month);
+
+  //   }
+  //   else if (month === 'December') {
+  //     return tPotential(month) - tCost(month);
+  //   }
+  // }
+
+  const tResult = (month) => {
+    if (tRemaining > 0) {
+      return <span className="fw-thicc">will</span>;
+    }
+    else {
+      return (
+        <span>
+          will <span className="fw-thicc">not</span>
+        </span>
+      );
+    }
+  }
+
+  console.log("tPotential(month):", tPotential(month));
+  console.log("tCost[month.toLowerCase()]:", tCost[month.toLowerCase()]);
+  // console.log(month.toLowerCase())
+  // console.log(month)
+  // console.log
+  console.log("tRemaining:", tRemaining);
+
 
   return (
-    <Card className='costs-card w-auto mb-2'>
-      <h3>{category}</h3>
-      <div>{text}</div>
-    </Card>      
+    <Card className='costs-card d-flex flex-grow-2'>
+      <h3 className='fw-bold'>{month}</h3>
+
+      <h4>{tStart(month)} + {earnings[0]} = {tPotential(month)} - {tCost} = {tRemaining} :: {tResult(month)}</h4>
+
+      <div className='border border-secondary border-2'>
+        <div className='card-fw'>
+          you will have a total of <span className="fw-thicc">{tStart(month)}</span> tendies at the start of {month}
+        </div>
+
+        <div className='card-fw'>
+          you have a max potential of <span className="fw-thicc">{tPotential(month)}</span> tendies by the end of the month
+        </div>
+
+        <div className='card-fw'>
+          you will need a total of <span className="fw-thicc">{tCost}</span> tendies to buy everything you want in {month}
+        </div>
+
+        <div className='card-fw'>
+          you will have a total of <span className="fw-thicc">{tRemaining}</span> tendies left over at the end of the month
+        </div>
+
+        <div className='card-fw'>
+          you {tResult(month)} be able to buy everything you want in {month};
+        </div>
+      </div>
+    </Card>
   );
 }
 

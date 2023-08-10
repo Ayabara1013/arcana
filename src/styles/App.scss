@@ -29,7 +29,7 @@
     0.75rem 1.5rem 1.5rem rgba($dark-3, 0.025)
 }
 @mixin box-shadow-light {
-  box-shadow: 1px 2px 12px #0000003d;
+  box-shadow: 1px 2px 12px #0000002b;// , inset 0 0 4px #0000001c;
 }
 
 * {
@@ -80,6 +80,9 @@ body {
 
 .box-shadow {
   @include box-shadow();
+}
+.box-shadow-light {
+  @include box-shadow-light();
 }
 
 // .container {
@@ -242,3 +245,4 @@ body {
   &.-closed {
   }
 }
+

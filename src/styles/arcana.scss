@@ -210,3 +210,26 @@ $default-form-rounding: 0.375rem;
 .cost-total-card {
   padding: 0.5rem;
 }
+
+.costs-card {
+  // margin-bottom: 1rem;
+  // width: 100%;
+  font-weight: 400;
+}
+
+.flex-item {
+  flex: 1;
+}
+
+.card-fw {
+  font-weight: 300;
+}
+
+.fw-thicc {
+  font-weight: 900;
+  text-decoration-line: underline;
+}
+
+.card {
+  @include a.box-shadow-light;
+}
