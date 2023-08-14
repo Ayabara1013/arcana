@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 
 import '../../styles/arcana.scss';
-import { Input } from '@chakra-ui/react';
+import { Input, color } from '@chakra-ui/react';
 
 function Arcana(props) {
 
@@ -180,13 +180,13 @@ function TradingPost(props) {
     setCosts: setCosts
   }
 
-  const sdEarnings = [1000, 1000, 1000, 1000];
+  const sdEarnings = [1400, 1400, 1400, 1400];
 
   const [earnings, setEarnings] = useState({
-    september: 1000,
-    october: 1000,
-    november: 1000,
-    december: 1000,
+    september: sdEarnings[0],
+    october: sdEarnings[1],
+    november: sdEarnings[2],
+    december: sdEarnings[3]
   });
 
   const colClass = 'flex-grow-0 p-0';
@@ -194,7 +194,7 @@ function TradingPost(props) {
 
   return (
     <Container className='m-auto max-w-100 p-0'>
-      <Card className='d-flex flex-row justify-content-between m-2 mb-4 p-2 box-shadow-light'>
+      <Card className='title-bar d-flex flex-row justify-content-between m-2 mb-4 box-shadow-light'>
         <h1>Trading Post Calculator</h1>
         <h1>{tendies} tendies!</h1>
       </Card>
@@ -207,7 +207,7 @@ function TradingPost(props) {
             <Button variant="primary" id="button-addon2" onClick={() => console.log(tendies)}>confirm</Button>
           </InputGroup>
 
-          <MonthlyEarningsForm earnings={earnings} setEarnings={setEarnings} />
+          {/* <MonthlyEarningsForm className='mb-2' earnings={earnings} /> */}
 
           <h4 className='fw-bold'>you need:</h4>
           <div className="d-flex flex-wrap gap-2">
@@ -219,7 +219,13 @@ function TradingPost(props) {
             <Card className={cstyle}>weapons: {costs.weapons}</Card>
           </div>
           
-          <div className='m-2'>{calcTendiesCost(costs, tendies, 'total')}</div>          
+          <div className='d-flex flex-wrap px-0 py-2 gap-2'>
+            <CostsCardCompact costs={costs} tendies={tendies} month='September' earnings={sdEarnings} />
+            <CostsCardCompact costs={costs} tendies={tendies} month='October' earnings={sdEarnings} />
+            <CostsCardCompact costs={costs} tendies={tendies} month='November' earnings={sdEarnings} />
+            <CostsCardCompact costs={costs} tendies={tendies} month='December' earnings={sdEarnings} />
+          </div>
+          {/* <div className='m-2'>{calcTendiesCost(costs, tendies, 'total')}</div>           */}
         </Col>
 
         <Col md='' className=''>
@@ -265,6 +271,7 @@ function TradingPost(props) {
         <CostsCard costs={costs} tendies={tendies} month='October' earnings={sdEarnings} />
         <CostsCard costs={costs} tendies={tendies} month='November' earnings={sdEarnings} />
         <CostsCard costs={costs} tendies={tendies} month='December' earnings={sdEarnings} />
+        {/* <MonthCostv2 costs={costs} tendies={tendies} month='september' earnings={sdEarnings} /> */}
       </div>
     </Container>
   );
@@ -715,9 +722,9 @@ function CostsCard(props) {
 }
 
 function MonthlyEarningsForm(props) {
-  const { earnings, setEarnings } = props;
+  const { earnings, setEarnings, className} = props;
   return (
-    <Card className='d-flex flex-row gap-2'>
+    <Card className={`d-flex flex-row gap-2 ${className}`}>
       <Form.Group>
         <Form.Text className="text-muted">september</Form.Text>
         <Form.Control placeholder={earnings.september} aria-label="tendies" aria-describedby="basic-addon1" className='flex-item' />
@@ -738,6 +745,77 @@ function MonthlyEarningsForm(props) {
         <Form.Control placeholder={earnings.december} aria-label="tendies" aria-describedby="basic-addon1" className='flex-item' />
       </Form.Group>
 
+    </Card>
+  );
+}
+
+function CostsCardCompact(props) {
+  const { costs, tendies, month, earnings } = props;
+  
+  const tStart = (month) => {
+    if (month === 'September') {
+      return tendies;
+    }
+    else if (month === 'October') {
+      return tendies - costs.september + earnings[0];
+    }
+    else if (month === 'November') {
+      return tendies - costs.september - costs.october + earnings[0] + earnings[1];
+    }
+    else if (month === 'December') {
+      return tendies - costs.september - costs.october - costs.november + earnings[0] + earnings[1] + earnings[2];
+    }
+  }
+
+  const tPotential = (month) => {
+    if (month === 'September') {
+      return tStart(month) + earnings[0];
+    }
+    else if (month === 'October') {
+      return tStart(month) + earnings[1];
+    }
+    else if (month === 'November') {
+      return tStart(month) + earnings[2];
+    }
+    else if (month === 'December') {
+      return tStart(month) + earnings[3];
+    }
+  }
+
+  const tCost = costs[month.toLowerCase()];
+  const tRemaining = tPotential(month) - tCost;
+
+  const tResult = (month) => {
+    if (tRemaining > 0) {
+      return `will`;
+    }
+    else {
+      return `will not`
+    }
+  }
+  
+  const valueClass = tRemaining > 0 ? 'bg-success text-light rounded m-auto px-2' : 'bg-danger text-light rounded m-auto px-2';
+
+  const StatCard = (props) => {
+    const { variantText, value } = props;
+
+    return (
+      <div className='d-flex flex-column'>
+        <div className='fw-bold'>{variantText}</div>
+        <div>{value}</div>
+      </div>
+    );
+  }
+
+  return (
+    <Card className='costs-card compact-monthly-costs d-flex flex-item text-center'>
+      <h3 className='fw-bold text-center'>{month}</h3>
+      <div className='d-flex flex-row gap-2 justify-content-around'>
+        <StatCard variantText='Start' value={tStart(month)} />
+        <StatCard variantText='Max' value={tPotential(month)} />
+        <StatCard variantText='Cost' value={tCost} />
+      </div>
+      <div className={`${valueClass} fw-bold`}>{tRemaining}</div>
     </Card>
   );
 }

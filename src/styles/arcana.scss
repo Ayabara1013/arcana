@@ -241,7 +241,7 @@ $default-form-rounding: 0.375rem;
 }
 
 .math-block {
-  font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+  font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace !important;
   line-height: normal;
   // background: rgba(135, 131, 120, 0);
   background: #292927;
@@ -249,4 +249,23 @@ $default-form-rounding: 0.375rem;
   border-radius: 1rem;
   font-size: 85%;
   padding: 0.2em 0.4em;
+}
+
+.title-bar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+
+.compact-monthly-costs {
+  flex-basis: calc(50% - 1rem); /* Two items per row, minus the gap */
+  padding: 0.6rem;
+  min-width: fit-content;
+
 }
