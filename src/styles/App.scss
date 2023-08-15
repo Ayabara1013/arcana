@@ -1,0 +1,251 @@
+@use './globals' as g;
+@import './colours.scss';
+
+
+// --- mixins // --- layers
+@mixin layer-1 {
+  background-color: $mid-3;
+}
+@mixin layer-2 {
+  background-color: $mid-2;
+}
+@mixin layer-3 {
+  background-color: $mid-1;
+}
+@mixin layer-4 {
+  background-color: $light-3;
+}
+@mixin layer-5 {
+  background-color: $light-2;
+}
+@mixin layer-6 {
+  background-color: $light-1;
+}
+
+@mixin box-shadow {
+  box-shadow:
+    0.25rem 0.5rem 0.5rem rgba($dark-3, 0.2),
+    0.5rem 1rem 1rem rgba($dark-3, 0.1),
+    0.75rem 1.5rem 1.5rem rgba($dark-3, 0.025)
+}
+@mixin box-shadow-light {
+  box-shadow: 1px 2px 12px #0000002b;// , inset 0 0 4px #0000001c;
+}
+@mixin box-shadow-dark {
+  box-shadow: 1px 2px 12px #00000075;// , inset 0 0 4px #0000001c;
+}
+
+* {
+  // @include layer-4;
+  box-sizing: border-box;
+  font-family: 'Cera Round Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+}
+
+body {
+  @include layer-4();
+}
+
+.box {
+  margin: auto;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid whitesmoke;
+
+  &.red { 
+    border-color: red;
+  }
+}
+
+.svh-100 {
+  height: 100svh;
+}
+
+// --- layer classes
+.layer-1 {
+  @include layer-1
+}
+.layer-2 {
+  @include layer-2
+}
+.layer-3 {
+  @include layer-3
+}
+.layer-4 {
+  @include layer-4
+}
+.layer-5 {
+  @include layer-5
+}
+.layer-6 {
+  @include layer-6
+}
+
+.box-shadow {
+  @include box-shadow();
+}
+.box-shadow-light {
+  @include box-shadow-light();
+}
+
+// .container {
+//   // border: 1px solid red;
+// }
+
+// .row {
+//   // border: 1px solid whitesmoke;
+// }
+
+// .col {
+//   // border: 1px solid red;
+// }
+
+// ----- ACTUAL CLASSES ----- //
+
+// .navbar {
+
+// }
+
+.translate-screen {
+  .row {
+    // padding: 0.25rem;
+    // width: 100%;
+    // border: 1px solid red;
+  }
+
+  .col {
+    border-radius: 0.25rem;
+  }
+}
+
+.translate-bar {
+  @include layer-4();
+  height: 200px;
+}
+
+.App {
+  @include layer-4;
+  
+  display: flex;
+  flex-direction: column;
+  height: calc(100svh);
+
+  // border: 2px solid red;
+}
+
+.app-wrapper {
+  height: 100%;
+  // border: 2px solid blueviolet;
+}
+
+.settings-card {
+  @include layer-5;
+  @include box-shadow;
+
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  color: $dark-3;
+
+}
+
+.settings-nav {
+  border-radius: 0.5rem;
+  flex-grow: 3;
+}
+
+.st-input {
+  min-width: 60%;
+  border: 0;
+  border-radius: 0.25rem;
+  height: 2.5rem;
+  
+  &.-button, &.-b {
+    min-width: 60%;
+  }
+
+  &.-nbutton, &.-nb {
+    width: 100%;
+  }
+}
+
+
+
+.dangerous-button {
+  background-color: rgb(220, 100, 100);
+  // I need to add 'on hover' styles
+}
+
+.btn {
+  font-weight: 500;
+  color: white;
+
+  // :hover {
+  //   color: white;
+  // }
+}
+
+.st-modal {
+  // padding: 1rem;
+  .modal-content {
+    background-color: $light-2;
+    border-bottom-color: $dark-3;
+  }
+}
+
+.patreon-benefits {
+  margin: 0 auto;
+  display: inline-block;
+  padding-left: 0;
+  text-align: left;
+  // border: 1px solid blue;
+
+}
+
+
+.card {
+  @include layer-6();
+  @extend .box-shadow;
+  // background-color: $light-1;
+
+  padding: 1rem;
+  border: 0px;
+  color: $dark-3;
+  border-radius: 0.5rem;
+}
+
+.phe {
+  border: 2px dotted rgb(226, 91, 67);
+}
+
+.pa-button {
+  background-color: $patreon-orange;
+  border: 0;
+
+  &.-dark {
+    background-color: $patreon-blue;
+  }
+}
+
+.btn {
+  &.-warning {
+    &:active {
+      background-color: red;
+      color: white;
+    }
+  }
+}
+
+.screen-container {
+  margin-top: 1rem;
+}
+
+.email-element {
+  &.-open {
+    @extend .card;
+  }
+
+  &.-closed {
+  }
+}
+

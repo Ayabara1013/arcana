@@ -1,0 +1,29 @@
+@use './globals.scss' as g;
+@use './App.scss' as a;
+@use './colours.scss' as c;
+
+.navbar {
+  // height: 40px;
+  // background-color: c.$rtc-background;
+  @include a.layer-4;
+}
+
+.nav-item {
+  // @include a.box-shadow;
+  
+  padding: 0.25rem;
+  border: 0px;
+  border-radius: 0.5rem;
+  color: black;
+  text-decoration-line: none;
+
+  &:hover {
+    @include a.box-shadow;
+    @include a.layer-4;
+  }
+
+  &:active {
+    @include a.layer-1;
+    // background-color: c.$rtc-accent;
+  }
+}
