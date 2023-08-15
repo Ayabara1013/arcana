@@ -1,9 +1,11 @@
 @use './globals.scss' as g;
 @use './App.scss' as a;
-@use './colours.scss' as colours;
+@use './colours.scss' as c;
 
 .navbar {
   // height: 40px;
+  // background-color: c.$rtc-background;
+  @include a.layer-4;
 }
 
 .nav-item {
@@ -17,13 +19,11 @@
 
   &:hover {
     @include a.box-shadow;
-
-    // padding-left: 0.5rem;
-    // padding-right: 0.5rem;
-    background-color: colours.$light-2;
+    @include a.layer-4;
   }
 
   &:active {
-    @include a.layer-6;
+    @include a.layer-1;
+    // background-color: c.$rtc-accent;
   }
 }
