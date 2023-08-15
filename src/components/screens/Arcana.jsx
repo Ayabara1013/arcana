@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 
 import '../../styles/arcana.scss';
+// import '../../styles/arcana.scss';
 
 function Arcana(props) {
 
@@ -47,7 +48,9 @@ function TradingPost(props) {
     mage:         new ClassSet(false, false, 'Mage',          'December'),
     shaman:       new ClassSet(false, false, 'Shaman',        'December'),
   });
+
   const [tendies, setTendies] = useState(0);
+
   const [costs, setCosts] = useState({
     september: 0,
     october: 0,
@@ -56,6 +59,7 @@ function TradingPost(props) {
     armour: 0,
     weapons: 0,
   });
+
   const [btnState, setBtnState] = useState({
     paladin: new ClassBtn('Paladin', false, false),
     priest: new ClassBtn('Priest', false, false),
@@ -145,27 +149,6 @@ function TradingPost(props) {
       <>
         <div>your tendies: {tendies}</div>
         <div>(total) monthly tendies: {sdTotal}</div>
-
-        {/* <div className='border border-primary'>
-          <div>{aggEarnings.sep}</div>
-          <div>{aggEarnings.oct}</div>
-          <div>{aggEarnings.nov}</div>
-          <div>{aggEarnings.dec}</div>
-        </div>
-
-        <div className='border border-primary'>
-          <div>october cost: {costs.october}</div>
-        </div>
-        
-        <div className='border border-primary'>
-          <div>november cost: {costs.november}</div>
-        </div>
-
-        <div className='border border-primary'>
-          <div>december cost: {costs.december}</div>
-          <div>october = (october tendies + your tendies) - leftover tendies</div>
-        </div> */}
-
         <div>total cost: {total}</div>
         <div>{result}</div>
       </>
@@ -220,7 +203,6 @@ function TradingPost(props) {
     );
   }
     
-
   const colClass = 'flex-grow-0 p-0';
   const cstyle = 'cost-total-card flex-grow-1 flex-shrink-1 flex-basis-0 text-center';
 
@@ -240,6 +222,7 @@ function TradingPost(props) {
           </InputGroup>
 
           <h4 className='fw-bold'>you need:</h4>
+
           <div className="d-flex flex-wrap gap-2">
             <Card className={cstyle}>september: {costs.september}</Card>
             <Card className={cstyle}>october: {costs.october}</Card>
@@ -248,9 +231,10 @@ function TradingPost(props) {
             <Card className={cstyle}>armour: {costs.armour}</Card>
             <Card className={cstyle}>weapons: {costs.weapons}</Card>
           </div>
+
+          <CostsCardCompactGroup />
         </Col>
 
-        <CostsCardCompactGroup />
 
         <Col md='' className=''>
           <Row>
@@ -433,36 +417,6 @@ function CostsCardVerbose(props) {
   const tCost = costs[month.toLowerCase()];
   const tRemaining = tPotential(month) - tCost;
 
-  // const tCost = (month) => {
-  //   if (month === 'September') {
-  //     return costs.september;
-  //   }
-  //   else if (month === 'October') {
-  //     return costs.october;
-  //   }
-  //   else if (month === 'November') {
-  //     return costs.november;
-  //   }
-  //   else if (month === 'December') {
-  //     return costs[month.toLowerCase()];
-  //   }
-  // }
-
-  // const tRemaining = (month) => {
-  //   if (month === 'September') {
-  //     return tPotential(month) - tCost(month);
-  //   }
-  //   else if (month === 'October') {
-  //     return tPotential(month) - tCost(month);
-  //   }
-  //   else if (month === 'November') {
-  //     return tPotential(month) - tCost(month);
-
-  //   }
-  //   else if (month === 'December') {
-  //     return tPotential(month) - tCost(month);
-  //   }
-  // }
 
   const tResult = (month) => {
     if (tRemaining > 0) {
