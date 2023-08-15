@@ -1,17 +1,16 @@
-import { Button, Container, Form, Nav, NavLink, Navbar, NavbarBrand } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom"; // Import Link component
 
 import '../../styles/NavigationBar.scss';
 
+/**
+ * I know the nav isnt actually in the center but I will have to come back and fix that later!!!
+ */
+
 function NavigationBar(props) {
-
-	/**
-	 * I know the nav isnt actually in the center but I will have to come back and fix that later!!!
-	 */
-
 	return (
 		<>
-			<Navbar className='justify-content-between'>
+			<Navbar expand='md' className='justify-content-between'>
 				<Container>
 					<div className='nav-left'>
 						<Navbar.Brand>
@@ -19,36 +18,39 @@ function NavigationBar(props) {
 						</Navbar.Brand>
 					</div>
 
-					<div className="nav-middle">
-						<Nav className=''>
-							{/* Use Link component for navigation */}
-							<Link to="/" className='nav-item'>
-								Home
-							</Link>
-							
-							<Link to="/character" className='nav-item'>
-								Character
-							</Link>
-						
-							<Link to="/games" className='nav-item'>
-								Games
-							</Link>
+					<Navbar.Toggle aria-controls="navbar-nav" />
 
-							<Link to="/settings" className='nav-item'>
-								Settings
-							</Link>
-							
-							<Link to="/about" className='nav-item'>
-								About
-							</Link>
+					<Navbar.Collapse id='navbar-nav'>
+						<div className="nav-middle">
+							<Nav className=''>
+								{/* Use Link component for navigation */}
+								<Link to="/" className='nav-item'>
+									Home
+								</Link>
 						
-							<Link to="/contact" className='nav-item'>
-								Contact
-							</Link>
-						</Nav>
-					</div>
+								<Link to="/character" className='nav-item'>
+									Character
+								</Link>
+						
+								<Link to="/games" className='nav-item'>
+									Games
+								</Link>
+								<Link to="/settings" className='nav-item'>
+									Settings
+								</Link>
+						
+								<Link to="/about" className='nav-item'>
+									About
+								</Link>
+						
+								<Link to="/contact" className='nav-item'>
+									Contact
+								</Link>
+							</Nav>
+						</div>
+					</Navbar.Collapse>
 
-					<div className='nav-right'>
+					{/* <div className='nav-right'>
 						<Form className="d-flex">
 							<Form.Control
 								type="search"
@@ -58,7 +60,7 @@ function NavigationBar(props) {
 							/>
 							<Button variant="outline-success">Search</Button>
 						</Form>
-					</div>
+					</div> */}
 
 				</Container>
 			</Navbar>
@@ -69,4 +71,3 @@ function NavigationBar(props) {
 
 
 export default NavigationBar;
-

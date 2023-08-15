@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../App.scss';
+import '../../../styles/App.scss';
 
 // components
 import { Button, Col, Container, Row } from 'react-bootstrap';
@@ -11,6 +11,8 @@ import SecuritySettings from './SecuritySettings';
 import PatreonSettings from './PatreonSettings';
 import BillingSettings from './BillingSettings';
 
+const { Account, accountsDB } = require('../../../tools');
+
 
 
 function SettingsScreen(props) {
@@ -20,7 +22,7 @@ function SettingsScreen(props) {
     <Container className='mt-2'>
       <Row>
         <Col className='col-4'>
-          <div class="settings-nav box-shadow list-group list-group-flush" role="tablist">
+          <div className="settings-nav box-shadow list-group list-group-flush" role="tablist">
 
             <StNavListItem
               name='Account'

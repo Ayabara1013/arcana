@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import '../../../App.scss';
+import '../../../styles/App.scss';
 
 // components
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { SettingsCard, StCategoryContainer, StCategoryTitle, StInputSingle, StNavListItem } from './SettingsComponents';
-import { GoToPatreonButton } from '../../utils/MiscComponents';
+import { PatreonButton } from '../../utils/MiscComponents';
 
 
 
@@ -14,7 +14,7 @@ function BillingSettings(props) {
   return (
     <StCategoryContainer title='Billing'>
       <SettingsCard>
-        <GoToPatreonButton></GoToPatreonButton>
+        <PatreonButton></PatreonButton>
       </SettingsCard>
     </StCategoryContainer>
 

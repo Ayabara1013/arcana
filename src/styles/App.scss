@@ -1,5 +1,5 @@
-@use './styles/globals' as g;
-@import './styles/colours.scss';
+@use './globals' as g;
+@import './colours.scss';
 
 
 // --- mixins // --- layers
@@ -28,6 +28,9 @@
     0.5rem 1rem 1rem rgba($dark-3, 0.1),
     0.75rem 1.5rem 1.5rem rgba($dark-3, 0.025)
 }
+@mixin box-shadow-light {
+  box-shadow: 1px 2px 12px #0000002b;// , inset 0 0 4px #0000001c;
+}
 
 * {
   // @include layer-4;
@@ -41,7 +44,7 @@ body {
 }
 
 .box {
-  // margin: auto;
+  margin: auto;
   padding: 0.25rem;
   border-radius: 0.25rem;
   border: 1px solid whitesmoke;
@@ -78,24 +81,27 @@ body {
 .box-shadow {
   @include box-shadow();
 }
-
-.container {
-  // border: 1px solid red;
+.box-shadow-light {
+  @include box-shadow-light();
 }
 
-.row {
-  // border: 1px solid whitesmoke;
-}
+// .container {
+//   // border: 1px solid red;
+// }
 
-.col {
-  // border: 1px solid red;
-}
+// .row {
+//   // border: 1px solid whitesmoke;
+// }
+
+// .col {
+//   // border: 1px solid red;
+// }
 
 // ----- ACTUAL CLASSES ----- //
 
-.navbar {
+// .navbar {
 
-}
+// }
 
 .translate-screen {
   .row {
@@ -177,6 +183,7 @@ body {
 }
 
 .st-modal {
+  // padding: 1rem;
   .modal-content {
     background-color: $light-2;
     border-bottom-color: $dark-3;
@@ -195,13 +202,47 @@ body {
 
 .card {
   @include layer-6();
+  @extend .box-shadow;
   // background-color: $light-1;
 
   padding: 1rem;
   border: 0px;
   color: $dark-3;
+  border-radius: 0.5rem;
 }
 
 .phe {
   border: 2px dotted rgb(226, 91, 67);
 }
+
+.pa-button {
+  background-color: $patreon-orange;
+  border: 0;
+
+  &.-dark {
+    background-color: $patreon-blue;
+  }
+}
+
+.btn {
+  &.-warning {
+    &:active {
+      background-color: red;
+      color: white;
+    }
+  }
+}
+
+.screen-container {
+  margin-top: 1rem;
+}
+
+.email-element {
+  &.-open {
+    @extend .card;
+  }
+
+  &.-closed {
+  }
+}
+
