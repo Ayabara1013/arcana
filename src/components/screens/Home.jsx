@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Card, Col, Container, Image, Row } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 import '../../styles/Home.scss';
 
@@ -130,18 +131,21 @@ function Home(props) {
 
 
 function ToolCard(props) {
-	const { title, description } = props;
+	const { title, description, route } = props;
 
 	return (
 		<div className='tool-card text-center'>
-			<h3 className='-title'>{title}</h3>
-			<div className='-image-container'>
-        <Image className='-image' src={hordeTradingPost1 || 'https://via.placeholder.com/150'} />
-      </div>
-			<div className='-description'>{description}</div>
+			<Link to={route}>
+				<h3 className='-title'>{title}</h3>
+				<div className='-image-container'>
+								<Image className='-image' src={hordeTradingPost1 || 'https://via.placeholder.com/150'} />
+							</div>
+				<div className='-description'>{description}</div>
+			</Link>
 		</div>
 	);
 }
+
 
 
 

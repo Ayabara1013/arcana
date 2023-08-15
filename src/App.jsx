@@ -31,12 +31,8 @@ function App() {
         <div className='app-wrapper'>
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/character" element={<SettingsScreen />} />
-            <Route path="/games" element={<SettingsScreen />} />
-            <Route path="/settings" element={<SettingsScreen />} />
-            <Route path="/about" element={<SettingsScreen />} />
-            <Route path="/contact" element={<SettingsScreen />} />
-            <Route path="*" element={<SettingsScreen />} />
+            <Route path="/trading-post" element={<Arcana />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </div>
 

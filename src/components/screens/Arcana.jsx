@@ -145,27 +145,6 @@ function TradingPost(props) {
       <>
         <div>your tendies: {tendies}</div>
         <div>(total) monthly tendies: {sdTotal}</div>
-
-        {/* <div className='border border-primary'>
-          <div>{aggEarnings.sep}</div>
-          <div>{aggEarnings.oct}</div>
-          <div>{aggEarnings.nov}</div>
-          <div>{aggEarnings.dec}</div>
-        </div>
-
-        <div className='border border-primary'>
-          <div>october cost: {costs.october}</div>
-        </div>
-        
-        <div className='border border-primary'>
-          <div>november cost: {costs.november}</div>
-        </div>
-
-        <div className='border border-primary'>
-          <div>december cost: {costs.december}</div>
-          <div>october = (october tendies + your tendies) - leftover tendies</div>
-        </div> */}
-
         <div>total cost: {total}</div>
         <div>{result}</div>
       </>

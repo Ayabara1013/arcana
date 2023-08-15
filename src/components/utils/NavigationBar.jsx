@@ -27,20 +27,9 @@ function NavigationBar(props) {
 								<Link to="/" className='nav-item'>
 									Home
 								</Link>
-						
-								<Link to="/character" className='nav-item'>
-									Character
-								</Link>
-						
-								<Link to="/games" className='nav-item'>
-									Games
-								</Link>
-								<Link to="/settings" className='nav-item'>
-									Settings
-								</Link>
-						
-								<Link to="/about" className='nav-item'>
-									About
+
+								<Link to="/trading-post" className='nav-item'>
+									Trading Post
 								</Link>
 						
 								<Link to="/contact" className='nav-item'>
@@ -49,18 +38,6 @@ function NavigationBar(props) {
 							</Nav>
 						</div>
 					</Navbar.Collapse>
-
-					{/* <div className='nav-right'>
-						<Form className="d-flex">
-							<Form.Control
-								type="search"
-								placeholder="Search"
-								className="me-2"
-								aria-label="Search"
-							/>
-							<Button variant="outline-success">Search</Button>
-						</Form>
-					</div> */}
 
 				</Container>
 			</Navbar>

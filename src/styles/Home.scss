@@ -68,6 +68,10 @@
     word-wrap: break-word;
   }
 
+  ::hover {
+    background-color: c.$rtc-secondary;
+    color: c.$rtc-text;
+  }
 }
 
 .arcana-header {

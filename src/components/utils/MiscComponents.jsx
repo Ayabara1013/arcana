@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Container, Image } from 'react-bootstrap';
 import { faPatreon } from '@fortawesome/free-brands-svg-icons';
-// import { faB } from '@fortawesome/free-solid-svg-icons';
+import { faB } from '@fortawesome/free-solid-svg-icons';
 
 
 export function PatreonButton(props) {
