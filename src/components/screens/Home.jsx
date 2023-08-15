@@ -123,6 +123,7 @@ function Home(props) {
 			<Row>
 				<Col id='contact'>
 					<h2>contact us</h2>
+					<div className='fw-light text-muted'>I swear I will fill this in soon haha</div>
 				</Col>
 			</Row>
 		</Container>
