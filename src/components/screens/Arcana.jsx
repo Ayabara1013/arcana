@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 
 import '../../styles/arcana.scss';
-import { Input, color } from '@chakra-ui/react';
 
 function Arcana(props) {
 

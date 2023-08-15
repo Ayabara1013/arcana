@@ -1,26 +1,148 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { useState } from 'react';
+import { Card, Col, Container, Image, Row } from "react-bootstrap";
+
+import '../../styles/Home.scss';
+
+import hordeTradingPost1 from '../../images/horde-trading-post-1.png';
+
+const toolData = {
+	tendiesCalculator: {
+		title: 'Tendies Calculator',
+		description: 'Calculate the tendies you need to get all of the awesome class sets you want!',
+	},
+  diceRoller: {
+    title: 'Dice Roller',
+    description: 'A dice roller for tabletop gaming.',
+  },
+  characterSheet: {
+    title: 'Character Sheet',
+    description: 'A character sheet for tabletop gaming.',
+  },
+  initiativeTracker: {
+    title: 'Initiative Tracker',
+    description: 'An initiative tracker for tabletop gaming.',
+  },
+  lootGenerator: {
+    title: 'Loot Generator',
+    description: 'A loot generator for tabletop gaming.',
+  },
+  lootTracker: {
+    title: 'Loot Tracker',
+    description: 'A loot tracker for tabletop gaming.',
+  },
+  encounterGenerator: {
+    title: 'Encounter Generator',
+    description: 'An encounter generator for tabletop gaming.',
+  },
+  encounterTracker: {
+    title: 'Encounter Tracker',
+    description: 'An encounter tracker for tabletop gaming.',
+  },
+  campaignManager: {
+    title: 'Campaign Manager',
+    description: 'A campaign manager for tabletop gaming.',
+  },
+  campaignTracker: {
+    title: 'Campaign Tracker',
+    description: 'A campaign tracker for tabletop gaming.',
+  },
+  characterCreator: {
+    title: 'Character Creator',
+    description: 'A character creator for tabletop gaming.',
+  },
+};
+
+const toolList = () => {
+	const list = [];
+	for (const tool in toolData) {
+		list.push(
+			<ToolCard
+				title={toolData[tool].title}
+				description={toolData[tool].description}
+			/>
+		);
+	}
+	return list;
+}
 
 
 
 function Home(props) {
-    return (
-        <div className="home-screen h-100 border border-1 border-warning">
-            <h1>
-                welcome to lexicon!
-            </h1>
+	return (
+		<Container fluid className='home'>
+			<Row>
+				<Col>
+					<h1 className='text-center'>Welcome to Arcana!</h1>
+				</Col>
+			</Row>
+			<Row>
+				<Col id='about'>
+					{/* <div>Arcana is a personal project of mine where I keep a series of tools I have developed for tabletop gaming and video games!</div> */}
+					<div className='intro-blurb text-center'>
+						Welcome! I put all these tools together as personal projects, and I hope you can find them useful too!
+					</div>
+				</Col>
+			</Row>
 
-            <Container className="d-flex flex-column m-auto p-2 gap-2 w-100 h-100 bg-dark">
-                <Row className="m-auto p-2 h-25 bg-light">
-                    <Col className="m-auto p-2 bg-primary">bootstrap</Col>
-                </Row>
+			<Row className='my-2'>
+				<div id='tools' className='p-0'>
+					{/* <h2>the tools</h2> */}
 
-                <Row className="d-flex flex-row w-100 m-auto p-2 gap-2 h-75 bg-light">
-                    <Col className="col-1 m-auto p-2 bg-primary">bootstrap</Col>
-                    <Col className="col-1 m-auto p-2 bg-primary">bootstrap</Col>
-                </Row>
-            </Container>
-        </div>
-    )
+					<div className='tool-container m-auto gap-2'>
+						<ToolCard
+							title={toolData.tendiesCalculator.title}
+							description={toolData.tendiesCalculator.description}
+							route='/trading-post'
+						/>
+						<ToolCard
+							title={toolData.tendiesCalculator.title}
+							description={toolData.tendiesCalculator.description}
+							route='/trading-post'
+						/>
+						<ToolCard
+							title={toolData.tendiesCalculator.title}
+							description={toolData.tendiesCalculator.description}
+							route='/trading-post'
+						/>
+						<ToolCard
+							title={toolData.tendiesCalculator.title}
+							description={toolData.tendiesCalculator.description}
+							route='/trading-post'
+						/>
+						<ToolCard
+							title={toolData.tendiesCalculator.title}
+							description={toolData.tendiesCalculator.description}
+							route='/trading-post'
+						/>
+
+					</div>
+				</div>
+			</Row>
+
+			<Row>
+				<Col id='contact'>
+					<h2>contact us</h2>
+				</Col>
+			</Row>
+		</Container>
+	);
 }
+
+
+function ToolCard(props) {
+	const { title, description } = props;
+
+	return (
+		<div className='tool-card text-center'>
+			<h3 className='-title'>{title}</h3>
+			<div className='-image-container'>
+        <Image className='-image' src={hordeTradingPost1 || 'https://via.placeholder.com/150'} />
+      </div>
+			<div className='-description'>{description}</div>
+		</div>
+	);
+}
+
+
 
 export default Home;

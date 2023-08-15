@@ -14,11 +14,11 @@ import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
 import SettingsScreen from './components/screens/settings/SettingsScreen';
 import ContactScreen from './components/screens/ContactScreen';
 import Arcana from './components/screens/Arcana';
+import Home from './components/screens/Home';
 
 
 // Import the Account class and the accountsDB array
 const { Account, accountsDB } = require('./tools');
-
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
 
         <div className='app-wrapper'>
         <Routes>
-            <Route path="/" element={<Arcana />} />
+            <Route path="/" element={<Home />} />
             <Route path="/character" element={<SettingsScreen />} />
             <Route path="/games" element={<SettingsScreen />} />
             <Route path="/settings" element={<SettingsScreen />} />
