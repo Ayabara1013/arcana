@@ -218,7 +218,8 @@ function TradingPost(props) {
           <InputGroup className="mb-3">
             <InputGroup.Text id="basic-addon1">$</InputGroup.Text>
             <Form.Control placeholder="input tendies!" aria-label="tendies" aria-describedby="basic-addon1" onChange={(e) => updateTendies(e.target.value)} />
-            <Button variant="primary" id="button-addon2" onClick={() => console.log(tendies)}>confirm</Button>
+            {/* <Button variant="primary" id="button-addon2" onClick={() => console.log(tendies)}>confirm</Button> */}
+            <InputGroup.Text id="basic-addon0">enter tendies here!</InputGroup.Text>
           </InputGroup>
 
           <h4 className='fw-bold'>you need:</h4>
