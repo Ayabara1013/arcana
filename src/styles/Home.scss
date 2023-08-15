@@ -68,9 +68,11 @@
     word-wrap: break-word;
   }
 
-  ::hover {
-    background-color: c.$rtc-secondary;
+  &:hover {
+    // background-color: c.$rtc-secondary;
     color: c.$rtc-text;
+    transform: scale(1.02);
+    @include a.box-shadow-dark;
   }
 }
 
@@ -83,6 +85,13 @@
   margin: 1rem auto;
   width: 70%;
   font-size: 125%;
+}
+
+.normal-text {
+  color: inherit; /* Inherit the color from parent */
+  text-decoration: none; /* Remove underlines or other decorations */
+  font-weight: normal; /* Reset font weight to normal */
+  /* Add other styling properties as needed */
 }
 
 

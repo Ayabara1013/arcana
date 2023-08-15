@@ -135,11 +135,11 @@ function ToolCard(props) {
 
 	return (
 		<div className='tool-card text-center'>
-			<Link to={route}>
+			<Link to={route} className='normal-text'>
 				<h3 className='-title'>{title}</h3>
 				<div className='-image-container'>
-								<Image className='-image' src={hordeTradingPost1 || 'https://via.placeholder.com/150'} />
-							</div>
+					<Image className='-image' src={hordeTradingPost1 || 'https://via.placeholder.com/150'} />
+				</div>
 				<div className='-description'>{description}</div>
 			</Link>
 		</div>
