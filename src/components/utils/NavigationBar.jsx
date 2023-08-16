@@ -11,43 +11,26 @@ import arcanaIcon512 from '../../assets/images/android-chrome-512x512.png';
 function NavigationBar(props) {
 	return (
 		<>
-			<Navbar expand='md' className='justify-content-between'>
+			<Navbar expand='md' className='navigation-bar'>
 				<Container>
-					<div className='nav-left'>
-						{/* <Navbar.Brand>
-							Arcana
-						</Navbar.Brand> */}
-						<Navbar.Brand  as={Link} to="/">
-            <img
-              alt=""
-              src={arcanaIcon512}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-							/>{' '}
-							Arcana
-						</Navbar.Brand>
-					</div>
+
+					<Navbar.Brand as={Link} to="/" className='nav-brand gap-1'>
+						<img alt="" src={arcanaIcon512} width="30" height="30" className="d-inline-block align-top" />{' '}
+						<span className='nav-brand-text'>Arcana</span>
+					</Navbar.Brand>
+					{/* <div className='nav-left border'></div> */}
 
 					<Navbar.Toggle aria-controls="navbar-nav" />
 
-					<Navbar.Collapse id='navbar-nav'>
-						<div className="nav-middle">
-							<Nav className=''>
-								{/* Use Link component for navigation */}
-								<Link to="/" className='nav-item'>
-									Home
-								</Link>
+					<Navbar.Collapse id='navbar-nav' className='nav-middle' >
 
-								<Link to="/trading-post" className='nav-item'>
-									Trading Post
-								</Link>
-						
-								<Link to="/contact" className='nav-item'>
-									Contact
-								</Link>
-							</Nav>
-						</div>
+						<Nav className=''>
+							{/* <Link to="/" className='nav-item'>Home</Link> */}
+							<Link to="/trading-post" className='nav-item'>
+								Trading Post
+							</Link>
+							{/* <Link to="/contact" className='nav-item'>Contact</Link> */}
+						</Nav>
 					</Navbar.Collapse>
 
 				</Container>

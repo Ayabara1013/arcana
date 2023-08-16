@@ -1,15 +1,27 @@
 
+import { Col, Container, Row } from 'react-bootstrap';
 import '../styles/contact.scss';
 
 
 export default function Contact(props) {
   return (
-    <div className='contact'>
+    <Container fluid className='contact'>
       <h4 className='header'>Contact me</h4>
-      <div>I swear I will add everything in here soon haha</div>
-      <div className='d-flex'>
-        <p></p>
-      </div>
-    </div>
+      <p>I swear I will this in soon haha</p>
+      
+      <Row>
+        <Col>
+          <div className='d-flex'>
+            <p><span className='fw-medium'>email:</span> arcana.toolkit@gmail.com</p>
+          </div>
+        </Col>
+
+        <Col>
+          koffee
+          patreon
+          paypal
+        </Col>
+      </Row>
+    </Container>
   );
 }

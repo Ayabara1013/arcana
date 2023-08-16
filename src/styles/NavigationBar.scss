@@ -2,20 +2,48 @@
 @use './App.scss' as a;
 @use './colours.scss' as c;
 
-.navbar {
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+@mixin text-dark-3 {
+  color: c.$dark-3;
+}
+
+.navigation-bar {
   // height: 40px;
   // background-color: c.$rtc-background;
   @include a.layer-4;
+
+  display: flex;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.nav-brand-text {
+  @include text-dark-3;
+  
+  // font-family: 'Borel', cursive;
+  font-weight: 700; // bold
+  font-size: 130%;
+  // vertical-align: text-top;
+  // line-height: 0;
+  // height: 100%;
+  position: relative;
+  bottom: 0.025rem;
 }
 
 .nav-item {
-  // @include a.box-shadow;
+  @include text-dark-3;
   
   padding: 0.25rem;
   border: 0px;
   border-radius: 0.5rem;
-  color: black;
   text-decoration-line: none;
+  font-weight: 600; // semi-bold
 
   &:hover {
     @include a.box-shadow;
@@ -26,4 +54,9 @@
     @include a.layer-1;
     // background-color: c.$rtc-accent;
   }
+}
+
+.nav-middle {
+  display: flex;
+  // justify-content: center;
 }
