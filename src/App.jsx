@@ -59,6 +59,10 @@ function App() {
   );
 }
 
+
+
+export default App;
+
 // function DisplayAccount(props) {
 //   const data = accountsDB[0]; 
 //   let string = JSON.stringify(accountsDB[0], null, '  ');
@@ -128,5 +132,3 @@ function App() {
 // }
 
 
-
-export default App;

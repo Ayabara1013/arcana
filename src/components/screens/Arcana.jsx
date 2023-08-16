@@ -9,9 +9,7 @@ import Contact from '../Contact';
 function Arcana(props) {
 
   return (
-    <div className='p-0'>
       <TradingPost />
-    </div>
   );
 }
 
@@ -203,13 +201,16 @@ function TradingPost(props) {
   const cstyle = 'cost-total-card flex-grow-1 flex-shrink-1 flex-basis-0 text-center';
 
   return (
-    <Container className='m-auto max-w-100 p-0'>
+    <Container fluid className='trading-post max-w-100 h-100 p-0 justify-content-start'>
       <Card className='title-bar d-flex flex-row justify-content-between m-2 mb-4 box-shadow-light'>
         <h1>Trading Post Calculator</h1>
         <h1>{tendies} tendies!</h1>
       </Card>
 
-      <Row className='m-auto'>
+      {/* removed m-auto, can add back in later? 
+        also removed flex-grow-1, it was making the verbose group force itself to the bottom of the screen
+        */}
+      <Row className='p-2'> 
         <Col md='5' className=''>
           <InputGroup className="mb-3">
             <InputGroup.Text id="basic-addon1">$</InputGroup.Text>
@@ -231,7 +232,6 @@ function TradingPost(props) {
 
           <CostsCardCompactGroup />
         </Col>
-
 
         <Col md='' className=''>
           <Row>
@@ -265,11 +265,17 @@ function TradingPost(props) {
             </Col>
           </Row>
         </Col>
-
-        <CostCardVerboseGroup />
+      </Row>
+      
+      <Row className='p-2'>
+        <Col>
+          <CostCardVerboseGroup />
+        </Col>
       </Row>
 
-      <Contact />
+      <div className="mt-auto">
+        <Contact />
+      </div>
 
     </Container>
   );

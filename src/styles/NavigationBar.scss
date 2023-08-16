@@ -78,3 +78,9 @@
   margin: 0 auto;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+  .nav-middle {
+    justify-content: flex-start;
+  }
+}

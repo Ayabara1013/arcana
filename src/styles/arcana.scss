@@ -1,5 +1,5 @@
 @use '../styles/App.scss' as a;
-@import './colours.scss';
+@use './colours.scss' as c;
 
 
 $c-death-knight: #C41E3A;
@@ -32,6 +32,10 @@ Warlock	135	136	238	0.53	0.53	0.93	#8788EE	Purple
 Warrior	198	155	109	0.78	0.61	0.43	#C69B6D	Tan
 */
 
+body {
+  color: c.$dark-3;
+}
+
 $class-title-alpha: 0.5;
 $class-background-alpha: 0.5;
 $default-form-rounding: 0.375rem;
@@ -53,6 +57,24 @@ $default-form-rounding: 0.375rem;
 
 .border-box {
   box-sizing: border-box;
+}
+
+.trading-post {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title-bar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  flex: 0 1 auto;
+
+  h1 {
+    margin: 0;
+  }
 }
 
 .card-1 {
@@ -255,20 +277,17 @@ $default-form-rounding: 0.375rem;
   padding: 0.2em 0.4em;
 }
 
-.title-bar {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
 
-  h1 {
-    margin: 0;
-  }
-}
 
 
 .compact-monthly-costs {
   flex-basis: calc(50% - 1rem); /* Two items per row, minus the gap */
   padding: 0.25rem;
   min-width: fit-content;
+}
+
+
+.footer {
+  margin-top: auto;
+  justify-self: end;
 }

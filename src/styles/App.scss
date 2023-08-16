@@ -1,32 +1,32 @@
 @use './globals' as g;
-@import './colours.scss';
+@use './colours.scss' as c;
 
 
 // --- mixins // --- layers
 @mixin layer-1 {
-  background-color: $mid-3;
+  background-color: c.$mid-3;
 }
 @mixin layer-2 {
-  background-color: $mid-2;
+  background-color: c.$mid-2;
 }
 @mixin layer-3 {
-  background-color: $mid-1;
+  background-color: c.$mid-1;
 }
 @mixin layer-4 {
-  background-color: $light-3;
+  background-color: c.$light-3;
 }
 @mixin layer-5 {
-  background-color: $light-2;
+  background-color: c.$light-2;
 }
 @mixin layer-6 {
-  background-color: $light-1;
+  background-color: c.$light-1;
 }
 
 @mixin box-shadow {
   box-shadow:
-    0.25rem 0.5rem 0.5rem rgba($dark-3, 0.2),
-    0.5rem 1rem 1rem rgba($dark-3, 0.1),
-    0.75rem 1.5rem 1.5rem rgba($dark-3, 0.025)
+    0.25rem 0.5rem 0.5rem rgba(c.$dark-3, 0.2),
+    0.5rem 1rem 1rem rgba(c.$dark-3, 0.1),
+    0.75rem 1.5rem 1.5rem rgba(c.$dark-3, 0.025)
 }
 @mixin box-shadow-light {
   box-shadow: 1px 2px 12px #0000002b;// , inset 0 0 4px #0000001c;
@@ -40,11 +40,12 @@
   box-sizing: border-box;
   font-family: 'Cera Round Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 500;
-  color: $dark-3;
+  // color: $dark-3;
 }
 
 body {
   @include layer-4();
+  color: c.$dark-3;
 }
 
 .box {
@@ -146,7 +147,7 @@ body {
   border-radius: 0.5rem;
   margin-bottom: 2rem;
   padding: 1rem;
-  color: $dark-3;
+  color: c.$dark-3;
 
 }
 
@@ -189,8 +190,8 @@ body {
 .st-modal {
   // padding: 1rem;
   .modal-content {
-    background-color: $light-2;
-    border-bottom-color: $dark-3;
+    background-color: c.$light-2;
+    border-bottom-color: c.$dark-3;
   }
 }
 
@@ -207,24 +208,26 @@ body {
 .card {
   @include layer-6();
   @extend .box-shadow;
-  // background-color: $light-1;
+  // background-color: c.$light-1;
 
   padding: 1rem;
   border: 0px;
-  color: $dark-3;
+  color: c.$dark-3;
   border-radius: 0.5rem;
 }
 
 .phe {
+  background-clip: content-box;
   border: 2px dotted rgb(226, 91, 67);
+  background-color:  rgba(226, 91, 67, 25%);
 }
 
 .pa-button {
-  background-color: $patreon-orange;
+  background-color: c.$patreon-orange;
   border: 0;
 
   &.-dark {
-    background-color: $patreon-blue;
+    background-color: c.$patreon-blue;
   }
 }
 
@@ -250,3 +253,6 @@ body {
   }
 }
 
+.container-fluid {
+  overflow: auto;
+}

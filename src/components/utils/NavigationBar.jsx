@@ -18,24 +18,19 @@ function NavigationBar(props) {
 						<img alt="" src={arcanaIcon512} width="30" height="30" className="d-inline-block align-top" />{' '}
 						<span className='nav-brand-text'>Arcana</span>
 					</Navbar.Brand>
-					{/* <div className='nav-left border'></div> */}
 
 					<Navbar.Toggle aria-controls="navbar-nav" />
 
 					<Navbar.Collapse id='navbar-nav' className='nav-middle' >
 
 						<Nav className=''>
-							{/* <Link to="/" className='nav-item'>Home</Link> */}
-							<Link to="/trading-post" className='nav-item'>
-								Trading Post
-							</Link>
-							{/* <Link to="/contact" className='nav-item'>Contact</Link> */}
+							<Link to="/trading-post" className='nav-item'>Trading Post</Link>
+							<Link to="https://ko-fi.com/greenbottle" target="_blank" className='nav-item'>Support</Link>
 						</Nav>
 					</Navbar.Collapse>
 
 					<div>
 						<div className='creator-tag'><span className='-name'>Arcana</span> by Greenbottle</div>
-						{/* <KoFiWidget thin red /> */}
 					</div>
 
 				</Container>

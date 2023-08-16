@@ -86,46 +86,10 @@ function Home(props) {
 					img={hordeTradingPost1}
 					route='/trading-post'
 				/>
-				
-				<ToolCard title='character generator' description={toolData.tendiesCalculator.description} />
-				
-				{/* <ToolCard title='race generator' img={hordeTradingPost1}  />
-				<ToolCard /> */}
-				<div className='p-2 bg-danger'>boop</div>
+				<ToolCard title='character generator' />
+				<ToolCard title='scifi/fantasy race generator' />
+				<ToolCard title='spellcasting theme creator' />
 			</div>
-
-			{/* <Row className='my-2 flex-grow-1 border border-danger border-2 tool-row'>
-				<div id='tools' className='p-0'>
-					<div className='tool-container m-auto gap-2'>
-						<ToolCard
-							title={toolData.tendiesCalculator.title}
-							description={toolData.tendiesCalculator.description}
-							img={hordeTradingPost1}
-							route='/trading-post'
-						/>
-
-						<ToolCard title='character generator' />
-						<ToolCard title='race generator' />
-						<ToolCard />
-					</div>
-				</div>
-			</Row> */}
-
-			{/* <div class="box">
-				<div class="row header">
-					<p>header (sized to content)</p>
-				</div>
-				<div class="row content">
-					<p>content (fills remaining space)</p>
-				</div>
-				<div class="row footer">
-					<p>footer (fixed height)</p>
-				</div>
-			</div> */}
-
-			{/* <div className='border d-flex flex-grow-1'>
-
-			</div> */}
 
 			<Contact />
 		</Container>
@@ -143,17 +107,19 @@ function ToolCard(props) {
 		// </div>
 
 		<Link to={route || '/'} className='tool-card'>
-			<h3 className={`-title ${fontColour} phe`}>
+			<h3 className={`-title ${fontColour} px-2`}>
 				{title || 'coming soon...'}
 			</h3>
 
-			<div className='-image-container phe'>
+			<div className='-image-container'>
 				<Image className='-image' src={img || 'https://via.placeholder.com/150'} />
 			</div>
 
-			<div className='-description phe'>
+			<div className='pb-2'></div>
+			<div className='-description px-2'>
 				{description || 'coming soon...'}
 			</div>
+			<div className='pb-2'></div>
 		</Link>
 	);
 }

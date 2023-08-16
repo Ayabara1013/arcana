@@ -28,16 +28,18 @@
   // layout
   padding-bottom: 4rem;
   gap: 1rem;
+  margin: auto;
 }
 
 .tool-card {
   display: flex;
   flex-direction: column;
-  flex: 0 1 auto;
+  // flex: 0 1 auto;
   position: relative;
   width: 20%;
   max-width: 40%;
-  min-height: fit-content;
+  // height: fit-content;
+  max-height: 60%;
 
   border-radius: 1rem;
   overflow: hidden;
@@ -61,36 +63,34 @@
     font-weight: 800;
     z-index: 1;
     color: white;
+
   }
 
   .-image-container {
-    // flex: 1 1 auto;
-    // flex-grow: 1;
-    width: 100%;
-    padding-bottom: calc(100% * 2/3); /* Maintain a 3:2 aspect ratio (2/3 = 0.6667) */
-    position: relative;
+    // aspect-ratio: 3/2;
+    flex: 1 1 auto;
+    // width: 100%;
+    // padding-bottom: calc(100% * 2/3);
     background-color: aquamarine;
+    overflow: hidden; /* Hide overflow to prevent image covering other elements */
   }
 
   .-image {
-    position: absolute;
-    // transform: translateX(-50%); /* Adjust horizontally for centering */
-    // no idea why that ^ was necessary
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
   .-description {
-    // flex: 0 1 auto;
-    padding: 1rem;
-    word-wrap: break-word;
-
-    // // @include normal-text();
-    // color: inherit; /* Inherit the color from parent */
-    // text-decoration: none; /* Remove underlines or other decorations */
-    // font-weight: normal; /* Reset font weight to normal */
-    // /* Add other styling properties as needed */
+    flex: 0 1 auto;
+    // padding: 1rem;
+    max-height: 8rem;
+    // this is working so weirdly, I may just ask a dude to do it?
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    // overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &:hover {
@@ -99,6 +99,11 @@
     transform: scale(1.02);
     @include a.box-shadow-dark;
   }
+}
+
+.texter {
+  // max-width: fit-content;
+  margin: auto;
 }
 
 .arcana-header {
