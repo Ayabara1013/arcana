@@ -45,4 +45,4 @@ let accountsDB = [account1, account2];
 
 
 
-module.exports = { Account, accountsDB };
+export { Account, accountsDB };
