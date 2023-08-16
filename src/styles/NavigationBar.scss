@@ -3,9 +3,10 @@
 @use './colours.scss' as c;
 
 @import url('https://fonts.googleapis.com/css2?family=Borel&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+  // font-family: 'Borel', cursive;
 
 
-@mixin text-dark-3 {
+@mixin base-text-colour {
   color: c.$dark-3;
 }
 
@@ -15,6 +16,7 @@
   @include a.layer-4;
 
   display: flex;
+  // justify-content: space-between;
 }
 
 .nav-brand {
@@ -24,7 +26,7 @@
 }
 
 .nav-brand-text {
-  @include text-dark-3;
+  @include base-text-colour;
   
   // font-family: 'Borel', cursive;
   font-weight: 700; // bold
@@ -37,7 +39,7 @@
 }
 
 .nav-item {
-  @include text-dark-3;
+  @include base-text-colour;
   
   padding: 0.25rem;
   border: 0px;
@@ -58,5 +60,21 @@
 
 .nav-middle {
   display: flex;
-  // justify-content: center;
+  justify-content: center;
+}
+
+.creator-tag {
+  @include base-text-colour;
+  font-weight: 300;
+  opacity: 50%;
+
+  .-name {
+    font-weight: 500;
+  }
+}
+
+.nav-divider {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }

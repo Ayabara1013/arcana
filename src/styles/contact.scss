@@ -2,11 +2,29 @@
 
 .contact {
   padding: 1rem;
-
   background-color: #212b20;
-  color: white;
+
+  * {
+    color: white !important;
+  }
 }
 
 p {
   font-weight: 200;
+}
+
+.support {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    justify-content: center;
+  }
+
+  .support {
+    justify-content: center;
+  }
 }

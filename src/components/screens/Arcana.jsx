@@ -4,6 +4,7 @@ import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from
 // import '../../styles/arcana.scss';
 import '../../styles/arcana.scss';
 import Footer from '../Contact';
+import Contact from '../Contact';
 
 function Arcana(props) {
 
@@ -15,6 +16,7 @@ function Arcana(props) {
 }
 
 function TradingPost(props) {
+  //#region misc classes and states
   class ClassSet {
     constructor(armour, weapons, cName, month) {
       this.armour = armour;
@@ -171,7 +173,9 @@ function TradingPost(props) {
     november: sdEarnings[2],
     december: sdEarnings[3]
   });
+  //#endregion
 
+  //#region components
   const CostsCardCompactGroup = (props) => {
     return (
       <div className='d-flex flex-wrap py-2 gap-2'>
@@ -193,16 +197,7 @@ function TradingPost(props) {
       </div>
     )
   }
-
-  const NavigationBar = () => {
-    return (
-      <nav class="navbar navbar-expand-md sticky-top bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Sticky top</a>
-        </div>
-      </nav>
-    );
-  }
+  //#endregion
     
   const colClass = 'flex-grow-0 p-0';
   const cstyle = 'cost-total-card flex-grow-1 flex-shrink-1 flex-basis-0 text-center';
@@ -273,6 +268,8 @@ function TradingPost(props) {
 
         <CostCardVerboseGroup />
       </Row>
+
+      <Contact />
 
     </Container>
   );

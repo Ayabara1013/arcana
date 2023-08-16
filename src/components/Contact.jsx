@@ -1,6 +1,7 @@
 
 import { Col, Container, Row } from 'react-bootstrap';
 import '../styles/contact.scss';
+import KoFiWidget from './KofiWidget';
 
 
 export default function Contact(props) {
@@ -16,10 +17,14 @@ export default function Contact(props) {
           </div>
         </Col>
 
-        <Col>
-          koffee
-          patreon
-          paypal
+        {/* <Col>
+          kofi?
+          patreon?
+          paypal?
+        </Col> */}
+
+        <Col className='support'>
+          <KoFiWidget thin red />
         </Col>
       </Row>
     </Container>

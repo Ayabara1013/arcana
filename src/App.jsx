@@ -54,8 +54,6 @@ function App() {
           </Routes>
         </div>
 
-        <Contact />
-
       </Router>
     </div>
   );

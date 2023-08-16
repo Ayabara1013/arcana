@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import '../../styles/Home.scss';
 
 import hordeTradingPost1 from '../../assets/images/horde-trading-post-1.png';
+import Contact from '../Contact';
 
 const toolData = {
 	tendiesCalculator: {
@@ -70,83 +71,92 @@ const toolList = () => {
 
 function Home(props) {
 	return (
-		<Container fluid className='home'>
-			<Row>
-				<Col>
-					<h1 className='text-center'>Welcome to Arcana!</h1>
-				</Col>
-			</Row>
-			<Row>
-				<Col id='about'>
-					{/* <div>Arcana is a personal project of mine where I keep a series of tools I have developed for tabletop gaming and video games!</div> */}
-					<div className='intro-blurb text-center'>
-						Welcome! I put all these tools together as personal projects, and I hope you can find them useful too!
-					</div>
-				</Col>
-			</Row>
+		<Container fluid className='home d-flex flex-column px-0 h-100'>
 
-			<Row className='my-2'>
+			<h1 className='arcana-header text-center'>Welcome to Arcana!</h1>
+			
+			<div className='intro-blurb text-center'>
+				Welcome! I put all these tools together as personal projects, and I hope you can find them useful too!
+			</div>
+
+			<div className='tool-container'>
+				<ToolCard
+					title={toolData.tendiesCalculator.title}
+					description={toolData.tendiesCalculator.description}
+					img={hordeTradingPost1}
+					route='/trading-post'
+				/>
+				
+				<ToolCard title='character generator' description={toolData.tendiesCalculator.description} />
+				
+				{/* <ToolCard title='race generator' img={hordeTradingPost1}  />
+				<ToolCard /> */}
+				<div className='p-2 bg-danger'>boop</div>
+			</div>
+
+			{/* <Row className='my-2 flex-grow-1 border border-danger border-2 tool-row'>
 				<div id='tools' className='p-0'>
-					{/* <h2>the tools</h2> */}
-
 					<div className='tool-container m-auto gap-2'>
 						<ToolCard
 							title={toolData.tendiesCalculator.title}
 							description={toolData.tendiesCalculator.description}
-							route='/trading-post'
-						/>
-						<ToolCard
-							title={toolData.tendiesCalculator.title}
-							description={toolData.tendiesCalculator.description}
-							route='/trading-post'
-						/>
-						<ToolCard
-							title={toolData.tendiesCalculator.title}
-							description={toolData.tendiesCalculator.description}
-							route='/trading-post'
-						/>
-						<ToolCard
-							title={toolData.tendiesCalculator.title}
-							description={toolData.tendiesCalculator.description}
-							route='/trading-post'
-						/>
-						<ToolCard
-							title={toolData.tendiesCalculator.title}
-							description={toolData.tendiesCalculator.description}
+							img={hordeTradingPost1}
 							route='/trading-post'
 						/>
 
+						<ToolCard title='character generator' />
+						<ToolCard title='race generator' />
+						<ToolCard />
 					</div>
 				</div>
-			</Row>
-
-			{/* <Row>
-				<Col id='contact'>
-					<h2>contact us</h2>
-					<div className='fw-light text-muted'>I swear I will fill this in soon haha</div>
-				</Col>
 			</Row> */}
+
+			{/* <div class="box">
+				<div class="row header">
+					<p>header (sized to content)</p>
+				</div>
+				<div class="row content">
+					<p>content (fills remaining space)</p>
+				</div>
+				<div class="row footer">
+					<p>footer (fixed height)</p>
+				</div>
+			</div> */}
+
+			{/* <div className='border d-flex flex-grow-1'>
+
+			</div> */}
+
+			<Contact />
 		</Container>
 	);
 }
 
-
 function ToolCard(props) {
-	const { title, description, route } = props;
+	const { title, description, route, img } = props;
 
+	const fontColour = img ? '' : 'text-secondary';
+// className='normal-text'
 	return (
-		<div className='tool-card text-center'>
-			<Link to={route} className='normal-text'>
-				<h3 className='-title'>{title}</h3>
-				<div className='-image-container'>
-					<Image className='-image' src={hordeTradingPost1 || 'https://via.placeholder.com/150'} />
-				</div>
-				<div className='-description'>{description}</div>
-			</Link>
-		</div>
+		// <div className='tool-card'>
+			
+		// </div>
+
+		<Link to={route || '/'} className='tool-card'>
+			<h3 className={`-title ${fontColour} phe`}>
+				{title || 'coming soon...'}
+			</h3>
+
+			<div className='-image-container phe'>
+				<Image className='-image' src={img || 'https://via.placeholder.com/150'} />
+			</div>
+
+			<div className='-description phe'>
+				{description || 'coming soon...'}
+			</div>
+		</Link>
 	);
 }
-
 
 
 
