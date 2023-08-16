@@ -3,6 +3,7 @@ import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from
 
 // import '../../styles/arcana.scss';
 import '../../styles/arcana.scss';
+import Footer from '../Contact';
 
 function Arcana(props) {
 
@@ -272,6 +273,7 @@ function TradingPost(props) {
 
         <CostCardVerboseGroup />
       </Row>
+
     </Container>
   );
 }

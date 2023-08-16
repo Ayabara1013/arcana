@@ -2,6 +2,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom"; // Import Link component
 
 import '../../styles/NavigationBar.scss';
+import arcanaIcon512 from '../../assets/images/android-chrome-512x512.png';
 
 /**
  * I know the nav isnt actually in the center but I will have to come back and fix that later!!!
@@ -13,8 +14,18 @@ function NavigationBar(props) {
 			<Navbar expand='md' className='justify-content-between'>
 				<Container>
 					<div className='nav-left'>
-						<Navbar.Brand>
-							Logo
+						{/* <Navbar.Brand>
+							Arcana
+						</Navbar.Brand> */}
+						<Navbar.Brand  as={Link} to="/">
+            <img
+              alt=""
+              src={arcanaIcon512}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+							/>{' '}
+							Arcana
 						</Navbar.Brand>
 					</div>
 

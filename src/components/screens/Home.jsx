@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import '../../styles/Home.scss';
 
-import hordeTradingPost1 from '../../images/horde-trading-post-1.png';
+import hordeTradingPost1 from '../../assets/images/horde-trading-post-1.png';
 
 const toolData = {
 	tendiesCalculator: {

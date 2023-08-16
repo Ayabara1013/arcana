@@ -16,6 +16,8 @@ import Home from './components/screens/Home';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import Footer from './components/Contact';
+import Contact from './components/Contact';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -51,6 +53,8 @@ function App() {
             <Route path="*" element={<Home />} />
           </Routes>
         </div>
+
+        <Contact />
 
       </Router>
     </div>
