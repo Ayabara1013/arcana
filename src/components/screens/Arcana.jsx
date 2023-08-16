@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 
-import '../../styles/arcana.scss';
 // import '../../styles/arcana.scss';
+import '../../styles/arcana.scss';
 
 function Arcana(props) {
 
@@ -173,7 +173,7 @@ function TradingPost(props) {
 
   const CostsCardCompactGroup = (props) => {
     return (
-      <div className='d-flex flex-wrap px-2 py-2 gap-2'>
+      <div className='d-flex flex-wrap py-2 gap-2'>
         <CostsCardCompact costs={costs} tendies={tendies} month='September' earnings={sdEarnings} />
         <CostsCardCompact costs={costs} tendies={tendies} month='October' earnings={sdEarnings} />
         <CostsCardCompact costs={costs} tendies={tendies} month='November' earnings={sdEarnings} />
@@ -184,7 +184,7 @@ function TradingPost(props) {
 
   const CostCardVerboseGroup = (props) => {
     return (
-      <div className='d-flex flex-wrap p-2 gap-2'>
+      <div className='d-flex flex-wrap py-2 gap-2'>
         <CostsCardVerbose costs={costs} tendies={tendies} month='September' earnings={sdEarnings} />
         <CostsCardVerbose costs={costs} tendies={tendies} month='October' earnings={sdEarnings} />
         <CostsCardVerbose costs={costs} tendies={tendies} month='November' earnings={sdEarnings} />
@@ -346,7 +346,7 @@ function ClassCard(props) {
   let strName = cl.cName.toLowerCase().replace(' ', '-');
 
   return (
-    <Card className={` class-card box -${strName}`}>
+    <div className={`class-card -${strName}`}>
       <div className="d-flex -title">
         <h3 className={` text-center m-auto fw-bold class-title ${tc}`}>{cl.cName || `class`}</h3>
       </div>
@@ -378,7 +378,7 @@ function ClassCard(props) {
       </div>
 
       {/* <div className="-buttons border"></div> */}
-    </Card>
+    </div>
   )
 }
 
