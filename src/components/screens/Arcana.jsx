@@ -163,7 +163,7 @@ function TradingPost(props) {
     setCosts: setCosts
   }
 
-  const sdEarnings = [1400, 1400, 1400, 1400];
+  const sdEarnings = [1000, 1000, 1000, 1000];
 
   const [earnings, setEarnings] = useState({
     september: sdEarnings[0],
