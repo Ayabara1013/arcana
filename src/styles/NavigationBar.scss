@@ -11,12 +11,12 @@
 }
 
 .navigation-bar {
-  // height: 40px;
-  // background-color: c.$rtc-background;
-  @include a.layer-4;
+  // @include a.layer-4;
+  @include a.layer-5;
 
   display: flex;
-  // justify-content: space-between;
+  // position: sticky;
+  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow */
 }
 
 .nav-brand {
@@ -40,6 +40,7 @@
 
 .nav-item {
   @include base-text-colour;
+  @include a.shadow-transition;
   
   padding: 0.25rem;
   border: 0px;
@@ -48,8 +49,8 @@
   font-weight: 600; // semi-bold
 
   &:hover {
-    @include a.box-shadow;
-    @include a.layer-4;
+    @include a.box-shadow-light;
+    // @include a.layer-4;
   }
 
   &:active {
@@ -76,8 +77,11 @@
 .nav-divider {
   width: 60%;
   margin: 0 auto;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
 }
+
+
+
 
 @media (max-width: 768px) {
   .nav-middle {

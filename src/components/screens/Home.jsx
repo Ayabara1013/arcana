@@ -91,7 +91,7 @@ function Home(props) {
 				<ToolCard title='spellcasting theme creator' />
 			</div>
 
-			<Contact />
+			{/* <Contact /> */}
 		</Container>
 	);
 }

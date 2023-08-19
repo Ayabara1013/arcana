@@ -1,8 +1,10 @@
 
 
 .contact {
+  // margin-top: auto;
   padding: 1rem;
   background-color: #212b20;
+  justify-self: flex-end;
 
   * {
     color: white !important;
@@ -18,9 +20,17 @@ p {
 
 .support {
   display: flex;
-  justify-content: end;
-  align-items: end;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
+/**
+the compiler told me to use flex-end instead of end for some reason;
+
+Warning
+(19:3) autoprefixer: end value has mixed support, consider using flex-end instead
+*/
+
+
 
 @media (max-width: 768px) {
   .contact {
