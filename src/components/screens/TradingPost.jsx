@@ -227,12 +227,12 @@ function TradingPost(props) {
         - also removed flex-grow-1, it was making the verbose group force itself to the bottom of the screen
       */}
       <Row className='m-auto'> 
-        <Col md='5' className=''>
-          <InputGroup>
-            <InputGroup.Text>$</InputGroup.Text>
+        <Col md='5'>
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="basic-addon1">$</InputGroup.Text>
             <Form.Control placeholder="input tendies!" aria-label="tendies" aria-describedby="basic-addon1" onChange={(e) => updateTendies(e.target.value)} />
+            <InputGroup.Text id="basic-addon0">enter tendies here!</InputGroup.Text>
           </InputGroup>
-          {/* <InputGroup.Text className="mb-3">enter tendies here!</InputGroup.Text> */}
 
           <TotalsCard cstyle={cstyle} costs={costs} />
 
@@ -241,28 +241,28 @@ function TradingPost(props) {
 
         <Col className=''>
           <Row>
-            <Col>
+            <Col className='month-col-left'>
               <h4 className='text-center fw-bold'>September</h4>
               <ClassCard cl={cr.paladin} name='paladin' {...classCardProps} />
               <ClassCard cl={cr.priest} name='priest' {...classCardProps} />
               <ClassCard cl={cr.rogue} name='rogue' {...classCardProps} />
             </Col>
 
-            <Col>
+            <Col className='month-col-right'>
               <h4 className='text-center fw-bold'>October</h4>
               <ClassCard cl={cr.deathKnight} name='deathKnight' {...classCardProps} tc='-smaller-title' />
               <ClassCard cl={cr.demonHunter} name='demonHunter' {...classCardProps} tc='-smaller-title' />
               <ClassCard cl={cr.druid} name='druid' {...classCardProps} />
             </Col>
 
-            <Col>
+            <Col className='month-col-left'>
               <h4 className='text-center fw-bold'>November</h4>
               <ClassCard cl={cr.warlock} name='warlock' {...classCardProps} />
               <ClassCard cl={cr.monk} name='monk' {...classCardProps} />
               <ClassCard cl={cr.warrior} name='warrior' {...classCardProps} />
             </Col>
 
-            <Col>
+            <Col className='month-col-right'>
               <h4 className='text-center fw-bold'>December</h4>
               <ClassCard cl={cr.evoker} name='evoker' {...classCardProps} />
               <ClassCard cl={cr.hunter} name='hunter' {...classCardProps} />

@@ -358,3 +358,11 @@ $default-form-rounding: 0.375rem;
   border: 2px dotted rgb(218, 66, 20);
 }
 
+@media (max-width: 768px) {
+  .month-col-left {
+    padding-right: 0.25rem;
+  }
+  .month-col-right {
+    padding-left: 0.25rem;
+  }
+}
