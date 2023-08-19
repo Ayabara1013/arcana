@@ -120,6 +120,12 @@ body {
   // border: 2px solid blueviolet;
 }
 
+@media (max-width: 768px) {
+  .app-wrapper {
+    // padding: 1rem;
+  }
+}
+
 .settings-card {
   @include layer-5;
   @include box-shadow;

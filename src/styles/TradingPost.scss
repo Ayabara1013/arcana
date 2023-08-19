@@ -62,7 +62,8 @@ $default-form-rounding: 0.375rem;
 .trading-post {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  margin: 0 auto;
+  // width: 80%;
   // min-height: fit-content;
   // height: fit-content;
   box-sizing: border-box;
@@ -356,3 +357,4 @@ $default-form-rounding: 0.375rem;
 .b3 {
   border: 2px dotted rgb(218, 66, 20);
 }
+

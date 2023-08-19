@@ -15,11 +15,12 @@ import TradingPost from './components/screens/TradingPost';
 import Home from './components/screens/Home';
 import Footer from './components/Contact';
 import Contact from './components/Contact';
+import TestPage from './components/screens/TestPage';
 
-// ----------------- FIREBASE -------------------------------------------------------------------- //
+// ----------------- FIREBASE ----------------- //
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import TestPage from './components/screens/TestPage';
+import { getAnalytics, logEvent  } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -35,7 +36,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// ----------------- FIREBASE -------------------------------------------------------------------- //
+// Initialize Analytics and get a reference to the service
+const analytics = getAnalytics(app);
+
+// ----------------- FIREBASE ----------------- //
 
 
 
@@ -50,7 +54,7 @@ function App() {
         <div className="app-wrapper">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/trading-post" element={<TradingPost />} />
+            <Route path="/trading-post" element={<TradingPost app={app} analytics={analytics} logEvent={logEvent} />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </div>

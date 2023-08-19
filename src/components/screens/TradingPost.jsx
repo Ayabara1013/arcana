@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 
-// import '../../styles/arcana.scss';
+import { initializeApp } from "firebase/app";
+import { getAnalytics, logEvent  } from "firebase/analytics";
+
+// styles --------------------------------------------------
 import '../../styles/TradingPost.scss';
+
+// my things --------------------------------------------------
 import Footer from '../Contact';
 import Contact from '../Contact';
 import ClassSetItemImageViewer from './trading post/ClassSetItemImageViewer';
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDa07YaK378Y7UiIdlS9w-AZl18fiJ0FKQ",
+  authDomain: "arcana-app.firebaseapp.com",
+  projectId: "arcana-app",
+  storageBucket: "arcana-app.appspot.com",
+  messagingSenderId: "778639434190",
+  appId: "1:778639434190:web:f4522ee3b1410ed8b28b9f"
+};
 
-
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 function TradingPost(props) {
+  // const { app, analytics , logEvent } = props;
+
   //#region misc classes and states
   class ClassSet {
     constructor(armour, weapons, cName, month) {
@@ -157,7 +174,11 @@ function TradingPost(props) {
     setCr: setCr,
     btnState: btnState,
     setBtnState: setBtnState,
-    setCosts: setCosts
+    setCosts: setCosts,
+    app: app,
+    analytics: analytics,
+    logEvent: logEvent,
+
   }
 
   const sdEarnings = [1000, 1000, 1000, 1000];
@@ -199,7 +220,7 @@ function TradingPost(props) {
 
   return (
     <Container fluid className='trading-post p-0 justify-content-start'>
-      <TitleCard tendies={tendies}/>
+      <TitleCard tendies={tendies} />
 
       {/* main tool row 
         - removed m-auto, can add back in later? 
@@ -207,11 +228,11 @@ function TradingPost(props) {
       */}
       <Row className='m-auto'> 
         <Col md='5' className=''>
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="basic-addon1">$</InputGroup.Text>
+          <InputGroup>
+            <InputGroup.Text>$</InputGroup.Text>
             <Form.Control placeholder="input tendies!" aria-label="tendies" aria-describedby="basic-addon1" onChange={(e) => updateTendies(e.target.value)} />
-            <InputGroup.Text id="basic-addon0">enter tendies here!</InputGroup.Text>
           </InputGroup>
+          {/* <InputGroup.Text className="mb-3">enter tendies here!</InputGroup.Text> */}
 
           <TotalsCard cstyle={cstyle} costs={costs} />
 
@@ -317,7 +338,7 @@ function updateCosts(cl, type, setCosts) {
  * @returns ClassCard component
  */
 function ClassCard(props) {
-  const { cl, name, btnState, setCr, setBtnState, setCosts, tc } = props;
+  const { cl, name, btnState, setCr, setBtnState, setCosts, tc, analytics, logEvent } = props;
   
   // button variants ( for future-proofing and to remove hard-coded strings )
   const activeVariant = 'info';
@@ -340,19 +361,31 @@ function ClassCard(props) {
         <ButtonGroup className='item-btn-group d-flex flex-grow-1 rounded-0'>
             <Button
               className={`item-btn -armour ${btnState[pClass].armour ? '-on' : '-off'} `}
-              // variant={btnState[pClass].armour ? activeVariant : inactiveVariant}
-              onClick={() => {
-                updateStates(setCr, setBtnState, pClass, armour);
-                //--------------------------------
-                updateCosts(cl, armour, setCosts);
+            onClick={() => {
+              if (btnState[pClass].armour === false) {
+                logEvent(analytics, `${pClass}_armour_clicked`);
+                // logEvent(analytics, 'goal_completion', { name: 'clicked_armour_button'});
+              }
+
+              //--------------------------------
+              updateStates(setCr, setBtnState, pClass, armour);
+              //--------------------------------
+              updateCosts(cl, armour, setCosts);
             }}>
-              <span className="">armour</span>
+              armour
             </Button>
         
             <Button
               className={`item-btn -weapons ${btnState[pClass].weapons ? '-on' : '-off'} `}
               // variant={btnState[pClass].weapons ? activeVariant : inactiveVariant}
               onClick={() => {
+
+                if (btnState[pClass].weapons === false) {
+                  logEvent(analytics, `${pClass}_weapon_clicked`);
+                  // logEvent(analytics, 'goal_completion', { name: 'clicked_weapons_button'});
+                }
+
+                //--------------------------------
                 updateStates(setCr, setBtnState, pClass, weapons);
                 //--------------------------------
                 updateCosts(cl, weapons, setCosts);
@@ -504,7 +537,20 @@ function CostsCardCompact(props) {
   );
 }
 
-function TitleCard({ tendies }) {
+function TitleCard({ tendies, updateTendies }) {
+  const EnterTendies = (props) => {
+    const { updateTendies, tendies } = props;
+    return (
+      <InputGroup className="mb-3">
+        {/* <InputGroup.Text id="basic-addon1">$</InputGroup.Text> */}
+        <Form.Control placeholder={tendies} aria-label="tendies" aria-describedby="basic-addon1" onChange={(e) => updateTendies(e.target.value)} />
+        {/* <InputGroup.Text id="basic-addon0">enter tendies here!</InputGroup.Text> */}
+      </InputGroup>
+    )
+  }
+
+  // I will hold off on finishing this till tomorrow, or till when I have any clue how to do it lol
+
   return (
     <Card className='title-bar d-flex flex-row justify-content-between m-2 mb-4 box-shadow-light'>
       <h1>Trading Post Calculator</h1>
