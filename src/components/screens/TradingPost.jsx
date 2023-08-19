@@ -184,7 +184,7 @@ function TradingPost(props) {
 
   const CostCardVerboseGroup = (props) => {
     return (
-      <div className='d-flex flex-wrap py-2 gap-2'>
+      <div className='verbose-group d-flex flex-wrap py-2 gap-2'>
         <CostsCardVerbose costs={costs} tendies={tendies} month='September' earnings={sdEarnings} />
         <CostsCardVerbose costs={costs} tendies={tendies} month='October' earnings={sdEarnings} />
         <CostsCardVerbose costs={costs} tendies={tendies} month='November' earnings={sdEarnings} />
@@ -198,7 +198,7 @@ function TradingPost(props) {
   const cstyle = 'cost-total-card flex-grow-1 flex-shrink-1 flex-basis-0 text-center';
 
   return (
-    <Container className='trading-post w-100 p-0 justify-content-start b1'>
+    <Container fluid className='trading-post p-0 justify-content-start'>
       <TitleCard tendies={tendies}/>
 
       {/* main tool row 
@@ -206,7 +206,7 @@ function TradingPost(props) {
         - also removed flex-grow-1, it was making the verbose group force itself to the bottom of the screen
       */}
       <Row className='m-auto'> 
-        <Col md='5' className='b2'>
+        <Col md='5' className=''>
           <InputGroup className="mb-3">
             <InputGroup.Text id="basic-addon1">$</InputGroup.Text>
             <Form.Control placeholder="input tendies!" aria-label="tendies" aria-describedby="basic-addon1" onChange={(e) => updateTendies(e.target.value)} />
@@ -218,7 +218,7 @@ function TradingPost(props) {
           <CostsCardCompactGroup />
         </Col>
 
-        <Col className='b2'>
+        <Col className=''>
           <Row>
             <Col>
               <h4 className='text-center fw-bold'>September</h4>
@@ -252,7 +252,7 @@ function TradingPost(props) {
         </Col>
       </Row>
 
-      <Row className='b2 m-auto'>
+      <Row className='m-auto'>
         <Col>
           <CostCardVerboseGroup />
         </Col>
@@ -414,7 +414,7 @@ function CostsCardVerbose(props) {
   }
 
   return (
-    <Card className='costs-card -verbose d-flex flex-item'>
+    <Card className='costs-card -verbose d-flex flex-item-wide'>
       <h3 className='fw-bold'>{month}</h3>
 
       <div className='math-block d-flex justify-content-center flex-wrap gap-1 rounded text-center'>

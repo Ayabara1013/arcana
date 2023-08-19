@@ -11,8 +11,8 @@
 }
 
 .navigation-bar {
-  // @include a.layer-4;
-  @include a.layer-5;
+  @include a.layer-4;
+  @include a.box-shadow-light;
 
   display: flex;
   // position: sticky;
@@ -86,5 +86,11 @@
 @media (max-width: 768px) {
   .nav-middle {
     justify-content: flex-start;
+  }
+}
+
+@media (min-width: 800px) {
+  .nav-middle-nav {
+    gap: 0.5rem;
   }
 }

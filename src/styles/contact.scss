@@ -4,18 +4,19 @@
   // margin-top: auto;
   padding: 1rem;
   background-color: #212b20;
-  justify-self: flex-end;
+  // justify-self: flex-end;
 
   * {
     color: white !important;
   }
-
-  // margin-top: auto;
-  justify-self: flex-end;
 }
 
 p {
   font-weight: 200;
+}
+
+.contact-content {
+  justify-content: space-between;
 }
 
 .support {
@@ -34,6 +35,12 @@ Warning
 
 @media (max-width: 768px) {
   .contact {
+    justify-content: center;
+  }
+
+  .contact-content {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 

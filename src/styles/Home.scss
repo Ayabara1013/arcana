@@ -98,6 +98,7 @@
     color: c.$rtc-text;
     transform: scale(1.02);
     @include a.box-shadow-dark;
+    @include a.shadow-transition;
   }
 }
 

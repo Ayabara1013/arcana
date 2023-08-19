@@ -53,7 +53,7 @@ body {
 
   margin: 0;
   padding: 0;
-  width: 100vh !important;
+  // width: 100vh !important;
   // overflow-x: hidden;
 }
 
@@ -116,6 +116,7 @@ body {
 
 .app-wrapper {
   // height: 100%;
+  flex: 1;
   // border: 2px solid blueviolet;
 }
 
@@ -234,4 +235,18 @@ body {
 
 .container-fluid {
   overflow: auto;
+}
+
+
+// --- scroll bar
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+::-webkit-scrollbar-track {
+  @include layer-5();
+}
+::-webkit-scrollbar-thumb {
+  @include layer-3();
+  border-radius: 1rem;
+  background-clip: padding-box;
 }

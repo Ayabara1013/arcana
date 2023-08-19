@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Carousel, Col, Container, Form, Image, Row } from 'react-bootstrap';
-import '../../../styles/toggles.scss';
+// import '../../../styles/toggles.scss';
 
 import classSetsSeptember from '../../../assets/images/trading post/class sets/armour/class-sets-armour-september.png';
 import classSetsOctober from '../../../assets/images/trading post/class sets/armour/class-sets-armour-october.png';

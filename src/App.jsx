@@ -43,21 +43,22 @@ const app = initializeApp(firebaseConfig);
 function App() {
 
   return (
-    <BrowserRouter>
-      <div className='App'>
+    <div className='App'>
+      <BrowserRouter>
         <NavigationBar />
         
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/trading-post" element={<TradingPost />} />
-          <Route path="/test-page" element={<TestPage />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
+        <div className="app-wrapper">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/trading-post" element={<TradingPost />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </div>
         
         <Contact />
 
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 

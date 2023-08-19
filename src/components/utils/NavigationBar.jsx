@@ -17,7 +17,7 @@ function NavigationBar(props) {
 		// 	<hr className='nav-divider'/>
 		// </div>
 
-		<Navbar expand='md' className='navigation-bar w-100 border border-2 border-danger'>
+		<Navbar expand='md' className='navigation-bar w-100 sticky-top'>
 			<Container>
 				<Navbar.Brand as={Link} to="/" className='nav-brand gap-1'>
 					<img alt="" src={arcanaIcon512} width="30" height="30" className="d-inline-block align-top" />{' '}
@@ -27,10 +27,9 @@ function NavigationBar(props) {
 				<Navbar.Toggle aria-controls="navbar-nav" />
 
 				<Navbar.Collapse id='navbar-nav' className='nav-middle' >
-
-					<Nav className=''>
+					<Nav className='nav-middle-nav'>
 						<Link to="/trading-post" className='nav-item'>Trading Post</Link>
-						<Link to="/test-page" className='nav-item'>test page</Link>
+						{/* <Link to="/test-page" className='nav-item'>test page</Link> */}
 						<Link to="https://ko-fi.com/greenbottle" target="_blank" className='nav-item'>Support</Link>
 					</Nav>
 				</Navbar.Collapse>
