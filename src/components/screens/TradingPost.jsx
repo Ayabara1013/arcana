@@ -10,7 +10,7 @@ import '../../styles/TradingPost.scss';
 // my things --------------------------------------------------
 import Footer from '../Contact';
 import Contact from '../Contact';
-import ClassSetItemImageViewer from './trading post/ClassSetItemImageViewer';
+import ClassSetViewerTradingPost from './trading post/ClassSetViewerTradingPost';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -205,7 +205,7 @@ function TradingPost(props) {
 
   const CostCardVerboseGroup = (props) => {
     return (
-      <div className='verbose-group d-flex flex-wrap py-2 gap-2'>
+      <div className='verbose-group d-flex flex-wrap mb-4 gap-2'>
         <CostsCardVerbose costs={costs} tendies={tendies} month='September' earnings={sdEarnings} />
         <CostsCardVerbose costs={costs} tendies={tendies} month='October' earnings={sdEarnings} />
         <CostsCardVerbose costs={costs} tendies={tendies} month='November' earnings={sdEarnings} />
@@ -226,7 +226,7 @@ function TradingPost(props) {
         - removed m-auto, can add back in later? 
         - also removed flex-grow-1, it was making the verbose group force itself to the bottom of the screen
       */}
-      <Row className='m-auto'> 
+      <Row className='m-auto mb-4'> 
         <Col md='5'>
           <InputGroup className="mb-3">
             <InputGroup.Text id="basic-addon1">$</InputGroup.Text>
@@ -240,7 +240,7 @@ function TradingPost(props) {
         </Col>
 
         <Col className=''>
-          <Row>
+          <Row className=''>
             <Col className='month-col-left'>
               <h4 className='text-center fw-bold'>September</h4>
               <ClassCard cl={cr.paladin} name='paladin' {...classCardProps} />
@@ -270,6 +270,12 @@ function TradingPost(props) {
               <ClassCard cl={cr.shaman} name='shaman' {...classCardProps} />
             </Col>
           </Row>
+        </Col>
+      </Row>
+
+      <Row className='m-auto mb-4 w-100 '>
+        <Col>
+          <ClassSetViewerTradingPost />
         </Col>
       </Row>
 

@@ -1,0 +1,75 @@
+@use './App.scss' as a;
+@use './colours.scss' as c;
+
+
+.class-set-viewer {
+  @include a.layer-6;
+  @include a.box-shadow;
+
+  border-radius: 1rem;
+  overflow: hidden;
+
+  .header-row {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .set-image {
+    width: auto;
+    max-height: 500px;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+}
+
+.small {
+  height: fit-content;
+  max-height: 60.5781px;
+  overflow: hidden;
+}
+
+.expanded {
+  height: 200px;
+  max-height: 1000px; /* Set a reasonable max height */
+}
+
+
+.viewer-switch {
+  padding: 0;
+  scale: 200%;
+}
+.viewer-toggle-button {
+  // width: auto;
+  // height: 100%;
+  // align-self: center;
+  border-radius: 0.6rem;
+}
+
+.view-button-row {
+  .col {
+    padding: 0;
+    border: 2px dotted blue;
+    box-sizing: content-box;
+  }
+}
+
+/* Example CSS to adjust carousel size */
+.item-carousel {
+  max-width: 100%; /* Set your desired maximum width */
+  margin: 0 auto;
+
+  // transition: max-height 0.5s ease-in-out;
+
+  /* Example CSS to adjust image size within carousel */
+  .carousel-item {
+    border-radius: 0.6rem;
+    overflow: hidden; /* Hide overflow to prevent image covering other elements */
+    
+    img {
+      // border-radius: 0.6rem;
+      max-width: 100%; /* Images won't exceed the width of the carousel */
+      height: auto; /* Allow images to maintain aspect ratio */
+    }
+  }
+}
+
