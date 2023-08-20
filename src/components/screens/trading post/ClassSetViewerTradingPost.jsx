@@ -24,21 +24,79 @@ import shamanWeapons from '../../../assets/images/trading post/class sets/weapon
 
 // used this to convert the avif images to png - https://pixelied.com/convert/avif-converter/avif-to-png/
 
-
+// const classRewards = {
+//   Septemeber: classSetsSeptember,
+//   October: classSetsOctober,
+//   November: classSetsNovember,
+//   December: classSetsDecember,
+//   Paladin: paladinWeapons,
+//   Priest: priestWeapons,
+//   Rogue: rogueWeapons,
+//   'Death Knight': deathKnightWeapons,
+//   'Demon Hunter': demonHunterWeapons,
+//   Druid: druidWeapons,
+//   Monk: monkWeapons,
+//   Warlock: warlockWeapons,
+//   Warrior: warriorWeapons,
+//   Evoker: evokerWeapons,
+//   Hunter: hunterWeapons,
+//   Mage: mageWeapons,
+//   Shaman: shamanWeapons
+// }
 
 function ClassSetViewerTradingPost(props) {
   const [showContent, setShowContent] = useState(false);
-  const [contentShown, setContentShown] = useState('false');
+  const [contentShown, setContentShown] = useState('armour');
   const [index, setIndex] = useState(0);
   let screenSize = window.innerWidth;
 
   const contentGroups = {
-    armour: { classSetsSeptember, classSetsOctober, classSetsNovember, classSetsDecember },
-    weapons: { paladinWeapons, priestWeapons, rogueWeapons, deathKnightWeapons, demonHunterWeapons, druidWeapons, monkWeapons, warlockWeapons, warriorWeapons, evokerWeapons, hunterWeapons, mageWeapons, shamanWeapons },
-    september: { classSetsSeptember, paladinWeapons, priestWeapons, rogueWeapons },
-    october: { classSetsOctober, deathKnightWeapons, demonHunterWeapons, druidWeapons },
-    november: { classSetsNovember, monkWeapons, warlockWeapons, warriorWeapons },
-    december: { classSetsDecember, evokerWeapons, hunterWeapons, mageWeapons, shamanWeapons },
+    armour: {
+      September: classSetsSeptember,
+      October: classSetsOctober,
+      November: classSetsNovember,
+      December: classSetsDecember,
+    },
+    weapons: { 
+      Paladin: paladinWeapons,
+      Priest: priestWeapons,
+      Rogue: rogueWeapons,
+      'Death Knight': deathKnightWeapons,
+      'Demon Hunter': demonHunterWeapons,
+      Druid: druidWeapons,
+      Monk: monkWeapons,
+      Warlock: warlockWeapons,
+      Warrior: warriorWeapons,
+      Evoker: evokerWeapons,
+      Hunter: hunterWeapons,
+      Mage: mageWeapons,
+      Shaman: shamanWeapons
+    },
+    september: {
+      Septemeber: classSetsSeptember,
+      Paladin: paladinWeapons,
+      Priest: priestWeapons,
+      Rogue: rogueWeapons,
+    },
+    october: {
+      October: classSetsOctober,
+      'Death Knight': deathKnightWeapons,
+      'Demon Hunter': demonHunterWeapons,
+      Druid: druidWeapons,
+    },
+    november: {
+      November: classSetsNovember,
+      Monk: monkWeapons,
+      Warlock: warlockWeapons,
+      Warrior: warriorWeapons,
+    },
+    december: {
+      December: classSetsDecember,
+      Evoker: evokerWeapons,
+      Hunter: hunterWeapons,
+      Mage: mageWeapons,
+      Shaman: shamanWeapons
+    }
   }
 
   const headerRowProps = {
@@ -72,7 +130,7 @@ function ClassSetViewerTradingPost(props) {
   // )
 
   return (
-    <div className={`class-set-viewer -large-screen ${showContent ? 'p-2 pt-1' : 'px-2 py-1'}`}>
+    <div className={`class-set-viewer row m-auto ${showContent ? 'p-2 pt-1' : 'px-2 py-1'}`}>
       <HeaderRow {...headerRowProps} />
       <ImageViewer {...viewerProps} />
     </div>
@@ -109,7 +167,7 @@ const HeaderRow = (props) => {
 
   function generateButtons(contentGroups, contentShown, setContentShown) {
     return Object.keys(contentGroups).map((key, index) => (
-      <Col>
+      <>
         <Button
           key={index}
           variant={contentShown === key ? 'primary' : 'secondary'}
@@ -117,44 +175,35 @@ const HeaderRow = (props) => {
           onClick={() => {
             if (!showContent) {
               setShowContent(true)
-              // setContentShown(key)
-            }
-            else if (showContent) {
-              // setContentShown(key)
-              // setShowContent(false);
             }
             setContentShown(key)
           }}>
           {key}
         </Button>
-      </Col>
+      </>
     ));
   }
 
   return (
     <div className={`header-row d-flex flex-row p-0 gap-2`}>
-      <h1>view sets</h1>
+      <h1 className='flex-grow-1'>view sets</h1>
 
-      <div>
-        <Row className='view-button-row m-auto d-flex gap-2'>
-          {generateButtons(contentGroups, contentShown, setContentShown)}
-
-          <Col className=''>
-            <Button
-              variant={showContent ? 'danger' : 'secondary'}
-              className={`viewer-toggle-button align-self-stretch my-1`}
-              onClick={() => {
-                setShowContent(!showContent)
-                // setContentShown(false);
-                if (!showContent) {
-                  setContentShown(contentShown);
-                }
-              }}>
-              {showContent ? 'close' : 'open'}
-            </Button>
-          </Col>
-        </Row>
-      </div>
+      {/* category buttons */}
+      {generateButtons(contentGroups, contentShown, setContentShown)}
+      
+      {/* open/close button */}
+      <Button
+        key={'open-close'}
+        variant={showContent ? 'danger' : 'primary'}
+        className={`viewer-toggle-button -open-close align-self-stretch my-1`}
+        onClick={() => {
+          setShowContent(!showContent)
+          if (!showContent) {
+            setContentShown(contentShown);
+          }
+        }}>
+        {showContent ? 'close' : 'open'}
+      </Button>
     </div>
   )
 }
@@ -164,22 +213,26 @@ function ImageViewer(props) {
   let openClose = showContent ? 'mt-1' : 'd-none';
 
   function generateCarouselItems(contentGroups) {
-    console.log("Selected content group:", contentGroups);
+    
+    // console.log("Selected content group:", contentGroups);
     return Object.keys(contentGroups).map((key, index) => (
       <Carousel.Item key={index}>
         <img className="d-block" src={contentGroups[key]} alt="..." />
+        <Carousel.Caption>
+          <h3>{key}</h3>
+        </Carousel.Caption>
       </Carousel.Item>
     ));
   }
 
-  console.log("Content shown:", contentShown);
+  // console.log("Content shown:", contentShown);
   const selectedContentGroup = contentGroups[contentShown];
-  console.log("Selected content:", selectedContentGroup);
+  // console.log("Selected content:", selectedContentGroup);
 
   if (!selectedContentGroup) return null;
 
   return (
-    <Carousel className={`item-carousel ${openClose}`} interval={null}>
+    <Carousel className={`item-carousel p-0 ${openClose}`} interval={null}>
       {generateCarouselItems(selectedContentGroup)}
     </Carousel>
   );

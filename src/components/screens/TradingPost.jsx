@@ -270,11 +270,17 @@ function TradingPost(props) {
               <ClassCard cl={cr.shaman} name='shaman' {...classCardProps} />
             </Col>
           </Row>
+
+          {/* <Row className='m-auto mb-4 w-100 b1'>
+            <Col className='b2'>
+              <ClassSetViewerTradingPost />
+            </Col>
+          </Row> */}
         </Col>
       </Row>
 
-      <Row className='m-auto mb-4 w-100 '>
-        <Col>
+      <Row className='m-auto mb-4 w-100'>
+        <Col className=''>
           <ClassSetViewerTradingPost />
         </Col>
       </Row>

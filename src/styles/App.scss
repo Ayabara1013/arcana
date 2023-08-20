@@ -108,22 +108,16 @@ body {
   flex-direction: column;
   width: 100% !important;
   height: calc(100svh);
-
-  // padding: 0;
-
-  // border: 2px solid red;
 }
 
 .app-wrapper {
-  // height: 100%;
   flex: 1;
-  // border: 2px solid blueviolet;
 }
 
 @media (max-width: 768px) {
-  .app-wrapper {
-    // padding: 1rem;
-  }
+  // .app-wrapper {
+  //   // padding: 1rem;
+  // }
 }
 
 .settings-card {

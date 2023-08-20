@@ -1,11 +1,21 @@
 @use './App.scss' as a;
 @use './colours.scss' as c;
 
+// // Override Bootstrap's default color variables
+// $theme-colors: (
+//   "primary": c.$primary,
+//   "secondary": c.$secondary,
+// );
+
+
 
 .class-set-viewer {
   @include a.layer-6;
   @include a.box-shadow;
-
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
   border-radius: 1rem;
   overflow: hidden;
 
@@ -16,9 +26,45 @@
 
   .set-image {
     width: auto;
+    // max-width: 50%;
     max-height: 500px;
+    // max-height: 50vh;
     border-radius: 1rem;
     object-fit: cover;
+  }
+}
+
+// @media (min-width: 576px) { 
+//   .class-set-viewer {
+//     max-width: 100%;
+//   }
+// }
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) { 
+//   .class-set-viewer {
+//     max-width: 75%;
+//   }
+// }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .class-set-viewer {
+    max-width: 90%;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .class-set-viewer {
+    max-width: 90%;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .class-set-viewer {
+    max-width: 1200px;
   }
 }
 
@@ -38,19 +84,35 @@
   padding: 0;
   scale: 200%;
 }
+
 .viewer-toggle-button {
-  // width: auto;
-  // height: 100%;
-  // align-self: center;
-  border-radius: 0.6rem;
+  border-radius: 0.6rem !important;
+  border: 0;
+
+  &.-open-close {
+    width: 70px;
+  }
+
+  &:active {
+    color: white;
+  }
+}
+
+.-active {
+  @include a.layer-1;
+
+  &.-close {
+    background-color: palevioletred;
+  }
+}
+
+.-inactive {
+  border: 0;
+  background-color:  #0099cc;
 }
 
 .view-button-row {
-  .col {
-    padding: 0;
-    border: 2px dotted blue;
-    box-sizing: content-box;
-  }
+  height: 100% !important;
 }
 
 /* Example CSS to adjust carousel size */
@@ -71,5 +133,14 @@
       height: auto; /* Allow images to maintain aspect ratio */
     }
   }
+
+  .carousel-caption {
+    font-weight: 600;
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 1); /* Add a shadow offset by 2px horizontally and vertically, with a blur of 4px */
+  }
 }
 
+
+
+// // Import Bootstrap's SCSS files
+// @import "~bootstrap/scss/bootstrap";
