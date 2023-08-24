@@ -16,6 +16,7 @@ import Home from './components/screens/Home';
 import Footer from './components/Contact';
 import Contact from './components/Contact';
 import TestPage from './components/screens/TestPage';
+import CharacterGenerator from './components/screens/character generator/CharacterGenerator';
 
 // ----------------- FIREBASE ----------------- //
 // Import the functions you need from the SDKs you need
@@ -55,6 +56,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/trading-post" element={<TradingPost app={app} analytics={analytics} logEvent={logEvent} />} />
+            <Route path="/character-generator" element={<CharacterGenerator />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </div>
