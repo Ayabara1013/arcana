@@ -6,27 +6,20 @@ import KoFiWidget from './KofiWidget';
 
 export default function Contact(props) {
   return (
-    <Container fluid className='contact'>
+    <div fluid="true" className='contact'>
       <h4 className='header'>Contact me</h4>
       <p>I swear I will fill this in soon haha if there is a feature you want to see in the tendies calculator or another tool all together, just let me know!</p>
       
-      <Row>
-        <Col>
-          <div className='d-flex'>
-            <p><span className='fw-medium'>email:</span> arcana.toolkit@gmail.com</p>
-          </div>
-        </Col>
+      <div className='contact-content d-flex'>
+        <div className=''>
+          <p><span className='fw-medium'>email:</span> arcana.toolkit@gmail.com</p>
+        </div>
 
-        {/* <Col>
-          kofi?
-          patreon?
-          paypal?
-        </Col> */}
-
-        <Col className='support'>
+        <div className='support'>
           <KoFiWidget thin red />
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+      
+    </div>
   );
 }

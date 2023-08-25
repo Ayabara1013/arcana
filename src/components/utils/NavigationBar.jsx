@@ -11,33 +11,36 @@ import KoFiWidget from '../KofiWidget';
 
 function NavigationBar(props) {
 	return (
-		<>
-			<Navbar expand='md' className='navigation-bar'>
-				<Container>
-					<Navbar.Brand as={Link} to="/" className='nav-brand gap-1'>
-						<img alt="" src={arcanaIcon512} width="30" height="30" className="d-inline-block align-top" />{' '}
-						<span className='nav-brand-text'>Arcana</span>
-					</Navbar.Brand>
+		// <div className='navbar-container mb-2'>
+			
 
-					<Navbar.Toggle aria-controls="navbar-nav" />
+		// 	<hr className='nav-divider'/>
+		// </div>
 
-					<Navbar.Collapse id='navbar-nav' className='nav-middle' >
+		<Navbar expand='md' className='navigation-bar w-100 sticky-top'>
+			<Container>
+				<Navbar.Brand as={Link} to="/" className='nav-brand gap-1'>
+					<img alt="" src={arcanaIcon512} width="30" height="30" className="d-inline-block align-top" />{' '}
+					<span className='nav-brand-text'>Arcana</span>
+				</Navbar.Brand>
 
-						<Nav className=''>
-							<Link to="/trading-post" className='nav-item'>Trading Post</Link>
-							<Link to="https://ko-fi.com/greenbottle" target="_blank" className='nav-item'>Support</Link>
-						</Nav>
-					</Navbar.Collapse>
+				<Navbar.Toggle aria-controls="navbar-nav" />
 
-					<div>
-						<div className='creator-tag'><span className='-name'>Arcana</span> by Greenbottle</div>
-					</div>
+				<Navbar.Collapse id='navbar-nav' className='nav-middle' >
+					<Nav className='nav-middle-nav'>
+						<Link to="/trading-post" className='nav-item'>Trading Post</Link>
+						{/* <Link to="/test-page" className='nav-item'>test page</Link> */}
+						<Link to="/character-generator" className='nav-item'>Character Generator</Link>
+						<Link to="https://ko-fi.com/greenbottle" target="_blank" className='nav-item'>Support</Link>
+					</Nav>
+				</Navbar.Collapse>
 
-				</Container>
-			</Navbar>
+				<div>
+					<div className='creator-tag'><span className='-name'>Arcana</span> by Greenbottle</div>
+				</div>
 
-			<hr className='nav-divider'/>
-		</>
+			</Container>
+		</Navbar>
 	)
 }
 

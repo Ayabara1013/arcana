@@ -2,6 +2,10 @@
 @use './colours.scss' as c;
 
 
+$base-font-family: 'Cera Round Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$base-font-weight: 500;
+
+
 // --- mixins // --- layers
 @mixin layer-1 {
   background-color: c.$mid-3;
@@ -35,29 +39,109 @@
   box-shadow: 1px 2px 12px #00000075;// , inset 0 0 4px #0000001c;
 }
 
-* {
-  // @include layer-4;
+@mixin shadow-transition {
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the shadow */
+}
+
+@mixin base-styles {
+  // // @include layer-4;
   box-sizing: border-box;
-  font-family: 'Cera Round Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 500;
-  // color: $dark-3;
+  font-family: $base-font-family;
+  // font-weight: 500;
+  // color: $dark-3
+}
+
+* {
+  @include base-styles();
 }
 
 body {
   @include layer-4();
   color: c.$dark-3;
+
+  margin: 0;
+  padding: 0;
+  // width: 100vh !important;
+  // overflow-x: hidden;
 }
 
 .box {
-  margin: auto;
-  padding: 0.25rem;
-  border-radius: 0.25rem;
   border: 1px solid whitesmoke;
+  
+  &.-wrapper {
+    margin: auto;
+    padding: 0.25rem;
+  }
 
-  &.red { 
+  &.-w2 {
+    border-width: 2px;
+  }
+
+  &.-dotted {
+    border-style: dotted;
+  }
+
+  &.-solid {
+    border-style: solid;
+  }
+
+  &.-dashed {
+    border-style: dashed;
+  }
+
+  &.-rounded {
+    border-radius: 0.5rem;
+  }
+
+  &.-white {
+    border-color: whitesmoke;
+  }
+
+  &.-black {
+    border-color: black;
+  }
+
+  &.-grey {
+    border-color: grey;
+  }
+
+  &.-red {
     border-color: red;
   }
+
+  &.-green {
+    border-color: green;
+  }
+
+  &.-blue {
+    border-color: blue;
+  }
+
+  &.-yellow {
+    border-color: yellow;
+  }
+
+  &.-purple {
+    border-color: purple;
+  }
+
+  &.-orange {
+    border-color: orange;
+  }
+
+  &.-pink {
+    border-color: pink;
+  }
+
+  &.-aqua {
+    border-color: aqua;
+  }
+
+  &.-coral {
+    border-color: coral;
+  }
 }
+
 
 .svh-100 {
   height: 100svh;
@@ -90,54 +174,27 @@ body {
   @include box-shadow-light();
 }
 
-// .container {
-//   // border: 1px solid red;
-// }
-
-// .row {
-//   // border: 1px solid whitesmoke;
-// }
-
-// .col {
-//   // border: 1px solid red;
-// }
-
 // ----- ACTUAL CLASSES ----- //
-
-// .navbar {
-
-// }
-
-.translate-screen {
-  .row {
-    // padding: 0.25rem;
-    // width: 100%;
-    // border: 1px solid red;
-  }
-
-  .col {
-    border-radius: 0.25rem;
-  }
-}
-
-.translate-bar {
-  @include layer-4();
-  height: 200px;
-}
 
 .App {
   @include layer-4;
+  // @include base-styles();
   
   display: flex;
   flex-direction: column;
+  width: 100% !important;
   height: calc(100svh);
-
-  // border: 2px solid red;
+  font-weight: 500;
 }
 
 .app-wrapper {
-  height: 100%;
-  // border: 2px solid blueviolet;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  // .app-wrapper {
+  //   // padding: 1rem;
+  // }
 }
 
 .settings-card {
@@ -255,4 +312,18 @@ body {
 
 .container-fluid {
   overflow: auto;
+}
+
+
+// --- scroll bar
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+::-webkit-scrollbar-track {
+  @include layer-5();
+}
+::-webkit-scrollbar-thumb {
+  @include layer-3();
+  border-radius: 1rem;
+  background-clip: padding-box;
 }

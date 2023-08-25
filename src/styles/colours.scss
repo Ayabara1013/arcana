@@ -21,6 +21,41 @@ $notion-dark-codeblock: #292927;
 $notion-dark-codeblock-text: #EB5757;
 $notion-dark-background-alpha-variant:rgba(135, 131, 120, 0.15);
 
+// // overrides
+$primary: $dark-1; // #497ece; // Custom primary color
+$secondary: #6c757d; // Custom secondary color
+$success: #198754; // Custom success color
+$info: #0dcaf0; // Custom info color
+$warning: #ffc107; // Custom warning color
+$danger: #d45c68; // Custom danger color
+$light: #f8f9fa; // Custom light color
+$dark: #212529; // Custom dark color
+
+// original bootstrap them colours
+// $primary: #0d6efd; // Original primary color
+// $secondary: #6c757d; // Original secondary color
+// $success: #198754; // Original success color
+// $info: #0dcaf0; // Original info color
+// $warning: #ffc107; // Original warning color
+// $danger: #dc3545; // Original danger color
+// $light: #f8f9fa; // Original light color
+// $dark: #212529; // Original dark color
+
+
+
+// Override Bootstrap's default color variables
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+
 // --- https://lingtalfi.com/bootstrap4-color-generator# 
 
 
@@ -192,3 +227,8 @@ button.bg-def:focus {
 a.text-def:hover, a.text-def:focus {
   color: $def_t2 !important;
 }
+
+
+
+// Import Bootstrap's SCSS files
+@import "~bootstrap/scss/bootstrap";
