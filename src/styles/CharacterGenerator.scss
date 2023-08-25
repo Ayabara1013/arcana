@@ -1,0 +1,78 @@
+@use './App.scss' as a;
+@use './colours.scss' as c;
+
+.character-generator {
+
+  // layout
+
+  // text
+
+  // appearance
+
+  // other
+}
+
+.generator-tools-container {
+  // padding: 0.25rem;
+}
+
+.generator {
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+
+  @include a.layer-1;
+
+  &.gen-tool-card {
+    @include a.layer-2;
+  }
+
+  &__initials {
+    // display: flex;
+    flex-direction: row;
+    // margin: 0;
+    // width: 100%;
+
+    &__display {
+      justify-content: space-around;
+      font-size: 3rem;
+      font-weight: 900;
+
+      // &__first {
+
+      // }
+
+      // &__last {
+
+      // }
+    }
+
+    &__button {
+      background-color: c.$dark-3;
+      // border-color: c.$dark-3;
+
+      // &--submit {
+
+      // }
+
+      // &--reset {
+
+      // }
+    }
+  }
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.generator-results {
+  p {
+    font-weight: normal;
+    margin-bottom: 0.25rem;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
