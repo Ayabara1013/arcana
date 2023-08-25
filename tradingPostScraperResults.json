@@ -1,105 +1,132 @@
-[
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/TZ12G6JTFJ601690524398948.png",
-    "caption": "\nSpirit of Competition\nItem Type: Pet\nCost: 650 Trader's Tender\n"
+{
+  "Spirit of Competition": {
+    "name": "Spirit of Competition",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/TZ12G6JTFJ601690524398948.png",
+    "caption": "Spirit of Competition\nItem Type: Pet\nCost: 650 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/ZYP281SC78HU1690530564119.png",
-    "caption": "\nEthereal Transmogrifier\nItem Type: Toy\nCost: 500 Trader's Tender\n"
+  "Ethereal Transmogrifier": {
+    "name": "Ethereal Transmogrifier",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/ZYP281SC78HU1690530564119.png",
+    "caption": "Ethereal Transmogrifier\nItem Type: Toy\nCost: 500 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/DWXD8E1O4TOM1690561751882.png",
-    "caption": "\nAlabaster Thunderwing\nItem Type: Horde Mount\nCost: 650 Trader's Tender\n"
+  "Alabaster Thunderwing": {
+    "name": "Alabaster Thunderwing",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/DWXD8E1O4TOM1690561751882.png",
+    "caption": "Alabaster Thunderwing\nItem Type: Horde Mount\nCost: 650 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/2KUFG0A6OF3L1690561751939.png",
-    "caption": "\nAlabaster Stormtalon\nItem Type: Alliance Mount\nCost: 650 Trader's Tender\n\n\n"
+  "Alabaster Stormtalon": {
+    "name": "Alabaster Stormtalon",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/2KUFG0A6OF3L1690561751939.png",
+    "caption": "Alabaster Stormtalon\nItem Type: Alliance Mount\nCost: 650 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/9X8IMVNQK2R91690530564163.png",
-    "caption": "\nAncestral Clefthoof\nItem Type: Mount\nCost: 650 Trader's Tender\n"
+  "Ancestral Clefthoof": {
+    "name": "Ancestral Clefthoof",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/9X8IMVNQK2R91690530564163.png",
+    "caption": "Ancestral Clefthoof\nItem Type: Mount\nCost: 650 Trader's Tender"
   },
-  {
-    "caption": ""
+  "City Guard Heater Shield": {
+    "name": "City Guard Heater Shield",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/39N6E7K1HH2X1690524390194.png",
+    "caption": "City Guard Heater Shield\nItem Type: Shield\nCost: 50 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/39N6E7K1HH2X1690524390194.png",
-    "caption": "\nCity Guard Heater Shield\nItem Type: Shield\nCost: 50 Trader's Tender\n\n\n"
+  "Grunt’s Buckler": {
+    "name": "Grunt’s Buckler",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/BTG222U1JGJQ1690524392863.png",
+    "caption": "Grunt’s Buckler\nItem Type: Sheild\nCost: 50 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/BTG222U1JGJQ1690524392863.png",
-    "caption": "\nGrunt’s Buckler\nItem Type: Sheild\nCost: 50 Trader's Tender\n\n\n"
+  "Queen’s Conservatory Ball Gloves": {
+    "name": "Queen’s Conservatory Ball Gloves",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/SIMP5IT3ABGF1690524393737.png",
+    "caption": "Queen’s Conservatory Ball Gloves\nItem Type: Gloves\nCost: 100 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/SIMP5IT3ABGF1690524393737.png",
-    "caption": "\nQueen’s Conservatory Ball Gloves\nItem Type: Gloves\nCost: 100 Trader's Tender\n"
+  "Ember Court Soiree Gloves": {
+    "name": "Ember Court Soiree Gloves",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/O94ZM7RC6WXY1690524391574.png",
+    "caption": "Ember Court Soiree Gloves\nItem Type: Gloves\nCost: 100 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/O94ZM7RC6WXY1690524391574.png",
-    "caption": "\nEmber Court Soiree Gloves\nItem Type: Gloves\nCost: 100 Trader's Tender\n"
+  "Ensemble: Vagabond’s Azure Threads": {
+    "name": "Ensemble: Vagabond’s Azure Threads",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/7UDK5QF3RP1O1690524396550.png",
+    "caption": "Ensemble: Vagabond’s Azure Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/7UDK5QF3RP1O1690524396550.png",
-    "caption": "\nEnsemble: Vagabond’s Azure Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender\n"
+  "Ensemble: Wanderer’s Azure Trappings": {
+    "name": "Ensemble: Wanderer’s Azure Trappings",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/R8KRILVQ05Y71690524397018.png",
+    "caption": "Ensemble: Wanderer’s Azure Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/R8KRILVQ05Y71690524397018.png",
-    "caption": "\nEnsemble: Wanderer’s Azure Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender\n"
+  "Ensemble: Vagabond’s Crimson Threads": {
+    "name": "Ensemble: Vagabond’s Crimson Threads",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/6XEG6AKMWKML1690524396765.png",
+    "caption": "Ensemble: Vagabond’s Crimson Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/6XEG6AKMWKML1690524396765.png",
-    "caption": "\nEnsemble: Vagabond’s Crimson Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender\n"
+  "Ensemble: Wanderer’s Crimson Trappings": {
+    "name": "Ensemble: Wanderer’s Crimson Trappings",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/HRFFE8NTAM4X1690524397954.png",
+    "caption": "Ensemble: Wanderer’s Crimson Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/HRFFE8NTAM4X1690524397954.png",
-    "caption": "\nEnsemble: Wanderer’s Crimson Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender\n"
+  "Azure Scalesworn Longbow": {
+    "name": "Azure Scalesworn Longbow",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/D1N4DADH6NZZ1690524386332.png",
+    "caption": "Azure Scalesworn Longbow\nItem Type: Bow\nCost: 200 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/D1N4DADH6NZZ1690524386332.png",
-    "caption": "\nAzure Scalesworn Longbow\nItem Type: Bow\nCost: 200 Trader's Tender\n"
+  "Shard of Frozen Secrets": {
+    "name": "Shard of Frozen Secrets",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/XA53XPQ1QTBV1690524395259.png",
+    "caption": "Shard of Frozen Secrets\nItem Type: 1-Hand Dagger\nCost: 200 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/XA53XPQ1QTBV1690524395259.png",
-    "caption": "\nShard of Frozen Secrets\nItem Type: 1-Hand Dagger\nCost: 200 Trader's Tender\n"
+  "Azure Nexus Crescent": {
+    "name": "Azure Nexus Crescent",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/L7YIFX9S12D51690524386456.png",
+    "caption": "Azure Nexus Crescent\nItem Type: 2-Hand Axe\nCost: 225 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/L7YIFX9S12D51690524386456.png",
-    "caption": "\nAzure Nexus Crescent\nItem Type: 2-Hand Axe\nCost: 225 Trader's Tender\n"
+  "Crimson Nexus Crescent": {
+    "name": "Crimson Nexus Crescent",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/LJ9MD5HZU7PU1690524390680.png",
+    "caption": "Crimson Nexus Crescent\nItem Type: 2-Hand Axe\nCost: 225 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/LJ9MD5HZU7PU1690524390680.png",
-    "caption": "\nCrimson Nexus Crescent\nItem Type: 2-Hand Axe\nCost: 225 Trader's Tender\n"
+  "Aquamarine Felfire Bulwark": {
+    "name": "Aquamarine Felfire Bulwark",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/UJLH2OS8A3N81690524398722.png",
+    "caption": "Aquamarine Felfire Bulwark\nItem Type: Shield\nCost: 400 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/UJLH2OS8A3N81690524398722.png",
-    "caption": "\nAquamarine Felfire Bulwark\nItem Type: Shield\nCost: 400 Trader's Tender\n"
+  "Aquamarine Felfire Splitblade": {
+    "name": "Aquamarine Felfire Splitblade",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/97ISIGCO7MXR1690524386323.png",
+    "caption": "Aquamarine Felfire Splitblade\nItem Type: 1-Hand Sword\nCost: 400 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/97ISIGCO7MXR1690524386323.png",
-    "caption": "\nAquamarine Felfire Splitblade\nItem Type: 1-Hand Sword\nCost: 400 Trader's Tender\n"
+  "Ruby Felfire Bulwark": {
+    "name": "Ruby Felfire Bulwark",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/100QV03ASEZ91690524394696.png",
+    "caption": "Ruby Felfire Bulwark\nItem Type: Shield\nCost: 400 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/100QV03ASEZ91690524394696.png",
-    "caption": "\nRuby Felfire Bulwark\nItem Type: Shield\nCost: 400 Trader's Tender\n"
+  "Ruby Felfire Splitblade": {
+    "name": "Ruby Felfire Splitblade",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/XPBDO9EA6LD81690524395011.png",
+    "caption": "Ruby Felfire Splitblade\nItem Type: 1-Hand Sword\nCost: 400 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/XPBDO9EA6LD81690524395011.png",
-    "caption": "\nRuby Felfire Splitblade\nItem Type: 1-Hand Sword\nCost: 400 Trader's Tender\n"
+  "Crown of Eternal Winter": {
+    "name": "Crown of Eternal Winter",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/GYE5SBHDQYQQ1690524391205.png",
+    "caption": "Crown of Eternal Winter\nItem Type: Head\nCost: 400 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/GYE5SBHDQYQQ1690524391205.png",
-    "caption": "\nCrown of Eternal Winter\nItem Type: Head\nCost: 400 Trader's Tender\n"
+  "Hood of Hungering Darkness": {
+    "name": "Hood of Hungering Darkness",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/WTIEG8LKTQ211690524393198.png",
+    "caption": "Hood of Hungering Darkness\nItem Type: Head\nCost: 400 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/WTIEG8LKTQ211690524393198.png",
-    "caption": "\nHood of Hungering Darkness\nItem Type: Head\nCost: 400 Trader's Tender\n"
+  "Blade of Brutal Sacrifice": {
+    "name": "Blade of Brutal Sacrifice",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/M4A0YH3L8XLA1690524388120.png",
+    "caption": "Blade of Brutal Sacrifice\nItem Type: 1-Hand Dagger\nCost: 400 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/M4A0YH3L8XLA1690524388120.png",
-    "caption": "\nBlade of Brutal Sacrifice\nItem Type: 1-Hand Dagger\nCost: 400 Trader's Tender\n"
+  "Fury of the Firelord": {
+    "name": "Fury of the Firelord",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/BFMA7V92I5CA1690524397624.jpg",
+    "caption": "Fury of the Firelord\nItem Type: 1-Hand Mace\nCost: 750 Trader's Tender"
   },
-  {
-    "imgSrc": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/BFMA7V92I5CA1690524397624.jpg",
-    "caption": "\nFury of the Firelord\nItem Type: 1-Hand Mace\nCost: 750 Trader's Tender\n"
+  "Ensemble: Bones of the Bloodhunter": {
+    "name": "Ensemble: Bones of the Bloodhunter",
+    "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/LAY2M77RLLY11690524389125.png",
+    "caption": "Ensemble: Bones of the Bloodhunter"
   }
-]
+}
