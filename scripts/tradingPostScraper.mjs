@@ -57,22 +57,30 @@ async function scrapeTradingPost() {
           return; // Skip this element if there is no figcaption
         }
 
-        // pull the caption text
-        const caption = figcaption.text().trim();
+        // pull the caption text & replace non-breaking spaces with regular spaces
+        const caption = figcaption.text().trim().replace(/\u00A0/g, ' ');;
+
+
 
         // get the name
         const name = caption.split('\n')[0].trim();
 
         // get the tags
+        const tags = caption.includes('Item Type: ')
+          ? caption.split('Item Type: ')[1].split('\n')[0] // .split('\n')[0]
+          : null;
 
         // get the price
+        const price = caption.includes("Cost: ")
+          ? parseInt(caption.split('Cost: ')[1].split(' ')) //.replace(/\D/g, ''))
+          : null;
+        
       
         const item = {
           "name": name,
-          // "price": cost,
+          "price": price,
           "image": imgSrc,
-          // "image": imgSrc,
-          // "tags": [tags],
+          "tags": [tags],
           // "currentAvailability": true,
           // "pastAvailability": [null]
           "caption": caption,
@@ -95,19 +103,28 @@ async function scrapeTradingPost() {
         existingData = JSON.parse(fileContents);
       }
 
+      // Check if the year and month exist in the existing data
+      if (!existingData[year]) {
+        existingData[year] = {};
+      }
+      if (!existingData[year][month]) {
+        existingData[year][month] = {};
+      }
+
       // Add new items to the existing data
       for (const itemName in items) {
-        if (existingData[itemName]) {
-          console.log(`Item ${itemName} already exists in the JSON file`);
+        if (existingData[year][month][itemName]) {
+          console.log(`Item ${itemName} already exists in year ${year}, month ${month}`);
           continue;
         }
-        existingData[itemName] = items[itemName];
+        existingData[year][month][itemName] = items[itemName];
+        console.log(`Added item ${itemName} to year ${year}, month ${month}`);
       }
 
       // Write the updated data to the JSON file
       const data = JSON.stringify(existingData, null, 2);
       fs.writeFileSync(filename, data);
-      console.log(`Data saved to ${filePath}`);
+      console.log(`Data saved to ${filename}`);
     })
     .catch(error => {
       console.error('Error fetching or parsing HTML:', error);
@@ -115,6 +132,7 @@ async function scrapeTradingPost() {
 }
 
 scrapeTradingPost();
+
 
 /**
  * example html

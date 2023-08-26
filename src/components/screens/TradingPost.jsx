@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 
 import { initializeApp } from "firebase/app";
-import { getAnalytics, logEvent  } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
+
+import tradingPostItems from '../tradingPostItems.jsx';
 
 // styles --------------------------------------------------
 import '../../styles/TradingPost.scss';
@@ -11,6 +13,7 @@ import '../../styles/TradingPost.scss';
 import Footer from '../Contact';
 import Contact from '../Contact';
 import ClassSetViewerTradingPost from './trading post/ClassSetViewerTradingPost';
+import TradingPostItemViewer from './trading post/TradingPostItemViewer.jsx';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -221,6 +224,8 @@ function TradingPost(props) {
   return (
     <Container fluid className='trading-post p-0 justify-content-start'>
       <TitleCard tendies={tendies} />
+
+      <TradingPostItemViewer />
 
       {/* main tool row 
         - removed m-auto, can add back in later? 
