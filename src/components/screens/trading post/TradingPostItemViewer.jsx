@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fas, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 import '../../../styles/TradingPostItemViewer.scss'
+import { getItem } from 'localforage';
+import { get } from 'lodash';
 
 library.add(fas, faChevronDown)
 
@@ -19,6 +21,24 @@ export default function TradingPostItemViewer(props) {
 
   const [open, setOpen] = useState(true);
   const openClose = open ? 'open' : 'closed';
+
+  // function galleryClickHandler(item) {
+  //   console.log(item);
+  //   setImgSrc(item.image)
+  //   console.log(imgSrc);
+  // }
+
+  // function getGalleryButtons(items) {
+  //   return Object.keys(items).map((itemName) => {
+  //     const item = items[itemName];
+  //     return (
+  //       <button className='btn btn-primary p-0 rounded' onClick={galleryClickHandler(item)}>
+  //         {/* {item.name} */}
+  //         <img src={items[itemName].image} alt="" className='w-100 h-100 rounded' />
+  //       </button>
+  //     )
+  //   });
+  // }
 
   const itemButtons = Object.keys(aug2023Items).map((itemName) => {
     const item = aug2023Items[itemName];

@@ -18,6 +18,7 @@
   &.closed {
     height: 2rem;
     padding: 0;
+    display: none; //TEMPORARY TILL I LEARN HOW TO DO THIS RIGHT!!!
   }
 
   .viewer-row {
