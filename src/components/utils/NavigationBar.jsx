@@ -30,7 +30,7 @@ function NavigationBar(props) {
 					<Nav className='nav-middle-nav'>
 						<Link to="/trading-post" className='nav-item'>Trading Post</Link>
 						{/* <Link to="/test-page" className='nav-item'>test page</Link> */}
-						<Link to="/character-generator" className='nav-item'>Character Generator</Link>
+						{/* <Link to="/character-generator" className='nav-item'>Character Generator</Link> */}
 						<Link to="https://ko-fi.com/greenbottle" target="_blank" className='nav-item'>Support</Link>
 					</Nav>
 				</Navbar.Collapse>

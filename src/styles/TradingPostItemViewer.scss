@@ -20,7 +20,6 @@
     padding: 0;
   }
 
-
   .viewer-row {
     display: flex;
     flex-direction: row;
@@ -36,12 +35,19 @@
     grid-template-columns: repeat(2, 1fr);
 
     overflow-y: scroll;
-    // overflow-y: overlay; 
     overflow-x: hidden;
     box-sizing: border-box;
 
+    height: 100%;
+
     @media (max-width: 768px) {
-      grid-template-columns: repeat(1, 1fr);
+      // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Set the grid to have columns that are at least 200 pixels wide */
+
+      display: flex;
+      flex-direction: row;
+
+      // height: 50px;
+      overflow-x: scroll;
     }
 
     &.closed {
@@ -53,11 +59,11 @@
       background-color: transparent;
     }
 
-    &::-webkit-scrollbar-thumb {
-      // position: relative;
-      width: 10px;
-      height: 50px;
-    }
+    // &::-webkit-scrollbar-thumb {
+    //   // position: relative;
+    //   width: 10px;
+    //   height: 50px;
+    // }
   }
 
   .btn {
@@ -104,7 +110,7 @@
   right: 0;
 
   color: white;
-  // transition: background-color 0.5s ease-in-out; /* Add a transition to the background-color property */
+  transition: background-color 0.5s ease-in-out; /* Add a transition to the background-color property */
 
   &.open {
     background-color: transparent !important;

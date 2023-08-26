@@ -17,26 +17,26 @@ const aug2023Items = tradingPostItems[2023]['august'];
 export default function TradingPostItemViewer(props) {
   const [imgSrc, setImgSrc] = useState('https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/DWXD8E1O4TOM1690561751882.png');
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const openClose = open ? 'open' : 'closed';
 
   const itemButtons = Object.keys(aug2023Items).map((itemName) => {
     const item = aug2023Items[itemName];
     return (
-      <button className='btn btn-primary m-auto p-0 rounded' onClick={() => {
+      <button className='btn btn-primary p-0 rounded' onClick={() => {
         console.log(item);
         setImgSrc(item.image)
         console.log(imgSrc);
       }}>
         {/* {item.name} */}
-        <img src={aug2023Items[itemName].image} alt="" className='w-100 h-100 rounded'/>
+        <img src={aug2023Items[itemName].image} alt="" className='w-100 h-100 rounded' />
       </button>
     )
   })
 
   return (
     <Container className={`${openClose} trading-post-item-viewer m-auto mb-4 rounded`}>
-      <div className={`${openClose} viewer-title m-0 p-0`}>
+      <div className={`${openClose} viewer-title ps-2`}>
         image viewer!
       </div>
 
@@ -46,10 +46,8 @@ export default function TradingPostItemViewer(props) {
       </Button>
       
       <Row className={`viewer-row ${openClose} m-auto h-100`}>
-        <Col className={`${openClose} selector-bar gap-1 p-0 h-100 rounded`}>
+        <Col className={`${openClose} selector-bar gap-1 p-0 rounded`}>
             {itemButtons}
-          {/* <div className=" button-container d-flex flex-wrap">
-          </div> */}
         </Col>
   
         <Col md={'auto'} className={`${openClose} item-image-container d-flex align-items-center justify-content-center p-0`}>
