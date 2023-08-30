@@ -1,0 +1,151 @@
+@use './App.scss' as a;
+@use './colours.scss' as c;
+
+
+
+.trading-post-tracker {
+  height: a.$wrapper-height;
+}
+
+.sorting-row {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tool-row {
+  padding: 0.5rem;
+}
+
+.gallery {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding: 0.5rem;
+
+  overflow: auto;
+}
+
+.gallery-item {
+  position: relative;
+  flex: 1 0 calc((100% / 3) - 0.5rem);
+  // width: calc(100% / 3);
+  height: auto;
+  font-size:70%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+
+  .reward-icon-button {
+    position: absolute;
+    right: 0.5rem;
+    // z-index: 1;
+    scale: 1.5;
+    color: white;
+    
+    &.collected-icon {
+      top: 0.5rem;
+      
+      &.not-collected {
+        opacity: 25%;
+      }
+
+      &.collected {
+        scale: 2;
+        color: greenyellow;
+        opacity: 100%;
+      }
+    }
+
+    .tracked-icon{
+      bottom: 0.5rem;
+      
+      &.not-tracked {
+        opacity: 25%;
+      }
+      
+      &.tracked {
+        scale: 2;
+        color: rgb(57, 176, 255);
+        opacity: 100%;
+      }
+    }
+
+    &:hover {
+      scale: 2;
+    }
+
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    scale: 1.05;
+    box-shadow: 0 0 1rem 0.25rem rgba(0, 0, 0, 0.25)
+  }
+
+  transition: all 0.2s ease-in-out;
+}
+
+.details {
+  overflow: auto;
+
+  .details__image {
+    width: 100%;
+    height: auto;
+
+    border-radius: 0.5rem;
+  }
+
+  .details__data {
+    @include a.layer-6;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+}
+
+.data-text {
+  font-size: 200%;
+  // font-weight: 600;
+
+  &.-name {
+    // font-size: 300%;
+    font-weight: 800;
+    border-bottom: 2px solid c.$dark-3;
+  }
+
+  // &.-tags {
+
+  // }
+
+  // &.-price {
+
+  // }
+}
+
+
+
+
+.flex-contain {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.b {
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.details__controls {
+  // display: flex;
+}

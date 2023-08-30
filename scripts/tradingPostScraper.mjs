@@ -4,7 +4,8 @@ import axios from 'axios';
 import cheerio from 'cheerio';
 import inquirer from 'inquirer';
 
-const filename = 'tradingPostScraperResults.json';
+// const filename = 'tradingPostScraperResults.json';
+const filename = './src/assets/data/tradingPostScraperResults.json';
 
 async function scrapeTradingPost() {
   const { url, year, month, outputFile } = await inquirer.prompt([

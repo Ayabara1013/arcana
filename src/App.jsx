@@ -5,23 +5,20 @@ import './styles/classes.scss';
 
 // react router
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 // components
 import NavigationBar from './components/utils/NavigationBar';
-import SettingsScreen from './components/screens/settings/SettingsScreen';
-import ContactScreen from './components/screens/ContactScreen';
+
 import TradingPost from './components/screens/TradingPost';
 import Home from './components/screens/Home';
-import Footer from './components/Contact';
 import Contact from './components/Contact';
-import TestPage from './components/screens/TestPage';
 import CharacterGenerator from './components/screens/character generator/CharacterGenerator';
 
 // ----------------- FIREBASE ----------------- //
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent  } from "firebase/analytics";
+import TradingPostTracker from './components/screens/trading post/TradingPostTracker';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -54,14 +51,34 @@ function App() {
         
         <div className="app-wrapper">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/trading-post" element={<TradingPost app={app} analytics={analytics} logEvent={logEvent} />} />
-            <Route path="/character-generator" element={<CharacterGenerator />} />
-            <Route path="*" element={<Home />} />
+            <Route
+              path="/"
+              element={<Home />}
+            />
+
+            <Route
+              path="/trading-post"
+              element={<TradingPost app={app} analytics={analytics} logEvent={logEvent} />}
+            />
+
+            <Route
+              path="/trading-post-tracker"
+              element={<TradingPostTracker app={app} analytics={analytics} logEvent={logEvent} />}
+            />
+
+            <Route
+              path="/character-generator"
+              element={<CharacterGenerator />}
+            />
+
+            <Route
+              path="*"
+              element={<Home />}
+            />
           </Routes>
         </div>
         
-        <Contact />
+        {/* <Contact /> */}
 
       </BrowserRouter>
     </div>

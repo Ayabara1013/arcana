@@ -71,7 +71,7 @@ const toolList = () => {
 
 function Home(props) {
 	return (
-		<Container fluid className='home d-flex flex-column px-0 h-100'>
+		<Container fluid className='home d-flex flex-column px-0 h-100 phe'>
 
 			<h1 className='arcana-header text-center'>Welcome to Arcana!</h1>
 			

@@ -4,6 +4,7 @@
 
 $base-font-family: 'Cera Round Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 $base-font-weight: 500;
+$wrapper-height: calc(100svh - 4rem);
 
 
 // --- mixins // --- layers
@@ -140,6 +141,10 @@ body {
   &.-coral {
     border-color: coral;
   }
+
+  &.-lime {
+    border-color: lime;
+  }
 }
 
 
@@ -189,6 +194,7 @@ body {
 
 .app-wrapper {
   flex: 1;
+  max-height: $wrapper-height
 }
 
 @media (max-width: 768px) {

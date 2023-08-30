@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom"; // Import Link component
 
 import '../../styles/NavigationBar.scss';
@@ -28,10 +28,45 @@ function NavigationBar(props) {
 
 				<Navbar.Collapse id='navbar-nav' className='nav-middle' >
 					<Nav className='nav-middle-nav'>
-						<Link to="/trading-post" className='nav-item'>Trading Post</Link>
+						{/* <Nav.Item>
+							<Link to="/trading-post-class-sets" className='nav-link'>
+								Trading Post
+							</Link>
+						</Nav.Item>
+
+						<Nav.Item>
+							<Link to="/trading-post-tracker" className='nav-link'>
+								Tracker
+							</Link>
+						</Nav.Item>
+
+						<Nav.Item>
+							<Link>
+								thing
+							</Link>
+						</Nav.Item> */}
+
+						<NavDropdown title="Trading Post" id="nav-dropdown__trading-post" className='nav-dropdown'>
+							<NavDropdown.Item eventKey="4.1">
+								<Link to="/trading-post-class-sets" className='nav-dropdown-item'>
+									Class Sets
+								</Link>
+							</NavDropdown.Item>
+
+							<NavDropdown.Item eventKey="4.2">
+								<Link to="/trading-post-tracker" className='nav-dropdown-item'>
+									Tracker
+								</Link>
+							</NavDropdown.Item>
+						</NavDropdown>
+
 						{/* <Link to="/test-page" className='nav-item'>test page</Link> */}
 						{/* <Link to="/character-generator" className='nav-item'>Character Generator</Link> */}
-						<Link to="https://ko-fi.com/greenbottle" target="_blank" className='nav-item'>Support</Link>
+						<Nav.Item>
+							<Link to="https://ko-fi.com/greenbottle" target="_blank" className='nav-link'>
+								Support
+							</Link>
+						</Nav.Item>
 					</Nav>
 				</Navbar.Collapse>
 

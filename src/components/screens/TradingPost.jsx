@@ -225,7 +225,7 @@ function TradingPost(props) {
     <Container fluid className='trading-post p-0 justify-content-start'>
       <TitleCard tendies={tendies} />
 
-      <TradingPostItemViewer />
+      {/* <TradingPostItemViewer /> */}
 
       {/* main tool row 
         - removed m-auto, can add back in later? 
