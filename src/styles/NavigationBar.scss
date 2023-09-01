@@ -115,6 +115,30 @@
 }
 
 
+.nav-dropdown {
+  a {
+    &:active {
+      @include base-text-colour;
+    }
+  }
+}
+
+.dropdown-item {
+  &:active {
+    background-color: c.$light-2 !important;
+  }
+
+  &.active {
+    background-color: c.$light-1 !important;
+  }
+
+  a {
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  }
+}
+
+
 
 
 @media (max-width: 768px) {
@@ -128,3 +152,6 @@
     gap: 0.5rem;
   }
 }
+
+
+

@@ -13,12 +13,14 @@ import TradingPost from './components/screens/TradingPost';
 import Home from './components/screens/Home';
 import Contact from './components/Contact';
 import CharacterGenerator from './components/screens/character generator/CharacterGenerator';
+import Testes from './components/screens/testes/Testes.jsx';
 
 // ----------------- FIREBASE ----------------- //
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent  } from "firebase/analytics";
 import TradingPostTracker from './components/screens/trading post/TradingPostTracker';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -41,7 +43,6 @@ const analytics = getAnalytics(app);
 
 
 
-
 function App() {
 
   return (
@@ -57,12 +58,12 @@ function App() {
             />
 
             <Route
-              path="/trading-post"
+              path="/trading-post/class-sets"
               element={<TradingPost app={app} analytics={analytics} logEvent={logEvent} />}
             />
 
             <Route
-              path="/trading-post-tracker"
+              path="/trading-post/rewards-tracker"
               element={<TradingPostTracker app={app} analytics={analytics} logEvent={logEvent} />}
             />
 

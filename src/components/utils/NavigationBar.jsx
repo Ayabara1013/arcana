@@ -48,13 +48,13 @@ function NavigationBar(props) {
 
 						<NavDropdown title="Trading Post" id="nav-dropdown__trading-post" className='nav-dropdown'>
 							<NavDropdown.Item eventKey="4.1">
-								<Link to="/trading-post-class-sets" className='nav-dropdown-item'>
+								<Link to="/trading-post/class-sets" className='dropdown-item__text'>
 									Class Sets
 								</Link>
 							</NavDropdown.Item>
 
 							<NavDropdown.Item eventKey="4.2">
-								<Link to="/trading-post-tracker" className='nav-dropdown-item'>
+								<Link to="/trading-post/rewards-tracker" className='dropdown-item__text'>
 									Tracker
 								</Link>
 							</NavDropdown.Item>

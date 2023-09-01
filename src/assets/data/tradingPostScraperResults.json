@@ -235,6 +235,206 @@
         ],
         "caption": "Ensemble: Bones of the Bloodhunter"
       }
+    },
+    "september": {
+      "Plate of the Light Avenger": {
+        "name": "Plate of the Light Avenger",
+        "price": 450,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/5YQMVPB45XDL1693412277630.png",
+        "tags": [
+          "Head, Shoulder Waist"
+        ],
+        "caption": "Plate of the Light Avenger\nItem Type: Head, Shoulder Waist\nCost: 450 Trader's Tender"
+      },
+      "Armaments of the Light Avenger": {
+        "name": "Armaments of the Light Avenger",
+        "price": 500,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/HJUW9AY5J12Y1690595304489.png",
+        "tags": [
+          "Hammer of the Light Avenger (2-Hand Mace), Kite of the Light Avenger (Shield), Club of the Light Avenger (1-Hand Mace)"
+        ],
+        "caption": "Armaments of the Light Avenger\nItem Type: Hammer of the Light Avenger (2-Hand Mace), Kite of the Light Avenger (Shield), Club of the Light Avenger (1-Hand Mace)\nCost: 500 Trader's Tender"
+      },
+      "Silks of the Unnamed Cult": {
+        "name": "Silks of the Unnamed Cult",
+        "price": 450,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/D0BYGRW865CW1693412277660.png",
+        "tags": [
+          "Head, Shoulder Waist"
+        ],
+        "caption": "Silks of the Unnamed Cult\nItem Type: Head, Shoulder Waist\nCost: 450 Trader's Tender"
+      },
+      "Secrets of the Unnamed Cult": {
+        "name": "Secrets of the Unnamed Cult",
+        "price": 500,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/DP0K89L9ELOJ1690595304401.png",
+        "tags": [
+          "Scepter of the Unnamed Cult (1-Hand Mace), Libram of the Unnamed Cult (Off-Hand), Staff of the Unnamed Cult (Staff)"
+        ],
+        "caption": "Secrets of the Unnamed Cult\nItem Type: Scepter of the Unnamed Cult (1-Hand Mace), Libram of the Unnamed Cult (Off-Hand), Staff of the Unnamed Cult (Staff)\nCost: 500 Trader's Tender"
+      },
+      "Blood Onyx Uniform": {
+        "name": "Blood Onyx Uniform",
+        "price": 450,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/8R2IZGBVG65K1693412277664.png",
+        "tags": [
+          "Head, Shoulder Waist"
+        ],
+        "caption": "Blood Onyx Uniform\nItem Type: Head, Shoulder Waist\nCost: 450 Trader's Tender"
+      },
+      "Blood Onyx Blades": {
+        "name": "Blood Onyx Blades",
+        "price": 500,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/8KB29UB91UE31690595306222.png",
+        "tags": [
+          "Blood Onyx Shortblade (1-Hand Sword), Blood Onyx Serrated Edge (Dagger), Blood Onyx Impaler (Dagger)"
+        ],
+        "caption": "Blood Onyx Blades\nItem Type: Blood Onyx Shortblade (1-Hand Sword), Blood Onyx Serrated Edge (Dagger), Blood Onyx Impaler (Dagger)\nCost: 500 Trader's Tender"
+      },
+      "Slyvy": {
+        "name": "Slyvy",
+        "price": 650,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/O10YWFJDC9ZZ1693414932329.png",
+        "tags": [
+          "Pet"
+        ],
+        "caption": "Slyvy\nItem Type: Pet\nCost: 650 Trader's Tender"
+      },
+      "Gently-Used Cleaver": {
+        "name": "Gently-Used Cleaver",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/7LVKMR6P3H2R1693412240445.png",
+        "tags": [
+          "1-Hand Sword"
+        ],
+        "caption": "Gently-Used Cleaver\nItem Type: 1-Hand Sword\nCost: 50 Trader's Tender"
+      },
+      "Gorian Mining Pick": {
+        "name": "Gorian Mining Pick",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/RN30BKTLIS3W1693412240465.png",
+        "tags": [
+          "Horde Mining Tool"
+        ],
+        "caption": "Gorian Mining Pick\nItem Type: Horde Mining Tool\nCost: 50 Trader's Tender"
+      },
+      "Watchman’s Flare": {
+        "name": "Watchman’s Flare",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/OB9O6D8ZMVPQ1693412242829.png",
+        "tags": [
+          "Off-Hand"
+        ],
+        "caption": "Watchman’s Flare\nItem Type: Off-Hand\nCost: 100 Trader's Tender"
+      },
+      "Ensemble: Wanderer’s Sunny Trappings": {
+        "name": "Ensemble: Wanderer’s Sunny Trappings",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/o2/O2DX36R69IT21693425327060.png",
+        "tags": [
+          "Head and Cloak"
+        ],
+        "caption": "Ensemble: Wanderer’s Sunny Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
+      },
+      "Ensemble: Vagabond’s Sunny Threads": {
+        "name": "Ensemble: Vagabond’s Sunny Threads",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/MR18GKESNHDA1693412242131.png",
+        "tags": [
+          "Head and Cloak"
+        ],
+        "caption": "Ensemble: Vagabond’s Sunny Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
+      },
+      "Burgundy Cap": {
+        "name": "Burgundy Cap",
+        "price": 150,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/4J2EPNWVDPTK1693412239649.png",
+        "tags": [
+          "Head"
+        ],
+        "caption": "Burgundy Cap\nItem Type: Head\nCost: 150 Trader's Tender"
+      },
+      "Yellow Tweed Cap": {
+        "name": "Yellow Tweed Cap",
+        "price": 150,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/69UKOPG5YJ2K1693412242970.png",
+        "tags": [
+          "Head"
+        ],
+        "caption": "Yellow Tweed Cap\nItem Type: Head\nCost: 150 Trader's Tender"
+      },
+      "Dread Admiral’s Bicorne": {
+        "name": "Dread Admiral’s Bicorne",
+        "price": 175,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/7R1F35EZGOG71693412240336.png",
+        "tags": [
+          "Head"
+        ],
+        "caption": "Dread Admiral’s Bicorne\nItem Type: Head\nCost: 175 Trader's Tender"
+      },
+      "Irontide’s Raider’s Bicorne": {
+        "name": "Irontide’s Raider’s Bicorne",
+        "price": 175,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/N0UEVNLUZ5M61693412239643.png",
+        "tags": [
+          "Head"
+        ],
+        "caption": "Irontide’s Raider’s Bicorne\nItem Type: Head\nCost: 175 Trader's Tender"
+      },
+      "Ancestral Skychaser’s Totem": {
+        "name": "Ancestral Skychaser’s Totem",
+        "price": 250,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/9CWN0UJ6EQ2M1693412241290.png",
+        "tags": [
+          "Cloak/Back"
+        ],
+        "caption": "Ancestral Skychaser’s Totem\nItem Type: Cloak/Back\nCost: 250 Trader's Tender"
+      },
+      "Ancestral Stonehoof Totem": {
+        "name": "Ancestral Stonehoof Totem",
+        "price": 250,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/1I77ZMBWS45G1693412241353.png",
+        "tags": [
+          "Cloak/Back"
+        ],
+        "caption": "Ancestral Stonehoof Totem\nItem Type: Cloak/Back\nCost: 250 Trader's Tender"
+      },
+      "Homebrewer’s Sampling Crest": {
+        "name": "Homebrewer’s Sampling Crest",
+        "price": 500,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/2THMG8WGX9LD1693414932298.png",
+        "tags": [
+          "Cloak"
+        ],
+        "caption": "Homebrewer’s Sampling Crest\nItem Type: Cloak\nCost: 500 Trader's Tender"
+      },
+      "Ensemble: Swashbuckling Bucaneer’s Slops": {
+        "name": "Ensemble: Swashbuckling Bucaneer’s Slops",
+        "price": 650,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/JZV1ZABEGV761675186835361.png",
+        "tags": [
+          "Chest, Waist, Legs, Feet"
+        ],
+        "caption": "Ensemble: Swashbuckling Bucaneer’s Slops\nItem Type: Chest, Waist, Legs, Feet\nCost: 650 Trader's Tender"
+      },
+      "Trusty Treasure Trove": {
+        "name": "Trusty Treasure Trove",
+        "price": 750,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/TLAG3XD3CADH1677619811147.png",
+        "tags": [
+          "Cloak/Back"
+        ],
+        "caption": "Trusty Treasure Trove\nItem Type: Cloak/Back\nCost: 750 Trader's Tender"
+      },
+      "Crusty Crawler Mount": {
+        "name": "Crusty Crawler Mount",
+        "price": null,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/Q4DH0SZA5PGD1693414932292.png",
+        "tags": [
+          null
+        ],
+        "caption": "Crusty Crawler Mount"
+      }
     }
   }
 }
