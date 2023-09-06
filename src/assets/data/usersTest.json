@@ -1,0 +1,114 @@
+{
+  "user1": {
+    "name": "John Smith",
+    "username": "john.smith",
+    "email": "john.smith@email.com",
+    "password": "password1",
+    "rewards": {
+      "tracked": {
+        "item1": true,
+        "item2": false,
+        "item3": true,
+        "item4": false
+      },
+      "collected": {
+        "item1": false,
+        "item2": true,
+        "item3": true,
+        "item4": false
+      }
+    }
+  },
+  "user2": {
+    "name": "Emma Johnson",
+    "username": "emma.johnson",
+    "email": "emma.johnson@email.com",
+    "password": "password2",
+    "rewards": {
+      "tracked": {},
+      "collected": {}
+    }
+  },
+  "user3": {
+    "name": "Michael Brown",
+    "username": "michael.brown",
+    "email": "michael.brown@email.com",
+    "password": "password3",
+    "rewards": {
+      "tracked": {},
+      "collected": {}
+    }
+  },
+  "user4": {
+    "name": "Linda Wilson",
+    "username": "linda.wilson",
+    "email": "linda.wilson@email.com",
+    "password": "password4",
+    "rewards": {
+      "tracked": {},
+      "collected": {}
+    }
+  },
+  "user5": {
+    "name": "James Taylor",
+    "username": "james.taylor",
+    "email": "james.taylor@email.com",
+    "password": "password5",
+    "rewards": {
+      "tracked": {},
+      "collected": {}
+    }
+  },
+  "user6": {
+    "name": "Sarah Lee",
+    "username": "sarah.lee",
+    "email": "sarah.lee@email.com",
+    "password": "password6",
+    "rewards": {
+      "tracked": {},
+      "collected": {}
+    }
+  },
+  "user7": {
+    "name": "David Martinez",
+    "username": "david.martinez",
+    "email": "david.martinez@email.com",
+    "password": "password7",
+    "rewards": {
+      "tracked": {},
+      "collected": {}
+    }
+  },
+  "user8": {
+    "name": "Olivia Garcia",
+    "username": "olivia.garcia",
+    "email": "olivia.garcia@email.com",
+    "password": "password8",
+    "rewards": {
+      "tracked": {},
+      "collected": {}
+    }
+  },
+  "user9": {
+    "name": "William Rodriguez",
+    "username": "william.rodriguez",
+    "email": "william.rodriguez@email.com",
+    "password": "password9",
+    "rewards": {
+      "tracked": {},
+      "collected": {}
+    }
+  },
+  "user10": {
+    "name": "Ava Martinez",
+    "username": "ava.martinez",
+    "email": "ava.martinez@email.com",
+    "password": "password10",
+    "rewards": {
+      "tracked": {},
+      "collected": {}
+    }
+  }
+}
+
+  

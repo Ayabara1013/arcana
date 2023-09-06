@@ -14,12 +14,14 @@ import Home from './components/screens/Home';
 import Contact from './components/Contact';
 import CharacterGenerator from './components/screens/character generator/CharacterGenerator';
 import Testes from './components/screens/testes/Testes.jsx';
+import TestPage from './components/screens/TestPage.jsx'
+import TradingPostTracker from './components/screens/trading post/TradingPostTracker';
 
 // ----------------- FIREBASE ----------------- //
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics, logEvent  } from "firebase/analytics";
-import TradingPostTracker from './components/screens/trading post/TradingPostTracker';
+import { getAnalytics, logEvent } from "firebase/analytics";
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -40,6 +42,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 // ----------------- FIREBASE ----------------- //
+
 
 
 
@@ -69,7 +72,12 @@ function App() {
 
             <Route
               path="/character-generator"
-              element={<CharacterGenerator />}
+              element={<CharacterGenerator app={app} />}
+            />
+
+            <Route
+              path="/test"
+              element={<TestPage />}
             />
 
             <Route

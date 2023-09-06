@@ -46,6 +46,7 @@ function NavigationBar(props) {
 							</Link>
 						</Nav.Item> */}
 
+
 						<NavDropdown title="Trading Post" id="nav-dropdown__trading-post" className='nav-dropdown'>
 							<NavDropdown.Item eventKey="4.1">
 								<Link to="/trading-post/class-sets" className='dropdown-item__text'>
@@ -62,6 +63,13 @@ function NavigationBar(props) {
 
 						{/* <Link to="/test-page" className='nav-item'>test page</Link> */}
 						{/* <Link to="/character-generator" className='nav-item'>Character Generator</Link> */}
+
+						<Nav.Item>
+							<Link to="/test" className='nav-link'>
+								Test
+							</Link>
+						</Nav.Item>
+
 						<Nav.Item>
 							<Link to="https://ko-fi.com/greenbottle" target="_blank" className='nav-link'>
 								Support

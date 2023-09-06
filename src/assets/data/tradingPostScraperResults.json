@@ -8,7 +8,13 @@
         "tags": [
           "Pet"
         ],
-        "caption": "Spirit of Competition\nItem Type: Pet\nCost: 650 Trader's Tender"
+        "caption": "Spirit of Competition\nItem Type: Pet\nCost: 650 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Ethereal Transmogrifier": {
         "name": "Ethereal Transmogrifier",
@@ -17,7 +23,13 @@
         "tags": [
           "Toy"
         ],
-        "caption": "Ethereal Transmogrifier\nItem Type: Toy\nCost: 500 Trader's Tender"
+        "caption": "Ethereal Transmogrifier\nItem Type: Toy\nCost: 500 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Alabaster Thunderwing": {
         "name": "Alabaster Thunderwing",
@@ -26,7 +38,13 @@
         "tags": [
           "Horde Mount"
         ],
-        "caption": "Alabaster Thunderwing\nItem Type: Horde Mount\nCost: 650 Trader's Tender"
+        "caption": "Alabaster Thunderwing\nItem Type: Horde Mount\nCost: 650 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Alabaster Stormtalon": {
         "name": "Alabaster Stormtalon",
@@ -35,7 +53,13 @@
         "tags": [
           "Alliance Mount"
         ],
-        "caption": "Alabaster Stormtalon\nItem Type: Alliance Mount\nCost: 650 Trader's Tender"
+        "caption": "Alabaster Stormtalon\nItem Type: Alliance Mount\nCost: 650 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Ancestral Clefthoof": {
         "name": "Ancestral Clefthoof",
@@ -44,7 +68,13 @@
         "tags": [
           "Mount"
         ],
-        "caption": "Ancestral Clefthoof\nItem Type: Mount\nCost: 650 Trader's Tender"
+        "caption": "Ancestral Clefthoof\nItem Type: Mount\nCost: 650 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "City Guard Heater Shield": {
         "name": "City Guard Heater Shield",
@@ -53,7 +83,13 @@
         "tags": [
           "Shield"
         ],
-        "caption": "City Guard Heater Shield\nItem Type: Shield\nCost: 50 Trader's Tender"
+        "caption": "City Guard Heater Shield\nItem Type: Shield\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Grunt’s Buckler": {
         "name": "Grunt’s Buckler",
@@ -62,7 +98,13 @@
         "tags": [
           "Sheild"
         ],
-        "caption": "Grunt’s Buckler\nItem Type: Sheild\nCost: 50 Trader's Tender"
+        "caption": "Grunt’s Buckler\nItem Type: Sheild\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Queen’s Conservatory Ball Gloves": {
         "name": "Queen’s Conservatory Ball Gloves",
@@ -71,7 +113,13 @@
         "tags": [
           "Gloves"
         ],
-        "caption": "Queen’s Conservatory Ball Gloves\nItem Type: Gloves\nCost: 100 Trader's Tender"
+        "caption": "Queen’s Conservatory Ball Gloves\nItem Type: Gloves\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Ember Court Soiree Gloves": {
         "name": "Ember Court Soiree Gloves",
@@ -80,7 +128,13 @@
         "tags": [
           "Gloves"
         ],
-        "caption": "Ember Court Soiree Gloves\nItem Type: Gloves\nCost: 100 Trader's Tender"
+        "caption": "Ember Court Soiree Gloves\nItem Type: Gloves\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Ensemble: Vagabond’s Azure Threads": {
         "name": "Ensemble: Vagabond’s Azure Threads",
@@ -89,7 +143,13 @@
         "tags": [
           "Head and Cloak"
         ],
-        "caption": "Ensemble: Vagabond’s Azure Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
+        "caption": "Ensemble: Vagabond’s Azure Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Ensemble: Wanderer’s Azure Trappings": {
         "name": "Ensemble: Wanderer’s Azure Trappings",
@@ -98,7 +158,13 @@
         "tags": [
           "Head and Cloak"
         ],
-        "caption": "Ensemble: Wanderer’s Azure Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
+        "caption": "Ensemble: Wanderer’s Azure Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Ensemble: Vagabond’s Crimson Threads": {
         "name": "Ensemble: Vagabond’s Crimson Threads",
@@ -107,7 +173,13 @@
         "tags": [
           "Head and Cloak"
         ],
-        "caption": "Ensemble: Vagabond’s Crimson Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
+        "caption": "Ensemble: Vagabond’s Crimson Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Ensemble: Wanderer’s Crimson Trappings": {
         "name": "Ensemble: Wanderer’s Crimson Trappings",
@@ -116,7 +188,13 @@
         "tags": [
           "Head and Cloak"
         ],
-        "caption": "Ensemble: Wanderer’s Crimson Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
+        "caption": "Ensemble: Wanderer’s Crimson Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Azure Scalesworn Longbow": {
         "name": "Azure Scalesworn Longbow",
@@ -125,7 +203,13 @@
         "tags": [
           "Bow"
         ],
-        "caption": "Azure Scalesworn Longbow\nItem Type: Bow\nCost: 200 Trader's Tender"
+        "caption": "Azure Scalesworn Longbow\nItem Type: Bow\nCost: 200 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Shard of Frozen Secrets": {
         "name": "Shard of Frozen Secrets",
@@ -134,7 +218,13 @@
         "tags": [
           "1-Hand Dagger"
         ],
-        "caption": "Shard of Frozen Secrets\nItem Type: 1-Hand Dagger\nCost: 200 Trader's Tender"
+        "caption": "Shard of Frozen Secrets\nItem Type: 1-Hand Dagger\nCost: 200 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Azure Nexus Crescent": {
         "name": "Azure Nexus Crescent",
@@ -143,7 +233,13 @@
         "tags": [
           "2-Hand Axe"
         ],
-        "caption": "Azure Nexus Crescent\nItem Type: 2-Hand Axe\nCost: 225 Trader's Tender"
+        "caption": "Azure Nexus Crescent\nItem Type: 2-Hand Axe\nCost: 225 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Crimson Nexus Crescent": {
         "name": "Crimson Nexus Crescent",
@@ -152,7 +248,13 @@
         "tags": [
           "2-Hand Axe"
         ],
-        "caption": "Crimson Nexus Crescent\nItem Type: 2-Hand Axe\nCost: 225 Trader's Tender"
+        "caption": "Crimson Nexus Crescent\nItem Type: 2-Hand Axe\nCost: 225 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Aquamarine Felfire Bulwark": {
         "name": "Aquamarine Felfire Bulwark",
@@ -161,7 +263,13 @@
         "tags": [
           "Shield"
         ],
-        "caption": "Aquamarine Felfire Bulwark\nItem Type: Shield\nCost: 400 Trader's Tender"
+        "caption": "Aquamarine Felfire Bulwark\nItem Type: Shield\nCost: 400 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Aquamarine Felfire Splitblade": {
         "name": "Aquamarine Felfire Splitblade",
@@ -170,7 +278,13 @@
         "tags": [
           "1-Hand Sword"
         ],
-        "caption": "Aquamarine Felfire Splitblade\nItem Type: 1-Hand Sword\nCost: 400 Trader's Tender"
+        "caption": "Aquamarine Felfire Splitblade\nItem Type: 1-Hand Sword\nCost: 400 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Ruby Felfire Bulwark": {
         "name": "Ruby Felfire Bulwark",
@@ -179,7 +293,13 @@
         "tags": [
           "Shield"
         ],
-        "caption": "Ruby Felfire Bulwark\nItem Type: Shield\nCost: 400 Trader's Tender"
+        "caption": "Ruby Felfire Bulwark\nItem Type: Shield\nCost: 400 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Ruby Felfire Splitblade": {
         "name": "Ruby Felfire Splitblade",
@@ -188,7 +308,13 @@
         "tags": [
           "1-Hand Sword"
         ],
-        "caption": "Ruby Felfire Splitblade\nItem Type: 1-Hand Sword\nCost: 400 Trader's Tender"
+        "caption": "Ruby Felfire Splitblade\nItem Type: 1-Hand Sword\nCost: 400 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Crown of Eternal Winter": {
         "name": "Crown of Eternal Winter",
@@ -197,7 +323,13 @@
         "tags": [
           "Head"
         ],
-        "caption": "Crown of Eternal Winter\nItem Type: Head\nCost: 400 Trader's Tender"
+        "caption": "Crown of Eternal Winter\nItem Type: Head\nCost: 400 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Hood of Hungering Darkness": {
         "name": "Hood of Hungering Darkness",
@@ -206,7 +338,13 @@
         "tags": [
           "Head"
         ],
-        "caption": "Hood of Hungering Darkness\nItem Type: Head\nCost: 400 Trader's Tender"
+        "caption": "Hood of Hungering Darkness\nItem Type: Head\nCost: 400 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Blade of Brutal Sacrifice": {
         "name": "Blade of Brutal Sacrifice",
@@ -215,7 +353,13 @@
         "tags": [
           "1-Hand Dagger"
         ],
-        "caption": "Blade of Brutal Sacrifice\nItem Type: 1-Hand Dagger\nCost: 400 Trader's Tender"
+        "caption": "Blade of Brutal Sacrifice\nItem Type: 1-Hand Dagger\nCost: 400 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Fury of the Firelord": {
         "name": "Fury of the Firelord",
@@ -224,7 +368,13 @@
         "tags": [
           "1-Hand Mace"
         ],
-        "caption": "Fury of the Firelord\nItem Type: 1-Hand Mace\nCost: 750 Trader's Tender"
+        "caption": "Fury of the Firelord\nItem Type: 1-Hand Mace\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       },
       "Ensemble: Bones of the Bloodhunter": {
         "name": "Ensemble: Bones of the Bloodhunter",
@@ -233,7 +383,13 @@
         "tags": [
           null
         ],
-        "caption": "Ensemble: Bones of the Bloodhunter"
+        "caption": "Ensemble: Bones of the Bloodhunter",
+        "lastAvailable": [
+          [
+            "2023",
+            "august"
+          ]
+        ]
       }
     },
     "september": {
@@ -244,7 +400,13 @@
         "tags": [
           "Head, Shoulder Waist"
         ],
-        "caption": "Plate of the Light Avenger\nItem Type: Head, Shoulder Waist\nCost: 450 Trader's Tender"
+        "caption": "Plate of the Light Avenger\nItem Type: Head, Shoulder Waist\nCost: 450 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Armaments of the Light Avenger": {
         "name": "Armaments of the Light Avenger",
@@ -253,7 +415,13 @@
         "tags": [
           "Hammer of the Light Avenger (2-Hand Mace), Kite of the Light Avenger (Shield), Club of the Light Avenger (1-Hand Mace)"
         ],
-        "caption": "Armaments of the Light Avenger\nItem Type: Hammer of the Light Avenger (2-Hand Mace), Kite of the Light Avenger (Shield), Club of the Light Avenger (1-Hand Mace)\nCost: 500 Trader's Tender"
+        "caption": "Armaments of the Light Avenger\nItem Type: Hammer of the Light Avenger (2-Hand Mace), Kite of the Light Avenger (Shield), Club of the Light Avenger (1-Hand Mace)\nCost: 500 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Silks of the Unnamed Cult": {
         "name": "Silks of the Unnamed Cult",
@@ -262,7 +430,13 @@
         "tags": [
           "Head, Shoulder Waist"
         ],
-        "caption": "Silks of the Unnamed Cult\nItem Type: Head, Shoulder Waist\nCost: 450 Trader's Tender"
+        "caption": "Silks of the Unnamed Cult\nItem Type: Head, Shoulder Waist\nCost: 450 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Secrets of the Unnamed Cult": {
         "name": "Secrets of the Unnamed Cult",
@@ -271,7 +445,13 @@
         "tags": [
           "Scepter of the Unnamed Cult (1-Hand Mace), Libram of the Unnamed Cult (Off-Hand), Staff of the Unnamed Cult (Staff)"
         ],
-        "caption": "Secrets of the Unnamed Cult\nItem Type: Scepter of the Unnamed Cult (1-Hand Mace), Libram of the Unnamed Cult (Off-Hand), Staff of the Unnamed Cult (Staff)\nCost: 500 Trader's Tender"
+        "caption": "Secrets of the Unnamed Cult\nItem Type: Scepter of the Unnamed Cult (1-Hand Mace), Libram of the Unnamed Cult (Off-Hand), Staff of the Unnamed Cult (Staff)\nCost: 500 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Blood Onyx Uniform": {
         "name": "Blood Onyx Uniform",
@@ -280,7 +460,13 @@
         "tags": [
           "Head, Shoulder Waist"
         ],
-        "caption": "Blood Onyx Uniform\nItem Type: Head, Shoulder Waist\nCost: 450 Trader's Tender"
+        "caption": "Blood Onyx Uniform\nItem Type: Head, Shoulder Waist\nCost: 450 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Blood Onyx Blades": {
         "name": "Blood Onyx Blades",
@@ -289,7 +475,28 @@
         "tags": [
           "Blood Onyx Shortblade (1-Hand Sword), Blood Onyx Serrated Edge (Dagger), Blood Onyx Impaler (Dagger)"
         ],
-        "caption": "Blood Onyx Blades\nItem Type: Blood Onyx Shortblade (1-Hand Sword), Blood Onyx Serrated Edge (Dagger), Blood Onyx Impaler (Dagger)\nCost: 500 Trader's Tender"
+        "caption": "Blood Onyx Blades\nItem Type: Blood Onyx Shortblade (1-Hand Sword), Blood Onyx Serrated Edge (Dagger), Blood Onyx Impaler (Dagger)\nCost: 500 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
+      },
+      "High Scholar's Grand Staff": {
+        "name": "High Scholar's Grand Staff",
+        "price": 500,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/DS1OWRX8ZHE81693412241079.png",
+        "tags": [
+          "Staff"
+        ],
+        "caption": "High Scholar's Grand Staff\nItem Type: Staff\nCost: 500 Trader's Tender\n(Also available in October's Trading Post)",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Slyvy": {
         "name": "Slyvy",
@@ -298,7 +505,13 @@
         "tags": [
           "Pet"
         ],
-        "caption": "Slyvy\nItem Type: Pet\nCost: 650 Trader's Tender"
+        "caption": "Slyvy\nItem Type: Pet\nCost: 650 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Gently-Used Cleaver": {
         "name": "Gently-Used Cleaver",
@@ -307,7 +520,13 @@
         "tags": [
           "1-Hand Sword"
         ],
-        "caption": "Gently-Used Cleaver\nItem Type: 1-Hand Sword\nCost: 50 Trader's Tender"
+        "caption": "Gently-Used Cleaver\nItem Type: 1-Hand Sword\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Gorian Mining Pick": {
         "name": "Gorian Mining Pick",
@@ -316,7 +535,13 @@
         "tags": [
           "Horde Mining Tool"
         ],
-        "caption": "Gorian Mining Pick\nItem Type: Horde Mining Tool\nCost: 50 Trader's Tender"
+        "caption": "Gorian Mining Pick\nItem Type: Horde Mining Tool\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Watchman’s Flare": {
         "name": "Watchman’s Flare",
@@ -325,7 +550,13 @@
         "tags": [
           "Off-Hand"
         ],
-        "caption": "Watchman’s Flare\nItem Type: Off-Hand\nCost: 100 Trader's Tender"
+        "caption": "Watchman’s Flare\nItem Type: Off-Hand\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Ensemble: Wanderer’s Sunny Trappings": {
         "name": "Ensemble: Wanderer’s Sunny Trappings",
@@ -334,7 +565,13 @@
         "tags": [
           "Head and Cloak"
         ],
-        "caption": "Ensemble: Wanderer’s Sunny Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
+        "caption": "Ensemble: Wanderer’s Sunny Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Ensemble: Vagabond’s Sunny Threads": {
         "name": "Ensemble: Vagabond’s Sunny Threads",
@@ -343,7 +580,13 @@
         "tags": [
           "Head and Cloak"
         ],
-        "caption": "Ensemble: Vagabond’s Sunny Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender"
+        "caption": "Ensemble: Vagabond’s Sunny Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Burgundy Cap": {
         "name": "Burgundy Cap",
@@ -352,7 +595,13 @@
         "tags": [
           "Head"
         ],
-        "caption": "Burgundy Cap\nItem Type: Head\nCost: 150 Trader's Tender"
+        "caption": "Burgundy Cap\nItem Type: Head\nCost: 150 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Yellow Tweed Cap": {
         "name": "Yellow Tweed Cap",
@@ -361,7 +610,13 @@
         "tags": [
           "Head"
         ],
-        "caption": "Yellow Tweed Cap\nItem Type: Head\nCost: 150 Trader's Tender"
+        "caption": "Yellow Tweed Cap\nItem Type: Head\nCost: 150 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Dread Admiral’s Bicorne": {
         "name": "Dread Admiral’s Bicorne",
@@ -370,7 +625,13 @@
         "tags": [
           "Head"
         ],
-        "caption": "Dread Admiral’s Bicorne\nItem Type: Head\nCost: 175 Trader's Tender"
+        "caption": "Dread Admiral’s Bicorne\nItem Type: Head\nCost: 175 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Irontide’s Raider’s Bicorne": {
         "name": "Irontide’s Raider’s Bicorne",
@@ -379,7 +640,13 @@
         "tags": [
           "Head"
         ],
-        "caption": "Irontide’s Raider’s Bicorne\nItem Type: Head\nCost: 175 Trader's Tender"
+        "caption": "Irontide’s Raider’s Bicorne\nItem Type: Head\nCost: 175 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Ancestral Skychaser’s Totem": {
         "name": "Ancestral Skychaser’s Totem",
@@ -388,7 +655,13 @@
         "tags": [
           "Cloak/Back"
         ],
-        "caption": "Ancestral Skychaser’s Totem\nItem Type: Cloak/Back\nCost: 250 Trader's Tender"
+        "caption": "Ancestral Skychaser’s Totem\nItem Type: Cloak/Back\nCost: 250 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Ancestral Stonehoof Totem": {
         "name": "Ancestral Stonehoof Totem",
@@ -397,7 +670,13 @@
         "tags": [
           "Cloak/Back"
         ],
-        "caption": "Ancestral Stonehoof Totem\nItem Type: Cloak/Back\nCost: 250 Trader's Tender"
+        "caption": "Ancestral Stonehoof Totem\nItem Type: Cloak/Back\nCost: 250 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Homebrewer’s Sampling Crest": {
         "name": "Homebrewer’s Sampling Crest",
@@ -406,7 +685,13 @@
         "tags": [
           "Cloak"
         ],
-        "caption": "Homebrewer’s Sampling Crest\nItem Type: Cloak\nCost: 500 Trader's Tender"
+        "caption": "Homebrewer’s Sampling Crest\nItem Type: Cloak\nCost: 500 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Ensemble: Swashbuckling Bucaneer’s Slops": {
         "name": "Ensemble: Swashbuckling Bucaneer’s Slops",
@@ -415,7 +700,13 @@
         "tags": [
           "Chest, Waist, Legs, Feet"
         ],
-        "caption": "Ensemble: Swashbuckling Bucaneer’s Slops\nItem Type: Chest, Waist, Legs, Feet\nCost: 650 Trader's Tender"
+        "caption": "Ensemble: Swashbuckling Bucaneer’s Slops\nItem Type: Chest, Waist, Legs, Feet\nCost: 650 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Trusty Treasure Trove": {
         "name": "Trusty Treasure Trove",
@@ -424,7 +715,13 @@
         "tags": [
           "Cloak/Back"
         ],
-        "caption": "Trusty Treasure Trove\nItem Type: Cloak/Back\nCost: 750 Trader's Tender"
+        "caption": "Trusty Treasure Trove\nItem Type: Cloak/Back\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       },
       "Crusty Crawler Mount": {
         "name": "Crusty Crawler Mount",
@@ -433,7 +730,13 @@
         "tags": [
           null
         ],
-        "caption": "Crusty Crawler Mount"
+        "caption": "Crusty Crawler Mount",
+        "lastAvailable": [
+          [
+            "2023",
+            "september"
+          ]
+        ]
       }
     }
   }
