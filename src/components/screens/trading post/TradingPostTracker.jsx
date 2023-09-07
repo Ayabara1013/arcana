@@ -67,34 +67,75 @@ function RewardsGallery(props) {
   const { tradingPostData, setActiveReward } = props;
 
   let gallery = [];
+  let filterGallery = [];
 
-  for (const year in tradingPostData) {
-    gallery.push(
-      <div className='w-100 border-bottom border-2 border-primary'>
-        <h2 className='fw-bold'>{year}</h2>
-      </div>
-    )
+  function generateGallery(filter) {
+    const gallery = [];
 
-    for (const month in tradingPostData[year]) {
+    // iterate through the years
+    for (const year in tradingPostData) {
+      // push the year divider
       gallery.push(
-        <div className='w-100'>
-          <div className='w-50 border-bottom border-2 border-primary'>
-            <h4 className='fw-bold'>{capitalizeFirstLetter(month)}</h4>
-          </div>
+        <div className='w-100 border-bottom border-2 border-primary'>
+          <h2 className='fw-bold'>{year}</h2>
         </div>
       )
 
-      for (const item in tradingPostData[year][month]) {
-        const currentItem = tradingPostData[year][month][item];
+      // iterate through the months
+      for (const month in tradingPostData[year]) {
+        // push the month divider
         gallery.push(
-          <GalleryItem currentItem={currentItem} year={year} month={month} item={item} setActiveReward={setActiveReward} />
+          <div className='w-100'>
+            <div className='w-50 border-bottom border-2 border-primary'>
+              <h4 className='fw-bold'>{capitalizeFirstLetter(month)}</h4>
+            </div>
+          </div>
         )
+
+        // iterate through the items
+        for (const item in tradingPostData[year][month]) {
+          const currentItem = tradingPostData[year][month][item];
+
+          // if filter exists, && if current item.{filter} === true // this is for tracking // this could be evolved later to work with broader filtering
+          if (filter && localStorage.getItem('trackedItems') && JSON.parse(localStorage.getItem('trackedItems'))[item] === true) {
+            // console.log(`${filter} is the current filter \n${localStorage.getItem('trackedItems')} \n${JSON.parse(localStorage.getItem('trackedItems'))[item]}`)
+
+            // console.log(`${item} == true`)
+            filterGallery.push(
+              <GalleryItem currentItem={currentItem} year={year} month={month} item={item} setActiveReward={setActiveReward} />
+            )
+          }
+
+          // now push the item to the main gallery
+          gallery.push(
+            <GalleryItem currentItem={currentItem} year={year} month={month} item={item} setActiveReward={setActiveReward} />
+          )
+        }
       }
     }
+
+    return (filter ? filterGallery : gallery);
+  }
+
+  // add something here to also put any tracked items in a separate div?
+  gallery = generateGallery();
+  filterGallery = generateGallery('tracked');
+
+  const FilterElement = () => {
+    return (
+      <>
+        <div className='w-100 border-bottom border-2 border-primary'>
+          <h2 className='fw-bold'>Tracked</h2>
+        </div>
+
+        {filterGallery}
+      </>
+    )
   }
 
   return (
     <div className='gallery gap-2' data-toggle='collapse' >
+      {filterGallery.length > 0 ? <FilterElement /> : ""}
       {gallery}
     </div>
   )

@@ -30,6 +30,14 @@
   transition: all 0.2s ease-in-out;
 }
 
+.filter-gallery {
+  .gallery-item {
+    img {
+      max-width: 50%;
+    }
+  }
+}
+
 .gallery-item {
   position: relative;
   flex: 1 0 calc((100% / 3) - 0.5rem);
@@ -200,3 +208,9 @@
 //   // border-radius: 1rem;
 //   // background-clip: padding-box;
 // }
+
+.tracking-alert-text {
+  font-size: 80%;
+  font-weight: 400;
+  color: rgb(211, 90, 90);
+}
