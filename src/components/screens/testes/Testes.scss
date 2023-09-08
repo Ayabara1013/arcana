@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.b1 {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 500px;
+  max-width: 500px;
+  max-height: 500px;
+  border: 1px solid red;
+  overflow: auto;
+}
+
+.b2 {
+  width: 200px;
+  height: 200px;
+  transition: all 0.5s ease-in-out;
+  overflow: auto;
+}
+
+.b3 {
+  width: 200px;
+  height: 200px;
+  overflow: auto;
+}
+
+.w-400 {
+  width: 400px !important;
+}

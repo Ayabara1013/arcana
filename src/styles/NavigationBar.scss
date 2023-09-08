@@ -14,6 +14,8 @@
   @include a.layer-4;
   @include a.box-shadow-light;
 
+  height: 4rem;
+
   display: flex;
   // position: sticky;
   transition: box-shadow 0.3s ease; /* Smooth transition for the shadow */
@@ -41,12 +43,17 @@
 .nav-item {
   @include base-text-colour;
   @include a.shadow-transition;
+
+  display: flex;
+  align-items: center;
   
-  padding: 0.25rem;
+  padding: 0.25rem !important;
+
   border: 0px;
   border-radius: 0.5rem;
   text-decoration-line: none;
   font-weight: 600; // semi-bold
+  
 
   &:hover {
     @include a.box-shadow-light;
@@ -57,7 +64,34 @@
     @include a.layer-1;
     // background-color: c.$rtc-accent;
   }
+
+  // &__text {
+  //   padding-left: 0.5rem;
+  //   padding-right: 0.5rem;
+  // }
+
+  // & {
+  //   text-decoration-line: none;
+  //   font-weight: 600; // semi-bold
+  // }
+
+  & > a {
+    padding: 0.5rem;
+    text-decoration-line: none;
+    font-weight: 600; // semi-bold
+    @include base-text-colour;
+  }
+
+  .nav-link {
+    & nav-link__text {
+      @include base-text-colour;
+    }
+  }
 }
+
+
+
+
 
 .nav-middle {
   display: flex;
@@ -81,6 +115,30 @@
 }
 
 
+.nav-dropdown {
+  a {
+    &:active {
+      @include base-text-colour;
+    }
+  }
+}
+
+.dropdown-item {
+  &:active {
+    background-color: c.$light-2 !important;
+  }
+
+  &.active {
+    background-color: c.$light-1 !important;
+  }
+
+  a {
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  }
+}
+
+
 
 
 @media (max-width: 768px) {
@@ -94,3 +152,6 @@
     gap: 0.5rem;
   }
 }
+
+
+

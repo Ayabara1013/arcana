@@ -1,12 +1,40 @@
-// body {
-//   margin: 0;
-// }
+@use './App' as a;
 
 .bx {
   margin: 0;
   padding: 10px 10px;
 }
 
-.container {
-  height: 2000px;
+// .container {
+//   height: 2000px;
+// }
+
+.user-card {
+  padding: 1rem;
+  border: 2px solid black;
+
+  p {
+    font-weight: 400;
+  }
+}
+
+.user-card-field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+
+  gap: 0.5rem;
+}
+
+dialog {
+  position: absolute;
+}
+
+.reward-item {
+  // @include a.layer-6;
+
+  // padding: 1rem;
+  // font-size: 200%;
+
+  // border: 1px solid red;
 }

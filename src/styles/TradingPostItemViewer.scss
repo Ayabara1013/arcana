@@ -1,0 +1,155 @@
+@use './App.scss' as a;
+@use './colours.scss' as c;
+
+
+.trading-post-item-viewer {
+  @include a.layer-6;
+  @include a.box-shadow;
+  // max-width: 60vw;
+  height: 500px;
+  position: relative;
+
+  // transition: height 0.5s ease-in-out; /* Add a transition to the background-color property */
+
+  &.open {
+    padding: 0.5rem;
+  }
+
+  &.closed {
+    height: 2rem;
+    padding: 0;
+    display: none; //TEMPORARY TILL I LEARN HOW TO DO THIS RIGHT!!!
+  }
+
+  .viewer-row {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .selector-bar {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+
+    height: 100%;
+
+    @media (max-width: 768px) {
+      // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Set the grid to have columns that are at least 200 pixels wide */
+
+      display: flex;
+      flex-direction: row;
+
+      // height: 50px;
+      overflow-x: scroll;
+    }
+
+    &.closed {
+      display: none;
+    }
+
+    /* Hide the background of the scrollbar */
+      &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    // &::-webkit-scrollbar-thumb {
+    //   // position: relative;
+    //   width: 10px;
+    //   height: 50px;
+    // }
+  }
+
+  .btn {
+    // width: calc(50% - 0.25rem);
+    border: none;
+  }
+
+  
+}
+
+.item-image-container {
+  // position: relative;
+  width: fit-content;
+  height: 100%;
+  // object-fit: cover;
+
+  img {
+    object-fit: cover;
+  }
+
+  .title {
+    position: relative;
+    top: 0;
+  }
+
+  &.closed {
+    display: none;
+
+    img {
+      display: none;
+    }
+  }
+}
+
+
+.open-close-btn {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  color: white;
+  transition: background-color 0.5s ease-in-out; /* Add a transition to the background-color property */
+
+  &.open {
+    background-color: transparent !important;
+
+    #open-close-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  #open-close-icon {
+    transition: transform 0.3s ease-in-out; /* Add a transition for the transform property */
+  }
+
+  // &:not(:hover):not(:active):not(:focus) { /* Add a :not() pseudo-class to exclude the .open-close-btn element from the color change */
+  //   color: white;
+  // }
+
+  &:hover {
+    // background-color: rgba(0, 0, 0, 0.5) !important;
+    color: white !important;
+  }
+}
+
+.viewer-title {
+  display: flex;
+  justify-content: start; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  position: relative;
+
+  
+  padding-left: 0.5rem;
+  height: 2rem;
+  // position: absolute;
+  top: 0;
+  // left: 0;
+
+  &.open {
+    display: none;
+  } 
+}
+
