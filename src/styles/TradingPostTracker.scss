@@ -30,6 +30,8 @@
   transition: all 0.2s ease-in-out;
 }
 
+// this line kind of makes no sense and is broken based on how the gallery is currently constructed
+// I could put the filter gallery ITEMS inside a div of its own. that would fix that to an extent I think
 .filter-gallery {
   .gallery-item {
     img {
@@ -209,8 +211,8 @@
 //   // background-clip: padding-box;
 // }
 
-.tracking-alert-text {
-  font-size: 80%;
-  font-weight: 400;
-  color: rgb(211, 90, 90);
+.alert {
+  &.tracking-alert {
+    padding: 0.5rem;
+  }
 }

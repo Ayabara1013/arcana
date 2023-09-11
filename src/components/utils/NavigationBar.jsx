@@ -64,15 +64,15 @@ function NavigationBar(props) {
 						{/* <Link to="/test-page" className='nav-item'>test page</Link> */}
 						{/* <Link to="/character-generator" className='nav-item'>Character Generator</Link> */}
 
-						<Nav.Item>
+						{/* <Nav.Item>
 							<Link to="/test" className='nav-link'>
 								Test
 							</Link>
-						</Nav.Item>
+						</Nav.Item> */}
 
 						<Nav.Item>
 							<Link to="https://ko-fi.com/greenbottle" target="_blank" className='nav-link'>
-								Support
+								Support Me
 							</Link>
 						</Nav.Item>
 					</Nav>

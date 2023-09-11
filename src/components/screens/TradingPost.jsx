@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
@@ -10,10 +11,11 @@ import tradingPostItems from '../tradingPostItems.jsx';
 import '../../styles/TradingPost.scss';
 
 // my things --------------------------------------------------
-import Footer from '../Contact';
-import Contact from '../Contact';
+// import Footer from '../Contact';
+// import Contact from '../Contact';
 import ClassSetViewerTradingPost from './trading post/ClassSetViewerTradingPost';
-import TradingPostItemViewer from './trading post/TradingPostItemViewer.jsx';
+// import TradingPostItemViewer from './trading post/TradingPostItemViewer.jsx';
+import TrackerFeatureAlert from './trading post/components/TrackerFeatureAlert.jsx';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -231,6 +233,13 @@ function TradingPost(props) {
         - removed m-auto, can add back in later? 
         - also removed flex-grow-1, it was making the verbose group force itself to the bottom of the screen
       */}
+
+      <TrackerFeatureAlert>
+        I made a new tracker for every trading post reward so far*,&nbsp;<Link to='/trading-post/rewards-tracker'>check it out here!</Link> 
+        <br />
+        <span className='text-adjust-s-50'>my internet is out so I will include all months before august once fixed!</span>
+      </TrackerFeatureAlert>
+
       <Row className='m-auto mb-4'> 
         <Col md='5'>
           <InputGroup className="mb-3">

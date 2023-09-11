@@ -64,13 +64,13 @@ function TestGallery(props) {
 
 
 function RewardsGallery(props) {
-  const { tradingPostData, setActiveReward } = props;
+  const { tradingPostData, setActiveReward, className } = props;
 
   let gallery = [];
   let filterGallery = [];
 
   function generateGallery(filter) {
-    const gallery = [];
+    // const gallery = [];
 
     // iterate through the years
     for (const year in tradingPostData) {
@@ -102,7 +102,7 @@ function RewardsGallery(props) {
 
             // console.log(`${item} == true`)
             filterGallery.push(
-              <GalleryItem currentItem={currentItem} year={year} month={month} item={item} setActiveReward={setActiveReward} />
+              <GalleryItem className={`filter-gallery`} currentItem={currentItem} year={year} month={month} item={item} setActiveReward={setActiveReward} />
             )
           }
 

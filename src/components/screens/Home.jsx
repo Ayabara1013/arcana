@@ -12,6 +12,10 @@ const toolData = {
 		title: 'Tendies Calculator',
 		description: 'Calculate the tendies you need to get all of the awesome class sets you want!',
 	},
+	tpTracker: {
+		title: 'Trading Post Tracker',
+		description: 'Track all past and current trading post rewards that you want or have already collected!'
+	},
   diceRoller: {
     title: 'Dice Roller',
     description: 'A dice roller for tabletop gaming.',
@@ -86,9 +90,17 @@ function Home(props) {
 					img={hordeTradingPost1}
 					route='/trading-post'
 				/>
+
+				<ToolCard
+					title={toolData.tpTracker.title}
+					description={toolData.tpTracker.description}
+					img={hordeTradingPost1}
+					route='/trading-post/rewards-tracker'
+				/>
+
 				<ToolCard title='character generator' />
-				<ToolCard title='scifi/fantasy race generator' />
-				<ToolCard title='spellcasting theme creator' />
+				{/* <ToolCard title='scifi/fantasy race generator' />
+				<ToolCard title='spellcasting theme creator' /> */}
 			</div>
 
 			{/* <Contact /> */}
