@@ -13,11 +13,18 @@ import { defaultUser } from '../../../assets/data/createUserData.js';
 import { GalleryItem } from '../trading post/components/tracker/TradingPostTrackerComponents';
 import tradingPostData from '../../../assets/data/tradingPostScraperResults.json';
 
+// font awesome imports
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faHome, faUser, faPaperPlane, faAnglesDown, faHouse } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faCoffee, faHome, faUser, faPaperPlane, faAnglesDown, faHouse);
+
 // Get a reference to the Firestore collection
 const usersRef = firestore.collection('users');
 
 export default function TestPage(props) {
-  const { app, user, setUser, updateTendies, trackedItems, toggleTrackedItem } = props;
+  const { app, user, setUser, updateTendies, trackedItems, toggleTrackedItem, toggleCollectedItem } = props;
 
   useEffect(() => {
     if (user.tendies === 0) {
@@ -109,17 +116,94 @@ export default function TestPage(props) {
     );
   }
 
+
 // Assuming you have imported your JSON data as TradingPostData
-// Assuming you have imported your JSON data as TradingPostData
-  const augustData = tradingPostData["2023"]["august"];
-  const item1 = Object.values(augustData)[0]; // Accessing the first property within "august"
-  const itemKey1 = Object.keys(augustData)[0];
+  const month1 = tradingPostData["2023"]["august"];
+  const item1 = Object.values(month1)[0]; // Accessing the first property within "august"
+  const itemKey1 = 'Alabaster Stormtalon'// Object.keys(month1)[0];
   const image1 = item1.image;
-  
 
-  console.log(itemKey1);
+  // console.log(itemKey1);
+
+  // console.log(user.trackedItems.sampleItem)
 
 
+
+  // unit test 2
+
+  const month2 = tradingPostData['2023']['august'];
+  const item2 = month2['Alabaster Stormtalon'];
+  const item2name = item2.name;
+  // console.log(month2)
+  console.log(item2['image']);
+  // console.log(item2.name);
+  // console.log(item2name);
+
+
+  function ItemDisplay(props) {
+    const { item, src } = props;
+    return (
+      <div className='image-container'>
+        <img src={src} alt="" className='test-image' />
+        
+        <div className='image-container__buttons d-flex'>
+          <Button
+            variant={user.rewards[item.name].tracked ? 'primary' : 'danger'}
+            className={`w-50 ${user.rewards[item.name].tracked ? '' : ''}`}
+            onClick={() => {
+              console.log("toggling tracked");
+              console.log(item.name);
+              console.log(item);
+              console.log(user.rewards[item.name].tracked)
+
+              setUser((prevUser) => {
+                const newValue = !prevUser.rewards[item.name].tracked;
+                return {
+                  ...prevUser, 
+                  rewards: {
+                    ...prevUser.rewards,
+                    [item.name]: {
+                      ...prevUser.rewards[item.name],
+                      tracked: newValue,
+                    }
+                  }
+                }
+              })
+            }}
+          >
+            {user.rewards[item.name].tracked ? 'tracked' : 'not tracked'}
+          </Button>
+
+          <Button
+            variant={user.rewards[item.name].collected ? 'primary' : 'danger'}
+            className={`w-50 ${user.rewards[item.name].collected ? '' : ''}`}
+            onClick={() => {
+              console.log("toggling collected");
+              console.log(item.name);
+              console.log(item);
+              console.log(user.rewards[item.name].collected)
+
+              setUser((prevUser) => {
+                const newValue = !prevUser.rewards[item.name].collected;
+                return {
+                  ...prevUser, 
+                  rewards: {
+                    ...prevUser.rewards,
+                    [item.name]: {
+                      ...prevUser.rewards[item.name],
+                      collected: newValue,
+                    }
+                  }
+                }
+              })
+            }}
+          >
+            {user.rewards[item.name].collected ? 'collected' : 'not collected'}
+          </Button>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <Container className='p-2 border'>
@@ -148,7 +232,7 @@ export default function TestPage(props) {
             <div className={`${user.trackedItems.sampleItem ? 'bg-info' : 'bg-danger'} p-2 rounded`}>item 1</div>
           </div>
 
-          <div className="d-flex m-auto gap-2">
+          {/* <div className="d-flex m-auto gap-2">
             <Button variant="primary" onClick={() => console.log(user)}>
               display user
             </Button>
@@ -159,25 +243,49 @@ export default function TestPage(props) {
           </div>
 
           <div className='image-container d-flex flex-column'>
-            <img src={image1} alt="" className='test-image' />
+            <div key={``} className='gallery-item' >
+              <img src={image1} alt="" />
+            </div>
             <ButtonGroup>
               <Button variant="primary" onClick={() => {
-                if (!trackedItems[itemKey1]) {
-                  console.log(`${itemKey1}`)
+                // console.log(item1)
+                if (!item1) {
+                  console.log(`item1 not found`)
                 }
                 else {
-                  console.log(trackedItems)
+                  // console.log(`found key for ${item1.name}`)
+                  // console.log(`toggling tracked for ${item1.name}`)
+                  // console.log(user.trackedItems[itemKey1])
+                  toggleTrackedItem(itemKey1);
+                  // console.log(user.trackedItems[itemKey1])
                 }
               }}>
                 track
               </Button>
-              <Button variant="primary" onClick={() => {
 
+              <Button variant="primary" onClick={() => {
+                toggleCollectedItem(itemKey1);
               }}>
                 collect
               </Button>
             </ButtonGroup>
-          </div> 
+
+            <div>
+              <div className={`${user.trackedItems[itemKey1] === true ? 'bg-success text-white' : "bg-warning"}`} >
+                {user.trackedItems[itemKey1] === true ? 'tracked' : "not tracked"}
+              </div>
+              <div className={`${user.collectedItems[itemKey1] === true ? 'bg-success text-white' : "bg-warning"}`} >
+                {user.collectedItems[itemKey1] === true ? 'collected' : "not collected"}
+              </div>
+            </div>
+
+          </div>  */}
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <ItemDisplay item={tradingPostData['2023']['august']['Alabaster Stormtalon']} src={item2.image} />
         </Col>
       </Row>
     </Container>

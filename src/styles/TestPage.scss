@@ -41,7 +41,14 @@ dialog {
 
 
 .image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   width: 400px;
+
+  &__buttons {
+    gap: 0.5rem;
+  }
 }
 
 .test-image {

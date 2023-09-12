@@ -92,10 +92,26 @@ function App() {
     }, {})
   }
 
+  const rewardItems = {
+    sampleItem: {
+      tracked: true,
+      collected: true,
+    },
+    ...itemNames.reduce((obj, name) => {
+      obj[name] = {
+        tracked: false,
+        collected: false,
+      }
+      return obj;
+    }, {})
+  }
+
   const [user, setUser] = useState({
     trackedItems: trackedItems,
     collectedItems: trackedItems,
     tendies: 0,
+
+    rewards: rewardItems,
 
     classSets: {
       paladin:      new ClassSet(false, false, 'Paladin',       'September'),
@@ -134,6 +150,8 @@ function App() {
           }
         }
       })
+
+      localStorage.setItem('trackedItems', JSON.stringify(trackedItems));
     },
 
     addTrackedItem: function (item, value) {
@@ -158,10 +176,9 @@ function App() {
         }
       })
     },
-
-
-
   });
+
+  // console.log(user.updateTendies)
 
   useEffect(() => {
     console.log(user)
@@ -169,7 +186,15 @@ function App() {
 
   useEffect(() => {
     console.log(user.trackedItems)
+    localStorage.setItem('trackedItems', JSON.stringify(user.trackedItems));
   }, [user.trackedItems]);
+
+
+
+  useEffect(() => {
+    console.log(user.rewards)
+    localStorage.setItem('rewards', JSON.stringify(user.rewards));
+  }, [user.rewards]);
 
 
   const defaultProps = {
@@ -198,6 +223,7 @@ function App() {
     updateTendies: user.updateTendies,
     trackedItems: user.trackedItems,
     toggleTrackedItem: user.toggleTrackedItem,
+    toggleCollectedItem: user.toggleCollectedItem,
   }
 
   console.log(defaultProps.firebase)
