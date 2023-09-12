@@ -1,19 +1,39 @@
 import fs from 'fs';
 
 // const filename = 'tradingPostScraperResults.json';
-const filename = './src/assets/data/tradingPostScraperResults.json';
+const filename = '../src/assets/data/tradingPostScraperResults.json';
+const itemRecords = '../src/assets/data/itemRecords.json';
 
+// create an object to manipulate the data inside
+let existingData = {};
+let existingItems = [];
+
+// Read the existing data from the JSON file
+if (fs.existsSync(filename)) {
+  const fileContents = fs.readFileSync(filename, 'utf8');
+  existingData = JSON.parse(fileContents);
+  console.log(existingData);
+  console.log(`scraper data file exists`)
+}
+
+if (fs.existsSync(itemRecords)) {
+  const fileContents = fs.readFileSync(filename, 'utf8');
+  existingData = JSON.parse(fileContents);
+  console.log(existingData);
+  console.log(`item records exists`)
+}
 
 async function updateTradingPostData() {
-
   // create an object to manipulate the data inside
-  let existingData = {};
+  // let existingData = {};
 
-  // pull the contents of the file to the existingData object 
-  if (fs.existsSync(filename)) {
-    const fileContents = fs.readFileSync(filename, 'utf8');
-    existingData = JSON.parse(fileContents);
-  }
+  // // Read the existing data from the JSON file
+  // if (fs.existsSync(filename)) {
+  //   const fileContents = fs.readFileSync(filename, 'utf8');
+  //   existingData = JSON.parse(fileContents);
+  //   // console.log(existingData);
+  //   console.log(`file exists`)
+  // }
 
   // does the item have a last available value?
   // iterate over each year
@@ -23,21 +43,19 @@ async function updateTradingPostData() {
       // iterate over each item in the month
       for (const item in existingData[year][month]) {
         if (!existingData[year][month][item].lastAvailable) {
-          // console.log(`adding lastAvailable array property to ${item} with [${year}, ${month}]`);
+          console.log(`adding lastAvailable array property to ${item} with [${year}, ${month}]`);
           existingData[year][month][item].lastAvailable = [[year, month]];
-          // console.log(JSON.stringify(existingData[year][month][item].lastAvailable, null, 2));
+        }
+        else {
+          if (!existingData[year][month][item].lastAvailable.some(([yearToCheck, monthToCheck]) => year === yearToCheck && month === monthToCheck)) {
+            existingData[year][month][item].lastAvailable.unshift([year, month]);
+          }
         }
       }
     }
   }
 
-  // const updatedData = JSON.stringify(existingData, null, 2);
-  const updatedData = JSON.stringify(existingData, (key, value) => {
-    if (key === 'lastAvailable') {
-      return value ? JSON.stringify(value.map(([year, month]) => [year, month])) : '[]';
-    }
-    return value;
-  }, 2);
+  const updatedData = JSON.stringify(existingData, null, 2);
 
   // fs.writeFileSync(filename, updatedData, { flag: 'a' });
   /**
@@ -47,4 +65,22 @@ async function updateTradingPostData() {
   fs.writeFileSync(filename, updatedData);
 }
 
+
+function recordItems() {
+  for (const year in existingData) {
+    for (const month in existingData[year]) {
+      for (const item in existingData[year][month]) {
+        if (!existingItems.some(({ name }) => name === item)) {
+          existingItems.push({[item]: [year, month]});
+        }
+        else console.log(`item ${item} already exists in itemRecords`);
+      }
+    }
+  }
+
+  const updatedItems = JSON.stringify(existingItems, null, 2);
+  fs.writeFileSync(itemRecords, updatedItems);
+}
+
 updateTradingPostData();
+recordItems();

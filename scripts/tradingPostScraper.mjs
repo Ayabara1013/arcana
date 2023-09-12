@@ -6,6 +6,18 @@ import inquirer from 'inquirer';
 // const filename = 'tradingPostScraperResults.json';
 const filename = './src/assets/data/tradingPostScraperResults.json';
 
+const announcements = {
+  2023: {
+    february: 'https://worldofwarcraft.blizzard.com/en-gb/news/23910165/get-your-trading-post-items-for-february',
+    march: 'https://worldofwarcraft.blizzard.com/en-gb/news/23899629/march-over-to-the-trading-post-for-new-items',
+    april: 'https://worldofwarcraft.blizzard.com/en-gb/news/23934867/hop-over-to-the-trading-post-for-april',
+    may: 'https://worldofwarcraft.blizzard.com/en-us/news/23938067/the-trading-post-is-in-full-bloom-for-may',
+    june: 'https://worldofwarcraft.blizzard.com/en-us/news/23960048/the-trading-post-for-june-is-all-abuzz',
+    july: 'https://worldofwarcraft.blizzard.com/en-us/news/23973733/get-hot-summer-rewards-in-the-july-trading-post',
+  }
+  
+}
+
 async function scrapeTradingPost() {
   const { url, year, month, outputFile } = await inquirer.prompt([
     {

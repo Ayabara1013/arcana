@@ -63,7 +63,7 @@ export function SortingBar(props) {
   const { viewDetails, setViewDetails } = props;
   return (
     <div className='sorting-bar d-flex justify-content-between'>
-      <div>sorting things</div>
+      <div>sorting things (coming soon!)</div>
 
       <div className='details__controls'>
         <Form.Check inline type="switch"

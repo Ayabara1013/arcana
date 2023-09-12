@@ -1,5 +1,1517 @@
 {
   "2023": {
+    "february": {
+      "Celestial Steed": {
+        "name": "Celestial Steed",
+        "price": 900,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/R1A7QWCL15661675186835916.png",
+        "tags": [
+          "Mount"
+        ],
+        "caption": "Celestial Steed\nItem Type: Mount\nCost: 900 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Garrlok": {
+        "name": "Garrlok",
+        "price": 750,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/HCXGB6OST2K11675186837382.png",
+        "tags": [
+          "Pet"
+        ],
+        "caption": "Garrlok\nItem Type: Pet\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Ensemble: Swashbuckling Bucaneer's Slops": {
+        "name": "Ensemble: Swashbuckling Bucaneer's Slops",
+        "price": 650,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/JZV1ZABEGV761675186835361.png",
+        "tags": [
+          "Armor Set"
+        ],
+        "caption": "Ensemble: Swashbuckling Bucaneer's Slops\nItem Type: Armor Set\nCost: 650 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Iridescent Warcloak": {
+        "name": "Iridescent Warcloak",
+        "price": 75,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/C5W5OAD6ET341675186830220.jpg",
+        "tags": [
+          "Cloak"
+        ],
+        "caption": "Iridescent Warcloak\nItem Type: Cloak\nCost: 75 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Vagabond’s Rosey Threads": {
+        "name": "Vagabond’s Rosey Threads",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/SCYUMY24KXO71675186836663.jpg",
+        "tags": [
+          "Armor Set"
+        ],
+        "caption": "Vagabond’s Rosey Threads\nItem Type: Armor Set\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Wanderer's Rosey Trappings": {
+        "name": "Wanderer's Rosey Trappings",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/J0GI284SZASV1675186836772.jpg",
+        "tags": [
+          "Armor Set"
+        ],
+        "caption": "Wanderer's Rosey Trappings\nItem Type: Armor Set\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Infiltrator's Bandolier": {
+        "name": "Infiltrator's Bandolier",
+        "price": 250,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/MTA4M2D2ORDB1675186830202.jpg",
+        "tags": [
+          "Backpack"
+        ],
+        "caption": "Infiltrator's Bandolier\nItem Type: Backpack\nCost: 250 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Operative's Bandolier": {
+        "name": "Operative's Bandolier",
+        "price": 250,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/M2DJ0JWS2VYU1675186830433.jpg",
+        "tags": [
+          "Backpack"
+        ],
+        "caption": "Operative's Bandolier\nItem Type: Backpack\nCost: 250 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Rosy Corsage": {
+        "name": "Rosy Corsage",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/E6NB6AV0I5QQ1675186832856.jpg",
+        "tags": [
+          "Hand"
+        ],
+        "caption": "Rosy Corsage\nItem Type: Hand\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Fetid Bouquet": {
+        "name": "Fetid Bouquet",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/FR5UC678R5ZK1675186828874.jpg",
+        "tags": [
+          "Offhand"
+        ],
+        "caption": "Fetid Bouquet\nItem Type: Offhand\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Fury of the Firelord": {
+        "name": "Fury of the Firelord",
+        "price": 750,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/CP1C3PHY6V8R1675186828863.jpg",
+        "tags": [
+          "1-Hand Mace"
+        ],
+        "caption": "Fury of the Firelord\nItem Type: 1-Hand Mace\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Squire's Etched Warhammer": {
+        "name": "Squire's Etched Warhammer",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/I4DFPI17HR1P1675186833737.jpg",
+        "tags": [
+          "2-Hand Mace"
+        ],
+        "caption": "Squire's Etched Warhammer\nItem Type: 2-Hand Mace\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Shard of Frozen Secrets": {
+        "name": "Shard of Frozen Secrets",
+        "price": 200,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/ZJ46NJYK86Z51675186832880.jpg",
+        "tags": [
+          "Dagger"
+        ],
+        "caption": "Shard of Frozen Secrets\nItem Type: Dagger\nCost: 200 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Azure Scalesworn Longbow": {
+        "name": "Azure Scalesworn Longbow",
+        "price": 200,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/9UIXJRR0YJZB1675186828987.jpg",
+        "tags": [
+          "Bow"
+        ],
+        "caption": "Azure Scalesworn Longbow\nItem Type: Bow\nCost: 200 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Shattered Voidspire": {
+        "name": "Shattered Voidspire",
+        "price": 500,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/28CUMVL9W24Z1675186832917.jpg",
+        "tags": [
+          "Staff"
+        ],
+        "caption": "Shattered Voidspire\nItem Type: Staff\nCost: 500 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      },
+      "Ash'adar, Harbinger of Dawn mount": {
+        "name": "Ash'adar, Harbinger of Dawn mount",
+        "price": null,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/gx/GXCN5VR6SHN21675215146059.png",
+        "tags": [
+          null
+        ],
+        "caption": "Ash'adar, Harbinger of Dawn mount",
+        "lastAvailable": [
+          [
+            "2023",
+            "february"
+          ]
+        ]
+      }
+    },
+    "march": {
+      "Pandaren Monk": {
+        "name": "Pandaren Monk",
+        "price": 650,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/AV6YB9O70TOY1677619810796.png",
+        "tags": [
+          "Pet"
+        ],
+        "caption": "Pandaren Monk\nItem Type: Pet\nCost: 650 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Dread Pirate's Bicorne": {
+        "name": "Dread Pirate's Bicorne",
+        "price": 175,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/2RJ1RFD5IEHX1677479004592.jpg",
+        "tags": [
+          "Head"
+        ],
+        "caption": "Dread Pirate's Bicorne\nItem Type: Head\nCost: 175 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Fabulously Flashy Finery": {
+        "name": "Fabulously Flashy Finery",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/9MG2B0VIV2801677479004569.jpg",
+        "tags": [
+          "Shirt"
+        ],
+        "caption": "Fabulously Flashy Finery\nItem Type: Shirt\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Filigreed Lion’s Maw": {
+        "name": "Filigreed Lion’s Maw",
+        "price": 250,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/GH711YMJ3I5S1677619808477.png",
+        "tags": [
+          "Shield"
+        ],
+        "caption": "Filigreed Lion’s Maw\nItem Type: Shield\nCost: 250 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Frozen Shadow": {
+        "name": "Frozen Shadow",
+        "price": 400,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/BS85UIJ3JNEZ1677479004668.jpg",
+        "tags": [
+          "One-Hand Sword"
+        ],
+        "caption": "Frozen Shadow\nItem Type: One-Hand Sword\nCost: 400 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Gnomish Liquid Transfer Apparatus": {
+        "name": "Gnomish Liquid Transfer Apparatus",
+        "price": 75,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/HBCW8D3479TC1677479005406.jpg",
+        "tags": [
+          "Off-Hand"
+        ],
+        "caption": "Gnomish Liquid Transfer Apparatus\nItem Type: Off-Hand\nCost: 75 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Greatcloak of the Virtuous Protector": {
+        "name": "Greatcloak of the Virtuous Protector",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/0JR8Z24SP7RC1677479005465.jpg",
+        "tags": [
+          "Back"
+        ],
+        "caption": "Greatcloak of the Virtuous Protector\nItem Type: Back\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Shadowy Blademaster’s Greatsword": {
+        "name": "Shadowy Blademaster’s Greatsword",
+        "price": 225,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/0U3WO9F7SLSZ1677479006153.jpg",
+        "tags": [
+          "Two-Hand Sword"
+        ],
+        "caption": "Shadowy Blademaster’s Greatsword\nItem Type: Two-Hand Sword\nCost: 225 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Triumphant Blademaster’s Greatsword": {
+        "name": "Triumphant Blademaster’s Greatsword",
+        "price": 225,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/GYVU9I2ROQBP1677479006196.jpg",
+        "tags": [
+          "Two-Hand Sword"
+        ],
+        "caption": "Triumphant Blademaster’s Greatsword\nItem Type: Two-Hand Sword\nCost: 225 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Trusty Treasure Trove": {
+        "name": "Trusty Treasure Trove",
+        "price": 750,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/TLAG3XD3CADH1677619811147.png",
+        "tags": [
+          "Back"
+        ],
+        "caption": "Trusty Treasure Trove\nItem Type: Back\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Ensemble: Fel-Automaton Exoplate": {
+        "name": "Ensemble: Fel-Automaton Exoplate",
+        "price": 850,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/PSK3E1LAPCA21677619808473.png",
+        "tags": [
+          "Armor Set"
+        ],
+        "caption": "Ensemble: Fel-Automaton Exoplate\nItem Type: Armor Set\nCost: 850 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Ensemble: Glorious Dragonrider’s Mail": {
+        "name": "Ensemble: Glorious Dragonrider’s Mail",
+        "price": 750,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/IHXJ11MMDPPS1677479005445.jpg",
+        "tags": [
+          "Armor Set"
+        ],
+        "caption": "Ensemble: Glorious Dragonrider’s Mail\nItem Type: Armor Set\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Ensemble: Vagabond’s Midnight Threads": {
+        "name": "Ensemble: Vagabond’s Midnight Threads",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/P9K006BYF1M61677479006311.jpg",
+        "tags": [
+          "Transmog Set"
+        ],
+        "caption": "Ensemble: Vagabond’s Midnight Threads\nItem Type: Transmog Set\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Ensemble: Wanderer’s Midnight Trappings": {
+        "name": "Ensemble: Wanderer’s Midnight Trappings",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/K9OX7PML3DWZ1677479006749.jpg",
+        "tags": [
+          "Transmog Set"
+        ],
+        "caption": "Ensemble: Wanderer’s Midnight Trappings\nItem Type: Transmog Set\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      },
+      "Ensemble: Darkmoon Harlequin’s Bells": {
+        "name": "Ensemble: Darkmoon Harlequin’s Bells",
+        "price": null,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/WR8M9MKDBSAC1677619809255.png",
+        "tags": [
+          null
+        ],
+        "caption": "Ensemble: Darkmoon Harlequin’s Bells",
+        "lastAvailable": [
+          [
+            "2023",
+            "march"
+          ]
+        ]
+      }
+    },
+    "april": {
+      "Egbob": {
+        "name": "Egbob",
+        "price": 600,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/972LWOO0JUFJ1680051058782.png",
+        "tags": [
+          "Pet"
+        ],
+        "caption": "Egbob\nItem Type: Pet\nCost: 600 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Reins of the Magenta Cloud Serpent": {
+        "name": "Reins of the Magenta Cloud Serpent",
+        "price": 900,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/SIJ8B3BZC1TJ1680051059680.png",
+        "tags": [
+          null
+        ],
+        "caption": "Reins of the Magenta Cloud Serpent\nItem Type:Mount\nCost: 900 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Drape of Foreboding Mists": {
+        "name": "Drape of Foreboding Mists",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/7CKVOJ7TO6CY1680051060411.jpeg",
+        "tags": [
+          "Back"
+        ],
+        "caption": "Drape of Foreboding Mists\nItem Type: Back\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Fine White Evening Gloves": {
+        "name": "Fine White Evening Gloves",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/MQQ6RB12DKTD1680051060730.jpeg",
+        "tags": [
+          "Hands"
+        ],
+        "caption": "Fine White Evening Gloves\nItem Type: Hands\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Forsaken Cresset": {
+        "name": "Forsaken Cresset",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/JI51T6XIGAG71680051060957.jpeg",
+        "tags": [
+          "Off-Hand"
+        ],
+        "caption": "Forsaken Cresset\nItem Type: Off-Hand\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Watchman’s Flare": {
+        "name": "Watchman’s Flare",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/XPA6FVFPS9TH1680051062064.jpeg",
+        "tags": [
+          "Off-Hand"
+        ],
+        "caption": "Watchman’s Flare\nItem Type: Off-Hand\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Honed Bastard Sword": {
+        "name": "Honed Bastard Sword",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/VA593PO6ZFPP1680051061516.jpeg",
+        "tags": [
+          "Two-Hand Sword"
+        ],
+        "caption": "Honed Bastard Sword\nItem Type: Two-Hand Sword\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Fists of Polar Fury": {
+        "name": "Fists of Polar Fury",
+        "price": 175,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/557P4EIBBANT1680051060913.jpeg",
+        "tags": [
+          "One-Hand Fist"
+        ],
+        "caption": "Fists of Polar Fury\nItem Type: One-Hand Fist\nCost: 175 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Red Pith Helmet": {
+        "name": "Red Pith Helmet",
+        "price": 175,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/KBVCNL1HHAFG1680051058304.jpeg",
+        "tags": [
+          "Head"
+        ],
+        "caption": "Red Pith Helmet\nItem Type: Head\nCost: 175 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Crimson Nexus Crescent": {
+        "name": "Crimson Nexus Crescent",
+        "price": 225,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/YB0GNHQDMWED1680051059750.jpeg",
+        "tags": [
+          "Two-Hand Axe"
+        ],
+        "caption": "Crimson Nexus Crescent\nItem Type: Two-Hand Axe\nCost: 225 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Libram of Righteous Light": {
+        "name": "Libram of Righteous Light",
+        "price": 225,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/LXLM60L08LH21680051061529.jpeg",
+        "tags": [
+          "Off-Hand"
+        ],
+        "caption": "Libram of Righteous Light\nItem Type: Off-Hand\nCost: 225 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Tome of Sin’dorei Secrets": {
+        "name": "Tome of Sin’dorei Secrets",
+        "price": 225,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/E86JVBGE6W1E1680051061961.jpeg",
+        "tags": [
+          "Off-Hand"
+        ],
+        "caption": "Tome of Sin’dorei Secrets\nItem Type: Off-Hand\nCost: 225 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Gilded Drakkonid Morningstar": {
+        "name": "Gilded Drakkonid Morningstar",
+        "price": 450,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/ERKY0KHGX02F1680051061388.jpeg",
+        "tags": [
+          "One-Hand Mace"
+        ],
+        "caption": "Gilded Drakkonid Morningstar\nItem Type: One-Hand Mace\nCost: 450 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Ensemble: Trappers Munitions": {
+        "name": "Ensemble: Trappers Munitions",
+        "price": 500,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/dy/DYLLUBOF9GN81680109868704.png",
+        "tags": [
+          "Transmog Set"
+        ],
+        "caption": "Ensemble: Trappers Munitions\nItem Type: Transmog Set\nCost: 500 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Ensemble: Corrupted Runelord’s Regalia": {
+        "name": "Ensemble: Corrupted Runelord’s Regalia",
+        "price": 750,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/FW4SIDBU4VBI1680051060163.png",
+        "tags": [
+          "Transmog"
+        ],
+        "caption": "Ensemble: Corrupted Runelord’s Regalia\nItem Type: Transmog\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      },
+      "Transmog- Arsenal: Blades of Elune": {
+        "name": "Transmog- Arsenal: Blades of Elune",
+        "price": null,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/EOTTUW6RR3CL1680051058879.png",
+        "tags": [
+          null
+        ],
+        "caption": "Transmog- Arsenal: Blades of Elune",
+        "lastAvailable": [
+          [
+            "2023",
+            "april"
+          ]
+        ]
+      }
+    },
+    "may": {
+      "Pippin": {
+        "name": "Pippin",
+        "price": 600,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/H6MV2GDBXMYX1682702907367.png",
+        "tags": [
+          "Pet"
+        ],
+        "caption": "Pippin\nItem Type: Pet\nCost: 600 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "High Priestess’s Ceremonial Drape": {
+        "name": "High Priestess’s Ceremonial Drape",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/VY9VJMAA96UT1682641012404.png",
+        "tags": [
+          "Cloak"
+        ],
+        "caption": "High Priestess’s Ceremonial Drape\nItem Type: Cloak\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Huntsman’s Recurve Bow": {
+        "name": "Huntsman’s Recurve Bow",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/UPI7BQPOQJNW1682641015595.png",
+        "tags": [
+          "Bow"
+        ],
+        "caption": "Huntsman’s Recurve Bow\nItem Type: Bow\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Sharpened Shank": {
+        "name": "Sharpened Shank",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/878O5V7NH8VI1682641013767.png",
+        "tags": [
+          "Dagger"
+        ],
+        "caption": "Sharpened Shank\nItem Type: Dagger\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Ensemble: Vagabond’s Snowy Threads": {
+        "name": "Ensemble: Vagabond’s Snowy Threads",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/95IUDX85WEEZ1682702909185.png",
+        "tags": [
+          "Hood and Cloak"
+        ],
+        "caption": "Ensemble: Vagabond’s Snowy Threads\nItem Type: Hood and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Ensemble: Wanderer’s Snowy Trappings": {
+        "name": "Ensemble: Wanderer’s Snowy Trappings",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/OSID9PRA98921682641012463.png",
+        "tags": [
+          "Hood and Cloak"
+        ],
+        "caption": "Ensemble: Wanderer’s Snowy Trappings\nItem Type: Hood and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Sunbleached Grimskull Cinch": {
+        "name": "Sunbleached Grimskull Cinch",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/81WIJ48IBJXS1682641015178.png",
+        "tags": [
+          "Belt"
+        ],
+        "caption": "Sunbleached Grimskull Cinch\nItem Type: Belt\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Well-Worn Grimskull Cinch": {
+        "name": "Well-Worn Grimskull Cinch",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/WDE1J92XWS4Y1682641017043.png",
+        "tags": [
+          "Belt"
+        ],
+        "caption": "Well-Worn Grimskull Cinch\nItem Type: Belt\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Merciless Trapper’s Staff": {
+        "name": "Merciless Trapper’s Staff",
+        "price": 150,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/LJQLACMYSLO01682641016622.png",
+        "tags": [
+          "Staff"
+        ],
+        "caption": "Merciless Trapper’s Staff\nItem Type: Staff\nCost: 150 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Crimson Bicorne": {
+        "name": "Crimson Bicorne",
+        "price": 175,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/97GKT5NININX1682641012336.png",
+        "tags": [
+          "Helm"
+        ],
+        "caption": "Crimson Bicorne\nItem Type: Helm\nCost: 175 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Black Iron Blunderbuss": {
+        "name": "Black Iron Blunderbuss",
+        "price": 200,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/MLI0HY95WV471682641014079.png",
+        "tags": [
+          "2-Hand Rifle"
+        ],
+        "caption": "Black Iron Blunderbuss\nItem Type: 2-Hand Rifle\nCost: 200 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Lost Crown of the Arcane": {
+        "name": "Lost Crown of the Arcane",
+        "price": 200,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/UEA3SE5S3IC71682641014094.png",
+        "tags": [
+          "Helm"
+        ],
+        "caption": "Lost Crown of the Arcane\nItem Type: Helm\nCost: 200 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Tiercel’s Wing": {
+        "name": "Tiercel’s Wing",
+        "price": 200,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/STF3NBZMFME61682641015655.png",
+        "tags": [
+          "1-Hand Warglaive"
+        ],
+        "caption": "Tiercel’s Wing\nItem Type: 1-Hand Warglaive\nCost: 200 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Fang of the Mountain": {
+        "name": "Fang of the Mountain",
+        "price": 400,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/HR4DNXNP4Q001682702908215.png",
+        "tags": [
+          "1-Hand Sword"
+        ],
+        "caption": "Fang of the Mountain\nItem Type: 1-Hand Sword\nCost: 400 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Ensemble: Kvaldir Scout Leathers": {
+        "name": "Ensemble: Kvaldir Scout Leathers",
+        "price": 750,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/TZ71CT6DH69F1682702906358.png",
+        "tags": [
+          "Helm, Shoulder, Chest, Belt, Pants, Boots, Bracer, Gloves"
+        ],
+        "caption": "Ensemble: Kvaldir Scout Leathers\nItem Type: Helm, Shoulder, Chest, Belt, Pants, Boots, Bracer, Gloves\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Ensemble: Vestment of the Honored Valarjar": {
+        "name": "Ensemble: Vestment of the Honored Valarjar",
+        "price": 850,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/9MZR69Y4W0RF1682702908626.png",
+        "tags": [
+          "Helm, Shoulder, Robe, Belt, Pants, Boots, Bracer, Gloves, Cloak"
+        ],
+        "caption": "Ensemble: Vestment of the Honored Valarjar\nItem Type: Helm, Shoulder, Robe, Belt, Pants, Boots, Bracer, Gloves, Cloak\nCost: 850 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      },
+      "Mount- Savage Green Battle Turtle": {
+        "name": "Mount- Savage Green Battle Turtle",
+        "price": null,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/CVPWIB81YOE31682702907523.png",
+        "tags": [
+          null
+        ],
+        "caption": "Mount- Savage Green Battle Turtle",
+        "lastAvailable": [
+          [
+            "2023",
+            "may"
+          ]
+        ]
+      }
+    },
+    "june": {
+      "Buzzworth": {
+        "name": "Buzzworth",
+        "price": 600,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/2EWLNDFMAU6A1685063917360.png",
+        "tags": [
+          "Pet"
+        ],
+        "caption": "Buzzworth\nItem Type: Pet\nCost: 600 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Royal Swarmer’s Reins": {
+        "name": "Royal Swarmer’s Reins",
+        "price": 800,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/NZVEON4B4A671685063907472.png",
+        "tags": [
+          "Mount"
+        ],
+        "caption": "Royal Swarmer’s Reins\nItem Type: Mount\nCost: 800 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Cindermane Charger": {
+        "name": "Cindermane Charger",
+        "price": 900,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/FCCYAJAB57ST1685063906741.png",
+        "tags": [
+          "Mount"
+        ],
+        "caption": "Cindermane Charger\nItem Type: Mount\nCost: 900 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Shifty Merchant’s Tunic": {
+        "name": "Shifty Merchant’s Tunic",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/63A46XPV0NNH1685063921180.png",
+        "tags": [
+          "Shirt"
+        ],
+        "caption": "Shifty Merchant’s Tunic\nItem Type: Shirt\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Magister’s Jeweled Drape": {
+        "name": "Magister’s Jeweled Drape",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/BJB687HLG5FJ1685063920864.png",
+        "tags": [
+          "Cloak"
+        ],
+        "caption": "Magister’s Jeweled Drape\nItem Type: Cloak\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Veteran Grunt’s Chopper": {
+        "name": "Veteran Grunt’s Chopper",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/COGD1ZZO97VV1685063923061.png",
+        "tags": [
+          null
+        ],
+        "caption": "Veteran Grunt’s Chopper\nItem Type:2-Hand Axe\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Ensemble: Vagabond’s Carrot Trappings": {
+        "name": "Ensemble: Vagabond’s Carrot Trappings",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/E32JCMUZCQZU1685063922823.png",
+        "tags": [
+          "Head and Cloak"
+        ],
+        "caption": "Ensemble: Vagabond’s Carrot Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Ensemble: Wanderer’s Carrot Trappings": {
+        "name": "Ensemble: Wanderer’s Carrot Trappings",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/3A1B9OIZUE0U1685063930771.png",
+        "tags": [
+          "Head and Cloak"
+        ],
+        "caption": "Ensemble: Wanderer’s Carrot Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Pustulent Demonheart Fetish": {
+        "name": "Pustulent Demonheart Fetish",
+        "price": 150,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/3ZCY8511ACJI1685063917530.png",
+        "tags": [
+          "Off-Hand"
+        ],
+        "caption": "Pustulent Demonheart Fetish\nItem Type: Off-Hand\nCost: 150 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Sentinel’s Tower Shield": {
+        "name": "Sentinel’s Tower Shield",
+        "price": 150,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/NSVSAXHI75IL1685063921293.png",
+        "tags": [
+          "Shield"
+        ],
+        "caption": "Sentinel’s Tower Shield\nItem Type: Shield\nCost: 150 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Emberstone Dress": {
+        "name": "Emberstone Dress",
+        "price": 150,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/2KSD757I579I1685063919101.png",
+        "tags": [
+          "Robe"
+        ],
+        "caption": "Emberstone Dress\nItem Type: Robe\nCost: 150 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Jewel of the Firelord": {
+        "name": "Jewel of the Firelord",
+        "price": 400,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/HGEQJD9IQOS91685063919392.png",
+        "tags": [
+          "Helm"
+        ],
+        "caption": "Jewel of the Firelord\nItem Type: Helm\nCost: 400 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Flame-Forged Fel Fang": {
+        "name": "Flame-Forged Fel Fang",
+        "price": 450,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/AHYEMYQ8DDSJ1685063919335.png",
+        "tags": [
+          "1-Hand Dagger"
+        ],
+        "caption": "Flame-Forged Fel Fang\nItem Type: 1-Hand Dagger\nCost: 450 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Sunspire Battle Staff": {
+        "name": "Sunspire Battle Staff",
+        "price": 500,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/RGNDYYCQ9DUB1685063917480.png",
+        "tags": [
+          "Staff"
+        ],
+        "caption": "Sunspire Battle Staff\nItem Type: Staff\nCost: 500 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Soulburner Bardiche": {
+        "name": "Soulburner Bardiche",
+        "price": 550,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/IATFLX404IUG1685063922609.png",
+        "tags": [
+          "Polearm"
+        ],
+        "caption": "Soulburner Bardiche\nItem Type: Polearm\nCost: 550 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Ensemble: Helarjar Berserker Warplate": {
+        "name": "Ensemble: Helarjar Berserker Warplate",
+        "price": 750,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/QRRDW5FC4WDU1685063906419.png",
+        "tags": [
+          "Head, Shoulder, Chest, Waist, Legs, Feet, Wrist, Hand"
+        ],
+        "caption": "Ensemble: Helarjar Berserker Warplate\nItem Type: Head, Shoulder, Chest, Waist, Legs, Feet, Wrist, Hand\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      },
+      "Mount- Quawks": {
+        "name": "Mount- Quawks",
+        "price": null,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/HJZMZ41ULCYZ1685063906787.png",
+        "tags": [
+          null
+        ],
+        "caption": "Mount- Quawks",
+        "lastAvailable": [
+          [
+            "2023",
+            "june"
+          ]
+        ]
+      }
+    },
+    "july": {
+      "Spectral Tiger Cub": {
+        "name": "Spectral Tiger Cub",
+        "price": 750,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/FYFY8BOIC7KF1687563827802.png",
+        "tags": [
+          "Pet"
+        ],
+        "caption": "Spectral Tiger Cub\nItem Type: Pet\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Tyrael’s Charger": {
+        "name": "Tyrael’s Charger",
+        "price": null,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/H80B4V2E36YD1687563834106.png",
+        "tags": [
+          "Mount"
+        ],
+        "caption": "Tyrael’s Charger\nItem Type: Mount\nCost:  900 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Reins of the Felcrystal Scorpion": {
+        "name": "Reins of the Felcrystal Scorpion",
+        "price": 650,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/ZM8F0012MAGH1687563830410.png",
+        "tags": [
+          "Mount"
+        ],
+        "caption": "Reins of the Felcrystal Scorpion\nItem Type: Mount\nCost: 650 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Fabulously Flashy Finery": {
+        "name": "Fabulously Flashy Finery",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/QD492S18QM5B1687563827820.png",
+        "tags": [
+          "Shirt"
+        ],
+        "caption": "Fabulously Flashy Finery\nItem Type: Shirt\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Primeval Basher": {
+        "name": "Primeval Basher",
+        "price": 50,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/PEIUHQ5F8M021687563832390.png",
+        "tags": [
+          "1-Hand Mace"
+        ],
+        "caption": "Primeval Basher\nItem Type: 1-Hand Mace\nCost: 50 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Polished Shortsword": {
+        "name": "Polished Shortsword",
+        "price": 75,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/ZNPY9BWQWYU41687563832249.png",
+        "tags": [
+          "1-Hand Sword"
+        ],
+        "caption": "Polished Shortsword\nItem Type: 1-Hand Sword\nCost: 75 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Silvered Warcloak": {
+        "name": "Silvered Warcloak",
+        "price": 75,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/QLE6K6UV67IL1687563833693.png",
+        "tags": [
+          "Cloak"
+        ],
+        "caption": "Silvered Warcloak\nItem Type: Cloak\nCost: 75 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Ensemble: Vagabond’s Violet Threads": {
+        "name": "Ensemble: Vagabond’s Violet Threads",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/WFB89TIFZ6CY1687567268995.png",
+        "tags": [
+          "Head and Cloak"
+        ],
+        "caption": "Ensemble: Vagabond’s Violet Threads\nItem Type: Head and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Ensemble: Wanderer’s Violet Trappings": {
+        "name": "Ensemble: Wanderer’s Violet Trappings",
+        "price": 100,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/CRZQ7IV5Q9KO1687567268935.png",
+        "tags": [
+          "Head and Cloak"
+        ],
+        "caption": "Ensemble: Wanderer’s Violet Trappings\nItem Type: Head and Cloak\nCost: 100 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Fists of Polar Fury": {
+        "name": "Fists of Polar Fury",
+        "price": 175,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/8TNGJF6CNFQN1687563831346.jpg",
+        "tags": [
+          "Fist Weapon"
+        ],
+        "caption": "Fists of Polar Fury\nItem Type: Fist Weapon\nCost: 175 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Sinister Fel Staff": {
+        "name": "Sinister Fel Staff",
+        "price": 175,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/NWQAH5W2O39Z1687563833810.png",
+        "tags": [
+          "Staff"
+        ],
+        "caption": "Sinister Fel Staff\nItem Type: Staff\nCost: 175 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Mephistroth’s Razor": {
+        "name": "Mephistroth’s Razor",
+        "price": 200,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/YBD7TV485BFH1687563830918.jpg",
+        "tags": [
+          "1-Hand Sword"
+        ],
+        "caption": "Mephistroth’s Razor\nItem Type: 1-Hand Sword\nCost: 200 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Helm of the Fierce": {
+        "name": "Helm of the Fierce",
+        "price": 225,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/WRZ1694ES9861687563830395.png",
+        "tags": [
+          "Helm"
+        ],
+        "caption": "Helm of the Fierce\nItem Type: Helm\nCost: 225 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Filigreed Lion’s Maw": {
+        "name": "Filigreed Lion’s Maw",
+        "price": 250,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/NV1VUP08J04J1687563830209.png",
+        "tags": [
+          "Shield"
+        ],
+        "caption": "Filigreed Lion’s Maw\nItem Type: Shield\nCost: 250 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Aldori War Mace": {
+        "name": "Aldori War Mace",
+        "price": 500,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/RLEUOYHY87LQ1687563825983.png",
+        "tags": [
+          "2-Hand Mace"
+        ],
+        "caption": "Aldori War Mace\nItem Type: 2-Hand Mace\nCost: 500 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Antoran Felspire": {
+        "name": "Antoran Felspire",
+        "price": 600,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/JLL3I0IPF72O1687563826043.png",
+        "tags": [
+          "Staff"
+        ],
+        "caption": "Antoran Felspire\nItem Type: Staff\nCost: 600 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Conquest": {
+        "name": "Conquest",
+        "price": 600,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/3K8EPAQRF2KO1687563826031.png",
+        "tags": [
+          "2-Hand Sword"
+        ],
+        "caption": "Conquest\nItem Type: 2-Hand Sword\nCost: 600 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Ensemble: Sylvan Stalker’s Leathers": {
+        "name": "Ensemble: Sylvan Stalker’s Leathers",
+        "price": 750,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/LMOEQ0QXF84E1687563827982.png",
+        "tags": [
+          "Head, Shoulder, Chest, Waist, Legs, Feet, Wrist, Hand"
+        ],
+        "caption": "Ensemble: Sylvan Stalker’s Leathers\nItem Type: Head, Shoulder, Chest, Waist, Legs, Feet, Wrist, Hand\nCost: 750 Trader's Tender",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      },
+      "Dragonriding Mount – Grotto Netherwing Drake": {
+        "name": "Dragonriding Mount – Grotto Netherwing Drake",
+        "price": null,
+        "image": "https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/ICP28WOF0PPB1687563832052.png",
+        "tags": [
+          null
+        ],
+        "caption": "Dragonriding Mount – Grotto Netherwing Drake",
+        "lastAvailable": [
+          [
+            "2023",
+            "july"
+          ]
+        ]
+      }
+    },
     "august": {
       "Spirit of Competition": {
         "name": "Spirit of Competition",
