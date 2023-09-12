@@ -82,7 +82,7 @@ function App() {
 
   const itemNames = getTradingPostItems();
 
-  console.log(itemNames)
+  // console.log(itemNames)
 
   const trackedItems = {
     sampleItem: true,
@@ -91,6 +91,8 @@ function App() {
       return obj;
     }, {})
   }
+
+  // const trackedItems = localStorage.
 
   const rewardItems = {
     sampleItem: {
@@ -106,96 +108,265 @@ function App() {
     }, {})
   }
 
-  const [user, setUser] = useState({
-    trackedItems: trackedItems,
-    collectedItems: trackedItems,
-    tendies: 0,
+  // const [user, setUser] = useState({
+  //   trackedItems: trackedItems,
+  //   collectedItems: trackedItems,
+  //   rewards: rewardItems,
+  //   tendies: 0,
 
-    rewards: rewardItems,
+  //   classSets: {
+  //     paladin:      new ClassSet(false, false, 'Paladin',       'September'),
+  //     priest:       new ClassSet(false, false, 'Priest',        'September'),
+  //     rogue:        new ClassSet(false, false, 'Rogue',         'September'),
 
-    classSets: {
-      paladin:      new ClassSet(false, false, 'Paladin',       'September'),
-      priest:       new ClassSet(false, false, 'Priest',        'September'),
-      rogue:        new ClassSet(false, false, 'Rogue',         'September'),
+  //     deathKnight:  new ClassSet(false, false, 'Death Knight',  'October'),
+  //     demonHunter:  new ClassSet(false, false, 'Demon Hunter',  'October'),
+  //     druid:        new ClassSet(false, false, 'Druid',         'October'),
 
-      deathKnight:  new ClassSet(false, false, 'Death Knight',  'October'),
-      demonHunter:  new ClassSet(false, false, 'Demon Hunter',  'October'),
-      druid:        new ClassSet(false, false, 'Druid',         'October'),
+  //     warlock:      new ClassSet(false, false, 'Warlock',       'November'),
+  //     monk:         new ClassSet(false, false, 'Monk',          'November'),
+  //     warrior:      new ClassSet(false, false, 'Warrior',       'November'),
 
-      warlock:      new ClassSet(false, false, 'Warlock',       'November'),
-      monk:         new ClassSet(false, false, 'Monk',          'November'),
-      warrior:      new ClassSet(false, false, 'Warrior',       'November'),
+  //     evoker:       new ClassSet(false, false, 'Evoker',        'December'),
+  //     hunter:       new ClassSet(false, false, 'Hunter',        'December'),
+  //     mage:         new ClassSet(false, false, 'Mage',          'December'),
+  //     shaman:       new ClassSet(false, false, 'Shaman',        'December'),
+  //   },
 
-      evoker:       new ClassSet(false, false, 'Evoker',        'December'),
-      hunter:       new ClassSet(false, false, 'Hunter',        'December'),
-      mage:         new ClassSet(false, false, 'Mage',          'December'),
-      shaman:       new ClassSet(false, false, 'Shaman',        'December'),
-    },
+  //   updateTendies: function (num) {
+  //     setUser((prevUser) => ({
+  //       ...prevUser,
+  //       tendies: num,
+  //     }));
+  //   },
 
-    updateTendies: function (num) {
+  //   toggleTrackedItem: function (item) {
+  //     setUser((prevUser) => {
+  //       const newValue = !prevUser.trackedItems[item];
+  //       return {
+  //         ...prevUser,
+  //         trackedItems: {
+  //           ...prevUser.trackedItems,
+  //           [item]: newValue,
+  //         }
+  //       }
+  //     })
+
+  //     localStorage.setItem('trackedItems', JSON.stringify(trackedItems));
+  //   },
+
+  //   addTrackedItem: function (item, value) {
+  //     setUser((prevUser) => ({
+  //       ...prevUser,
+  //       trackedItems: {
+  //         ...prevUser.trackedItems,
+  //         [item]: value,
+  //       }
+  //     }))
+  //   },
+
+  //   toggleCollectedItem: function (item) {
+  //     setUser((prevUser) => {
+  //       const newValue = !prevUser.collectedItems[item];
+  //       return {
+  //         ...prevUser,
+  //         collectedItems: {
+  //           ...prevUser.collectedItems,
+  //           [item]: newValue,
+  //         }
+  //       }
+  //     })
+  //   },
+
+  //   // toggleReward: function (item, property) {
+  //   //   console.log(property);
+  //   //   setUser((prevUser) => {
+  //   //     const newValue = !prevUser.rewards[item.name];
+  //   //     return {
+  //   //       ...prevUser, 
+  //   //       rewards: {
+  //   //         ...prevUser.rewards,
+  //   //         [item.name]: {
+  //   //           ...prevUser.rewards[item.name],
+  //   //           [property]: !prevUser.rewards[item.name][property]
+  //   //         }
+  //   //       }
+  //   //     }
+  //   //   })
+  //   // },
+    
+  //   toggleReward: function (item, property) {
+  //     const itemName = item;
+  //     const propertyName = property;
+
+  //     console.log(itemName);
+  //     console.log(property);
+
+  //     const updatedUser = {
+  //       ...user,
+  //       rewards: {
+  //         ...user.rewards,
+  //         [itemName]: {
+  //           ...user.rewards[itemName],
+  //           [propertyName]: !user.rewards[itemName][propertyName],
+  //         },
+  //       },
+  //     };
+  //     setUser(updatedUser);
+  //   }
+  // });
+
+  const [user, setUser] = useState(() => {
+    const storedTrackedItems = JSON.parse(localStorage.getItem('trackedItems'));
+    const storedCollectedItems = JSON.parse(localStorage.getItem('collectedItems'));
+  
+    const trackedItems = storedTrackedItems ?? {
+      sampleItem: true,
+      ...itemNames.reduce((obj, name) => {
+        obj[name] = false;
+        return obj;
+      }, {})
+    }
+    
+    const collectedItems = storedCollectedItems ?? {
+      sampleItem: true,
+      ...itemNames.reduce((obj, name) => {
+        obj[name] = false;
+        return obj;
+      }, {})
+    }
+
+    return {
+      trackedItems: trackedItems,
+      collectedItems: trackedItems,
+      rewards: rewardItems,
+      tendies: 0,
+  
+      classSets: {
+        paladin:      new ClassSet(false, false, 'Paladin',       'September'),
+        priest:       new ClassSet(false, false, 'Priest',        'September'),
+        rogue:        new ClassSet(false, false, 'Rogue',         'September'),
+  
+        deathKnight:  new ClassSet(false, false, 'Death Knight',  'October'),
+        demonHunter:  new ClassSet(false, false, 'Demon Hunter',  'October'),
+        druid:        new ClassSet(false, false, 'Druid',         'October'),
+  
+        warlock:      new ClassSet(false, false, 'Warlock',       'November'),
+        monk:         new ClassSet(false, false, 'Monk',          'November'),
+        warrior:      new ClassSet(false, false, 'Warrior',       'November'),
+  
+        evoker:       new ClassSet(false, false, 'Evoker',        'December'),
+        hunter:       new ClassSet(false, false, 'Hunter',        'December'),
+        mage:         new ClassSet(false, false, 'Mage',          'December'),
+        shaman:       new ClassSet(false, false, 'Shaman',        'December'),
+      },
+  
+      // update how many tendies the user has
+      updateTendies: function (num) {
+        setUser((prevUser) => ({
+  
+          ...prevUser,
+          tendies: num,
+        }));
+      },
+  
+      // function to toggle a tracked item
+      toggleTrackedItem: function (item) {
+        setUser((prevUser) => {
+          const newValue = !prevUser.trackedItems[item];
+          return {
+            ...prevUser,
+            trackedItems: {
+              ...prevUser.trackedItems,
+              [item]: newValue,
+            }
+          }
+        })
+        localStorage.setItem('trackedItems', JSON.stringify(trackedItems));
+      },
+  
+      // NOT CURRENTLY USED
+      // addTrackedItem: function (item, value) {
+      //   setUser((prevUser) => ({
+      //     ...prevUser,
+      //     trackedItems: {
+      //       ...prevUser.trackedItems,
+      //       [item]: value,
+      //     }
+      //   }))
+      // },
+  
+      // function to toggle a collected item
+      toggleCollectedItem: function (item) {
+        setUser((prevUser) => {
+          const newValue = !prevUser.collectedItems[item];
+          return {
+            ...prevUser,
+            collectedItems: {
+              ...prevUser.collectedItems,
+              [item]: newValue,
+            }
+          }
+        })
+      },
+  
+      // NOT WORKING // function to toggle a reward
+      toggleReward: function (item, property) {
+        const itemName = item;
+        const propertyName = property;
+  
+        console.log(itemName);
+        console.log(property);
+  
+        const updatedUser = {
+          ...user,
+          rewards: {
+            ...user.rewards,
+            [itemName]: {
+              ...user.rewards[itemName],
+              [propertyName]: !user.rewards[itemName][propertyName],
+            },
+          },
+        };
+        setUser(updatedUser);
+      }
+    };
+  })
+
+  useEffect(() => {
+    const storedTrackedItems = JSON.parse(localStorage.getItem('trackedItems'));
+    const storedCollectedItems = JSON.parse(localStorage.getItem('collectedItems'));
+
+    if (storedTrackedItems) {
       setUser((prevUser) => ({
         ...prevUser,
-        tendies: num,
+        trackedItems: storedTrackedItems,
       }));
-    },
+      console.log(`retrieved stored tracked items from local storage`)
+    }
+    else console.log(`there were no tracked items stored in local storage`);
 
-    toggleTrackedItem: function (item) {
-      setUser((prevUser) => {
-        const newValue = !prevUser.trackedItems[item];
-        return {
-          ...prevUser,
-          trackedItems: {
-            ...prevUser.trackedItems,
-            [item]: newValue,
-          }
-        }
-      })
-
-      localStorage.setItem('trackedItems', JSON.stringify(trackedItems));
-    },
-
-    addTrackedItem: function (item, value) {
+    if (storedCollectedItems) {
       setUser((prevUser) => ({
         ...prevUser,
-        trackedItems: {
-          ...prevUser.trackedItems,
-          [item]: value,
-        }
-      }))
-    },
+        collectedItems: storedCollectedItems,
+      }));
+      console.log(`retrieved stored collected items from local storage`)
+    }
+    else console.log(`there were no collected items stored in local storage`);
+  }, [])
 
-    toggleCollectedItem: function (item) {
-      setUser((prevUser) => {
-        const newValue = !prevUser.collectedItems[item];
-        return {
-          ...prevUser,
-          collectedItems: {
-            ...prevUser.collectedItems,
-            [item]: newValue,
-          }
-        }
-      })
-    },
-  });
-
-  // console.log(user.updateTendies)
+  // useEffect(() => {
+  //   console.log(user)
+  // }, [user]);
 
   useEffect(() => {
-    console.log(user)
-  }, [user]);
-
-  useEffect(() => {
-    console.log(user.trackedItems)
     localStorage.setItem('trackedItems', JSON.stringify(user.trackedItems));
   }, [user.trackedItems]);
 
-
-
   useEffect(() => {
-    console.log(user.rewards)
-    localStorage.setItem('rewards', JSON.stringify(user.rewards));
-  }, [user.rewards]);
-
+    localStorage.setItem('collectedItems', JSON.stringify(user.collectedItems));
+  }, [user.collectedItems]);
 
   const defaultProps = {
     firebase: {
@@ -226,7 +397,7 @@ function App() {
     toggleCollectedItem: user.toggleCollectedItem,
   }
 
-  console.log(defaultProps.firebase)
+  // console.log(defaultProps.firebase)
 
   return (
     <div className='App'>

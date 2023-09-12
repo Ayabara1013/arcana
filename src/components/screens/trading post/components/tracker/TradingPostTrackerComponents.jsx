@@ -7,72 +7,51 @@ import { Form } from 'react-bootstrap';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faHome, faUser, faPaperPlane, faAnglesDown, faHouse, faEye, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { current } from '@reduxjs/toolkit';
 
 library.add(faCoffee, faHome, faUser, faPaperPlane, faAnglesDown, faHouse, faEye, faCircleCheck);
 
 export function GalleryItem(props) {
-  const { currentItem, year, month, item, setActiveReward, user, toggleTrackedItem } = props;
-  const [isTracked, setIsTracked] = useState(() => {
-    // Retrieve the current state of tracked items from localStorage
-    const trackedItems = JSON.parse(localStorage.getItem('trackedItems')) || {};
-
-    // Return the value of the "item" property, or false if it doesn't exist
-    return trackedItems[item] || false;
-  });
-
-  const [isCollected, setIsCollected] = useState(false);
+  const { currentItem, year, month, item, setActiveReward, user, setUser, itemKey } = props;
 
   const handleClick = (event) => {
     if (event.shiftKey) {
       console.log(`you just toggled tracking on ${item}`)
-      setIsTracked(!isTracked)
-      // Retrieve the current state of tracked items from localStorage
-      const trackedItems = JSON.parse(localStorage.getItem('trackedItems')) || {};
-
-      trackedItems[item] = !trackedItems[item]
-
-      // Save the updated state back to localStorage
-      localStorage.setItem('trackedItems', JSON.stringify(trackedItems));
+      user.toggleTrackedItem(item);
     }
 
     if (event.ctrlKey) {
-      setIsCollected(!isCollected)
+      user.toggleCollectedItem(item);
     }
 
     setActiveReward(currentItem);
   }
   
   return (
-    <div key={`${year}-${month}-${item}`} className='gallery-item' >
+    <div key={itemKey} className={`gallery-item ${user.collectedItems[currentItem.name] ? 'collected' : ''}`} >
       <a onClick={(event) => handleClick(event)}
         className='position-relative'>
         <img src={currentItem.image} alt="" />
       </a>
 
       <FontAwesomeIcon
-        icon={`fa-solid fa-circle-check`}
-        className={`reward-icon-button collected-icon ${isCollected ? 'collected' : 'not-collected'}`}
-        onClick={() => setIsCollected(!isCollected)}
+        icon={`fa-solid fa-eye`}
+        className={`reward-icon-button tracked-icon ${user.trackedItems[currentItem.name] ? 'tracked' : 'not-tracked'}`}
+        onClick={() => {
+          console.log(`pressed tracked for ${currentItem.name}`);
+          console.log('tracking...');
+          user.toggleTrackedItem(currentItem.name);
+        }}
       />
 
       <FontAwesomeIcon
-        icon={`fa-solid fa-eye`}
-        className={`reward-icon-button tracked-icon ${isTracked ? 'tracked' : 'not-tracked'}`}
+        icon={`fa-solid fa-circle-check`}
+        className={`reward-icon-button collected-icon ${user.collectedItems[currentItem.name] ? 'collected' : 'not-collected'}`}
         onClick={() => {
-          // setIsTracked(!isTracked)
-          // // Retrieve the current state of tracked items from localStorage
-          // const trackedItems = JSON.parse(localStorage.getItem('trackedItems')) || {};
-
-          // trackedItems[item] = !trackedItems[item]
-
-          // // Save the updated state back to localStorage
-
-
-          // does the user have that item yet?
-
-          // user.toggleTrackedItem(item);
-
-          // localStorage.setItem('trackedItems', JSON.stringify(trackedItems));
+          console.log(`pressed collect for ${currentItem.name}`);
+          console.log('collecting...');
+          console.log(user.collectedItems[currentItem.name])
+          user.toggleCollectedItem(currentItem.name);
         }}
       />
 
@@ -139,7 +118,7 @@ export const GalleryControlsHint = (props) => {
         {/* <div className='tracking-alert-text'>if there are issues with the tracked items not showing correctly, please just reload the page, im working on a fix!</div> */}
       </div>
 
-      <div class="tracking-alert alert alert-danger" role="alert">
+      <div className="tracking-alert alert alert-danger" role="alert">
         <div className='tracking-alert__text bs-protect'>
           if there are issues with the tracked items not showing correctly, please just reload the page, im working on a fix!
         </div>

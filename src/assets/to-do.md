@@ -2,6 +2,11 @@
 * trading post tracker
   -- fix the tracking for the tracked and collected items so they update regardless of where they're clicked
   -- add the ad block under the details panel
+  -- /**
+    * I may want to change current item to item and item to itemName, but thats for later
+    * I could make it item={currentItem}, itemName={item} or something like that?
+    * year=* month=* itemKey=* could also work
+    */
 
 - trading post class set Calculator
   -- add local storage for the class set items
@@ -14,3 +19,4 @@
     --- to accomplish this, I should try moving the storage to the main <App.jsx /> component, then passing it in to the other pages?
     --- this could accomplish what I am trying to do, and would hopefully allow me to have everything tracked across the app easily
     --- to do this, I could make a <const [user, setUser] = useState(getLocalStorageUserData())> state and pass that through
+

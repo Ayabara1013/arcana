@@ -33,7 +33,11 @@ export default function TradingPostTracker(props) {
       <div className='tool-row flex-contain flex-row gap-2'>
         <div className={`flex-contain ${viewDetails ? 'w-50' : 'w-75'}`}>
           <GalleryControlsHint />
-          <RewardsGallery tradingPostData={tradingPostData} setActiveReward={setActiveReward} user={user} setUser={setUser} toggleTrackedItem={toggleTrackedItem} />
+          <RewardsGallery
+            tradingPostData={tradingPostData}
+            setActiveReward={setActiveReward}
+            user={user}
+            setUser={setUser} />
         </div>
 
         <div className={`details d-flex flex-column align-items-stretch ${viewDetails ? 'w-50' : 'w-25'}`}>
@@ -96,19 +100,48 @@ function RewardsGallery(props) {
 
         // iterate through the items
         for (const item in tradingPostData[year][month]) {
+          // console.log(item);
           const currentItem = tradingPostData[year][month][item];
-
+          // console.log(currentItem);
           // if filter exists, && if current item.{filter} === true // this is for tracking // this could be evolved later to work with broader filtering
-          if (filter && localStorage.getItem('trackedItems') && JSON.parse(localStorage.getItem('trackedItems'))[item] === true) {
+
+          // if (filter && localStorage.getItem('trackedItems') && JSON.parse(localStorage.getItem('trackedItems'))[item] === true) {
+          //   filterGallery.push(
+          //     <GalleryItem
+          //       className={`filter-gallery`}
+          //       currentItem={currentItem}
+          //       year={year} month={month} item={item}
+          //       setActiveReward={setActiveReward}
+          //       user={user}
+          //       setUser={setUser}
+          //       toggleTrackedItem={toggleTrackedItem}
+
+          //       /**
+          //        * I may want to change current item to item and item to itemName, but thats for later
+          //        * I could make it item={currentItem}, itemName={item} or something like that?
+          //        * year=* month=* itemKey=* could also work
+          //        */
+          //     />
+          //   )
+          // }
+          
+          if (filter && user.trackedItems[item] === true) {
             filterGallery.push(
               <GalleryItem
                 className={`filter-gallery`}
                 currentItem={currentItem}
                 year={year} month={month} item={item}
+                itemKey={`${year}-${month}-${item}`}
                 setActiveReward={setActiveReward}
                 user={user}
                 setUser={setUser}
                 toggleTrackedItem={toggleTrackedItem}
+
+                /**
+                 * I may want to change current item to item and item to itemName, but thats for later
+                 * I could make it item={currentItem}, itemName={item} or something like that?
+                 * year=* month=* itemKey=* could also work
+                 */
               />
             )
           }

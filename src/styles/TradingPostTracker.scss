@@ -68,6 +68,10 @@
     transition: all 0.3s ease-in-out;
   }
 
+  &.collected {
+    opacity: 25%;
+  }
+
   .reward-icon-button {
     position: absolute;
     scale: 1.5;
