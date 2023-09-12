@@ -1,26 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
 import './styles/App.scss';
 import './styles/classes.scss';
+
+import tradingPostData from './assets/data/tradingPostScraperResults.json';
+
 
 // react router
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 
 // components
 import NavigationBar from './components/utils/NavigationBar';
-
 import TradingPost from './components/screens/TradingPost';
 import Home from './components/screens/Home';
 import Contact from './components/Contact';
 import CharacterGenerator from './components/screens/character generator/CharacterGenerator';
 import Testes from './components/screens/testes/Testes.jsx';
-import TestPage from './components/screens/TestPage.jsx'
+import TestPage from './components/screens/test page/TestPage.jsx'
 import TradingPostTracker from './components/screens/trading post/TradingPostTracker';
 
 // ----------------- FIREBASE ----------------- //
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
+import { defaultUser } from './assets/data/createUserData';
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -46,7 +49,158 @@ const analytics = getAnalytics(app);
 
 
 
+
 function App() {
+  // create user states
+  class ClassSet {
+    constructor(armour, weapons, cName, month) {
+      this.armour = armour;
+      this.weapons = weapons;
+      this.cName = cName; // class name
+      this.month = month;
+    }
+  }
+
+  function printUser() {
+    alert(JSON.stringify(user));
+  }
+  window.printUser = printUser;
+
+  function getTradingPostItems() {
+    let itemNames = [];
+
+    for (const year in tradingPostData) {
+      for (const month in tradingPostData[year]) {
+        for (const item in tradingPostData[year][month]) {
+          itemNames.push(item);
+        }
+      }
+    }
+
+    return itemNames;
+  }
+
+  const itemNames = getTradingPostItems();
+
+  console.log(itemNames)
+
+  const trackedItems = {
+    sampleItem: true,
+    ...itemNames.reduce((obj, name) => {
+      obj[name] = false;
+      return obj;
+    }, {})
+  }
+
+  const [user, setUser] = useState({
+    trackedItems: trackedItems,
+    collectedItems: trackedItems,
+    tendies: 0,
+
+    classSets: {
+      paladin:      new ClassSet(false, false, 'Paladin',       'September'),
+      priest:       new ClassSet(false, false, 'Priest',        'September'),
+      rogue:        new ClassSet(false, false, 'Rogue',         'September'),
+
+      deathKnight:  new ClassSet(false, false, 'Death Knight',  'October'),
+      demonHunter:  new ClassSet(false, false, 'Demon Hunter',  'October'),
+      druid:        new ClassSet(false, false, 'Druid',         'October'),
+
+      warlock:      new ClassSet(false, false, 'Warlock',       'November'),
+      monk:         new ClassSet(false, false, 'Monk',          'November'),
+      warrior:      new ClassSet(false, false, 'Warrior',       'November'),
+
+      evoker:       new ClassSet(false, false, 'Evoker',        'December'),
+      hunter:       new ClassSet(false, false, 'Hunter',        'December'),
+      mage:         new ClassSet(false, false, 'Mage',          'December'),
+      shaman:       new ClassSet(false, false, 'Shaman',        'December'),
+    },
+
+    updateTendies: function (num) {
+      setUser((prevUser) => ({
+        ...prevUser,
+        tendies: num,
+      }));
+    },
+
+    toggleTrackedItem: function (item) {
+      setUser((prevUser) => {
+        const newValue = !prevUser.trackedItems[item];
+        return {
+          ...prevUser,
+          trackedItems: {
+            ...prevUser.trackedItems,
+            [item]: newValue,
+          }
+        }
+      })
+    },
+
+    addTrackedItem: function (item, value) {
+      setUser((prevUser) => ({
+        ...prevUser,
+        trackedItems: {
+          ...prevUser.trackedItems,
+          [item]: value,
+        }
+      }))
+    },
+
+    toggleCollectedItem: function (item) {
+      setUser((prevUser) => {
+        const newValue = !prevUser.collectedItems[item];
+        return {
+          ...prevUser,
+          collectedItems: {
+            ...prevUser.collectedItems,
+            [item]: newValue,
+          }
+        }
+      })
+    },
+
+
+
+  });
+
+  useEffect(() => {
+    console.log(user)
+  }, [user]);
+
+  useEffect(() => {
+    console.log(user.trackedItems)
+  }, [user.trackedItems]);
+
+
+  const defaultProps = {
+    firebase: {
+      app: app,
+      analytics: analytics,
+      logEvent: logEvent,
+    },
+    userObject: {
+      user: user,
+      setUser: setUser,
+      updateTendies: user.updateTendies,
+      toggleTrackedItem: user.toggleTrackedItem,
+    }
+  }
+
+  const defaultFirebaseProps = {
+    app: app,
+    analytics: analytics,
+    logEvent: logEvent,
+  };
+
+  const defaultUserProps = {
+    user: user,
+    setUser: setUser,
+    updateTendies: user.updateTendies,
+    trackedItems: user.trackedItems,
+    toggleTrackedItem: user.toggleTrackedItem,
+  }
+
+  console.log(defaultProps.firebase)
 
   return (
     <div className='App'>
@@ -57,32 +211,31 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home />}
+              element={<Home {...defaultFirebaseProps} {...defaultUserProps} />}
             />
 
             <Route
               path="/trading-post/class-sets"
-              element={<TradingPost app={app} analytics={analytics} logEvent={logEvent} />}
+              element={<TradingPost {...defaultFirebaseProps} {...defaultUserProps} />}
             />
 
             <Route
               path="/trading-post/rewards-tracker"
-              element={<TradingPostTracker app={app} analytics={analytics} logEvent={logEvent} />}
+              element={<TradingPostTracker {...defaultFirebaseProps} {...defaultUserProps} />}
             />
 
             <Route
               path="/character-generator"
-              element={<CharacterGenerator app={app} />}
             />
 
             <Route
               path="/test"
-              element={<TestPage />}
+              element={<TestPage {...defaultFirebaseProps} {...defaultUserProps} />}
             />
 
             <Route
               path="*"
-              element={<Home />}
+              element={<Home {...defaultFirebaseProps} {...defaultUserProps} />}
             />
           </Routes>
         </div>

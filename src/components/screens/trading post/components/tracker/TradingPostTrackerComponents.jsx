@@ -6,13 +6,12 @@ import { Form } from 'react-bootstrap';
 // font awesome imports
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faHome, faUser, faPaperPlane, faAnglesDown, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faHome, faUser, faPaperPlane, faAnglesDown, faHouse, faEye, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faCoffee, faHome, faUser, faPaperPlane, faAnglesDown, faHouse);
-
+library.add(faCoffee, faHome, faUser, faPaperPlane, faAnglesDown, faHouse, faEye, faCircleCheck);
 
 export function GalleryItem(props) {
-  const { currentItem, year, month, item, setActiveReward } = props;
+  const { currentItem, year, month, item, setActiveReward, user, toggleTrackedItem } = props;
   const [isTracked, setIsTracked] = useState(() => {
     // Retrieve the current state of tracked items from localStorage
     const trackedItems = JSON.parse(localStorage.getItem('trackedItems')) || {};
@@ -60,14 +59,20 @@ export function GalleryItem(props) {
         icon={`fa-solid fa-eye`}
         className={`reward-icon-button tracked-icon ${isTracked ? 'tracked' : 'not-tracked'}`}
         onClick={() => {
-          setIsTracked(!isTracked)
-          // Retrieve the current state of tracked items from localStorage
-          const trackedItems = JSON.parse(localStorage.getItem('trackedItems')) || {};
+          // setIsTracked(!isTracked)
+          // // Retrieve the current state of tracked items from localStorage
+          // const trackedItems = JSON.parse(localStorage.getItem('trackedItems')) || {};
 
-          trackedItems[item] = !trackedItems[item]
+          // trackedItems[item] = !trackedItems[item]
 
-          // Save the updated state back to localStorage
-          localStorage.setItem('trackedItems', JSON.stringify(trackedItems));
+          // // Save the updated state back to localStorage
+
+
+          // does the user have that item yet?
+
+          // user.toggleTrackedItem(item);
+
+          // localStorage.setItem('trackedItems', JSON.stringify(trackedItems));
         }}
       />
 

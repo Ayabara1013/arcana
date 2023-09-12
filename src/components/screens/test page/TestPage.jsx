@@ -1,21 +1,34 @@
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row, ButtonGroup } from 'react-bootstrap';
 
-import usersTest from '../../assets/data/usersTest.json';
-import { retrieveUsers } from '../../assets/functions/modifyUsers';
+import usersTest from '../../../assets/data/usersTest.json';
+import { retrieveUsers, updateUser } from '../../../assets/functions/modifyUsers';
 
-import '../../styles/TestPage.scss';
+import '../../../styles/TestPage.scss';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-import { firestore } from '../../firebase';
+import { firestore } from '../../../firebase';
 
-import { defaultUser } from '../../assets/data/createUserData.js';
+import { defaultUser } from '../../../assets/data/createUserData.js';
+import { GalleryItem } from '../trading post/components/tracker/TradingPostTrackerComponents';
+import tradingPostData from '../../../assets/data/tradingPostScraperResults.json';
 
 // Get a reference to the Firestore collection
 const usersRef = firestore.collection('users');
 
 export default function TestPage(props) {
-  const { app } = props;
+  const { app, user, setUser, updateTendies, trackedItems, toggleTrackedItem } = props;
+
+  useEffect(() => {
+    if (user.tendies === 0) {
+      console.log(`tendies are ${user.tendies}...setting...`);
+      updateTendies(5);
+    }
+    else {
+      console.log(`tendies are ${user.tendies}...setting...`);
+      updateTendies(0);
+    }
+  }, [])
 
   const [showDialog, setShowDialog] = useState(false);
   const users = usersTest;
@@ -96,6 +109,18 @@ export default function TestPage(props) {
     );
   }
 
+// Assuming you have imported your JSON data as TradingPostData
+// Assuming you have imported your JSON data as TradingPostData
+  const augustData = tradingPostData["2023"]["august"];
+  const item1 = Object.values(augustData)[0]; // Accessing the first property within "august"
+  const itemKey1 = Object.keys(augustData)[0];
+  const image1 = item1.image;
+  
+
+  console.log(itemKey1);
+
+
+
   return (
     <Container className='p-2 border'>
       <Row>
@@ -109,9 +134,50 @@ export default function TestPage(props) {
           </Button>
         </Col>
       </Row>
+
       <Row className='m-auto p-2 border'>
         <Col className='p-2 border'>
           <ShowUser userData={Object.values(users)[0]} />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <div className="d-flex m-2 gap-2">
+            <div className={`${user.trackedItems.sampleItem ? 'bg-info' : 'bg-danger'} p-2 rounded`}>item 1</div>
+            <div className={`${user.trackedItems.sampleItem ? 'bg-info' : 'bg-danger'} p-2 rounded`}>item 1</div>
+          </div>
+
+          <div className="d-flex m-auto gap-2">
+            <Button variant="primary" onClick={() => console.log(user)}>
+              display user
+            </Button>
+            
+            <Button variant="primary" onClick={() => toggleTrackedItem('sampleItem')}>
+              toggle item 1
+            </Button>
+          </div>
+
+          <div className='image-container d-flex flex-column'>
+            <img src={image1} alt="" className='test-image' />
+            <ButtonGroup>
+              <Button variant="primary" onClick={() => {
+                if (!trackedItems[itemKey1]) {
+                  console.log(`${itemKey1}`)
+                }
+                else {
+                  console.log(trackedItems)
+                }
+              }}>
+                track
+              </Button>
+              <Button variant="primary" onClick={() => {
+
+              }}>
+                collect
+              </Button>
+            </ButtonGroup>
+          </div> 
         </Col>
       </Row>
     </Container>

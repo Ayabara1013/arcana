@@ -237,7 +237,7 @@ function TradingPost(props) {
       <TrackerFeatureAlert>
         I made a new tracker for every trading post reward so far*,&nbsp;<Link to='/trading-post/rewards-tracker'>check it out here!</Link> 
         <br />
-        <span className='text-adjust-s-50'>my internet is out so I will include all months before august once fixed!</span>
+        <span className='text-adjust-s-80'>my internet is out so I will include all months before august once fixed!</span>
       </TrackerFeatureAlert>
 
       <Row className='m-auto mb-4'> 

@@ -18,6 +18,8 @@ library.add(faCoffee, faHome, faUser, faPaperPlane, faAnglesDown, faHouse);
 
 
 export default function TradingPostTracker(props) {
+  const { user, setUser, toggleTrackedItem } = props; 
+
   const [activeReward, setActiveReward] = useState(tradingPostData[2023]['august']['Spirit of Competition'])
   const [viewDetails, setViewDetails] = useState(true);
 
@@ -31,7 +33,7 @@ export default function TradingPostTracker(props) {
       <div className='tool-row flex-contain flex-row gap-2'>
         <div className={`flex-contain ${viewDetails ? 'w-50' : 'w-75'}`}>
           <GalleryControlsHint />
-          <RewardsGallery tradingPostData={tradingPostData} setActiveReward={setActiveReward} />
+          <RewardsGallery tradingPostData={tradingPostData} setActiveReward={setActiveReward} user={user} setUser={setUser} toggleTrackedItem={toggleTrackedItem} />
         </div>
 
         <div className={`details d-flex flex-column align-items-stretch ${viewDetails ? 'w-50' : 'w-25'}`}>
@@ -64,7 +66,7 @@ function TestGallery(props) {
 
 
 function RewardsGallery(props) {
-  const { tradingPostData, setActiveReward, className } = props;
+  const { tradingPostData, setActiveReward, className, user, setUser, toggleTrackedItem } = props;
 
   let gallery = [];
   let filterGallery = [];
@@ -98,17 +100,29 @@ function RewardsGallery(props) {
 
           // if filter exists, && if current item.{filter} === true // this is for tracking // this could be evolved later to work with broader filtering
           if (filter && localStorage.getItem('trackedItems') && JSON.parse(localStorage.getItem('trackedItems'))[item] === true) {
-            // console.log(`${filter} is the current filter \n${localStorage.getItem('trackedItems')} \n${JSON.parse(localStorage.getItem('trackedItems'))[item]}`)
-
-            // console.log(`${item} == true`)
             filterGallery.push(
-              <GalleryItem className={`filter-gallery`} currentItem={currentItem} year={year} month={month} item={item} setActiveReward={setActiveReward} />
+              <GalleryItem
+                className={`filter-gallery`}
+                currentItem={currentItem}
+                year={year} month={month} item={item}
+                setActiveReward={setActiveReward}
+                user={user}
+                setUser={setUser}
+                toggleTrackedItem={toggleTrackedItem}
+              />
             )
           }
 
           // now push the item to the main gallery
           gallery.push(
-            <GalleryItem currentItem={currentItem} year={year} month={month} item={item} setActiveReward={setActiveReward} />
+            <GalleryItem
+              currentItem={currentItem}
+              year={year} month={month} item={item}
+              setActiveReward={setActiveReward}
+              user={user}
+              setUser={setUser}
+              toggleTrackedItem={toggleTrackedItem}
+            />
           )
         }
       }
