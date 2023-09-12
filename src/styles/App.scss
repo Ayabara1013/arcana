@@ -385,20 +385,18 @@ body {
 }
 
 .alert__new-feature {
-  // width: 50%;
+  max-width: fit-content;
   // max-width: 600px;
   margin: 0 auto;
   margin-bottom: 1.5rem;
 
-  svg {
-    max-width: 64px;
-  }
-
-  a {
+  &__link {
     font-weight: bold;
-    color: rgb(5, 81, 96); // this needs fixing asap! I need to do a proper rehaul of the styling system to stop all these breaks!
+    color: rgb(5, 81, 96); // this needs fixing asap! I need to do a proper rehaul of the styling system to stop all these colours from breaking!
   }
+  
 }
+
 
 .text-adjust {
   &-s {

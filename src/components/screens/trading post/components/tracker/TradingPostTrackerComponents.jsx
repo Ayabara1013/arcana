@@ -48,9 +48,8 @@ export function GalleryItem(props) {
         icon={`fa-solid fa-circle-check`}
         className={`reward-icon-button collected-icon ${user.collectedItems[currentItem.name] ? 'collected' : 'not-collected'}`}
         onClick={() => {
-          console.log(`pressed collect for ${currentItem.name}`);
+          console.log(`pressed collected for ${currentItem.name}`);
           console.log('collecting...');
-          console.log(user.collectedItems[currentItem.name])
           user.toggleCollectedItem(currentItem.name);
         }}
       />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
+import { Alert, Button, ButtonGroup, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import { initializeApp } from "firebase/app";
@@ -31,7 +31,10 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 function TradingPost(props) {
+  const { user, setUser } = props;
   // const { app, analytics , logEvent } = props;
+  
+  const ucs = user.classSets;
 
   //#region misc classes and states
   class ClassSet {
@@ -50,24 +53,7 @@ function TradingPost(props) {
     }
   }
 
-  const [cr, setCr] = useState({ // class rewards
-    paladin:      new ClassSet(false, false, 'Paladin',       'September'),
-    priest:       new ClassSet(false, false, 'Priest',        'September'),
-    rogue:        new ClassSet(false, false, 'Rogue',         'September'),
-
-    deathKnight:  new ClassSet(false, false, 'Death Knight',  'October'),
-    demonHunter:  new ClassSet(false, false, 'Demon Hunter',  'October'),
-    druid:        new ClassSet(false, false, 'Druid',         'October'),
-
-    warlock:      new ClassSet(false, false, 'Warlock',       'November'),
-    monk:         new ClassSet(false, false, 'Monk',          'November'),
-    warrior:      new ClassSet(false, false, 'Warrior',       'November'),
-
-    evoker:       new ClassSet(false, false, 'Evoker',        'December'),
-    hunter:       new ClassSet(false, false, 'Hunter',        'December'),
-    mage:         new ClassSet(false, false, 'Mage',          'December'),
-    shaman:       new ClassSet(false, false, 'Shaman',        'December'),
-  });
+  const [cr, setCr] = useState(user.classSets);
 
   const [tendies, setTendies] = useState(0);
 
@@ -81,20 +67,24 @@ function TradingPost(props) {
   });
 
   const [btnState, setBtnState] = useState({
-    paladin: new ClassBtn('Paladin', false, false),
-    priest: new ClassBtn('Priest', false, false),
-    rogue: new ClassBtn('Rogue', false, false),
-    deathKnight: new ClassBtn('Death Knight', false, false),
-    demonHunter: new ClassBtn('Demon Hunter', false, false),
-    druid: new ClassBtn('Druid', false, false),
-    warlock: new ClassBtn('Warlock', false, false),
-    monk: new ClassBtn('Monk', false, false),
-    warrior: new ClassBtn('Warrior', false, false),
-    evoker: new ClassBtn('Evoker', false, false),
-    hunter: new ClassBtn('Hunter', false, false),
-    mage: new ClassBtn('Mage', false, false),
-    shaman: new ClassBtn('Shaman', false, false),
+    paladin: new ClassBtn('Paladin', ucs.paladin.armour, ucs.paladin.weapons),
+    priest: new ClassBtn('Priest', ucs.priest.armour, ucs.priest.weapons),
+    rogue: new ClassBtn('Rogue', ucs.rogue.armour, ucs.rogue.weapons),
+    deathKnight: new ClassBtn('Death Knight', ucs.deathKnight.armour, ucs.deathKnight.weapons),
+    demonHunter: new ClassBtn('Demon Hunter', ucs.demonHunter.armour, ucs.demonHunter.weapons),
+    druid: new ClassBtn('Druid', ucs.druid.armour, ucs.druid.weapons),
+    warlock: new ClassBtn('Warlock', ucs.warlock.armour, ucs.warlock.weapons),
+    monk: new ClassBtn('Monk', ucs.monk.armour, ucs.monk.weapons),
+    warrior: new ClassBtn('Warrior', ucs.warrior.armour, ucs.warrior.weapons),
+    evoker: new ClassBtn('Evoker', ucs.evoker.armour, ucs.evoker.weapons),
+    hunter: new ClassBtn('Hunter', ucs.hunter.armour, ucs.hunter.weapons),
+    mage: new ClassBtn('Mage', ucs.mage.armour, ucs.mage.weapons),
+    shaman: new ClassBtn('Shaman', ucs.shaman.armour, ucs.shaman.weapons),
   });
+
+  // console.log(user.classSets === cr ? 'cr and user.classSets match!' : 'wrong');
+  
+  
 
   function updateTendies(value) {
     setTendies(parseFloat(value));
@@ -183,6 +173,8 @@ function TradingPost(props) {
     app: app,
     analytics: analytics,
     logEvent: logEvent,
+    user: user,
+    setUser: setUser,
 
   }
 
@@ -219,7 +211,11 @@ function TradingPost(props) {
     )
   }
   //#endregion
-    
+  
+  
+
+
+
   const colClass = 'flex-grow-0 p-0';
   const cstyle = 'cost-total-card flex-grow-1 flex-shrink-1 flex-basis-0 text-center';
 
@@ -235,10 +231,14 @@ function TradingPost(props) {
       */}
 
       <TrackerFeatureAlert>
-        I made a new tracker for every trading post reward so far*,&nbsp;<Link to='/trading-post/rewards-tracker'>check it out here!</Link> 
+        I made a new tracker for every trading post reward so far*,&nbsp;<Link to='/trading-post/rewards-tracker' className='alert__new-feature__link'>check it out here!</Link> 
         <br />
         <span className='text-adjust-s-80'>my internet is out so I will include all months before august once fixed!</span>
       </TrackerFeatureAlert>
+
+      {/* <Alert variant="danger" dismissible onClose={handleCloseAlert}>
+        Alert.Heading, p, Alert.Link, hr, etc
+      </Alert> */}
 
       <Row className='m-auto mb-4'> 
         <Col md='5'>
@@ -315,18 +315,28 @@ function TradingPost(props) {
  * @param {string} pClass - The name of the player class to update.
  * @param {string} type - The type of reward to update (e.g., 'armour', 'weapons').
  */
-function updateStates(setCr, setBtnState, pClass, type) {
+function updateStates(setCr, setBtnState, pClass, type, user) {
   // Update the class rewards state
   setCr((prevCr) => ({
     ...prevCr,
-    [pClass]: { ...prevCr[pClass], [type]: !prevCr[pClass][type] }
+    [pClass]: {
+      ...prevCr[pClass],
+      [type]: !prevCr[pClass][type]
+    }
   }));
 
   // Update the button states
   setBtnState((prevBtnState) => ({  
     ...prevBtnState,  
-    [pClass]: { ...prevBtnState[pClass], [type]: !prevBtnState[pClass][type] }  
-  }));  
+    [pClass]: {
+      ...prevBtnState[pClass],
+      [type]: !prevBtnState[pClass][type]
+    }  
+  }));
+  
+  console.log(typeof pClass + ' ' + pClass)
+
+  user.toggleClassSet(pClass, type);
 }
 
 /**
@@ -364,7 +374,7 @@ function updateCosts(cl, type, setCosts) {
  * @returns ClassCard component
  */
 function ClassCard(props) {
-  const { cl, name, btnState, setCr, setBtnState, setCosts, tc, analytics, logEvent } = props;
+  const { cl, name, btnState, setCr, setBtnState, setCosts, tc, analytics, logEvent, user, setUser } = props;
   
   // button variants ( for future-proofing and to remove hard-coded strings )
   const activeVariant = 'info';
@@ -394,7 +404,7 @@ function ClassCard(props) {
               }
 
               //--------------------------------
-              updateStates(setCr, setBtnState, pClass, armour);
+              updateStates(setCr, setBtnState, pClass, armour, user);
               //--------------------------------
               updateCosts(cl, armour, setCosts);
             }}>
@@ -411,8 +421,8 @@ function ClassCard(props) {
                   // logEvent(analytics, 'goal_completion', { name: 'clicked_weapons_button'});
                 }
 
-                //--------------------------------
-                updateStates(setCr, setBtnState, pClass, weapons);
+                //-------------------------------- ** now updates user(.classSets) object as well!
+                updateStates(setCr, setBtnState, pClass, weapons, user);
                 //--------------------------------
                 updateCosts(cl, weapons, setCosts);
               }}>

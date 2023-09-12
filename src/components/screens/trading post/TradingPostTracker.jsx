@@ -125,7 +125,7 @@ function RewardsGallery(props) {
           //   )
           // }
           
-          if (filter && user.trackedItems[item] === true) {
+          if (filter && user.trackedItems[item] === true && user.collectedItems[item] === false) {
             filterGallery.push(
               <GalleryItem
                 className={`filter-gallery`}
