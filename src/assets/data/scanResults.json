@@ -1,0 +1,1167 @@
+{
+  "2023": {
+    "february": {
+      "Celestial Steed": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Garrlok": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Swashbuckling Bucaneer's Slops": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Iridescent Warcloak": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Vagabond’s Rosey Threads": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Wanderer's Rosey Trappings": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Infiltrator's Bandolier": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Operative's Bandolier": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Rosy Corsage": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Fetid Bouquet": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Fury of the Firelord": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Squire's Etched Warhammer": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Shard of Frozen Secrets": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Azure Scalesworn Longbow": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Shattered Voidspire": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ash'adar, Harbinger of Dawn mount": {
+        "name": "string",
+        "price": "object",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      }
+    },
+    "march": {
+      "Pandaren Monk": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Dread Pirate's Bicorne": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Fabulously Flashy Finery": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Filigreed Lion’s Maw": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Frozen Shadow": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Gnomish Liquid Transfer Apparatus": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Greatcloak of the Virtuous Protector": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Shadowy Blademaster’s Greatsword": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Triumphant Blademaster’s Greatsword": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Trusty Treasure Trove": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Ensemble: Fel-Automaton Exoplate": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Glorious Dragonrider’s Mail": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Vagabond’s Midnight Threads": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Wanderer’s Midnight Trappings": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Darkmoon Harlequin’s Bells": {
+        "name": "string",
+        "price": "object",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      }
+    },
+    "april": {
+      "Egbob": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Reins of the Magenta Cloud Serpent": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Drape of Foreboding Mists": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Fine White Evening Gloves": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Forsaken Cresset": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Watchman’s Flare": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Honed Bastard Sword": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Fists of Polar Fury": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Red Pith Helmet": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Crimson Nexus Crescent": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Libram of Righteous Light": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Tome of Sin’dorei Secrets": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Gilded Drakkonid Morningstar": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Trappers Munitions": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Corrupted Runelord’s Regalia": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Transmog- Arsenal: Blades of Elune": {
+        "name": "string",
+        "price": "object",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      }
+    },
+    "may": {
+      "Pippin": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "High Priestess’s Ceremonial Drape": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Huntsman’s Recurve Bow": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Sharpened Shank": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Vagabond’s Snowy Threads": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Wanderer’s Snowy Trappings": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Sunbleached Grimskull Cinch": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Well-Worn Grimskull Cinch": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Merciless Trapper’s Staff": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Crimson Bicorne": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Black Iron Blunderbuss": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Lost Crown of the Arcane": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Tiercel’s Wing": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Fang of the Mountain": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Kvaldir Scout Leathers": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Vestment of the Honored Valarjar": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Mount- Savage Green Battle Turtle": {
+        "name": "string",
+        "price": "object",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      }
+    },
+    "june": {
+      "Buzzworth": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Royal Swarmer’s Reins": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Cindermane Charger": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Shifty Merchant’s Tunic": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Magister’s Jeweled Drape": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Veteran Grunt’s Chopper": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Vagabond’s Carrot Trappings": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Wanderer’s Carrot Trappings": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Pustulent Demonheart Fetish": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Sentinel’s Tower Shield": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Emberstone Dress": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Jewel of the Firelord": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Flame-Forged Fel Fang": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Sunspire Battle Staff": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Soulburner Bardiche": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Helarjar Berserker Warplate": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Mount- Quawks": {
+        "name": "string",
+        "price": "object",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      }
+    },
+    "july": {
+      "Spectral Tiger Cub": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Tyrael’s Charger": {
+        "name": "string",
+        "price": "object",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Reins of the Felcrystal Scorpion": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Fabulously Flashy Finery": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Primeval Basher": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Polished Shortsword": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Silvered Warcloak": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Vagabond’s Violet Threads": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Wanderer’s Violet Trappings": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Fists of Polar Fury": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Sinister Fel Staff": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Mephistroth’s Razor": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Helm of the Fierce": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Filigreed Lion’s Maw": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Aldori War Mace": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Antoran Felspire": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Conquest": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Sylvan Stalker’s Leathers": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Dragonriding Mount – Grotto Netherwing Drake": {
+        "name": "string",
+        "price": "object",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      }
+    },
+    "august": {
+      "Spirit of Competition": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ethereal Transmogrifier": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Alabaster Thunderwing": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Alabaster Stormtalon": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ancestral Clefthoof": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "City Guard Heater Shield": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Grunt’s Buckler": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Queen’s Conservatory Ball Gloves": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ember Court Soiree Gloves": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ensemble: Vagabond’s Azure Threads": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Wanderer’s Azure Trappings": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Vagabond’s Crimson Threads": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Wanderer’s Crimson Trappings": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Azure Scalesworn Longbow": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Shard of Frozen Secrets": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Azure Nexus Crescent": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Crimson Nexus Crescent": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Aquamarine Felfire Bulwark": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Aquamarine Felfire Splitblade": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ruby Felfire Bulwark": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Ruby Felfire Splitblade": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Crown of Eternal Winter": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Hood of Hungering Darkness": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Blade of Brutal Sacrifice": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Fury of the Firelord": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Ensemble: Bones of the Bloodhunter": {
+        "name": "string",
+        "price": "object",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      }
+    },
+    "september": {
+      "Plate of the Light Avenger": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Armaments of the Light Avenger": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Silks of the Unnamed Cult": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Secrets of the Unnamed Cult": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Blood Onyx Uniform": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Blood Onyx Blades": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "High Scholar's Grand Staff": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Slyvy": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Gently-Used Cleaver": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Gorian Mining Pick": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Watchman’s Flare": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Wanderer’s Sunny Trappings": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Vagabond’s Sunny Threads": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Burgundy Cap": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Yellow Tweed Cap": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Dread Admiral’s Bicorne": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Irontide’s Raider’s Bicorne": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ancestral Skychaser’s Totem": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ancestral Stonehoof Totem": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      },
+      "Homebrewer’s Sampling Crest": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Ensemble: Swashbuckling Bucaneer’s Slops": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string"
+      },
+      "Trusty Treasure Trove": {
+        "name": "string",
+        "price": "number",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array, nested"
+      },
+      "Crusty Crawler Mount": {
+        "name": "string",
+        "price": "object",
+        "image": "string",
+        "tags": "array",
+        "caption": "string",
+        "lastAvailable": "array"
+      }
+    }
+  }
+}
