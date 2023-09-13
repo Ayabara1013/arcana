@@ -8,7 +8,7 @@ import { KofiButton } from "react-kofi-button";
  * @returns 
  */
 function KoFiWidget(props) {
-  const { username, label, skinny, thin, grey, red } = props;
+  const { username, label, skinny, thin, grey, red, subtle } = props;
 
   // Build the props object based on the presence of certain JSX attributes
   const buttonProps = {
@@ -18,6 +18,9 @@ function KoFiWidget(props) {
     ...(skinny ? { preset: 'skinny' } : {}),
     ...(red ? { backgroundColor: 'kofiRed' } : {}),
     ...(grey ? { backgroundColor: 'kofiGrey' } : {}),
+    ...(subtle ?  {
+                    backgroundColor: 'rgb(205, 92, 92)',
+                  } : {}),
   };
 
   return (

@@ -10,7 +10,8 @@ import tradingPostData from './assets/data/tradingPostScraperResults.json';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 
 // components
-import NavigationBar from './components/utils/NavigationBar';
+import { OldNavigationBar, NavigationBar } from './components/utils/NavigationBar';
+
 import TradingPost from './components/screens/TradingPost';
 import Home from './components/screens/Home';
 import Contact from './components/Contact';
@@ -45,9 +46,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 // ----------------- FIREBASE ----------------- //
-
-
-
 
 
 function App() {
@@ -434,7 +432,8 @@ function App() {
   return (
     <div className='App'>
       <BrowserRouter>
-        <NavigationBar />
+        {/* <NavigationBar /> */}
+        <OldNavigationBar />
         
         <div className="app-wrapper">
           <Routes>
