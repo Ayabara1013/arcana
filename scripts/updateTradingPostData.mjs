@@ -6,21 +6,21 @@ const itemRecords = '../src/assets/data/itemRecords.json';
 
 // create an object to manipulate the data inside
 let existingData = {};
-let existingItems = [];
+let existingItems = {};
 
 // Read the existing data from the JSON file
 if (fs.existsSync(filename)) {
   const fileContents = fs.readFileSync(filename, 'utf8');
   existingData = JSON.parse(fileContents);
-  console.log(existingData);
-  console.log(`scraper data file exists`)
+  // console.log(existingData);
+  // console.log(`scraper data file exists`)
 }
 
 if (fs.existsSync(itemRecords)) {
-  const fileContents = fs.readFileSync(filename, 'utf8');
-  existingData = JSON.parse(fileContents);
-  console.log(existingData);
-  console.log(`item records exists`)
+  // const fileContents = fs.readFileSync(existingItems, 'utf8');
+  // existingData = JSON.parse(fileContents);
+  // // console.log(existingData);
+  // // console.log(`item records exists`)
 }
 
 async function updateTradingPostData() {
@@ -66,21 +66,62 @@ async function updateTradingPostData() {
 }
 
 
+const fixedNameString = (string) => {
+  return string.replace(/\u2019/g, "'").replace(/\u2013/g, "-");
+}
+
 function recordItems() {
   for (const year in existingData) {
     for (const month in existingData[year]) {
       for (const item in existingData[year][month]) {
-        if (!existingItems.some(({ name }) => name === item)) {
-          existingItems.push({[item]: [year, month]});
+        let newName = fixedNameString(existingData[year][month][item].name);
+
+        if (!existingItems[newName]) {
+          existingItems[newName] = [];
         }
-        else console.log(`item ${item} already exists in itemRecords`);
+        else console.log(`item ${existingData[year][month][item].name} already exists in itemRecords.json`);
+
+        existingItems[newName].push([year, month]);
       }
     }
+
+    const updatedItems = JSON.stringify(existingItems, null, 2);
+    fs.writeFileSync(itemRecords, updatedItems);
   }
+
+  console.log(existingItems)
 
   const updatedItems = JSON.stringify(existingItems, null, 2);
   fs.writeFileSync(itemRecords, updatedItems);
 }
 
-updateTradingPostData();
+function updateScraperResults() {
+  for (const year in existingData) {
+    for (const month in existingData[year]) {
+      for (const item in existingData[year][month]) {
+        let itemName = fixedNameString(existingData[year][month][item].name);
+
+        // existingData[year][month][item].lastAvailable = itemRecords[itemName];
+        // console.log(existingItems[item]);
+        existingData[year][month][item].lastAvailable = existingItems[item];
+      }
+    }
+  }
+  // console.log(existingItems);
+  // console.log(existingData);
+
+  const updatedData = JSON.stringify(existingData, null, 2);
+  fs.writeFileSync(filename, updatedData);
+}
+
+function finalChecks() {
+  console.log(existingItems);
+  for (const item in existingItems) {
+    if (item.length > 1) console.log(item)
+  }
+}
+
+// updateTradingPostData();
 recordItems();
+updateScraperResults();
+finalChecks();
