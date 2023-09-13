@@ -88,7 +88,7 @@ function Home(props) {
 					title={toolData.tendiesCalculator.title}
 					description={toolData.tendiesCalculator.description}
 					img={hordeTradingPost1}
-					route='/trading-post'
+					route='/trading-post/class-sets'
 				/>
 
 				<ToolCard
