@@ -11,7 +11,7 @@ import KoFiWidget from '../KofiWidget';
 
 // navigation-bar w-100 sticky-top px-5
 
-export function OldNavigationBar(props) {
+function NavigationBar(props) {
 	return (
 		<Navbar collapseOnSelect expand='lg' className=''>
 			<Container>
@@ -59,7 +59,7 @@ export function OldNavigationBar(props) {
 					</Nav>
 				</Navbar.Collapse>
 				<div className='d-flex gap-5 align-items-center'>
-					<div className='creator-tag'><span className='-name'>Arcana</span> by Greenbottle</div>
+					<div className={`creator-tag`}><span className='-name'>Arcana</span> by Greenbottle</div>
 					<KoFiWidget subtle thin/>
 				</div>
 			</Container>
@@ -69,57 +69,4 @@ export function OldNavigationBar(props) {
 	)
 }
 
-export function NavigationBar(props) {
-	return (
-    <Navbar collapseOnSelect expand="lg" className='bg-body-tertiary'>
-      <Container>
-        <Navbar.Brand as={Link} to="/" className='nav-brand layer-4 gap-1'>
-					<img alt="" src={arcanaIcon512} width="30" height="30" className="d-inline-block align-top" />{' '}
-					<span className='nav-brand-text'>Arcana</span>
-				</Navbar.Brand>
-
-				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-						
-            <NavDropdown title="Trading Post" id="nav-dropdown__trading-post" className='nav-dropdown'>
-							<NavDropdown.Item eventKey="4.1">
-								<Link to="/trading-post/class-sets" className='dropdown-item__text'>
-									Class Sets
-								</Link>
-							</NavDropdown.Item>
-
-							<NavDropdown.Item eventKey="4.2">
-								<Link to="/trading-post/rewards-tracker" className='dropdown-item__text'>
-									Tracker
-								</Link>
-							</NavDropdown.Item>
-						</NavDropdown>
-
-						<Nav.Item>
-								<Link to="/trading-post/class-sets" className='nav-link'>
-									Class Sets
-								</Link>
-						</Nav.Item>
-						
-							<Nav.Item>
-								<Link to="/trading-post/rewards-tracker" className='nav-link'>
-									Tracker Diary
-								</Link>
-						</Nav.Item>
-					</Nav>
-					
-					<Nav>
-						<div className='d-flex gap-5 align-items-center'>
-							<div	lassName='creator-tag'><span className='-name'>Arcana</span> by Greenbottle</div>
-							<KoFiWidget subtle thin/>
-						</div>
-					</Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-}
-
-// export default NavigationBar;
+export default NavigationBar;

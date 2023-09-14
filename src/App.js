@@ -10,7 +10,8 @@ import tradingPostData from './assets/data/tradingPostScraperResults.json';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 
 // components
-import { OldNavigationBar, NavigationBar } from './components/utils/NavigationBar';
+import NavigationBar from './components/utils/NavigationBar';
+import CustomNavBar from './components/CustomNavBar/CustomNavBar';
 
 import TradingPost from './components/screens/TradingPost';
 import Home from './components/screens/Home';
@@ -433,7 +434,7 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         {/* <NavigationBar /> */}
-        <OldNavigationBar />
+        <CustomNavBar />
         
         <div className="app-wrapper">
           <Routes>
@@ -474,11 +475,6 @@ function App() {
     </div>
   );
 }
-
-
-{/* <Route path="/" element={<Home />} />
-            <Route path="/trading-post" element={<TradingPost />} />
-            <Route path="*" element={<Home />} /> */}
 
 
 export default App;
