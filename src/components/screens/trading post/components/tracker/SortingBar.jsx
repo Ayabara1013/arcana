@@ -9,19 +9,21 @@ export default function SortingBar(props) {
       <div>sorting things (coming soon!)</div>
 
       <div className='details__controls'>
-      <Form.Check inline type="switch"
+        {/* <Form.Check inline type="switch"
           // label="view item details"
           label="include collected items in Tracked view"
           id="view-tracked-collected-switch"
           defaultChecked={viewTrackedCollected}
-          onClick={() => setViewTrackedCollected(!viewTrackedCollected)} />
+          onClick={() => setViewTrackedCollected(!viewTrackedCollected)} 
+        /> */}
 
         <Form.Check inline type="switch"
           // label="view item details"
-          label="smaller detail panel & larger grid"
+          label="denser gallery / larger detail panel"
           id="view-item-details-switch"
           defaultChecked={viewDetails}
-          onClick={() => setViewDetails(!viewDetails)} />
+          onClick={() => setViewDetails(!viewDetails)} 
+        />
       </div>
     </div>
   )

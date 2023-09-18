@@ -23,12 +23,12 @@ export default function TradingPostTracker(props) {
   const { user, setUser, toggleTrackedItem } = props; 
 
   const [activeReward, setActiveReward] = useState(tradingPostData[2023]['august']['Spirit of Competition'])
-  const [viewDetails, setViewDetails] = useState(true);
+  const [viewDetails, setViewDetails] = useState(false);
   const [viewTrackedCollected, setViewTrackedCollected] = useState(false);
 
-  // useEffect(() => {
-  //   console.log(viewDetails);
-  // }, [viewDetails]);
+  useEffect(() => {
+    console.log(viewDetails);
+  }, [viewDetails]);
 
   return (    
     <div className='trading-post-tracker flex-contain p-2'>
@@ -43,7 +43,9 @@ export default function TradingPostTracker(props) {
       </div>
 
       <div className='tool-row flex-contain flex-row gap-2'>
-        <div className={`flex-contain ${viewDetails ? 'w-50' : 'w-75'}`}>
+        <div className={`gallery-container d-flex flex-column
+        ${viewDetails ? 'smaller-details' : ''} 
+        h-100`}>
           <GalleryControlsHint />
           <RewardsGallery
             tradingPostData={tradingPostData}
@@ -55,7 +57,9 @@ export default function TradingPostTracker(props) {
           />
         </div>
 
-        <div className={`details d-flex flex-column align-items-stretch ${viewDetails ? 'w-50' : 'w-25'}`}>
+        <div className={`details d-flex flex-column align-items-stretch 
+        ${viewDetails ? '' : 'smaller-details'} 
+        h-100`}>
           {/* <div className='details__controls d-flex flex-row-reverse'>
             <Form.Check inline type="switch" label="view item details" id="view-item-details-switch" onClick={() => setViewDetails(!viewDetails)}/>
           </div> */}
@@ -141,8 +145,8 @@ function RewardsGallery(props) {
           // }
 
 
-          // removed the collected filtering for now : && user.collectedItems[item] === false
-          if (filter && user.trackedItems[item] === true && user.collectedItems[item] === viewTrackedCollected) {
+          // removed the collected filtering for now : && user.collectedItems[item] === false // viewtrackedCollected
+          if (filter && user.trackedItems[item] === true && user.collectedItems[item] === false) {
 
             // check to see if the item is not in the filter gallery already
             // if (filterGallery.includes(currentItem.item)) {

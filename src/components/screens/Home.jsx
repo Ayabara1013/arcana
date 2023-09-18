@@ -108,7 +108,7 @@ function Home(props) {
 					route={`/contact`}
 				/>
 
-				<ToolCard title='character generator' />
+				<ToolCard title='character generator' className={`opacity-50`} />
 				{/* <ToolCard title='scifi/fantasy race generator' />
 				<ToolCard title='spellcasting theme creator' /> */}
 
@@ -120,7 +120,7 @@ function Home(props) {
 }
 
 function ToolCard(props) {
-	const { title, description, route, img } = props;
+	const { title, description, route, img, className } = props;
 
 	const fontColour = img ? '' : 'text-secondary';
 // className='normal-text'
@@ -129,7 +129,7 @@ function ToolCard(props) {
 			
 		// </div>
 
-		<Link to={route || '/'} className='tool-card'>
+		<Link to={route || '/'} className={`tool-card ${className}`}>
 			<h3 className={`-title ${fontColour} px-2`}>
 				{title || 'coming soon...'}
 			</h3>

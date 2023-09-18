@@ -1,6 +1,6 @@
 @use './App.scss' as a;
 @use './colours.scss' as c;
-
+@use './globals.scss' as g;
 
 
 .trading-post-tracker {
@@ -28,6 +28,10 @@
   overflow-x: hidden;
 
   transition: all 0.2s ease-in-out;
+
+  // @media screen and (max-width: g.$small-screen) {
+  //   width: 100%;
+  // }
 }
 
 // this line kind of makes no sense and is broken based on how the gallery is currently constructed
@@ -67,7 +71,6 @@
 
   &.--items-5 {
     flex: 1 0 calc((100% / 5) - 0.5rem); /* set the number of items per row */
-
   }
 
   &__price {
@@ -167,6 +170,11 @@
   }
 }
 
+
+
+
+
+
 .data-text {
   font-size: 200%;
   // font-weight: 600;
@@ -234,5 +242,37 @@
 .alert {
   &.tracking-alert {
     padding: 0.5rem;
+  }
+}
+
+
+
+// screen sizing
+.tool-row {
+  display: flex;
+  flex-direction: row;
+
+  height: 100%;
+}
+
+.gallery-container {
+  flex: 1 0 50%;
+}
+
+.details {
+  flex: 0 0 50%;
+
+  &.smaller-details {
+    flex-basis: 25%;
+  }
+}
+
+@media screen and (max-width: g.$medium-screen) {
+  .gallery-item {
+    flex: 1 0 calc((100% / 2) - 0.5rem) !important; /* set the number of items per row */
+  }
+
+  .details, .sorting-bar, .tracking-issue-alert {
+    display: none !important;
   }
 }

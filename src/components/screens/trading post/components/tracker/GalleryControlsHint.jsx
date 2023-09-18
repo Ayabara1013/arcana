@@ -23,7 +23,7 @@ export default function GalleryControlsHint (props) {
         </div>
       </div> */}
 
-      <GalleryAlert variant={'danger'} >
+      <GalleryAlert variant={'danger'} className={`tracking-issue-alert`}>
         if there are issues with the tracked items not showing correctly, please just reload the page, im working on a fix!
       </GalleryAlert>
 
