@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { Container, Row, Col, Accordion, Form, Alert } from 'react-bootstrap';
 
 import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter.js';
-import { DetailsPanel, GalleryAlert, GalleryControlsHint, GalleryItem, SortingBar } from './components/tracker/TradingPostTrackerComponents';
+// import { DetailsPanel, GalleryAlert, GalleryControlsHint, GalleryItem, SortingBar } from './components/tracker';
+
+import { DetailsPanel, GalleryAlert, GalleryControlsHint, GalleryItem, SortingBar } from './components/tracker';
 
 import tradingPostData from '../../../assets/data/tradingPostScraperResults.json';
 

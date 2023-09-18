@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import { firestore } from '../../../firebase';
 
 import { defaultUser } from '../../../assets/data/createUserData.js';
-import { GalleryItem } from '../trading post/components/tracker/TradingPostTrackerComponents';
+import { GalleryItem } from '../trading post/components/tracker';
 import tradingPostData from '../../../assets/data/tradingPostScraperResults.json';
 
 // font awesome imports
