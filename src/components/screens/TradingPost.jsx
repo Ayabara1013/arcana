@@ -220,7 +220,7 @@ function TradingPost(props) {
   const cstyle = 'cost-total-card flex-grow-1 flex-shrink-1 flex-basis-0 text-center';
 
   return (
-    <Container fluid className='trading-post p-0 justify-content-start'>
+    <Container fluid className='trading-post p-0 justify-content-start h-100 overflow-y-auto'>
       <TitleCard tendies={tendies} />
 
       {/* <TradingPostItemViewer /> */}

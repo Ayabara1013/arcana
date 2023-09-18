@@ -1,18 +1,48 @@
-@use '../../globals.scss' as g;
-@use '../../App.scss' as a;
-@use '../../colours.scss' as c;
+@use '../../styles/globals.scss' as g;
+@use '../../styles/App.scss' as a;
+@use '../../styles/colours.scss' as c;
 
 @import url('https://fonts.googleapis.com/css2?family=Borel&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
   // font-family: 'Borel', cursive;
 
+@mixin button-sizing {
+  padding: 0.5rem 1rem;
+  height: 2rem;
+}
+
 .custom-nav {
   @include a.layer-4;
   @include a.box-shadow-light;
-
-  // min-height: 4rem;
 }
 
-// .collapse-toggle {
-//   border: none;
-//   background-image: none;
-// }
+.KofiContainer {
+  
+  .KofiButton {
+    @include button-sizing();
+    min-height: 0;
+  }
+}
+
+#discord-button {
+  .icon {
+    svg {
+      fill: white;
+    }
+  }
+  
+  a {
+    @include button-sizing();
+
+    color: white;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    background-color: #7289da;
+    text-decoration: none;
+    
+    &:hover {
+      background-color: #6a7fc9;
+    }
+  }
+}

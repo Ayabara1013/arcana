@@ -15,7 +15,7 @@ import CustomNavBar from './components/CustomNavBar/CustomNavBar';
 
 import TradingPost from './components/screens/TradingPost';
 import Home from './components/screens/Home';
-import Contact from './components/Contact';
+import ContactScreen from './components/screens/contact/ContactScreen';
 import CharacterGenerator from './components/screens/character generator/CharacterGenerator';
 import Testes from './components/screens/testes/Testes.jsx';
 import TestPage from './components/screens/test page/TestPage.jsx'
@@ -430,8 +430,9 @@ function App() {
 
   // console.log(defaultProps.firebase)
 
+
   return (
-    <div className='App'>
+    <div className='App overflow-hidden'>
       <BrowserRouter>
         {/* <NavigationBar /> */}
         <CustomNavBar />
@@ -451,6 +452,11 @@ function App() {
             <Route
               path="/trading-post/rewards-tracker"
               element={<TradingPostTracker {...defaultFirebaseProps} {...defaultUserProps} />}
+            />
+
+            <Route
+              path="/contact"
+              element={<ContactScreen {...defaultFirebaseProps} {...defaultUserProps} />}
             />
 
             <Route

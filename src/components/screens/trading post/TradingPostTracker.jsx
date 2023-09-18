@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Container, Row, Col, Accordion, Form } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { Container, Row, Col, Accordion, Form, Alert } from 'react-bootstrap';
 
 import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter.js';
-import { DetailsPanel, GalleryControlsHint, GalleryItem, SortingBar } from './components/tracker/TradingPostTrackerComponents';
+import { DetailsPanel, GalleryAlert, GalleryControlsHint, GalleryItem, SortingBar } from './components/tracker/TradingPostTrackerComponents';
 
 import tradingPostData from '../../../assets/data/tradingPostScraperResults.json';
 
@@ -22,12 +22,22 @@ export default function TradingPostTracker(props) {
 
   const [activeReward, setActiveReward] = useState(tradingPostData[2023]['august']['Spirit of Competition'])
   const [viewDetails, setViewDetails] = useState(true);
+  const [viewTrackedCollected, setViewTrackedCollected] = useState(false);
+
+  // useEffect(() => {
+  //   console.log(viewDetails);
+  // }, [viewDetails]);
 
   return (    
     <div className='trading-post-tracker flex-contain p-2'>
 
       <div className='sorting-row'>
-        <SortingBar viewDetails={viewDetails} setViewDetails={setViewDetails} />
+        <SortingBar
+          viewDetails={viewDetails}
+          setViewDetails={setViewDetails}
+          viewTrackedCollected={viewTrackedCollected}
+          setViewTrackedCollected={setViewTrackedCollected}
+        />
       </div>
 
       <div className='tool-row flex-contain flex-row gap-2'>
@@ -37,7 +47,10 @@ export default function TradingPostTracker(props) {
             tradingPostData={tradingPostData}
             setActiveReward={setActiveReward}
             user={user}
-            setUser={setUser} />
+            setUser={setUser}
+            viewDetails={viewDetails}
+            viewTrackedCollected={viewTrackedCollected}
+          />
         </div>
 
         <div className={`details d-flex flex-column align-items-stretch ${viewDetails ? 'w-50' : 'w-25'}`}>
@@ -70,7 +83,7 @@ function TestGallery(props) {
 
 
 function RewardsGallery(props) {
-  const { tradingPostData, setActiveReward, className, user, setUser, toggleTrackedItem } = props;
+  const { tradingPostData, setActiveReward, className, user, setUser, toggleTrackedItem, viewDetails, viewTrackedCollected } = props;
 
   let gallery = [];
   let filterGallery = [];
@@ -124,37 +137,57 @@ function RewardsGallery(props) {
           //     />
           //   )
           // }
-          
-          if (filter && user.trackedItems[item] === true && user.collectedItems[item] === false) {
-            filterGallery.push(
-              <GalleryItem
-                className={`filter-gallery`}
-                currentItem={currentItem}
-                year={year} month={month} item={item}
-                itemKey={`${year}-${month}-${item}`}
-                setActiveReward={setActiveReward}
-                user={user}
-                setUser={setUser}
-                toggleTrackedItem={toggleTrackedItem}
 
-                /**
-                 * I may want to change current item to item and item to itemName, but thats for later
-                 * I could make it item={currentItem}, itemName={item} or something like that?
-                 * year=* month=* itemKey=* could also work
-                 */
-              />
-            )
+
+          // removed the collected filtering for now : && user.collectedItems[item] === false
+          if (filter && user.trackedItems[item] === true && user.collectedItems[item] === viewTrackedCollected) {
+
+            // check to see if the item is not in the filter gallery already
+            // if (filterGallery.includes(currentItem.item)) {
+            //   console.log(`Item ${currentItem.item} is already in the filter gallery`);
+            // }
+
+            const existingItem = filterGallery.find((item) => item.props.item === currentItem.name);
+
+            if (existingItem) {
+              console.log(`${existingItem.props.itemName} already exists in the filtered gallery`);
+            }
+            else {
+              filterGallery.push(
+                <GalleryItem
+                  className={`filter-gallery`}
+                  currentItem={currentItem}
+                  itemName={currentItem.name}
+                  year={year} month={month} item={item}
+                  itemKey={`${year}-${month}-${item}`}
+                  setActiveReward={setActiveReward}
+                  user={user}
+                  setUser={setUser}
+                  toggleTrackedItem={toggleTrackedItem}
+                  viewDetails={viewDetails}
+  
+                  /**
+                   * I may want to change current item to item and item to itemName, but thats for later
+                   * I could make it item={currentItem}, itemName={item} or something like that?
+                   * year=* month=* itemKey=* could also work
+                   */
+                />
+              )
+            }
           }
 
           // now push the item to the main gallery
           gallery.push(
             <GalleryItem
               currentItem={currentItem}
+              itemName={currentItem.name}
               year={year} month={month} item={item}
+              itemKey={`${year}-${month}-${item}`}
               setActiveReward={setActiveReward}
               user={user}
               setUser={setUser}
               toggleTrackedItem={toggleTrackedItem}
+              viewDetails={viewDetails}
             />
           )
         }
@@ -169,20 +202,34 @@ function RewardsGallery(props) {
   filterGallery = generateGallery('tracked');
 
   const FilterElement = () => {
-    return (
-      <>
+    const Heading = () => {
+      return (
         <div className='w-100 border-bottom border-2 border-primary'>
           <h2 className='fw-bold'>Tracked</h2>
         </div>
+      )
+    }
+    
+    return (
+      <>
+        <Heading />
 
-        {filterGallery}
+        {filterGallery.length > 0 ?
+          filterGallery :
+          <GalleryAlert>
+            Track your first item to see it here!
+          </GalleryAlert>
+        }
       </>
     )
   }
 
   return (
     <div className='gallery gap-2' data-toggle='collapse' >
-      {filterGallery.length > 0 ? <FilterElement /> : ""}
+      {/* {filterGallery.length > 0 ? <FilterElement /> : ""} */}
+
+      <FilterElement />
+
       {gallery}
     </div>
   )

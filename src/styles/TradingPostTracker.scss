@@ -44,7 +44,10 @@
   position: relative;
   flex: 1 0 calc((100% / 3) - 0.5rem);
   // width: calc(100% / 3);
+  // width: auto;
+  max-width: 50%;
   height: auto;
+  // max-height: 20vh;
   font-size:70%;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -52,6 +55,19 @@
   & img {
     width: 100%;
     height: auto;
+  }
+
+  &.--items-3 {
+    flex: 1 0 calc((100% / 3) - 0.5rem); /* set the number of items per row */
+  }
+
+  &.--items-4 {
+    flex: 1 0 calc((100% / 4) - 0.5rem); /* set the number of items per row */
+  }
+
+  &.--items-5 {
+    flex: 1 0 calc((100% / 5) - 0.5rem); /* set the number of items per row */
+
   }
 
   &__price {

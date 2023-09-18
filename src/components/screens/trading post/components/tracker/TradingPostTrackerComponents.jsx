@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Form } from 'react-bootstrap';
+import { Alert, Form } from 'react-bootstrap';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -12,7 +12,12 @@ import { current } from '@reduxjs/toolkit';
 library.add(faCoffee, faHome, faUser, faPaperPlane, faAnglesDown, faHouse, faEye, faCircleCheck);
 
 export function GalleryItem(props) {
-  const { currentItem, year, month, item, setActiveReward, user, setUser, itemKey } = props;
+  const { currentItem, year, month, item, setActiveReward, user, setUser, itemKey, viewDetails, flexBasis } = props;
+
+  const [flexState, setFlexState] = useState(viewDetails ? '--items-3' : '--items-5');
+
+
+  // console.log(viewDetails);
 
   const handleClick = (event) => {
     if (event.shiftKey) {
@@ -28,7 +33,7 @@ export function GalleryItem(props) {
   }
   
   return (
-    <div key={itemKey} className={`gallery-item ${user.collectedItems[currentItem.name] ? 'collected' : ''}`} >
+    <div key={itemKey} className={`gallery-item ${user.collectedItems[currentItem.name] ? 'collected' : ''} ${viewDetails ? '--items-3' : '--items-5'}`} >
       <a onClick={(event) => handleClick(event)}
         className='position-relative'>
         <img src={currentItem.image} alt="" />
@@ -60,16 +65,24 @@ export function GalleryItem(props) {
 }
 
 export function SortingBar(props) {
-  const { viewDetails, setViewDetails } = props;
+  const { viewDetails, setViewDetails, viewTrackedCollected, setViewTrackedCollected } = props;
   return (
     <div className='sorting-bar d-flex justify-content-between'>
       <div>sorting things (coming soon!)</div>
 
       <div className='details__controls'>
+      <Form.Check inline type="switch"
+          // label="view item details"
+          label="include collected items in Tracked view"
+          id="view-tracked-collected-switch"
+          defaultChecked={viewTrackedCollected}
+          onClick={() => setViewTrackedCollected(!viewTrackedCollected)} />
+
         <Form.Check inline type="switch"
           // label="view item details"
-          label="smaller detail panel"
+          label="smaller detail panel & larger grid"
           id="view-item-details-switch"
+          defaultChecked={viewDetails}
           onClick={() => setViewDetails(!viewDetails)} />
       </div>
     </div>
@@ -117,11 +130,43 @@ export const GalleryControlsHint = (props) => {
         {/* <div className='tracking-alert-text'>if there are issues with the tracked items not showing correctly, please just reload the page, im working on a fix!</div> */}
       </div>
 
-      <div className="tracking-alert alert alert-danger" role="alert">
+      {/* <div className="tracking-alert alert alert-danger" role="alert">
         <div className='tracking-alert__text bs-protect'>
           if there are issues with the tracked items not showing correctly, please just reload the page, im working on a fix!
         </div>
-      </div>
+      </div> */}
+
+      <GalleryAlert variant={'danger'} >
+        if there are issues with the tracked items not showing correctly, please just reload the page, im working on a fix!
+      </GalleryAlert>
+
+      {/* <GalleryAlert>
+        if there is any issue, please let me know!
+      </GalleryAlert> */}
     </>
+  )
+}
+
+
+export function GalleryAlert(props) {
+  const { variant = 'info'} = props;
+
+  return (
+    <Alert variant={variant}className='w-100'>
+    {props.children}
+    </Alert>  
+  )
+}
+
+export function GalleryAlertDismissable(props) {
+  const { variant = 'info' } = props;
+  const [showAlert, setShowAlert] = useState(true);
+
+  const handleCloseAlert = () => setShowAlert(false);
+
+  return (
+    <Alert variant={variant} dismissable onClose={handleCloseAlert} className='w-100'>
+    {props.children}
+  </Alert>  
   )
 }

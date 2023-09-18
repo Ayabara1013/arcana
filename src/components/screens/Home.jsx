@@ -16,46 +16,50 @@ const toolData = {
 		title: 'Trading Post Tracker',
 		description: 'Track all past and current trading post rewards that you want or have already collected!'
 	},
-  diceRoller: {
-    title: 'Dice Roller',
-    description: 'A dice roller for tabletop gaming.',
-  },
-  characterSheet: {
-    title: 'Character Sheet',
-    description: 'A character sheet for tabletop gaming.',
-  },
-  initiativeTracker: {
-    title: 'Initiative Tracker',
-    description: 'An initiative tracker for tabletop gaming.',
-  },
-  lootGenerator: {
-    title: 'Loot Generator',
-    description: 'A loot generator for tabletop gaming.',
-  },
-  lootTracker: {
-    title: 'Loot Tracker',
-    description: 'A loot tracker for tabletop gaming.',
-  },
-  encounterGenerator: {
-    title: 'Encounter Generator',
-    description: 'An encounter generator for tabletop gaming.',
-  },
-  encounterTracker: {
-    title: 'Encounter Tracker',
-    description: 'An encounter tracker for tabletop gaming.',
-  },
-  campaignManager: {
-    title: 'Campaign Manager',
-    description: 'A campaign manager for tabletop gaming.',
-  },
-  campaignTracker: {
-    title: 'Campaign Tracker',
-    description: 'A campaign tracker for tabletop gaming.',
-  },
-  characterCreator: {
-    title: 'Character Creator',
-    description: 'A character creator for tabletop gaming.',
-  },
+	contactUs: {
+		title: 'Contact Us',
+		description: 'Contact us with any questions, comments, feature suggestions, bugs, or concerns!'
+	}
+  // diceRoller: {
+  //   title: 'Dice Roller',
+  //   description: 'A dice roller for tabletop gaming.',
+  // },
+  // characterSheet: {
+  //   title: 'Character Sheet',
+  //   description: 'A character sheet for tabletop gaming.',
+  // },
+  // initiativeTracker: {
+  //   title: 'Initiative Tracker',
+  //   description: 'An initiative tracker for tabletop gaming.',
+  // },
+  // lootGenerator: {
+  //   title: 'Loot Generator',
+  //   description: 'A loot generator for tabletop gaming.',
+  // },
+  // lootTracker: {
+  //   title: 'Loot Tracker',
+  //   description: 'A loot tracker for tabletop gaming.',
+  // },
+  // encounterGenerator: {
+  //   title: 'Encounter Generator',
+  //   description: 'An encounter generator for tabletop gaming.',
+  // },
+  // encounterTracker: {
+  //   title: 'Encounter Tracker',
+  //   description: 'An encounter tracker for tabletop gaming.',
+  // },
+  // campaignManager: {
+  //   title: 'Campaign Manager',
+  //   description: 'A campaign manager for tabletop gaming.',
+  // },
+  // campaignTracker: {
+  //   title: 'Campaign Tracker',
+  //   description: 'A campaign tracker for tabletop gaming.',
+  // },
+  // characterCreator: {
+  //   title: 'Character Creator',
+  //   description: 'A character creator for tabletop gaming.',
+  // },
 };
 
 const toolList = () => {
@@ -98,9 +102,16 @@ function Home(props) {
 					route='/trading-post/rewards-tracker'
 				/>
 
+				<ToolCard
+					title={toolData.contactUs.title}
+					description={toolData.contactUs.description}
+					route={`/contact`}
+				/>
+
 				<ToolCard title='character generator' />
 				{/* <ToolCard title='scifi/fantasy race generator' />
 				<ToolCard title='spellcasting theme creator' /> */}
+
 			</div>
 
 			{/* <Contact /> */}
