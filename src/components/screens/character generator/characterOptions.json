@@ -1,0 +1,219 @@
+{
+  "origins": {
+    "Egyptian": {
+      "name": "Egyptian",
+      "grouping": "African",
+      "language": "Arabic"
+    },
+    "Nigerian": {
+      "name": "Nigerian",
+      "grouping": "African",
+      "language": ["Hausa", "Yoruba", "Igbo"]
+    },
+    "Sudanese": {
+      "name": "Sudanese",
+      "grouping": "African",
+      "language": "Arabic"
+    },
+    "Persian": {
+      "name": "Persian",
+      "grouping": "Middle Eastern",
+      "language": "Persian"
+    },
+    "Chinese": {
+      "name": "Chinese",
+      "grouping": "Asian",
+      "language": ["Mandarin", "Others"]
+    },
+    "Japanese": {
+      "name": "Japanese",
+      "grouping": "Asian",
+      "language": "Japanese"
+    },
+    "Korean": {
+      "name": "Korean",
+      "grouping": "Asian",
+      "language": "Korean"
+    },
+    "Thai": {
+      "name": "Thai",
+      "grouping": "Asian",
+      "language": "Thai"
+    },
+    "Mexican": {
+      "name": "Mexican",
+      "grouping": "North American",
+      "language": "Spanish"
+    },
+    "Panamanian": {
+      "name": "Panamanian",
+      "grouping": "Central American",
+      "language": "Spanish"
+    },
+    "British": {
+      "name": "British",
+      "grouping": "European",
+      "language": "English"
+    },
+    "Dutch": {
+      "name": "Dutch",
+      "grouping": "European",
+      "language": "Dutch"
+    },
+    "Estonian": {
+      "name": "Estonian",
+      "grouping": "European",
+      "language": "Estonian"
+    },
+    "French": {
+      "name": "French",
+      "grouping": "European",
+      "language": "French"
+    },
+    "German": {
+      "name": "German",
+      "grouping": "European",
+      "language": "German"
+    },
+    "Irish": {
+      "name": "Irish",
+      "grouping": "European",
+      "language": ["Irish", "English"]
+    },
+    "Italian": {
+      "name": "Italian",
+      "grouping": "European",
+      "language": "Italian"
+    },
+    "Moldovan": {
+      "name": "Moldovan",
+      "grouping": "European",
+      "language": ["Moldovan", "Romanian"]
+    },
+    "Portuguese": {
+      "name": "Portuguese",
+      "grouping": "European",
+      "language": "Portuguese"
+    },
+    "Romanian": {
+      "name": "Romanian",
+      "grouping": "European",
+      "language": "Romanian"
+    },
+    "Scottish": {
+      "name": "Scottish",
+      "grouping": "European",
+      "language": ["English", "Scots Gaelic"]
+    },
+    "Spanish": {
+      "name": "Spanish",
+      "grouping": "European",
+      "language": "Spanish"
+    },
+    "Welsh": {
+      "name": "Welsh",
+      "grouping": "European",
+      "language": ["Welsh", "English"]
+    },
+    "Danish": {
+      "name": "Danish",
+      "grouping": "Nordic",
+      "language": "Danish"
+    },
+    "Norwegian": {
+      "name": "Norwegian",
+      "grouping": "Nordic",
+      "language": "Norwegian"
+    },
+    "Swedish": {
+      "name": "Swedish",
+      "grouping": "Nordic",
+      "language": "Swedish"
+    },
+    "American": {
+      "name": "American",
+      "grouping": "North American",
+      "language": "English"
+    },
+    "Canadian": {
+      "name": "Canadian",
+      "grouping": "North American",
+      "language": ["English", "French"]
+    },
+    "Latino": {
+      "name": "Latino",
+      "grouping": "North American",
+      "language": ["Spanish", "Portuguese"]
+    },
+    "Australian": {
+      "name": "Australian",
+      "grouping": "Australian",
+      "language": "English"
+    },
+    "Hawaiian": {
+      "name": "Hawaiian",
+      "grouping": "Pacific Islander",
+      "language": ["Hawaiian", "English"]
+    },
+    "Maori": {
+      "name": "Maori",
+      "grouping": "Pacific Islander",
+      "language": ["Maori", "English"]
+    },
+    "New Zealander": {
+      "name": "New Zealander",
+      "grouping": "Pacific Islander",
+      "language": ["English", "Maori"]
+    },
+    "Polynesian": {
+      "name": "Polynesian",
+      "grouping": "Pacific Islander",
+      "language": "Polynesian"
+    },
+    "Samoan": {
+      "name": "Samoan",
+      "grouping": "Pacific Islander",
+      "language": ["Samoan", "English"]
+    },
+    "Bolivian": {
+      "name": "Bolivian",
+      "grouping": "South American",
+      "language": ["Spanish", "Indigenous languages"]
+    },
+    "Argentinian": {
+      "name": "Argentinian",
+      "grouping": "South American",
+      "language": "Spanish"
+    },
+    "Chilean": {
+      "name": "Chilean",
+      "grouping": "South American",
+      "language": "Spanish"
+    },
+    "Brazilian": {
+      "name": "Brazilian",
+      "grouping": "South American",
+      "language": "Portuguese"
+    },
+    "Russian": {
+      "name": "Russian",
+      "grouping": "Slavic",
+      "language": "Russian"
+    },
+    "Ukrainian": {
+      "name": "Ukrainian",
+      "grouping": "Slavic",
+      "language": "Ukrainian"
+    },
+    "Polish": {
+      "name": "Polish",
+      "grouping": "Slavic",
+      "language": "Polish"
+    },
+    "Slovakian": {
+      "name": "Slovakian",
+      "grouping": "Slavic",
+      "language": "Slovak"
+    }
+  }
+}

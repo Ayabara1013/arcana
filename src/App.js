@@ -441,7 +441,8 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home {...defaultFirebaseProps} {...defaultUserProps} />}
+              element={<CharacterGenerator {...defaultFirebaseProps} {...defaultUserProps} />}
+
             />
 
             <Route

@@ -1,142 +1,155 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import '../../../styles/App.scss'
-import '../../../styles/CharacterGenerator.scss';
-import { Button, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
+import options from './characterOptions.json';
+const origins = options.origins;
 
+const capitalizedString = (string) => {
+  let newString = string.toUpperCase();
+  let firstLetter = newString.charAt(0).toUpperCase();
+  // console.log(firstLetter + string.slice(1));
+  newString = firstLetter + string.slice(1);
+  // return newString;
 
-const originLocations = [
-  'Lanathel',
-  'Strovania',
-  'Sento', 'Talen',
-  'Iilsyndrae',
-  'Terreniel',
-  'Fjarnskellig',
-  'Boralas',
-  'Arkenos',
-  'Mothers Embrace',
-  'Tukaar',
-  'Nalcia',
-  'Xian',
-  "X'huul",
-  'The Dreaming Hills',
-  'Varos',
-  "drea"
-]
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
-const theDreamingLocations = ['The Dreaming', 'The Dreaming City', 'The Dreaming Woods', 'The Dreaming Forest', 'The Dreaming Jungle', 'The Dreaming Sea', 'The Dreaming Mountains', 'The Dreaming Peaks', 'The Dreaming Plains', 'The Dreaming Desert', 'The Dreaming Wastes', 'The Dreaming Tundra', 'The Dreaming Tangle', 'The Dreaming Marsh', 'The Dreaming Swamp', 'The Dreaming Ocean', 'The Dreaming River', 'The Dreaming Lake', 'The Dreaming Valley', 'The Dreaming Hills', 'The Dreaming Plateau', 'The Dreaming Glacier', 'The Dreaming Volcano', 'The Dreaming Island', 'The Dreaming Archipelago', 'The Dreaming Peninsula', 'The Dreaming Continent', 'The Dreaming World', 'The Dreaming Universe', 'The Dreaming Cosmos', 'The Dreaming Multiverse', 'The Dreaming Omniverse', 'The Dreaming Megaverse', 'The Dreaming Metaverse', 'The Dreaming Xenoverse', 'The Dreaming Hyperverse', 'The Dreaming Hypoverse', 'The Dreaming Archverse', 'The Dreaming Brane', 'The Dreaming Omnibrane']
+const getLanguages = () => {
+  let results = [];
 
+  for (const item in origins) {
 
-export default function CharacterGenerator(props) {
-  const [firstInitial, setFirstInitial] = useState('N');
-  const [lastInitial, setLastInitial] = useState('A');
-  const [origin, setOrigin] = useState('MISSING');
-  const [firstName, setFirstName] = useState('NOT');
-  const [lastName, setLastName] = useState('APPLICABLE');
-  const [currentHome, setCurrentHome] = useState('MISSING');
+    if (Array.isArray(origins[item].language))
+    {
+      origins[item].language.forEach(language =>
+      {
+        console.log(language);
 
-  const generateInitials = () => {
-    const firstInitial = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-    const lastInitial = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-
-    setFirstInitial(firstInitial);
-    setLastInitial(lastInitial);
+        if (!results.includes(language)) {
+          results.push(language);
+        }
+      })
+    }
+    else if (!results.includes(origins[item].language)) {
+      results.push(origins[item].language);
+    }
   }
 
-  const CreatorPromptsProps = {
-    firstInitial: firstInitial,
-    lastInitial: lastInitial,
-    origin: origin,
-  };
-
-  return (
-    <Container className='character-generator h-100 box -grey'>
-      <Row className='h-100 box -grey'>
-        <Col md={'auto'} className='generator-tools-container p-2 h-100 bg-light'>
-          <InitialsGenerator firstInitial={firstInitial} lastInitial={lastInitial} generateInitials={generateInitials} />
-
-          <OriginGenerator />
-        </Col>
-        
-        <Col>
-          <CreatorPrompts {...CreatorPromptsProps} />
-        </Col>
-
-        <Col className='generator-results'>
-          <p>
-            <span>first name: </span>
-            {firstName}
-          </p>
-          
-          <p>
-            <span>last name: </span>
-            {lastName}
-          </p>
-          
-          <p>
-            <span>origin: </span>
-            {origin}
-          </p>
-
-          <p>
-            <span>current home: </span>
-            {currentHome}
-          </p>
-        </Col>
-      </Row>
-    </Container>
-  )
+  return results;
 }
 
-function InitialsGenerator(props) {
-  const { firstInitial, lastInitial, generateInitials } = props;
+const getOrigin = () => {
+  const numOrigins = Object.keys(origins).length;
+  // console.log(numOrigins);
+  const originNum = Math.floor(Math.random() * numOrigins);
+  // console.log(originNum);
+  // console.log(Object.keys(origins)[originNum]);
+  // console.log(Object.values(origins)[originNum]);
+
+  // setResult((prevState) => ({
+  //   ...prevState,
+  //   ethnicity: Object.keys(origins)[originNum],
+  //   origin: ,
+  // }));
+
+  const origin = Object.values(origins)[originNum];
+
+  return origin;
+}
+
+const getGender = () => {
+  // let gender;
+  
+  if (Math.random() < 0.45) {
+    // gender = 'male';
+    return 'male';
+  }
+  else if (Math.random() < 0.9) {
+    // gender = 'female';
+    return 'female';
+  }
+  // else gender = 'other';
+  else return 'other';
+  
+  // return gender;
+}
+
+const getSpokenLangauges = () => {
+  let spokenLangauges = languages[Math.floor(Math.random() * languages.length)];
+  // console.log(spokenLangauges);
+  return spokenLangauges;
+}
+
+
+const languages = getLanguages();
+
+export default function CharacterGenerator() {
+  const tempOrigin = getOrigin();
+
+  const [result, setResult] = useState({
+    name: ['JOHN', 'SMITH'],
+    origin: tempOrigin || {
+      name: 'WHITE',
+      language: 'ENGLISH',
+    },
+    ethnicity: getOrigin().name || 'WHITE',
+    spokenLangauges: getSpokenLangauges() || 'ENGLISH',
+  });
+
+  console.log(generateThing(getString(), getNumber()));
+  console.log(getGender());
+  console.log(getSpokenLangauges());
+
   return (
-    <div className='generator generator__initials d-flex flex-column text-center'>
-      <div className='fw-bold '>
-        Initials
+    <div className='character-generator d-flex flex-column h-100 box'>
+      <h1>Character Generator</h1>
+
+      <div className='d-flex flex-row box -red'>
+        <div className='tool-column flex-grow-1 box -blue'>
+          <div className="d-flex flex-row gap-2 box -w2 -skyblue">
+            <button className={`btn btn-primary`} onClick={() => {
+              // set origin
+              setResult(prevResult => ({
+                ...prevResult,
+                origin: getOrigin(),
+                ethnicity: getOrigin().name,
+              }))
+            }
+            }>
+              generate origin
+            </button>
+
+            <button className={`btn btn-primary`} onClick={() => console.log(capitalizedString('hello'))}>
+              test
+            </button>
+            <button className={`btn btn-primary`} onClick={getLanguages}>
+              test languages
+            </button>
+          </div>
+        </div>
+
+        <div className='result-column flex-grow-1 box -green'>
+          <div></div>
+          <div>origin: {Object(result.origin.name)}</div>
+          <div>ethnicity: {result.ethnicity}</div>
+          <div>languages: {result.spokenLangauges}</div>
+          <div>gender: {getGender()}</div>
+        </div>
       </div>
-
-      <div className="generator__initials__display d-flex flex-row">
-        <div className='generator__initials__display__first'>{firstInitial}</div>
-        <div className='generator__initials__display__last'>{lastInitial}</div>
-      </div>
-
-      <Button className='generator__initials__button btn' onClick={generateInitials}>
-        Generate
-      </Button>
     </div>
   )
 }
 
-function OriginGenerator(props) {
-  return (
-    <div className='generator__origin'>
-      <div className='fw-bold'>Origin</div>
-    </div>
-  )
+
+
+
+function getString() {
+  return 'hello';
 }
 
-function CreatorPrompts(props) {
-  const { firstInitial, lastInitial, origin } = props;
-  return (
-    <div className='creator-prompts'>
-      <Form>
-        <Form.Group controlId="1">
-          {/* Form.Label, Form.Control, Form.Text, Form.Check, InputGroup, etc */}
-          
-          <Form.Label>What is their name?</Form.Label>
-          <InputGroup>
-            <InputGroup.Text>{firstInitial}</InputGroup.Text>
-            <Form.Control type="text" placeholder='...first name' />
-          </InputGroup>
+function getNumber() {
+  return 1;
+}
 
-          <InputGroup>
-            <InputGroup.Text>{lastInitial}</InputGroup.Text>
-            <Form.Control type="text" placeholder='...last name' />
-          </InputGroup>
-
-        </Form.Group>
-      </Form>
-    </div>
-  )
+function generateThing(string, number) {
+  return string + number;
 }
