@@ -20,12 +20,14 @@ import CharacterGenerator from './components/screens/character generator/Charact
 import Testes from './components/screens/testes/Testes.jsx';
 import TestPage from './components/screens/test page/TestPage.jsx'
 import TradingPostTracker from './components/screens/trading post/TradingPostTracker';
+import KevinsApp from './kevins app/KevinsApp';
 
 // ----------------- FIREBASE ----------------- //
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { defaultUser } from './assets/data/createUserData';
+
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -441,7 +443,7 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<CharacterGenerator {...defaultFirebaseProps} {...defaultUserProps} />}
+              element={<KevinsApp {...defaultFirebaseProps} {...defaultUserProps} />}
 
             />
 
@@ -462,6 +464,9 @@ function App() {
 
             <Route
               path="/character-generator"
+            />
+            <Route
+              path="/kevins-app"
             />
 
             <Route

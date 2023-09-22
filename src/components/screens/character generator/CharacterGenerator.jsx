@@ -18,10 +18,8 @@ const getLanguages = () => {
 
   for (const item in origins) {
 
-    if (Array.isArray(origins[item].language))
-    {
-      origins[item].language.forEach(language =>
-      {
+    if (Array.isArray(origins[item].language)) {
+      origins[item].language.forEach(language => {
         console.log(language);
 
         if (!results.includes(language)) {
@@ -39,38 +37,16 @@ const getLanguages = () => {
 
 const getOrigin = () => {
   const numOrigins = Object.keys(origins).length;
-  // console.log(numOrigins);
   const originNum = Math.floor(Math.random() * numOrigins);
-  // console.log(originNum);
-  // console.log(Object.keys(origins)[originNum]);
-  // console.log(Object.values(origins)[originNum]);
-
-  // setResult((prevState) => ({
-  //   ...prevState,
-  //   ethnicity: Object.keys(origins)[originNum],
-  //   origin: ,
-  // }));
-
   const origin = Object.values(origins)[originNum];
 
   return origin;
 }
 
 const getGender = () => {
-  // let gender;
-  
-  if (Math.random() < 0.45) {
-    // gender = 'male';
-    return 'male';
-  }
-  else if (Math.random() < 0.9) {
-    // gender = 'female';
-    return 'female';
-  }
-  // else gender = 'other';
+  if (Math.random() < 0.45) return 'male';
+  else if (Math.random() < 0.9) return 'female';
   else return 'other';
-  
-  // return gender;
 }
 
 const getSpokenLangauges = () => {

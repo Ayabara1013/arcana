@@ -1,0 +1,87 @@
+
+$btn-colour: rgb(69, 131, 69);
+
+
+.kevins-app {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.counter {
+  margin: 0 auto;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  margin: 0 auto;
+  gap: 0.5em;
+
+  font-size: 2rem;
+}
+
+// .add-subtract-button {
+//   min-width: 3em;
+//   border: none;
+//   border-radius: 0.5em;
+//   background-color: green;
+//   font-weight: bold;
+//   color: white;
+// }
+
+.button {
+  margin: 0;
+  padding: 0;
+  width: 3em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: $btn-colour;
+  font-weight: bold;
+  color: white;
+}
+
+.value-modifier-group {
+
+  border-radius: 0.5em;
+  overflow: hidden;
+  
+  .button {
+    width: 1.5em;
+
+    border: none;
+    border-radius: 0;
+
+    background-color: $btn-colour;
+    color: white;
+
+    font-weight: bold;
+
+    // &__add {
+    //   // background-color: $btn-colour;
+    //   color: rgb(101, 189, 101);
+    // }
+ 
+    // &__subtract {
+    //   // background-color: $btn-colour;
+    //   color: rgb(201, 72, 72);
+    // }
+
+    &__add, &__subtract {
+      background-color: rgb(165, 171, 182);
+      font-weight: 900;
+    }
+
+    &__send {
+      width: 3em;
+      // background-color: white;
+      // color: darkslategray;
+    }
+  }
+}
+
+.box-border {
+  // border: 2px dotted red;
+}
