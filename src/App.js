@@ -27,6 +27,7 @@ import KevinsApp from './kevins app/KevinsApp';
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { defaultUser } from './assets/data/createUserData';
+import FighterSheet from './characterSheet/FighterSheet';
 
 
 
@@ -443,7 +444,8 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<KevinsApp {...defaultFirebaseProps} {...defaultUserProps} />}
+              // element={<KevinsApp {...defaultFirebaseProps} {...defaultUserProps} />}
+              element={<FighterSheet {...defaultFirebaseProps} {...defaultUserProps} />}
 
             />
 
