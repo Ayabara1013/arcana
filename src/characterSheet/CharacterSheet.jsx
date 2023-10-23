@@ -7,7 +7,7 @@ class AbilityScore {
 }
 
 class Skill {
-	constructor(name, abilityScore, proficiency = false, expertise = false) {
+	constructor(name, abilityScore, proficiency = false, expertise = false, displayName = null) {
 		this.name = name;
 		this.displayName = displayName || capitalizeWords(name);
 		this.abilityScore = abilityScore;
@@ -22,35 +22,34 @@ const user = {
 		level: 0,
 	},
 	abilityScores: {
-		strength: 		new AbilityScore("strength", 0),
-		dexterity: 		new AbilityScore("dexterity", 0),
+		strength: 			new AbilityScore("strength", 0),
+		dexterity: 			new AbilityScore("dexterity", 0),
 		constitution: 	new AbilityScore("constitution", 0),
-		intelligence:	new AbilityScore("intelligence", 0),
-		wisdom: 		new AbilityScore("wisdom", 0),
-		charisma: 		new AbilityScore("charisma", 0),
+		intelligence:		new AbilityScore("intelligence", 0),
+		wisdom: 				new AbilityScore("wisdom", 0),
+		charisma: 			new AbilityScore("charisma", 0),
 	},
 	skills: {
-		athletics: 		new Skill("athletics", "strength", false, false),
-		acrobatics: 	new Skill("acrobatics", "dexterity", false, false),
-		sleightOfHand: 	new Skill("sleight of hand", "dexterity", false, false),
-		stealth: 		new Skill("stealth", "dexterity", false, false),
-		arcana: 		new Skill("arcana", "intelligence", false, false),
-		history: 		new Skill("history", "intelligence", false, false),
-		investigation: 	new Skill("investigation", "intelligence", false, false),
-		nature: 		new Skill("nature", "intelligence", false, false),
-		religion: 		new Skill("religion", "intelligence", false, false),
-		animalHandling: new Skill("animal handling", "wisdom", false, false),
-		insight: 		new Skill("insight", "wisdom", false, false),
-		medicine: 		new Skill("medicine", "wisdom", false, false),
-		perception: 	new Skill("perception", "wisdom", false, false),
-		survival: 		new Skill("survival", "wisdom", false, false),
-		deception: 		new Skill("deception", "charisma", false, false),
-		intimidation: 	new Skill("intimidation", "charisma", false, false),
-		performance: 	new Skill("performance", "charisma", false, false),
-		persuasion: 	new Skill("persuasion", "charisma", false, false),
+		athletics: 			new Skill("athletics", 				"strength",			false, false),
+		acrobatics: 		new Skill("acrobatics", 			"dexterity",		false, false),
+		sleightOfHand: 	new Skill("sleight of hand", 	"dexterity", 		false, false),
+		stealth: 				new Skill("stealth", 					"dexterity", 		false, false),
+		arcana: 				new Skill("arcana", 					"intelligence", false, false),
+		history: 				new Skill("history", 					"intelligence", false, false),
+		investigation: 	new Skill("investigation", 		"intelligence", false, false),
+		nature: 				new Skill("nature", 					"intelligence", false, false),
+		religion: 			new Skill("religion", 				"intelligence", false, false),
+		animalHandling: new Skill("animal handling", 	"wisdom", 			false, false),
+		insight: 				new Skill("insight", 					"wisdom", 			false, false),
+		medicine: 			new Skill("medicine", 				"wisdom", 			false, false),
+		perception: 		new Skill("perception", 			"wisdom", 			false, false),
+		survival: 			new Skill("survival", 				"wisdom", 			false, false),
+		deception: 			new Skill("deception", 				"charisma", 		false, false),
+		intimidation: 	new Skill("intimidation", 		"charisma", 		false, false),
+		performance: 		new Skill("performance", 			"charisma", 		false, false),
+		persuasion: 		new Skill("persuasion", 			"charisma", 		false, false),
 	},
 }
-
 
 const capitalizeWords = (string) => {
 	return string.split(" ").map(word => {

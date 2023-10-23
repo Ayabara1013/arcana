@@ -6,8 +6,8 @@ const fighter = {
   name: 'Fighter',
   hitDie: 10,
   levels: {
-    1: {},
-    2: {},
+    1: { features: [fighter.features.fightingStyle, fighter.features.secondWind] },
+    2: { features: [fighter.features.actionSurge1] },
     3: {},
     4: {},
     5: {},
@@ -30,27 +30,27 @@ const fighter = {
 
   features: {
     fightingStyle: new ClassFeature(
-      'Fighting Style',
-      'Fighter', 1,
-      "You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.",
-      null,
-      'passive'
+      'Fighting Style', // name
+      'Fighter', 1, // class, level
+      "You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.", // description
+      null, // uses
+      'passive' // type
     ),
 
     secondWind: new ClassFeature(
-      'Second Wind',
-      'Fighter', 1,
-      'You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level.\nOnce you use this feature, you must finish a short or long rest before you can use it again.',
-      { current: 1, max: 1, interval: 'short rest' },
-      'ability',
+      'Second Wind', // name
+      'Fighter', 1, // class, level
+      'You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level.\nOnce you use this feature, you must finish a short or long rest before you can use it again.', // description
+      { current: 1, max: 1, interval: 'short rest' }, // uses
+      'ability', // type
     ),
   
     actionSurge1: new ClassFeature(
-      'Action Surge',
-      'Fighter', 2,
-      'Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action.\nOnce you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.',
-      { current: 1, max: 1, interval: 'short rest' },
-      'ability',
+      'Action Surge', // name
+      'Fighter', 2, // class, level
+      'Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action.\nOnce you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.', // description
+      { current: 1, max: 1, interval: 'short rest' }, // uses
+      'ability',  // type
     ),
   },
 
