@@ -1,0 +1,47 @@
+
+
+.container {
+  padding: 0;
+  border: 1px solid red;
+}
+
+.row {
+  margin: 0;
+  border: 1px solid skyblue;
+}
+
+.col {
+  padding: 0;
+  border: 1px solid red;
+}
+
+
+
+
+
+
+
+
+
+.stats-page {
+  height: 100%;
+  border: 1px solid white;
+}
+
+.ability-score {
+  flex: 1 0 25%;
+}
+
+.bottom-bar {
+  position: relative;
+}
+
+.roll-window {
+  position: absolute;
+  bottom: calc(100% + 1rem);
+
+  margin: 0 auto;
+  padding: 0.25rem;
+
+  width: 95%;
+}

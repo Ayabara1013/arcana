@@ -240,6 +240,76 @@ const rogue = {
 
 
 
-export {
-  dnd5e,
+
+
+
+
+
+const fateAE = {
+  name: `Fate Accelerated Edition`,
+
+  stats: {
+    primary: {
+      name: `Approaches`,
+      careful: 2,
+      clever: 2,
+      flashy: 2,
+      forceful: 2,
+      quick: 2,
+      sneaky: 2,
+    }
+  },
+
+  details: {
+    highConcept: ``,
+    trouble: ``,
+    otherAspects: [],
+  },
+
+  stunts: [],
+
+  stress: {
+    value: 0,
+    reset: function (value) {
+      if (value) {
+        this.value += value;
+      }
+      else {
+        this.value = 0;
+      }
+    }
+  },
+
+  consequences: {
+    mild: {
+      cost: 2,
+      details: ``,
+      active: false,
+    },
+    moderate: {
+      cost: 4,
+      details: ``,
+      active: false,
+    },
+    severe: {
+      cost: 6,
+      details: ``,
+      active: false,
+    },
+
+    reset: function (type) {
+      if (Array.isArray(type)) {
+        type.forEach(consequence => {
+          consequence.active = false;
+        });
+      }
+      else {
+        type.active = false;
+      }
+    },
+  },
 }
+
+
+
+export { dnd5e, fateAE };

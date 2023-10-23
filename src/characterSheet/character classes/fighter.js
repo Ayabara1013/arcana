@@ -6,8 +6,8 @@ const fighter = {
   name: 'Fighter',
   hitDie: 10,
   levels: {
-    1: { features: [fighter.features.fightingStyle, fighter.features.secondWind] },
-    2: { features: [fighter.features.actionSurge1] },
+    1: {/* see lower region with declarations */},
+    2: {},
     3: {},
     4: {},
     5: {},

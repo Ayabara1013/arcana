@@ -20,7 +20,7 @@ const getLanguages = () => {
 
     if (Array.isArray(origins[item].language)) {
       origins[item].language.forEach(language => {
-        console.log(language);
+        // console.log(language);
 
         if (!results.includes(language)) {
           results.push(language);
@@ -71,9 +71,9 @@ export default function CharacterGenerator() {
     spokenLangauges: getSpokenLangauges() || 'ENGLISH',
   });
 
-  console.log(generateThing(getString(), getNumber()));
-  console.log(getGender());
-  console.log(getSpokenLangauges());
+  // console.log(generateThing(getString(), getNumber()));
+  // console.log(getGender());
+  // console.log(getSpokenLangauges());
 
   return (
     <div className='character-generator d-flex flex-column h-100 box'>
