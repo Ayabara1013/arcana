@@ -312,11 +312,30 @@ function Stats(props) {
 					<AbilityScore character={template} ability='intelligence' />
 					<AbilityScore character={template} ability='wisdom' />
 					<AbilityScore character={template} ability='charisma' />
+					<div className='ability-score m-1 p-2 bg-light text-dark rounded' onClick={() => console.log(`you pressed other`)}>
+						<div>other stat</div>
+						<div>10 (0)</div>
+					</div>
 				</div>
+
+				<AbilityScoreInput id='strength' type='strength' />
 			</div>
 
 		</div>
 	)
+}
+
+function AbilityScoreInput({ id, type }) {
+  return (
+      <div className="center w-full">
+        <div className="form-control w-10/12">
+          <label className="label">
+            <span className="label-text">{ type }:</span>
+          </label>
+          <input type="text" placeholder="Type here" className="input input-bordered w-full" id={ id } abilityScore={ type }/>
+        </div>
+      </div>
+  )
 }
 
 function AbilityScore(props) {
@@ -339,7 +358,7 @@ const Pages = {
 
 export default function CharacterSheet() {
 	return (
-		<Container className='d-flex flex-column box h-100'>
+		<Container className='d-flex flex-column h-100'>
 			<Row className='flex-grow-1'>
 				<Col>
 					<Pages.Stats character={template} />
