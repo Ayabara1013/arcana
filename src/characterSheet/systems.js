@@ -1,6 +1,7 @@
 
 
 const dnd5e = {
+
   abilityScores: {
     strength: 10,
     dexterity: 10,
@@ -90,22 +91,107 @@ const dnd5e = {
 
   },
 
+  spellcasting: {
+    SpellLevel: class {
+      constructor(level, spellSlots, known) {
+        this.level = level;
+        this.slots = spellSlots || { current: 0, total: 0 };
+        this.known = known || { max: null, current: 0 };
+      }
+    },
+
+    spell: class {
+      constructor(name, level, school, castingTime, range, components, duration, description) {
+        this.name = name;
+        this.level = level;
+        this.school = school;
+        this.castingTime = castingTime;
+        this.range = range;
+        this.components = components;
+        this.duration = duration;
+        this.description = description;
+      }
+    },
+
+    casterGroup: {
+      third: {
+        maxSpellLevel: 4,
+        maxSpellSlots: [4, 3, 3, 1],
+      },
+      half: {
+        maxSpellLevel: 5,
+        maxSpellSlots: [4, 3, 3, 3, 2],
+      },
+      full: {
+        maxSpellLevel: 9,
+        maxSpellSlots: [4, 3, 3, 3, 3, 2, 2, 1, 1],
+      },
+      pact: {
+        maxSpellLevel: 5,
+        maxSpellSlots: [4],
+      },
+    },
+
+    0: new SpellLevel(0),
+    1: new SpellLevel(1),
+    2: new SpellLevel(2),
+    3: new SpellLevel(3),
+    4: new SpellLevel(4),
+    5: new SpellLevel(5),
+    6: new SpellLevel(6),
+    7: new SpellLevel(7),
+    8: new SpellLevel(8),
+    9: new SpellLevel(9),
+  },
+
   experienceMethods: ['experiencePoints', 'milestone'],
 
 }
 
 
-const dnd5eBio = {
+const dnd5eDetails = {
 
   // id like to think of a better name for this category
   personality: {
-    personalityTraits: [],
+    traits: [],
     ideals: [],
     bonds: [],
     flaws: [],
   },
 
+  name: {
+    first: '',
+    last: '',
+    nickname: '',
+    title: '',
+  },
 
+  appearance: {
+    age: 0,
+    height: '',
+    weight: 0,
+    eyes: '',
+    skin: '',
+    hair: '',
+    img: '', // url
+  },
+
+  allies: [],
+  organizations: [],
+
+  backstory: {
+    backstory: '',
+    background: '',
+    allies: '',
+    enemies: '',
+    additionalFeatures: '',
+    treasure: '',
+    characterAppearance: '',
+  },
+
+  additionalFeaturesTraits: [],
+
+  treasure: [],
 }
 
 
