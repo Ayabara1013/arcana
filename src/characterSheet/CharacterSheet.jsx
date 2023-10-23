@@ -274,38 +274,3 @@ export default function CharacterSheet() {
 		</div>
 	)
 }
-
-
-// export function name(props) {
-// 	// const { item } = props;
-
-// 	return (
-// 		<Container className='d-flex flex-column h-100'>
-// 			<Row className='flex-grow-1'>
-// 				<Col className='overflow-y-auto'>
-// 					<Pages.Stats />
-// 				</Col>
-// 			</Row>
-
-// 			<Row className='box -blue p-2'>
-// 				<Col className='d-flex justify-content-end box -red'>
-// 					<Button variant="primary" onClick={() => notify()}>
-// 						Primary
-// 					</Button>
-// 					<Button variant="primary" onClick={() => {
-// 						notify('cleared all stats', { icon: '❌' });
-// 						// removeAllStats();
-// 					}}>
-// 						clear all stats
-// 					</Button>
-// 				</Col>
-// 			</Row>
-
-// 			<Toaster
-// 				position="bottom-left"
-// 				reverseOrder={false}
-// 			/>
-
-// 		</Container>
-// 	)
-// }
