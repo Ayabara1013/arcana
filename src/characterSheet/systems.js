@@ -58,15 +58,13 @@ const dnd5e = {
       wisdom: 0,
       charisma: 0,
     },
-
-
   },  
 
-  classes: {
-    fighter: dnd5eClasses.fighter,
-    rogue: dnd5eClasses.rogue,
-    wizard: dnd5eClasses.wizard,
-  },
+  // classes: {
+  //   fighter: dnd5eClasses.fighter,
+  //   rogue: dnd5eClasses.rogue,
+  //   wizard: dnd5eClasses.wizard,
+  // },
 
   armourClass: 10,
   initiative: 0,
@@ -88,13 +86,16 @@ const dnd5e = {
     },
   },
 
-  attacks: {},
+  actions: {
+    attacks: {},
+    other: {},
+  },
 
-  equipment: {},
+  items: {
+    equipment: {},
+  },
 
   features: {},
-
-  actions: {},
 
   baseCharacter: {
 
@@ -155,9 +156,10 @@ const dnd5e = {
 
   experienceMethods: ['experiencePoints', 'milestone'],
 
-  character_details: dnd5eDetails,
-
+  characterDetails: dnd5eDetails,
 }
+
+dnd5e.initiative = dnd5e.stats.abilityScores.dexterity.modifier;
 
 
 const dnd5eDetails = {
@@ -205,14 +207,10 @@ const dnd5eDetails = {
   treasure: [],
 }
 
-
-
-
-
-const dnd5eClasses = {
-  fighter: fighter,
-  rogue: rogue,
-}
+// const dnd5eClasses = {
+//   fighter: fighter,
+//   rogue: rogue,
+// }
 
 const fighter = {
   hitDie: 10,
@@ -249,14 +247,14 @@ const fateAE = {
   name: `Fate Accelerated Edition`,
 
   stats: {
-    primary: {
+    primary: { // does this actually need to be a sub cateogry? could it simply be apporaches {}?
       name: `Approaches`,
-      careful: 2,
-      clever: 2,
-      flashy: 2,
-      forceful: 2,
-      quick: 2,
-      sneaky: 2,
+      careful: 0,
+      clever: 0,
+      flashy: 0,
+      forceful: 0,
+      quick: 0,
+      sneaky: 0,
     }
   },
 
