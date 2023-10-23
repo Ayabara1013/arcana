@@ -1,21 +1,34 @@
+import capitalizeWords from '../../assets/functions/capitalizeWords';
+
+
+
+class AbilityScore {
+	constructor(name, score) {
+		this.name = name;
+		this.displayName = displayName || capitalizeWords(name) || this.name.charAt(0).toUpperCase() + this.name.slice(1);
+		this.score = score || 10;
+	}
+}
+
 class Skill {
-  constructor(name, ability, proficient, expertise) {
-    this.name = name;
-    this.ability = ability;
-    this.proficient = proficient;
-    this.expertise = expertise;
-  }
+	constructor(name, abilityScore, proficiency = false, expertise = false, displayName = null) {
+		this.name = name;
+		this.displayName = displayName || capitalizeWords(name);
+		this.abilityScore = abilityScore;
+		this.proficiency = proficiency;
+		this.expertise = expertise;
+	}
 }
 
 const dnd5e = {
   stats: {
     abilityScores: {
-      strength: 10,
-      dexterity: 10,
-      constitution: 10,
-      intelligence: 10,
-      wisdom: 10,
-      charisma: 10,
+      strength:     new AbilityScore("strength",      10),
+      dexterity:    new AbilityScore("dexterity",     10),
+      constitution: new AbilityScore("constitution",  10),
+      intelligence: new AbilityScore("intelligence",  10),
+      wisdom:       new AbilityScore("wisdom",        10),
+      charisma:     new AbilityScore("charisma",      10),
     },
   
     skills: {

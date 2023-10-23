@@ -1,15 +1,18 @@
+
+
+
+class Stat {
+  constructor(name, value) {
+    this.name = name;
+    this.value = value;
+  }
+}
+
 const generic = {
   stats: {
     primary: {},
     secondary: {},
     tertiary: {},
-
-    Stat: class {
-      constructor(name, value) {
-        this.name = name;
-        this.value = value;
-      }
-    },
 
     set: function (item, value) {
       this[item] = newStat(item, value);
@@ -29,7 +32,9 @@ const generic = {
   },
 
   details: {
-
+    set: function (item, value) {
+      this[item] = value;
+    },
   },
 }
 
