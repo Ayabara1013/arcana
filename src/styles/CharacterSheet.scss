@@ -18,10 +18,18 @@
 
 
 
+.note {
+  position: absolute;
+  bottom: calc(100% + 1rem);
 
+  margin: 0 auto;
+  padding: 0.25rem;
 
+  width: 95%;
 
-
+  left: 0;
+  right: 0;
+}
 
 .stats-page {
   height: 100%;
@@ -32,12 +40,15 @@
   padding: 0.25rem;
 }
 
-.ability-score {
-  flex: 1 0 25%;
+.stat-item, .ability-score {
+  flex: 1 0 30%;
+  // max-width: 33%;
+  text-align: center;
 }
 
 .bottom-bar {
-  position: relative;
+  // position: relative;
+  width: fit-content;
 }
 
 .roll-window {
@@ -51,4 +62,30 @@
 
   left: 0;
   right: 0;
+}
+
+
+
+.fake-navbar {
+  height: 4rem;
+}
+
+.character-sheet {
+  // this has a fixed height
+  height: 100%; // this is the problem here
+}
+
+.page-window {
+  flex-grow: 1;
+  // this will flex to fill remaining space
+  overflow-y: scroll;
+}
+
+.stats-page {
+  // this is inside page-window, it will scroll
+}
+
+
+.toolbar {
+ // this will flex to fit its contents
 }

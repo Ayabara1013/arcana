@@ -4,7 +4,6 @@ import generic from './systems/generic';
 import { useState } from 'react';
 
 import toast, { Toaster } from 'react-hot-toast';
-import Stats from './systems/sheets/dnd 5e/StatsPage';
 
 
 const notify = (text, icon) => toast(text || 'cool.', icon || '');
@@ -169,7 +168,119 @@ const character = {
 // 	skills[skill].modifier = abs[skills[skill].abilityScore].modifier;
 // }
 
+function Stats(props) {
+	const { character } = props;
 
+	const handleAddStat = (value) => {
+		let errors = 0;
+
+		console.log('adding stat...');
+
+		if (!value[0] || value[0] === null) {
+			notify('no category', { icon: '❌' });
+			console.error('no category');
+			errors++;
+		}
+		
+		if (!value[1] || value[1] === null) {
+			notify('no item', { icon: '❌' });
+			console.error('no item');
+			errors++;
+		}
+		
+		if (!value[2] || value[2] === null) {
+			notify('no value', { icon: '❌' });
+			console.error('no value');
+			errors++;
+		}
+
+		if (errors) return;
+
+		system.stats[value[0]][value[1]] = value[2];
+		notify('added stat!', { icon: '✅' });
+	}
+
+	const displayStats = (category) => {
+		const statItems = [];
+
+		for (const stat in character.stats[category]) {
+			statItems.push(<StatItem character={character} category={category} stat={stat} key={stat} />);
+		}
+
+		return statItems;
+	}
+
+	return (
+		<div className={`stats-page`}>
+
+			<div className='p-1 bg-secondary text-white rounded'>
+				<div>
+					<h3>Primary Stats</h3>
+					<div className="d-flex flex-wrap">
+					{ displayStats('primary') } 
+					</div>
+				</div>
+
+				<div>
+					<h3>Secondary Stats</h3>
+					<div className="d-flex flex-wrap">
+					{ displayStats('secondary') } 
+					</div>
+				</div>
+
+				<div>
+					<h3>add primary stat</h3>
+
+					<InputGroup className='rounded-2'>
+						<Form.Control id='add-stat:category' type="text" placeholder="category" />
+						<Form.Control id='add-stat:item' type="text" placeholder="stat" />
+						<Form.Control id='add-stat:value' type="number" placeholder="value" />
+
+						<Button variant="primary" onClick={() => {
+							const values = [
+								document.getElementById('add-stat:category').value,
+								document.getElementById('add-stat:item').value,
+								document.getElementById('add-stat:value').value,
+							];
+							
+							handleAddStat(values);
+						}}>
+							Primary
+						</Button>
+					</InputGroup>
+
+					<Button variant="primary"
+						className='m-1'
+						onClick={() => {
+							handleAddStat(null, ['secondary', 'new stat', 0]);
+							console.log(system.stats.secondary);
+						}}>
+						<div>add secondary 1</div>
+					</Button>
+
+					<Button variant="primary"
+						className='m-1'
+						onClick={() => {
+							handleAddStat(null, ['tertiary', 'new stat', 0]);
+							console.log(system.stats.tertiary);
+						}}>
+						<div>add tertiary 1</div>
+					</Button>
+
+					<Button variant="primary"
+						className='m-1'
+						onClick={() => console.log(system.stats)}>
+						log stats
+					</Button>
+
+					{/* <input type="text" placeholder='name' />
+					<input type="number" placeholder='value' /> */}
+				</div>
+			</div>
+
+		</div>
+	)
+}
 
 // function DnD5eAbilities(props) {
 // 	const { character } = props;
@@ -219,7 +330,17 @@ const character = {
 // 	)
 // }
 
+function StatItem(props) {
+	const {character, category, stat, key} = props;
+	const abs = character.stats[category];
 
+	return (
+		<div key={key} className='stat-item m-1 p-2 bg-light text-dark rounded'>
+			<div>{abs[stat].name}</div>
+			<div>{abs[stat].value} ({abs[stat].modifier})</div>
+		</div>
+	)
+}
 
 
 const Pages = {
@@ -232,80 +353,27 @@ export default function CharacterSheet() {
 	const [page, setPage] = useState('stats');
 	const [character, setCharacter] = useState(system.baseCharacter);
 
-	const defaultProps = {
-		character: character,
-		setCharacter: setCharacter,
-	}
-
-	const removeAllStats = () => {
-		setCharacter(prevState => ({
-			...prevState, stats: {
-				primary: {},
-				secondary: {},
-				tertiary: {},
-			}
-		}))
-	}
-
 	return (
-		<div className={`character-sheet box -blue -w2 d-flex flex-column`}>
-			<div className={`page-window box -red -w2`}>
-				<Pages.Stats {...defaultProps} />
-			</div>
+		<Container className='d-flex flex-column h-100'>
+			<Row className='flex-grow-1'>
+				<Col>
+					<Stats character={character} />
+				</Col>
+			</Row>
 
-			<div className={`toolbar d-flex flex-row-reverse gap-1 box -red`}>
-				<button className='btn btn-primary'
-					onClick={() => {
-						notify('wiped all stats', { icon:	'❌' });
-						removeAllStats();
-					}}>
-					<span>wipe stats</span>
-				</button>
-
-				<button className='btn btn-primary' onClick={() => notify()}>
-					<span>toast</span>
-				</button>
-			</div>
+			<Row className='box -blue p-2'>
+				<Col className='d-flex justify-content-end box -red'>
+					<Button variant="primary" onClick={() => notify()}>
+						Primary
+					</Button>
+				</Col>
+			</Row>
 
 			<Toaster
 				position="bottom-left"
 				reverseOrder={false}
 			/>
-		</div>
+
+		</Container>
 	)
 }
-
-
-// export function name(props) {
-// 	// const { item } = props;
-
-// 	return (
-// 		<Container className='d-flex flex-column h-100'>
-// 			<Row className='flex-grow-1'>
-// 				<Col className='overflow-y-auto'>
-// 					<Pages.Stats />
-// 				</Col>
-// 			</Row>
-
-// 			<Row className='box -blue p-2'>
-// 				<Col className='d-flex justify-content-end box -red'>
-// 					<Button variant="primary" onClick={() => notify()}>
-// 						Primary
-// 					</Button>
-// 					<Button variant="primary" onClick={() => {
-// 						notify('cleared all stats', { icon: '❌' });
-// 						// removeAllStats();
-// 					}}>
-// 						clear all stats
-// 					</Button>
-// 				</Col>
-// 			</Row>
-
-// 			<Toaster
-// 				position="bottom-left"
-// 				reverseOrder={false}
-// 			/>
-
-// 		</Container>
-// 	)
-// }

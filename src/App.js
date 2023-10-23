@@ -439,7 +439,10 @@ function App() {
     <div className='App overflow-hidden'>
       <BrowserRouter>
         {/* <NavigationBar /> */}
-        <CustomNavBar />
+        {/* <CustomNavBar /> */}
+        <div className='fake-navbar box -red'>
+          navbar	
+        </div>
         
         <div className="app-wrapper">
           <Routes>

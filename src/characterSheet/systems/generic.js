@@ -10,12 +10,24 @@ class Stat {
 
 const generic = {
   stats: {
-    primary: {},
-    secondary: {},
+    primary: {
+      force: {
+        name: "force",
+        value: 2,
+        modifier: 0,
+      }
+    },
+    secondary: {
+      movement: {
+        name: "movement",
+        value: 6,
+        modifier: 0,
+      },
+    },
     tertiary: {},
 
-    set: function (item, value) {
-      this[item] = newStat(item, value);
+    set: function (category, item, value) {
+      this[category][item] = new Stat(item, value);
     },
   },
 
@@ -36,8 +48,26 @@ const generic = {
       this[item] = value;
     },
   },
+
+  // baseCharacter: {
+  //   get: function () {
+  //     return {
+  //       stats: this.stats,
+  //       health: this.health,
+  //       items: this.items,
+  //       details: this.details,
+  //     };
+  //   },
+  // }
+
+  get baseCharacter() {
+    return {
+      stats: this.stats,
+      health: this.health,
+      items: this.items,
+      details: this.details,
+    };
+  },
 }
-
-
 
 export default generic;
