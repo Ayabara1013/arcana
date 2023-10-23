@@ -4,7 +4,8 @@ import generic from './systems/generic';
 import { useState } from 'react';
 
 import toast, { Toaster } from 'react-hot-toast';
-import Stats from './systems/sheets/dnd 5e/StatsPage';
+import Stats from './sheets/generic/StatsPage';
+import { SystemSelect } from './SystemSelect';
 
 
 const notify = (text, icon) => toast(text || 'cool.', icon || '');
@@ -224,18 +225,25 @@ const character = {
 
 const Pages = {
 	Stats: Stats,
+	SystemSelect: SystemSelect,	
 }
 
 
 export default function CharacterSheet() {
 
-	const [page, setPage] = useState('stats');
+	const [page, setPage] = useState(`main`);
 	const [character, setCharacter] = useState(system.baseCharacter);
 
 	const defaultProps = {
 		character: character,
 		setCharacter: setCharacter,
 	}
+
+	const pageProps = {
+		page: page,
+		setPage: setPage,
+	}
+
 
 	const removeAllStats = () => {
 		setCharacter(prevState => ({
@@ -247,14 +255,30 @@ export default function CharacterSheet() {
 		}))
 	}
 
+	const renderPage = () => {
+		if (page === 'main') {
+			return <Pages.SystemSelect {...defaultProps} {...pageProps} />;
+		}
+		else if (page === 'dnd5e') {
+			return <Pages.Dnd5e {...defaultProps} {...pageProps} />;
+		}
+		else if (page === 'generic') {
+			return <Pages.Stats {...defaultProps} {...pageProps} />;
+		}
+	};
+
 	return (
-		<div className={`character-sheet box -blue -w2 d-flex flex-column`}>
-			<div className={`page-window box -red -w2`}>
-				<Pages.Stats {...defaultProps} />
+		<div className={`character-sheet d-flex flex-column`}>
+			<div className={`page-window`}>
+				{/* <Pages.Stats {...defaultProps} /> */}
+				{/* <Pages.SystemSelect {...defaultProps} {...pageProps} /> */}
+				
+				{ renderPage() }
 			</div>
 
-			<div className={`toolbar d-flex flex-row-reverse gap-1 box -red`}>
-				<button className='btn btn-primary'
+			<div className={`toolbar d-flex flex-row-reverse gap-1 bg-dark`}>
+				<button
+					className='btn btn-primary'
 					onClick={() => {
 						notify('wiped all stats', { icon:	'❌' });
 						removeAllStats();
@@ -265,6 +289,7 @@ export default function CharacterSheet() {
 				<button className='btn btn-primary' onClick={() => notify()}>
 					<span>toast</span>
 				</button>
+
 			</div>
 
 			<Toaster

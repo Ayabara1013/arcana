@@ -1,6 +1,6 @@
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import toast, { Toaster } from 'react-hot-toast';
-import getRandomString from '../../../../assets/functions/getRandomString';
+import getRandomString from '../../../assets/functions/getRandomString';
 
 const notify = (text, icon) => toast(text || 'cool.', icon || '');
 
@@ -163,9 +163,6 @@ export default function Stats(props) {
 						onClick={() => console.log(character)}>
 						log stats
 					</Button>
-
-					{/* <input type="text" placeholder='name' />
-					<input type="number" placeholder='value' /> */}
 				</div>
 			</div>
 

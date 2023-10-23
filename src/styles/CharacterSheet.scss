@@ -78,7 +78,7 @@
 .page-window {
   flex-grow: 1;
   // this will flex to fill remaining space
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .stats-page {
@@ -87,5 +87,6 @@
 
 
 .toolbar {
- // this will flex to fit its contents
+  // this will flex to fit its contents
+  padding: 0.5rem;
 }
