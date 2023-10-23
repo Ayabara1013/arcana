@@ -2,62 +2,71 @@
 
 const dnd5e = {
 
-  abilityScores: {
-    strength: 10,
-    dexterity: 10,
-    constitution: 10,
-    intelligence: 10,
-    wisdom: 10,
-    charisma: 10,
-  },
-
-  skills: {
-    athletics: 			new Skill("athletics", 				"strength",			false, false),
-    acrobatics: 		new Skill("acrobatics", 			"dexterity",		false, false),
-    sleightOfHand: 	new Skill("sleight of hand", 	"dexterity", 		false, false),
-    stealth: 				new Skill("stealth", 					"dexterity", 		false, false),
-    arcana: 				new Skill("arcana", 					"intelligence", false, false),
-    history: 				new Skill("history", 					"intelligence", false, false),
-    investigation: 	new Skill("investigation", 		"intelligence", false, false),
-    nature: 				new Skill("nature", 					"intelligence", false, false),
-    religion: 			new Skill("religion", 				"intelligence", false, false),
-    animalHandling: new Skill("animal handling", 	"wisdom", 			false, false),
-    insight: 				new Skill("insight", 					"wisdom", 			false, false),
-    medicine: 			new Skill("medicine", 				"wisdom", 			false, false),
-    perception: 		new Skill("perception", 			"wisdom", 			false, false),
-    survival: 			new Skill("survival", 				"wisdom", 			false, false),
-    deception: 			new Skill("deception", 				"charisma", 		false, false),
-    intimidation: 	new Skill("intimidation", 		"charisma", 		false, false),
-    performance: 		new Skill("performance", 			"charisma", 		false, false),
-    persuasion: 		new Skill("persuasion", 			"charisma", 		false, false),
-    
-    passive: {
-      perception: 10,
-      insight: 10,
-      investigation: 10,
+  stats: {
+    abilityScores: {
+      strength: 10,
+      dexterity: 10,
+      constitution: 10,
+      intelligence: 10,
+      wisdom: 10,
+      charisma: 10,
     },
-    
-    other: {},
-  },
+  
+    skills: {
+      athletics: 			new Skill("athletics", 				"strength",			false, false),
+      acrobatics: 		new Skill("acrobatics", 			"dexterity",		false, false),
+      sleightOfHand: 	new Skill("sleight of hand", 	"dexterity", 		false, false),
+      stealth: 				new Skill("stealth", 					"dexterity", 		false, false),
+      arcana: 				new Skill("arcana", 					"intelligence", false, false),
+      history: 				new Skill("history", 					"intelligence", false, false),
+      investigation: 	new Skill("investigation", 		"intelligence", false, false),
+      nature: 				new Skill("nature", 					"intelligence", false, false),
+      religion: 			new Skill("religion", 				"intelligence", false, false),
+      animalHandling: new Skill("animal handling", 	"wisdom", 			false, false),
+      insight: 				new Skill("insight", 					"wisdom", 			false, false),
+      medicine: 			new Skill("medicine", 				"wisdom", 			false, false),
+      perception: 		new Skill("perception", 			"wisdom", 			false, false),
+      survival: 			new Skill("survival", 				"wisdom", 			false, false),
+      deception: 			new Skill("deception", 				"charisma", 		false, false),
+      intimidation: 	new Skill("intimidation", 		"charisma", 		false, false),
+      performance: 		new Skill("performance", 			"charisma", 		false, false),
+      persuasion: 		new Skill("persuasion", 			"charisma", 		false, false),
+      
+      passive: {
+        perception: 10,
+        insight: 10,
+        investigation: 10,
+      },
+      
+      other: {},
+    },
+
+    proficiencies: {
+      armour: [],
+      weapons: [],
+      tools: [],
+      skills: [],
+      languages: [],
+      other: [],
+    },
+
+    savingThrows: {
+      stregth: 0,
+      dexterity: 0,
+      constitution: 0,
+      intelligence: 0,
+      wisdom: 0,
+      charisma: 0,
+    },
+
+
+  },  
 
   classes: {
     fighter: dnd5eClasses.fighter,
     rogue: dnd5eClasses.rogue,
     wizard: dnd5eClasses.wizard,
   },
-
-  savingThrows: {
-    stregth: 0,
-    dexterity: 0,
-    constitution: 0,
-    intelligence: 0,
-    wisdom: 0,
-    charisma: 0,
-  },
-
-  otherProficiencies: {},
-
-  languages: {},
 
   armourClass: 10,
   initiative: 0,
@@ -146,6 +155,8 @@ const dnd5e = {
 
   experienceMethods: ['experiencePoints', 'milestone'],
 
+  character_details: dnd5eDetails,
+
 }
 
 
@@ -225,4 +236,10 @@ const rogue = {
     tools: ["thieves' tools"],
     skills: ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight of hand", "stealth"],
   },
+}
+
+
+
+export {
+  dnd5e,
 }
