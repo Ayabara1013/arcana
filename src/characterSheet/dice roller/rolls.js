@@ -65,9 +65,34 @@ const comm4 = `!roll 2d6 slashing 1d10 fire 5 strength`;
 const comm5 = `!roll 2d6 slashing+1d10 fire+5 strength`; // this as a spaced plus, as well as a non spaced plus
 const comm6 = `!roll 2d6 slashing+1d10 fire + 5 strength`; // this as a spaced plus, as well as a non spaced plus
 const comm7 = `!roll 2d6(slash)+1d10(fire)+ 5 str`;         //this now uses brackets, do we want to allow brackets? it also has a shortened STR modifier
-const comm8 = `roll 2d6 SLASHING + 1d10 FIRE + 5 STR`;      // this is all caps, do we want to allow all caps? 
+const comm8 = `roll 2d6 SLASHING + 1d10 FIRE + 5 STR`;      // this is all caps, do we want to allow all caps?
 
- /** 
+export function parseRolls(input) {
+  input = `!roll 2d6 +1d10 +5`;
+  const rolls = [];
+
+
+  /**
+   * // for comm1 : 
+   * 1. remove the command, leaving only the rolls
+   * 2. split the rolls into an array, splitting on the + sign?
+   */
+
+  input = input.split(' ').slice(1); // this removes the command, leaving only the rolls
+  console.log(input);
+  // rolls.push(input.split('+')); // this adds the rolls to an array
+
+  return rolls;
+}
+
+const regex = [
+  { pattern: /(!\w+)/g, type: 'command' },
+  { pattern: /(?:\+ )?\d+d\d+(?=\s[+\-])/g, type: 'basic roll' }, // the /s may not be good
+  // { pattern: /(?:\+ )?\d+d\d+/g, type: 'basic roll' }, // the /s may not be good
+];
+
+
+/**
  * @param {*} command this will be a string, like '!roll 2d6+1d10+5' OR '!roll 2d6 1d10 5'
  */
 export function roll(command) {
@@ -93,11 +118,7 @@ export function roll(command) {
   //   dieRoll: /(\d+d\d+)/g,
   // }
 
-  const regex = [
-    { pattern: /(!\w+)/g, type: 'command' },
-    { pattern: /(?:\+ )?\d+d\d+(?=\s[+\-])/g, type: 'basic roll' }, // the /s may not be good
-    // { pattern: /(?:\+ )?\d+d\d+/g, type: 'basic roll' }, // the /s may not be good
-  ];
+
 
   regex.forEach(({ pattern, type }) => {
     const matches = input.match(pattern);
@@ -110,237 +131,12 @@ export function roll(command) {
       // }
     }
   })
-
-
-  // create the parts;
-  // const parts = input.match(pattern.command);
-
-  // console.log(parts);
-
-
-
-  // const input = "Hello world, hello universe!";
-
-  // const output = [];
-
-  // // Define an array of objects with patterns and actions
-  // const regexPatterns = [
-  //   { pattern: /hello/g, action: "Found 'hello'" },
-  //   { pattern: /world/g, action: "Found 'world'" },
-  //   { pattern: /universe/g, action: "Found 'universe'" },
-  // ];
-  
-  // // Iterate through the patterns and perform actions
-  // regexPatterns.forEach(({ pattern, action }) => {
-  //   const matches = input.match(pattern);
-  //   if (matches) {
-  //     // console.log(action);
-  //     console.log(matches);
-
-  //     matches.forEach((match) => {
-  //       output.push(match);
-  //     });
-  //   }
-  // });
-
-  // console.log(output)
-  
-
-
-
-  // if (parts.length < 2) {
-  //   return `invalid command`;
-  // }
-
-
-  // return results;
-
 }
 
 
 
-// /**
-//  * this function takes in an array, I may want to change it to an object? Im not sure yet
-//  * @param {*} rolls array
-//  * @returns object
-//  */
-// export function roll(rolls) {
-//   const results = new Results();
-
-//   // console.log(`--- rolling dice ---`);
-
-//   for (const item of rolls) {
-//     let result = 0;
-//     console.log(item, item.length > 2 ? `typed` : `untyped`);
-
-//     // if (item.length > 2) {
-//     //   console.log(`this one has a type!`)
-//     // }
-
-//     if (typeof item[1] === 'number') { // roll the die
-//       // console.log(`rolling ${item[0]}d${item[1]}`)
-
-//       for (let i = 0; i < item[0]; i++) {
-        
-
-//         result = rollDie(item[1]);
-//         results.rolls[`d${item[1]}`].push(result);
-//         results.sum += result;
-
-//         // console.log(`rolled ${result} on a d${val[1]}, sum is now ${results.sum}`)
-//       }
-//     }
-//     else if (typeof item[1] === 'string') { // add the modifier
-//       console.log(`adding [${item[0]}] from [${item[1]}]`)
-
-//       result = item[0];
-//       results.mods[item[1]] = result;
-//       // console.log(`added ${result} to mods.${val[1]}`)
-//       results.sum += result;
-//       // console.log(`sum is now ${results.sum}`)
-//     }
-
-//   }
-
-//   return results;
-// }
-
-
-
-// export function typedRoll(rolls) {
-//   const results = new Results();
-//   let rollsArray = [];
-  
-//   for (const item of rolls) {
-//     console.log(item);
-//   }
-
-//   for (const item of rollsArray) {
-//     console.log(item);
-
-//     let roll = rollDie(item.die);
-    
-//   }
-
-//   console.log(rollsArray);
-// }
-
-
-
-
-
-
-
-// /**
-//  * @param {*} rolls
-//  * @returns
-//  */
-// export function parseRolls(rolls) {
-//   let string = "";
-
-//   for (let val = 0; val < rolls.length; val++) {
-//     if (rolls[val][0] !== undefined) {
-//       string += rolls[val][0];
-//     }
-//   }
-
-//   return string;
-// }
 
 
 export function displayRollResults() {
   return `--- displaying roll results ---`;
 }
-
-
-// /** 
-//  * @param {*} array 
-//  * @param {*} complexity - simple, verbose
-//  */
-// export function displayRollResults(array, sum, complexity) {
-//   let string = '';
-//   let append = 'd';
-
-//   switch (complexity) {
-//     case 'modifiers':
-//       for (const val of array) {
-//         if (typeof val === 'number') {
-//           string += `${val} + `;
-//         }
-//         else if (typeof val === 'string') {
-        
-//         }
-//       }
-//     case 'verbose':
-//       for (const roll of array) {
-//         if (Array.isArray(roll)) {
-//           string += `${roll[0]} (${roll[1]}) + `;
-//         }
-//         else string += roll;
-//       }
-//       break;
-//     default:
-//       for (const roll of array) {
-//         if (Array.isArray(roll)) {
-//           string += `${roll[0]} + `;
-//         }
-//         else string += `${roll} + `;
-//       }
-//       break;
-//   }
-
-//   if (string.endsWith(' + ')) string = string.slice(0, -3);
-
-//   string += ` = ${sum}`;
-
-//   console.log(`--- displaying roll results ---`)
-//   console.log(string);
-// }
-
-
-
-// export function displayRollResults(array, complexity) {
-//   const rolls = array.rolls;
-//   const mods = array.mods;
-//   let result = '';
-
-//   switch (complexity) {
-//     // case 'verbose':
-//     //   break;
-//     default:
-//       for (const item in rolls) {
-//         if (rolls[item].length > 0) {
-//           console.log(`handling ${item}...`)
-//           console.log(item, rolls[item]);
-          
-//           for (const value of rolls[item]) {
-
-//             if (typeof value === 'array') {
-//               result += `${value[0]} (${value[1]}) + `;
-//             }
-//             else {
-//               result += `${value} + `;
-//             }
-//           }
-//         }
-//       }
-      
-//       for (const item in mods) {
-//         console.log(`handling ${item}...`)
-//         result += `${mods[item]} (${item.slice(0, 3)}) + `;
-//       }
-//   }
-
-//   result = result.slice(0, -3);
-
-//   return result;
-// }
-
-
-
-
-
-
-// export function roll3(rolls) {
-
-// }

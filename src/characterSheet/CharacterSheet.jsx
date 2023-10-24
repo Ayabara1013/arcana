@@ -6,6 +6,8 @@ import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import Stats from './sheets/generic/StatsPage';
 import { SystemSelect } from './SystemSelect';
+import { parseRolls } from './dice roller/rolls';
+import { parse } from 'yargs';
 
 
 const notify = (text, icon) => toast(text || 'cool.', icon || '');
@@ -288,6 +290,17 @@ export default function CharacterSheet() {
 
 				<button className='btn btn-primary' onClick={() => notify()}>
 					<span>toast</span>
+				</button>
+
+				<button
+					className='btn btn-primary'
+					onClick={() => {
+						const input = `!roll 2d6 +1d10 +5`;
+						// parseRolls();
+						notify(`rolling [ ${input} ]`, { icon:	'🎲' });
+						console.log(parseRolls(input));
+					}}>
+					<span>test parse roll</span>
 				</button>
 
 			</div>
