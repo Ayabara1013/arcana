@@ -1,13 +1,13 @@
 // import { parse } from 'yargs';
 
-import { resolveMotionValue } from 'framer-motion';
+// import { resolveMotionValue } from 'framer-motion';
 
 
 
 export class Result {
   constructor(sum, totals, rolls, mods) {
     this.sum = 0;
-    this.totals = []
+    this.totals = [];
     this.rolls = {
       d4: [],
       d6: [],
@@ -157,7 +157,8 @@ export function parseRolls(command) {
   return results;
 }
 
-export function roll(rolls) {
+export function roll(command) {
+  const rolls = parseRolls(command);
   const result = new Result();
   console.clear();
   // console.log(rolls);
@@ -194,10 +195,16 @@ export function roll(rolls) {
       result.mods.push(mm);
       result.sum += mm.value;
       result.totals.push([mm.value, mm.type]);
+      // result.totals.push({
+      //   action: 'mod',
+      //   value: mm.value,
+      //   type: mm.type
+      // });
     }
   }
 
   console.log(result);
+  return result;
 }
 
 export function displayRollResults() {

@@ -8,7 +8,7 @@ import Stats from './sheets/generic/StatsPage';
 import { SystemSelect } from './SystemSelect';
 import { parseRolls, roll } from './dice roller/rolls';
 
-const notify = (text, icon) => toast(text || 'cool.', icon || '');
+export const notify = (text, icon) => toast(text || 'cool.', icon || '');
 
 
 const system = generic;
