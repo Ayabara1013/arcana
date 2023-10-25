@@ -49,7 +49,6 @@ function toastRolls(results) {
     console.log(result)
     // notify(result, { icon: '🎲' })
     if (typeof result[1] === 'number') {
-      // notifyAll += `+ ${result[0]} ${typeof result[1] === 'number' ? `(d${result[1]})` : '' } `;
       notifyAll += `+ ${result[0]} ${typeof result[1] === 'number' ? iterateTypeIcons(result[2]) : iterateTypeIcons[1]} `;
       notify(`${result[0]} (d${result[1]}) ${result[2].includes(false) ? getTypeIcon(null) : iterateTypeIcons(result[2])}`, { icon: '🎲' }); 
     }
