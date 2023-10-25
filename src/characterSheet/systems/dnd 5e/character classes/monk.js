@@ -1,4 +1,4 @@
-import { ClassFeature, Modifier } from '../classes';
+import { ClassFeature, Modifier } from '../../../classes';
 
 
 

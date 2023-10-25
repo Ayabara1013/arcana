@@ -1,5 +1,5 @@
-import capitalizeWords from '../../assets/functions/capitalizeWords';
-import generic from './generic';
+import capitalizeWords from '../../../assets/functions/capitalizeWords';
+import generic from '../generic';
 
 
 

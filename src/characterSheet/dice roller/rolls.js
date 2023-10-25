@@ -194,12 +194,7 @@ export function roll(command) {
 
       result.mods.push(mm);
       result.sum += mm.value;
-      result.totals.push([mm.value, mm.type]);
-      // result.totals.push({
-      //   action: 'mod',
-      //   value: mm.value,
-      //   type: mm.type
-      // });
+      result.totals.push([mm.operation === 'subtract' ? -mm.value : mm.value, mm.type]);
     }
   }
 
