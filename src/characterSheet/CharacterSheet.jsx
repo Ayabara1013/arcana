@@ -6,8 +6,7 @@ import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import Stats from './sheets/generic/StatsPage';
 import { SystemSelect } from './SystemSelect';
-import { parseRolls } from './dice roller/rolls';
-
+import { parseRolls, roll } from './dice roller/rolls';
 
 const notify = (text, icon) => toast(text || 'cool.', icon || '');
 
@@ -295,7 +294,8 @@ export default function CharacterSheet() {
 					className='btn btn-primary'
 					onClick={() => {
 						notify(`rolling things...`, { icon:	'🎲' });
-						parseRolls();
+						// parseRolls();
+						roll(parseRolls());
 					}}>
 					<span>test parse roll</span>
 				</button>
